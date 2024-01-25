@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Book SYSTEM "gapdoc.dtd"
+   [ <!ENTITY CVT "<Package>CVT</Package>">
+     <!ENTITY DIGRAPHS "<Package>Digraphs</Package>">
+     <!ENTITY neq 
+      "<Alt Only='Text'>{&lt;&gt;}</Alt><Alt Not='Text'>\not=</Alt>">
+     <!ENTITY Jbar 
+      "<Alt Only='Text'>Jbar</Alt><Alt Not='Text'>\overline{J}</Alt>">
+     <!ENTITY Kbar 
+      "<Alt Only='Text'>Kbar</Alt><Alt Not='Text'>\overline{K}</Alt>">       
+     <#Include Label="PKGVERSIONDATA">
+   ]>
+
+<Book Name="CVT"> 
+
+<TitlePage>
+  <Title>&CVT;</Title>
+  <Subtitle>&CVT; Cubic vertex-transitive graph library</Subtitle>
+  <Version>Version &VERSION;</Version>
+  <Date>&RELEASEDATE;</Date>
+  <Author> Rhys J. Evans
+    <Email>rhysjevans00@gmail.com</Email>
+    <Homepage>https://rhysje00.github.io/</Homepage>
+  </Author>
+  <Author> Antonio Montero
+    <Email>antonio.montero@fmf.uni-lj.si</Email>
+    <Homepage>https://anteromontonio.github.io/</Homepage>
+  </Author>
+  <Author> Primož Potočnik
+    <Email>primoz.potocnik@fmf.uni-lj.si</Email>
+    <Homepage>https://users.fmf.uni-lj.si/potocnik/work.htm</Homepage>
+  </Author>
+    <Copyright> 
+    <Index>License</Index>
+    &copyright; 2024 by Rhys J. Evans, Antonio Montero and Primož Potočnik<P/>
+    The &CVT; package is free software: you can redistribute it and/or modify
+    it under the terms of the 
+    <URL Text="GNU General Public License">https://www.fsf.org/licenses/gpl.html</URL>
+    as published by the Free Software Foundation, either version 2 of the License, or
+    (at your option) any later version. 
+  </Copyright>
+  <Acknowledgements>
+    Acknowledgements
+  </Acknowledgements>
+</TitlePage>
+
+<TableOfContents/>
+
+<Body>
+
+<#Include SYSTEM "intro.xml">
+
+<#Include SYSTEM "utils.xml">
+
+<#Include SYSTEM "prop.xml">
+
+</Body>
+
+<Bibliography Databases="references"/>
+<TheIndex/>
+
+</Book>
+
+<!-- ==================================================================== -->
+
