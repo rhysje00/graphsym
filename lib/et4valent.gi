@@ -118,7 +118,7 @@ function(n)
   
   fn := Concatenation("ET_4valent_",String(n),".s6");
   
-  return Filename(DirectoriesPackageLibrary("cvt","graphs/et4valent"),fn);  
+  return Filename(DirectoriesPackageLibrary("grsyli","graphs/et4valent"),fn);  
 end );
 
 #############################################################################
