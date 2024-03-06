@@ -1,4 +1,4 @@
-# CVT package for GAP - CHANGES.md
+# GrSyLi package for GAP - CHANGES.md
 
 Copyright (C) 2024 by Rhys J. Evans. 
 

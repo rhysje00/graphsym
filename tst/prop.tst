@@ -1,13 +1,13 @@
 ############################################################################
 ##
-#W    prop.tst   Cubic vertex-transitive graphs library        Rhys J. Evans
+#W    prop.tst   GRaphs with SYmmetries library        Rhys J. Evans
 ##                                                           Primož Potočnik
 ##                                                           Antonio Montero
 ##
-gap> START_TEST("CVT package: prop.tst");
+gap> START_TEST("GrSyLi package: prop.tst");
 
 # Loading package
-gap> LoadPackage("cvt",false);
+gap> LoadPackage("grsyli",false);
 true
 
 # IsCubicDigraph

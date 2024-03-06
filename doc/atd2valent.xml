@@ -1,0 +1,94 @@
+<Chapter Label="atd2valent">
+<Heading>The arc-transitive 2-valent digraph library</Heading>
+
+In this Chapter we give functions for accessing the arc-transitive 2-valent
+asymmetric digraphs stored in this package, and related properties. Currently, 
+this package contains all arc-transitive 2-valent connected asymmetric digraphs 
+on up to 1000 vertices. For information and references about these digraphs, see 
+<Cite Key="PSV_2013a"/>.
+<P/>
+Let <M>\Gamma</M> be a digraph. Then, <M>\Gamma</M> is <E>asymmetric</E> if
+it has no arcs for which the opposite arc is also in <M>\Gamma</M>, and is 
+<E>connected</E> if the underlying graph of <M>\Gamma</M> is connected. The digraph
+<M>\Gamma</M> is <E>arc-transitive</E> if the automorphism group of 
+<M>\Gamma</M> acts transitively on the arcs of <M>\Gamma</M>. Further, the 
+digraph <M>\Gamma</M> is <M>2</M><E>-valent</E> if each vertex of <M>\Gamma</M>
+has 2 in-neighbours and 2 out-neighbours.
+
+<Section Label="atd 2-valent stored values">
+<Heading>Global variables for the arc-transitive 2-valent digraph library</Heading>
+
+In this Section we introduce functions and variables which give information
+about the arc-transitive 2-valent digraph library and the graphs stored within.
+
+<#Include Label="ATD_2VALENT_ORDER_MAX">
+
+<#Include Label="ATD_2VALENT_NUMBERS">
+
+<#Include Label="ATD_2VALENT_INFO">
+
+<#Include Label="NrATD2ValentDigraphs">
+
+<#Include Label="IdOfATD2ValentDigraph">
+
+<#Include Label="SetATD2ValentDigraphPropsNC">
+
+<#Include Label="SetATD2ValentDigraphProps">
+
+</Section>
+
+<Section Label="Accessing the atd 2-valent graphs">
+<Heading>Accessing the arc-transitive 2-valent digraphs</Heading>
+
+In this Section we introduce functions for the access to the cubic 
+vertex-transitive graphs stored in the &GRSYLI; package.
+
+<#Include Label="ATD2ValentDigraph">
+
+<#Include Label="AllATD2ValentDigraphs">
+
+<#Include Label="IteratorOfATD2ValentDigraphs">
+
+</Section>
+
+<Section Label="Properties and attributes atd2valent">
+<Heading>Properties and attributes of the arc-transitive 2-valent graphs</Heading>
+
+In this Section we give the properties and attributes of the arc-transitive 
+2-valent graphs which are stored in this library.
+
+<#Include Label="IsSelfOppositeDigraph">
+
+<#Include Label="HasATUnderlyingGraph">
+
+<#Include Label="HasAbelianVertexStabilizer">
+
+<#Include Label="IsGeneralizedWreathDigraph">
+
+<#Include Label="IdOfOppositeDigraph">
+
+<#Include Label="NameOfUnderlyingGraph">
+
+<#Include Label="MaximumArcTransitiveness">
+
+<#Include Label="StabIndexMinATUnd">
+
+<#Include Label="StabIndexUnd">
+
+<#Include Label="ATD2ValentRadius">
+
+<#Include Label="ATD2ValentAttachmentNo">
+
+<#Include Label="ATD2ValentAttachmentType">
+
+<#Include Label="DigraphNrAlterCycles">
+
+<#Include Label="DigraphAlterExponent">
+
+<#Include Label="DigraphAlterPerimeter">
+
+<#Include Label="DigraphAlterSequence">
+
+</Section>
+
+</Chapter>

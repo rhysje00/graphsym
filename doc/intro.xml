@@ -1,26 +1,26 @@
-<Chapter Label="The CVT package">
-<Heading>The &CVT; package</Heading>
-<Index Key="CVT">&CVT; package overview</Index>
+<Chapter Label="The GrSyLi package">
+<Heading>The &GRSYLI; package</Heading>
+<Index Key="GRSYLI">&GRSYLI; package overview</Index>
 
-  This is the manual for the &CVT; package version &VERSION;.
+  This is the manual for the &GRSYLI; package version &VERSION;.
   <P/>
-  The &CVT; package contains all connected cubic vertex-transitive graphs on at most 1280
-  vertices, and provides functionality for the access to these graphs, along 
+  The &GRSYLI; package contains various collections of small graphs with
+  certain symmetry properties, and provides functionality for the access to these graphs, along 
   with several precomputed properties for each graph available.
   <P/>
-  All of the functions in this package deal with finite simple graphs in 
+  All of the functions in this package deal with finite graphs in 
   &DIGRAPHS; format <Cite Key="DIGRAPHS_2019"/>. 
 
 <Section Label="install">
-<Heading>Installing &CVT;</Heading>
-<Index>&CVT;</Index>
+<Heading>Installing &GRSYLI;</Heading>
+<Index>&GRSYLI;</Index>
 
-To install the &CVT; package, you will need to download the most recent 
+To install the &GRSYLI; package, you will need to download the most recent 
 <C>tar.gz</C> file, found at &PKGWWWHOME;. Once downloaded, you can install the 
 package by following the instructions found in the &GAP; reference manual, 
 <URL Text="chapter 76">https://docs.gap-system.org/doc/ref/chap76.html</URL>.
 <P/>
-The &CVT; package requires the following &GAP; packages:
+The &GRSYLI; package requires the following &GAP; packages:
 <List>
 <Item><Package>GAPDoc</Package> <Cite Key="GAPDOC_2019"/>, version 1.6.6 or higher;</Item>
 <Item><Package>Digraphs</Package> <Cite Key="DIGRAPHS_2019"/>, version 1.6.1 or higher.</Item>
@@ -30,33 +30,33 @@ Each of the above packages are part of the standard &GAP; distribution.
 </Section>
 
 <Section Label="load">
-<Heading>Loading &CVT;</Heading>
+<Heading>Loading &GRSYLI;</Heading>
 
-Once correctly installed, you can load the &CVT; package at the &GAP; prompt by
+Once correctly installed, you can load the &GRSYLI; package at the &GAP; prompt by
 typing the following.
 <Example>
-gap> LoadPackage("cvt");
+gap> LoadPackage("grsyli");
 true
 </Example>
 </Section>
 
 <Section Label="cite">
-<Heading>Citing &CVT;</Heading>
+<Heading>Citing &GRSYLI;</Heading>
 
-  If you use the &CVT; package in your research, please tell us about it by 
+  If you use the &GRSYLI; package in your research, please tell us about it by 
   emailing <Email>rhysjevans00@gmail.com</Email>. We are interested in any research
-  involving the use of the &CVT; package and might refer to your work in the future.
+  involving the use of the &GRSYLI; package and might refer to your work in the future.
   
-  If you wish to refer to the &CVT; package in a published work, please cite 
-  &CVT; like a journal article. The following is a BibTeX entry for the
-  current &CVT; version:
+  If you wish to refer to the &GRSYLI; package in a published work, please cite 
+  &GRSYLI; like a journal article. The following is a BibTeX entry for the
+  current &GRSYLI; version:
 
 <Listing Type="bibtex">
 @Manual{cvt,
         author = {Evans, Rhys J. and Montero, Antonio and
                   Poto\v{c}nik, Primo\v{z}},
         key = {cvt},
-        title = {{CVT -- Cubic vertex-transitive graphs library for GAP, 
+        title = {{GrSyLi -- GRaphs with SYmmetries LIbrary for GAP, 
                   Version &VERSION;}},
         url = {\verb+(&PKGWWWHOME;)+},
         year = {2024}
@@ -64,15 +64,15 @@ true
 </Section>
 
 <Section>
-<Heading>Examples of the use of &CVT;</Heading>
+<Heading>Examples of the use of &GRSYLI;</Heading>
 
-We will give a simple example of how to use the &CVT; package here.
+We will give a simple example of how to use the &GRSYLI; package here.
 
 In this example, we will examine the cubic vertex-transitive graphs with 
 <M>50</M> vertices.
 
 <Example>
-gap> LoadPackage("cvt");
+gap> LoadPackage("grsyli");
 true
 gap> 
 gap> 

@@ -1,13 +1,13 @@
 ############################################################################
 ##
-#W    utils.tst   Cubic vertex-transitive graphs library       Rhys J. Evans
+#W    utils.tst   GRaphs with SYmmetries library       Rhys J. Evans
 ##                                                           Primož Potočnik
 ##                                                           Antonio Montero
 ##
-gap> START_TEST("CVT package: utils.tst");
+gap> START_TEST("GrSyLi package: utils.tst");
 
 # Loading package
-gap> LoadPackage("cvt",false);
+gap> LoadPackage("grsyli",false);
 true
 
 # CVT_ORDER_MAX

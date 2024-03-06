@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE Book SYSTEM "gapdoc.dtd"
-   [ <!ENTITY CVT "<Package>CVT</Package>">
+   [ <!ENTITY GRSYLI "<Package>GrSyLi</Package>">
      <!ENTITY DIGRAPHS "<Package>Digraphs</Package>">
      <!ENTITY neq 
       "<Alt Only='Text'>{&lt;&gt;}</Alt><Alt Not='Text'>\not=</Alt>">
      <!ENTITY Jbar 
       "<Alt Only='Text'>Jbar</Alt><Alt Not='Text'>\overline{J}</Alt>">
      <!ENTITY Kbar 
-      "<Alt Only='Text'>Kbar</Alt><Alt Not='Text'>\overline{K}</Alt>">       
+      "<Alt Only='Text'>Kbar</Alt><Alt Not='Text'>\overline{K}</Alt>">
+     <!ENTITY Warw 
+      "<Alt Only='Text'>Warrow</Alt><Alt Not='Text'>\overrightarrow{W}</Alt>">       
      <#Include Label="PKGVERSIONDATA">
    ]>
 
-<Book Name="CVT"> 
+<Book Name="GRSYLI"> 
 
 <TitlePage>
-  <Title>&CVT;</Title>
-  <Subtitle>&CVT; Cubic vertex-transitive graph library</Subtitle>
+  <Title>&GRSYLI;</Title>
+  <Subtitle>&GRSYLI; Graphs with Symmetries library</Subtitle>
   <Version>Version &VERSION;</Version>
   <Date>&RELEASEDATE;</Date>
   <Author> Rhys J. Evans
@@ -34,7 +36,7 @@
     <Copyright> 
     <Index>License</Index>
     &copyright; 2024 by Rhys J. Evans, Antonio Montero and Primož Potočnik<P/>
-    The &CVT; package is free software: you can redistribute it and/or modify
+    The &GRSYLI; package is free software: you can redistribute it and/or modify
     it under the terms of the 
     <URL Text="GNU General Public License">https://www.fsf.org/licenses/gpl.html</URL>
     as published by the Free Software Foundation, either version 2 of the License, or
@@ -51,9 +53,17 @@
 
 <#Include SYSTEM "intro.xml">
 
-<#Include SYSTEM "utils.xml">
+<#Include SYSTEM "cvt.xml">
 
-<#Include SYSTEM "prop.xml">
+<#Include SYSTEM "atd2valent.xml">
+
+<#Include SYSTEM "at4valent.xml">
+
+<#Include SYSTEM "2at4valent.xml">
+
+<#Include SYSTEM "et4valent.xml">
+
+<#Include SYSTEM "lat34valent.xml">
 
 </Body>
 

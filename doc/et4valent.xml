@@ -1,0 +1,52 @@
+<Chapter Label="et4valent">
+<Heading>The edge-transitive 4-valent graph library</Heading>
+
+In this chapter we give functions for accessing the edge-transitive 4-valent 
+graphs stored in this package, and related properties. Currently, this package
+contains an incomplete list of edge-transitive 4-valent graphs on up to 512 
+vertices. For information and references about these graphs, see 
+<Cite Key="PW_2016"/>.
+<P/>
+Let <M>\Gamma</M> be a simple graph (undirected, loopless, without multiple 
+edges). Then <M>\Gamma</M> is <E>4-valent</E> (or <E>tetravalent</E>) if each 
+vertex of the graph has exactly 4 neighbours.
+<P/>
+The graph <M>\Gamma</M> is <E>edge-transitive</E> if the automorphism group 
+of <M>\Gamma</M> acts transitively on the edges of <M>\Gamma</M>.
+
+
+<Section Label="et 4-valent stored values">
+<Heading>Global variables for the edge-transitive 4-valent graph library</Heading>
+
+In this Section we introduce functions and variables which give information
+about the edge-transitive 4-valent graph library and the graphs stored within.
+
+<#Include Label="ET_4VALENT_ORDER_MAX">
+
+<#Include Label="ET_4VALENT_NUMBERS">
+
+<#Include Label="NrET4ValentGraphs">
+
+<#Include Label="IdOfET4ValentGraph">
+
+<#Include Label="SetET4ValentGraphPropsNC">
+
+<#Include Label="SetET4ValentGraphProps">
+
+</Section>
+
+<Section Label="Accessing the et 4-valent graphs">
+<Heading>Accessing the edge-transitive 4-valent graphs</Heading>
+
+In this Section we introduce functions for the access to the edge-transitive 
+4-valent graphs stored in the &GRSYLI; package.
+
+<#Include Label="ET4ValentGraph">
+
+<#Include Label="AllET4ValentGraphs">
+
+<#Include Label="IteratorOfET4ValentGraphs">
+
+</Section>
+
+</Chapter>

@@ -1,6 +1,6 @@
 #############################################################################
 ##
-#W    init.g     Cubic vertex-transitive graphs library        Rhys J. Evans
+#W    init.g     GRaphs with SYmmetries library        Rhys J. Evans
 ##                                                           Primož Potočnik
 ##                                                           Antonio Montero
 ##
@@ -9,8 +9,12 @@
 ##
 #R  Read the declaration files.
 ##
-ReadPackage( "cvt", "lib/utils.gd" );
-ReadPackage( "cvt", "lib/prop.gd" );
+ReadPackage( "grsyli", "lib/cvt.gd" );
+ReadPackage( "grsyli", "lib/atd2valent.gd" );
+ReadPackage( "grsyli", "lib/at4valent.gd" );
+ReadPackage( "grsyli", "lib/2at4valent.gd" );
+ReadPackage( "grsyli", "lib/et4valent.gd" );
+ReadPackage( "grsyli", "lib/lat34valent.gd" );
 
 
 #############################################################################

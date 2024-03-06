@@ -1,13 +1,13 @@
 #############################################################################
 ##
-#W  PackageInfo.g         Algebraic Graph Theory package        Rhys J. Evans
+#W  PackageInfo.g      GRaphs with SYmmetries LIbrary        Rhys J. Evans
 ##
 ##
 ##
 SetPackageInfo( rec(
 
-  PackageName := "CVT",
-  Subtitle := "Cubic vertex-transitive graph library",
+  PackageName := "GrSyLi",
+  Subtitle := "GRaphs with SYmmetries LIbrary",
   Version := "0.1",
   Date := "18/01/2024",
   License := "GPL-2.0-or-later",
@@ -54,7 +54,7 @@ SetPackageInfo( rec(
       IsMaintainer := true,
       FirstNames := "Primož",
       LastName := "Potočnik",
-      WWWHome := "https://users.fmf.uni-lj.si/potocnik/work.htm",
+      WWWHome := "https://users.fmf.uni-lj.si/potocnik/",
       Email := "primoz.potocnik@fmf.uni-lj.si",
       Place := "Ljubljana, Slovenia",
       Institution := "Fakulteta za Matematiko in Fiziko, Univerza v Ljubljani",
@@ -70,6 +70,25 @@ SetPackageInfo( rec(
       Place := "Ljubljana, Slovenia",
       Institution := "Fakulteta za Matematiko in Fiziko, Univerza v Ljubljani",
     ),
+
+    rec(
+      LastName      := "Verret",
+      FirstNames    := "Gabriel",
+      IsAuthor      := false,
+      IsMaintainer  := false,
+      Email         := "g.verret@auckland.ac.nz",
+      Place         := "Auckland, New Zealand",
+      Institution   := "University of Auckland"),
+
+    rec(
+      LastName      := "Spiga",
+      FirstNames    := "Pablo",
+      IsAuthor      := false,
+      IsMaintainer  := false,
+      Email         := "pablo.spiga@unimib.it",
+      Place         := "Auckland, New Zealand",
+      Institution   := "Università degli Studi di Milano - Bicocca"),
+  
   ],
 
   Status := "other",
@@ -81,19 +100,19 @@ SetPackageInfo( rec(
     Concatenation( ~.PackageWWWHome, "/PackageInfo.g" ),
 
   AbstractHTML   := 
-    "The <span class=\"pkgname\">CVT</span> package contains all cubic \
-     vertex-transitive graphs on at most 1280 vertices, and provides \
+    "The <span class=\"pkgname\">GrSyLi</span> package contains various \
+     collections of small graphs with ceratin symmetry properties, and provides \
      functionality for the access to these graphs, along with several \
      precomputed properties for each graph available.",
 
   PackageDoc := rec(
-    BookName  := "cvt",
+    BookName  := "grsyli",
     ArchiveURLSubset := ["doc"],
     HTMLStart := "doc/chap0_mj.html",
     PDFFile   := "doc/manual.pdf",
     # the path to the .six file used by GAP's help system
     SixFile   := "doc/manual.six",
-    LongTitle := "Cubic vertex-transitive graphs library",
+    LongTitle := "GRaphs with SYmmetries LIbrary",
   ),
 
   Dependencies := rec(
@@ -112,7 +131,8 @@ SetPackageInfo( rec(
 
   TestFile := "tst/testall.g",
 
-  Keywords := ["cubic","vertex-transitive","graphs"]
+  Keywords := ["cubic","vertex-transitive","edge-transitive", "arc-transitive",
+               "graphs"]
 
 ));
 

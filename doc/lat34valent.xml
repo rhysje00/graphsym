@@ -1,0 +1,49 @@
+<Chapter Label="lat34valent">
+<Heading>The locally arc-transitive {3,4}-valent graph library</Heading>
+
+In this chapter we give functions for accessing the locally arc-transitive 
+{3,4}-valent graphs stored in this package, and related properties. 
+<P/>
+In this package, we collect bipartite biregular graphs of valence {3,4} that are 
+locally <M>G</M>-arc-transitive for some group of automorphisms <M>G</M> with 
+the edge stabiliser acting faithfully on the union of the neighbourhoods of the 
+vertices of the edge. Currently, this package stores all such graphs on up to 
+350 vertices, and many more on up to 1050. For more information and references 
+about these graphs, see <Cite Key="P_2012"/>.
+
+<Section Label="lat 3,4-valent stored values">
+<Heading>Global variables for the locally arc-transitive {3,4}-valent graph library</Heading>
+
+In this Section we introduce functions and variables which give information
+about the locally arc-transitive {3,4}-valent graph library and the graphs 
+stored within.
+
+<#Include Label="LAT_34VALENT_ORDER_MAX">
+
+<#Include Label="LAT_34VALENT_NUMBERS">
+
+<#Include Label="NrLAT34ValentGraphs">
+
+<#Include Label="IdOfLAT34ValentGraph">
+
+<#Include Label="SetLAT34ValentGraphPropsNC">
+
+<#Include Label="SetLAT34ValentGraphProps">
+
+</Section>
+
+<Section Label="Accessing the lat 3,4-valent graphs">
+<Heading>Accessing the locally arc-transitive {3,4}-valent graphs</Heading>
+
+In this Section we introduce functions for the access to the locally 
+arc-transitive {3,4}-valent graphs stored in the &GRSYLI; package.
+
+<#Include Label="LAT34ValentGraph">
+
+<#Include Label="AllLAT34ValentGraphs">
+
+<#Include Label="IteratorOfLAT34ValentGraphs">
+
+</Section>
+
+</Chapter>

@@ -1,0 +1,101 @@
+<Chapter Label="cvt">
+<Heading>The cubic vertex-transitive graph library</Heading>
+
+In this Chapter we give functions for accessing the cubic vertex-transitive 
+graphs stored in this package, and related properties. Currently, this package 
+contains all cubic vertex-transitive on up to 1280 vertices. For information 
+and references on these graphs, see <Cite Key="PSV_2013b"/>.
+<P/>
+Let <M>\Gamma</M> be a simple graph (undirected, loopless, without multiple 
+edges). Then <M>\Gamma</M> is <E>cubic</E> (or <E>trivalent</E>, 
+<M>3</M><E>-valent</E>) if each vertex of the graph has exactly 3 neighbours.
+<P/>
+The graph <M>\Gamma</M> is <E>vertex-transitive</E> if the automorphism group 
+of <M>\Gamma</M> acts transitively on the vertices of <M>\Gamma</M>.
+
+<Section Label="Precomputed data and global variables">
+<Heading>Global variables for the cubic vertex-transitive graph library</Heading>
+
+In this Section we introduce functions and variables which give information
+about the cubic vertex-transitive graph library and the graphs stored within.
+
+<#Include Label="CVT_ORDER_MAX">
+
+<#Include Label="CVT_NUMBER_GRAPHS">
+
+<#Include Label="CVT_GRAPH_INFO">
+
+<#Include Label="NrCubicVTGraphs">
+
+<#Include Label="IdOfCubicVTGraph">
+
+<#Include Label="SetCubicVTGraphPropsNC">
+
+<#Include Label="SetCubicVTGraphProps">
+
+<#Include Label="SmallCubicVTGraphsInfo">
+
+</Section>
+
+<Section Label="Accessing the cvt graphs">
+<Heading>Accessing the cubic vertex-transitive graphs</Heading>
+
+In this Section we introduce functions for the access to the cubic 
+vertex-transitive graphs stored in the &GRSYLI; package.
+
+<#Include Label="CubicVTGraph">
+
+<#Include Label="AllCubicVTGraphs">
+
+<#Include Label="IteratorOfCubicVTGraphs">
+
+</Section>
+
+<Section Label="Properties and attributes cvt">
+<Heading>Properties and attributes of the cubic vertex-transitive graphs</Heading>
+
+In this Section we give the properties and attributes of the cubic 
+vertex-transitive graphs which are stored in this library.
+
+<Subsection Label="Properties from the Digraphs package">
+<Heading>Properties from the &DIGRAPHS; package</Heading>
+
+A few of the properties we have precomputed for the graphs of this library 
+are already defined in the &DIGRAPHS; package. These are;
+
+<List>
+<Item> Diameter, in the attribute 
+       <Ref BookName="digraphs" Attr="DigraphDiameter"/>. </Item>
+<Item> Girth, in the attribute 
+       <Ref BookName="digraphs" Attr="DigraphUndirectedGirth"/>. </Item>
+<Item> Bipartiteness, in the property 
+       <Ref BookName="digraphs" Prop="IsBipartiteDigraph"/>. </Item>
+<Item> Arc-transitivity, in the property 
+       <Ref BookName="digraphs" Prop="IsEdgeTransitive"/>. </Item>
+</List>
+
+Whenever we wish to store these as &GAP; properties or attributes, we will use 
+the aforementioned &DIGRAPHS; functionality. We also give a synonym for 
+arc-transitivity, <Ref Prop="IsArcTransitiveDigraph"/>.  
+
+</Subsection>
+
+Now we introduce properties and attributes which have been 
+precomputed and stored in the &GRSYLI; package, and are not defined in the 
+functionality of the &DIGRAPHS; package.
+
+<#Include Label="IsCubicDigraph">
+
+<#Include Label="IsCayleyDigraphCVT">
+
+<#Include Label="IsArcTransitiveDigraph">
+
+<#Include Label="IsSPXDigraphCVT">
+
+<#Include Label="HasSolvableAutGroup">
+
+<#Include Label="SizeStabAut2CVT">
+
+</Section>
+
+</Chapter>

@@ -1,12 +1,12 @@
 #############################################################################
 ##
-#W    testall.g    Cubic vertex-transitive graphs library      Rhys J. Evans
+#W    testall.g    GRaphs with SYmmetries library      Rhys J. Evans
 ##                                                           Primož Potočnik
 ##                                                           Antonio Montero
 ##
-LoadPackage( "cvt" );
+LoadPackage( "grsyli" );
 
-TestDirectory(DirectoriesPackageLibrary( "cvt", "tst" ),
+TestDirectory(DirectoriesPackageLibrary( "grsyli", "tst" ),
   rec(exitGAP := true, 
   testOptions := rec(compareFunction := "uptowhitespace")));
 
