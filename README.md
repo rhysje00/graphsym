@@ -1,8 +1,8 @@
-# The CVT package for GAP
+# The GrSyLi package for GAP
 
-The CVT package contains all connected cubic vertex-transitive graphs on at most
- 1280 vertices, and provides functionality for the access to these graphs, along
- with several precomputed properties of each graph available.
+The GrSyLi package contains various collections of small graphs with certain 
+symmetry properties, and provides functionality for the access to these graphs, 
+along with several precomputed properties for each graph available.",
   
 ## Documentation
 
