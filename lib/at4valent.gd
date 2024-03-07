@@ -27,7 +27,7 @@
 ##  package contains all arc-transitive 2-valent digraphs with at most <M>n</M> 
 ##  vertices. The number of arc-transitive 2-valent digraphs stored for each 
 ##  <M>n</M> is stored in the list <Ref Var="AT_4VALENT_NUMBERS"/>. This variable
-##  is currently set to 1000. 
+##  is currently set to 640. 
 ##    <Example>
 ##      <![CDATA[
 ##gap> AT_4VALENT_ORDER_MAX;
@@ -91,7 +91,10 @@ DeclareGlobalVariable("AT_4VALENT_NUMBERS","Number of arc-transitive 2-valent di
 ##  graph found when iterating through <C>IteratorOfAT4ValentGraphs(n)</C>.
 ##    <Example>
 ##      <![CDATA[
-##gap> gamma:=AT4ValentGraph(200,2);;
+##gap> gamma:=CompleteDigraph(5);;
+##gap> IdOfAT4ValentGraph(gamma);
+##1
+##gap> gamma:=AT4ValentGraph(50,2);;
 ##gap> IdOfAT4ValentGraph(gamma);
 ##2
 ##      ]]>
@@ -121,10 +124,10 @@ DeclareAttribute( "IdOfAT4ValentGraph", IsDigraph );
 ##  <Ref Func="SetAT4ValentGraphProps"/>. 
 ##    <Example>
 ##      <![CDATA[
-##gap> gamma:=AT4ValentGraph(200,10);;
-##gap> SetAT4ValentGraphPropsNC(gamma,200,10);
-##gap> IdOAT4ValentGraph(gamma);
-##10
+##gap> gamma:=AT4ValentGraph(50,2);;
+##gap> SetAT4ValentGraphPropsNC(gamma,50,2);
+##gap> IdOfAT4ValentGraph(gamma);
+##2
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -149,7 +152,10 @@ DeclareGlobalFunction( "SetAT4ValentGraphPropsNC" );
 ##  attributes of <A>gamma</A> precomputed in this package.
 ##    <Example>
 ##      <![CDATA[
-##gap> TODO
+##gap> gamma:=CompleteDigraph(5);;
+##gap> SetAT4ValentGraphProps(gamma);
+##gap> IdOfAT4ValentGraph(gamma);
+##1
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -180,8 +186,8 @@ DeclareGlobalFunction( "SetAT4ValentGraphProps" );
 ##  all arc-transitive 2-valent digraphs with <M>n</M> vertices.
 ##    <Example>
 ##      <![CDATA[
-##gap> NrAT4ValentGraphs(200);
-##40
+##gap> NrAT4ValentGraphs(640);
+##158
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -220,7 +226,10 @@ DeclareGlobalFunction( "AT_4VALENT_Filename" );
 ##  or attributes are given to the resulting graph.
 ##    <Example>
 ##      <![CDATA[
-##gap> TODO
+##gap> AT4ValentGraph(640,20);
+##<immutable symmetric digraph with 640 vertices, 2560 edges>
+##gap> AT4ValentGraph(640,159);
+##fail
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -252,7 +261,9 @@ DeclareGlobalFunction( "AT4ValentGraph" );
 ##  or attributes are given to the resulting graphs.
 ##    <Example>
 ##      <![CDATA[
-##gap> TODO
+##gap> gammas:=AllAT4ValentGraphs(640);;
+##gap> Length(gammas);
+##158
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -284,7 +295,14 @@ DeclareGlobalFunction( "AllAT4ValentGraphs" );
 ##  or attributes are given to the resulting graphs.
 ##    <Example>
 ##      <![CDATA[
-##gap> TODO
+##gap> cnt:=0;; iter:=IteratorOfAT4ValentGraphs(640);;
+##gap> for gamma in iter do
+##> if HasSolvableAutGroup(gamma) then
+##> cnt:=cnt+1;
+##> fi;
+##> od;
+##gap> cnt;
+##155
 ##      ]]>
 ##    </Example>
 ##  </Description>

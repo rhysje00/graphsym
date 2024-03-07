@@ -27,11 +27,11 @@
 ##  package contains all arc-transitive 2-valent digraphs with at most <M>n</M> 
 ##  vertices. The number of arc-transitive 2-valent digraphs stored for each 
 ##  <M>n</M> is stored in the list <Ref Var="2AT_4VALENT_NUMBERS"/>. This variable
-##  is currently set to 1000. 
+##  is currently set to 2000. 
 ##    <Example>
 ##      <![CDATA[
 ##gap> 2AT_4VALENT_ORDER_MAX;
-##640
+##2000
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -55,8 +55,8 @@
 ##  number of arc-transitive 2-valent graphs available in this package.
 ##    <Example>
 ##      <![CDATA[
-##gap> 2AT_4VALENT_NUMBERS[200];  
-##40
+##gap> Maximum(2AT_4VALENT_NUMBERS);
+##11
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -91,9 +91,12 @@ DeclareGlobalVariable("2AT_4VALENT_NUMBERS","Number of arc-transitive 2-valent d
 ##  graph found when iterating through <C>IteratorOf2AT4ValentGraphs(n)</C>.
 ##    <Example>
 ##      <![CDATA[
-##gap> gamma:=2AT4ValentGraph(200,2);;
+##gap> gamma:=CompleteDigraph(5);;
 ##gap> IdOf2AT4ValentGraph(gamma);
-##2
+##1
+##gap> gamma:=2AT4ValentGraph(1920,10);;
+##gap> IdOf2AT4ValentGraph(gamma);
+##10
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -121,9 +124,9 @@ DeclareAttribute( "IdOf2AT4ValentGraph", IsDigraph );
 ##  <Ref Func="Set2AT4ValentGraphProps"/>. 
 ##    <Example>
 ##      <![CDATA[
-##gap> gamma:=2AT4ValentGraph(200,10);;
-##gap> Set2AT4ValentGraphPropsNC(gamma,200,10);
-##gap> IdO2AT4ValentGraph(gamma);
+##gap> gamma:=2AT4ValentGraph(1920,10);;
+##gap> Set2AT4ValentGraphPropsNC(gamma,1920,10);
+##gap> IdOf2AT4ValentGraph(gamma);
 ##10
 ##      ]]>
 ##    </Example>
@@ -149,7 +152,10 @@ DeclareGlobalFunction( "Set2AT4ValentGraphPropsNC" );
 ##  attributes of <A>gamma</A> precomputed in this package.
 ##    <Example>
 ##      <![CDATA[
-##gap> TODO
+##gap> gamma:=2AT4ValentGraph(1920,5);;
+##gap> Set2AT4ValentGraphProps(gamma);
+##gap> IdOf2AT4ValentGraph(gamma);
+##5
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -180,8 +186,8 @@ DeclareGlobalFunction( "Set2AT4ValentGraphProps" );
 ##  all arc-transitive 2-valent digraphs with <M>n</M> vertices.
 ##    <Example>
 ##      <![CDATA[
-##gap> Nr2AT4ValentGraphs(200);
-##40
+##gap> Nr2AT4ValentGraphs(1920);
+##11
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -220,7 +226,10 @@ DeclareGlobalFunction( "2AT_4VALENT_Filename" );
 ##  or attributes are given to the resulting graph.
 ##    <Example>
 ##      <![CDATA[
-##gap> TODO
+##gap> 2AT4ValentGraph(1920,3);
+##<immutable symmetric digraph with 1920 vertices, 7680 edges>
+##gap> 2AT4ValentGraph(1920,12);
+##fail
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -252,7 +261,9 @@ DeclareGlobalFunction( "2AT4ValentGraph" );
 ##  or attributes are given to the resulting graphs.
 ##    <Example>
 ##      <![CDATA[
-##gap> TODO
+##gap> gammas:=All2AT4ValentGraphs(1920);;
+##gap> Length(gammas);
+##11
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -284,7 +295,14 @@ DeclareGlobalFunction( "All2AT4ValentGraphs" );
 ##  or attributes are given to the resulting graphs.
 ##    <Example>
 ##      <![CDATA[
-##gap> TODO
+##gap> cnt:=0;; iter:=IteratorOf2AT4ValentGraphs(1920);;
+##gap> for gamma in iter do
+##> if HasSolvableAutGroup(gamma) then
+##> cnt:=cnt+1;
+##> fi;
+##> od;
+##gap> cnt;
+##0
 ##      ]]>
 ##    </Example>
 ##  </Description>

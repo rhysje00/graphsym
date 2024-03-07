@@ -20,10 +20,10 @@ function(n)
   if not IsPosInt(n) then
     Error("usage: NrET4ValentGraphs( <n> ), where <n> is a positive integer");
   fi;
-  if n>AT_4VALENT_ORDER_MAX then
+  if n>ET_4VALENT_ORDER_MAX then
     return 0;
   fi;
-  return AT_4VALENT_NUMBERS[n];
+  return ET_4VALENT_NUMBERS[n];
 end );
 
 ################################################################################
@@ -32,19 +32,21 @@ end );
 ##  
 InstallMethod(IdOfET4ValentGraph, "for a digraph", [IsDigraph],
 function(gamma)
-  local n, iter, cnt, delta;
+  local n, iter, cnt, delta, edges;
   if not IsDigraph(gamma) then
     Error("usage: IdOfET4ValentGraph( <gamma> ), where <gamma> is a digraph");
   fi;
 
   n:=DigraphNrVertices(gamma);
-  if n>AT_4VALENT_ORDER_MAX or AT_4VALENT_NUMBERS[n]=0 then
+  if n>ET_4VALENT_ORDER_MAX or ET_4VALENT_NUMBERS[n]=0 then
     return fail;
   fi;
-  if OutDegreeSet(gamma)<>[2] or InDegreeSet<>[2] then
+  if OutDegreeSet(gamma)<>[4] or DigraphHasLoops(gamma) or (not IsSymmetricDigraph(gamma)) then
     return fail;
   fi;
-  if not IsTransitive(AutomorphismGroup(gamma)) then
+
+  edges:=Set(List(DigraphEdges(gamma),Set));
+  if not IsTransitive(AutomorphismGroup(gamma),edges,OnSets) then
     return fail;
   fi;
 
@@ -112,7 +114,7 @@ function(n)
   if not IsPosInt(n) then
     Error("usage: ET_4VALENT_Filename( <n> ), where <n> is a positive integer");
   fi;
-  if n>AT_4VALENT_ORDER_MAX or NrET4ValentGraphs(n)=0 then
+  if n>ET_4VALENT_ORDER_MAX or NrET4ValentGraphs(n)=0 then
     return fail;
   fi;
   
@@ -144,7 +146,7 @@ function(args...)
                   positive integers and <data> is a boolean");
   fi;
 
-  fn:=AT_4VALENT_Filename(n);
+  fn:=ET_4VALENT_Filename(n);
   if fn=fail or i>NrET4ValentGraphs(n) then
     return fail;
   fi;
@@ -178,7 +180,7 @@ function(args...)
                   positive integer and <data> is a boolean");
   fi;
 
-  fn:=AT_4VALENT_Filename(n);
+  fn:=ET_4VALENT_Filename(n);
   if fn=fail then
     return fail;
   fi;
@@ -215,7 +217,7 @@ function(args...)
                   positive integer and <data> is a boolean");
   fi;
 
-  filename:=AT_4VALENT_Filename(n);
+  filename:=ET_4VALENT_Filename(n);
   if filename=fail then
     return Iterator([]);
   fi;

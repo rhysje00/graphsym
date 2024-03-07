@@ -12,13 +12,13 @@
 
 ################################################################################
 ##
-#F  NrATD2ValentDigraphs( <integer> )
-#F  NumberATD2ValentDigraphs( <integer> )
+#F  NrAT2ValentDigraphs( <integer> )
+#F  NumberAT2ValentDigraphs( <integer> )
 ##  
-InstallGlobalFunction(NrATD2ValentDigraphs, 
+InstallGlobalFunction(NrAT2ValentDigraphs, 
 function(n)
   if not IsPosInt(n) then
-    Error("usage: NrATD2ValentDigraphs( <n> ), where <n> is a positive integer");
+    Error("usage: NrAT2ValentDigraphs( <n> ), where <n> is a positive integer");
   fi;
   if n>ATD_2VALENT_ORDER_MAX then
     return 0;
@@ -28,27 +28,30 @@ end );
 
 ################################################################################
 ##
-#F  IdOfATD2ValentDigraph( <digraph> )
+#F  IdOfAT2ValentDigraph( <digraph> )
 ##  
-InstallMethod(IdOfATD2ValentDigraph, "for a digraph", [IsDigraph],
+InstallMethod(IdOfAT2ValentDigraph, "for a digraph", [IsDigraph],
 function(gamma)
   local n, iter, cnt, delta;
   if not IsDigraph(gamma) then
-    Error("usage: IdOfATD2ValentDigraph( <gamma> ), where <gamma> is a digraph");
+    Error("usage: IdOfAT2ValentDigraph( <gamma> ), where <gamma> is a digraph");
   fi;
 
   n:=DigraphNrVertices(gamma);
   if n>ATD_2VALENT_ORDER_MAX or ATD_2VALENT_NUMBERS[n]=0 then
     return fail;
   fi;
-  if OutDegreeSet(gamma)<>[2] or InDegreeSet<>[2] then
+  if OutDegreeSet(gamma)<>[2] or InDegreeSet(gamma)<>[2] then
     return fail;
   fi;
   if not IsTransitive(AutomorphismGroup(gamma)) then
     return fail;
   fi;
+  if not IsArcTransitiveDigraph(gamma) then
+    return fail;
+  fi;
 
-  iter:=IteratorOfATD2ValentDigraphs(n);
+  iter:=IteratorOfAT2ValentDigraphs(n);
   cnt:=0;
   for delta in iter do
     cnt:=cnt+1;
@@ -63,9 +66,9 @@ end );
 
 ################################################################################
 ##
-#F  SetATD2ValentDigraphPropsNC( <digraph>, <integer>, <integer> )
+#F  SetAT2ValentDigraphPropsNC( <digraph>, <integer>, <integer> )
 ##  
-InstallGlobalFunction(SetATD2ValentDigraphPropsNC, 
+InstallGlobalFunction(SetAT2ValentDigraphPropsNC, 
 function(gamma,n,i)
   local nr,rc;
 
@@ -74,18 +77,18 @@ function(gamma,n,i)
                    and <n> and <i> are positive integers");
   fi;
   
-  nr := NrATD2ValentDigraphs(n);
+  nr := NrAT2ValentDigraphs(n);
   if i>nr then
     return;
   fi;
   
   rc:=ATD_2VALENT_INFO[n,i];
   # Set all Props and attributes for this record (Id is already set)  
-  SetIdOfATD2ValentDigraph(gamma,i);
+  SetIdOfAT2ValentDigraph(gamma,i);
   SetIsSelfOppositeDigraph(gamma,rc[1]);
   SetHasATUnderlyingGraph(gamma,rc[3]);
   SetHasAbelianVertexStabilizer(gamma,rc[6]);
-  SetHasAbelianVertexStabilizer(gamma,rc[9]);
+  SetHasSolvableAutGroup(gamma,rc[9]);
   SetIsGeneralizedWreathDigraph(gamma,rc[17]);
 
   SetIdOfOppositeDigraph(gamma,rc[2]);
@@ -110,16 +113,16 @@ end );
 
 ################################################################################
 ##
-#F  SetATD2ValentDigraphProps( <digraph> )
+#F  SetAT2ValentDigraphProps( <digraph> )
 ##  
-InstallGlobalFunction(SetATD2ValentDigraphProps, 
+InstallGlobalFunction(SetAT2ValentDigraphProps, 
 function(gamma)
   local idx;
 
-  idx:=IdOfATD2ValentDigraph(gamma);
+  idx:=IdOfAT2ValentDigraph(gamma);
 
   if idx<>fail then
-    SetATD2ValentDigraphPropsNC(gamma,DigraphNrVertices(gamma),idx);
+    SetAT2ValentDigraphPropsNC(gamma,DigraphNrVertices(gamma),idx);
   fi;
   return;
 end );
@@ -135,7 +138,7 @@ function(n)
   if not IsPosInt(n) then
     Error("usage: ATD_2valent_Filename( <n> ), where <n> is a positive integer");
   fi;
-  if n>ATD_2VALENT_ORDER_MAX or NrATD2ValentDigraphs(n)=0 then
+  if n>ATD_2VALENT_ORDER_MAX or NrAT2ValentDigraphs(n)=0 then
     return fail;
   fi;
   
@@ -146,9 +149,9 @@ end );
 
 #############################################################################
 ##
-#F  ATD2ValentDigraph( <integer> , <integer>[, <bool>] )
+#F  AT2ValentDigraph( <integer> , <integer>[, <bool>] )
 ##  
-InstallGlobalFunction(ATD2ValentDigraph,
+InstallGlobalFunction(AT2ValentDigraph,
 function(args...)
   local n, i, data, fn, gamma;
 
@@ -163,27 +166,27 @@ function(args...)
     data:=args[3];
   fi;
   if not (IsPosInt(n) and IsPosInt(i) and IsBool(data)) then
-    Error("usage: ATD2ValentDigraph( <n>, <i>[, <data>] ), where <n>, <i> are \
+    Error("usage: AT2ValentDigraph( <n>, <i>[, <data>] ), where <n>, <i> are \
                   positive integers and <data> is a boolean");
   fi;
 
   fn:=ATD_2valent_Filename(n);
-  if fn=fail or i>NrATD2ValentDigraphs(n) then
+  if fn=fail or i>NrAT2ValentDigraphs(n) then
     return fail;
   fi;
 
   gamma:= ReadDigraphs(fn,i);
   if data then
-    SetATD2ValentDigraphPropsNC(gamma,n,i);
+    SetAT2ValentDigraphPropsNC(gamma,n,i);
   fi;
   return gamma;
 end );
 
 #############################################################################
 ##
-#F  AllATD2ValentDigraphs( <integer> , <integer> )
+#F  AllAT2ValentDigraphs( <integer> , <integer> )
 ##  
-InstallGlobalFunction(AllATD2ValentDigraphs,
+InstallGlobalFunction(AllAT2ValentDigraphs,
 function(args...)
   local n, data, fn, lgraphs, i;
 
@@ -197,7 +200,7 @@ function(args...)
     data:=args[2];
   fi;
   if not (IsPosInt(n) and IsBool(data)) then
-    Error("usage: AllATD2ValentDigraphs( <n>[, <data>] ), where <n> is a \
+    Error("usage: AllAT2ValentDigraphs( <n>[, <data>] ), where <n> is a \
                   positive integer and <data> is a boolean");
   fi;
 
@@ -208,8 +211,8 @@ function(args...)
   
   lgraphs:=ReadDigraphs(fn);
   if data then
-    for i in [1..NrATD2ValentDigraphs(n)] do
-      SetATD2ValentDigraphPropsNC(lgraphs[i],n,i);
+    for i in [1..NrAT2ValentDigraphs(n)] do
+      SetAT2ValentDigraphPropsNC(lgraphs[i],n,i);
     od;
   fi;
 
@@ -218,9 +221,9 @@ end );
 
 #############################################################################
 ##
-#F  IteratorOfATD2ValentDigraphs( <integer> )
+#F  IteratorOfAT2ValentDigraphs( <integer> )
 ##  
-InstallGlobalFunction(IteratorOfATD2ValentDigraphs,
+InstallGlobalFunction(IteratorOfAT2ValentDigraphs,
 function(args...)
   local n, data, filename, decoder, file, record;
 
@@ -234,7 +237,7 @@ function(args...)
     data:=args[2];
   fi;
   if not (IsPosInt(n) and IsBool(data)) then
-    Error("usage: IteratorOfATD2ValentDigraphs( <n>[, <data>] ), where <n> is a \
+    Error("usage: IteratorOfAT2ValentDigraphs( <n>[, <data>] ), where <n> is a \
                   positive integer and <data> is a boolean");
   fi;
 
@@ -256,7 +259,7 @@ function(args...)
       next := iter!.current;
       iter!.count:= iter!.count+1;
       iter!.current := iter!.file!.coder(iter!.file);
-      SetATD2ValentDigraphPropsNC(next,n,iter!.count);
+      SetAT2ValentDigraphPropsNC(next,n,iter!.count);
       return next;
     end;
 

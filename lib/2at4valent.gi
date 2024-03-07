@@ -41,10 +41,13 @@ function(gamma)
   if n>2AT_4VALENT_ORDER_MAX or 2AT_4VALENT_NUMBERS[n]=0 then
     return fail;
   fi;
-  if OutDegreeSet(gamma)<>[2] or InDegreeSet<>[2] then
+  if OutDegreeSet(gamma)<>[4] or DigraphHasLoops(gamma) or (not IsSymmetricDigraph(gamma)) then
     return fail;
   fi;
-  if not IsTransitive(AutomorphismGroup(gamma)) then
+  if not IsVertexTransitive(gamma) then
+    return fail;
+  fi;
+  if not IsArcTransitiveDigraph(gamma) then
     return fail;
   fi;
 

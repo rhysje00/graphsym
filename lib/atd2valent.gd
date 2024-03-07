@@ -55,8 +55,8 @@
 ##  number of arc-transitive 2-valent graphs available in this package.
 ##    <Example>
 ##      <![CDATA[
-##gap> ATD_2VALENT_NUMBERS[200];  
-##40
+##gap> ATD_2VALENT_NUMBERS[1000];  
+##182
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -124,9 +124,9 @@ DeclareGlobalVariable("ATD_2VALENT_NUMBERS","Number of arc-transitive 2-valent d
 ##  </Enum>
 ##    <Example>
 ##      <![CDATA[
-##gap> CVT_GRAPH_INFO[8];
-##[ [ 2, 4, false, true, false, false, true, 1 ], 
-##  [ 3, 4, true, true, true, false, true, 1 ] ]
+##gap> ATD_2VALENT_INFO[8,1];
+##[ true, 1, true, "GWG(4;1)", 1, true, 2, 72, true, 4, 8, "---", 2, 1, 2, 
+##  [ 4 ], false ]
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -142,11 +142,11 @@ DeclareGlobalVariable( "ATD_2VALENT_INFO" );
 
 ################################################################################
 ##
-#A  IdOfATD2ValentDigraph( <digraph> )
+#A  IdOfAT2ValentDigraph( <digraph> )
 ##  
-##  <#GAPDoc Label="IdOfATD2ValentDigraph">
+##  <#GAPDoc Label="IdOfAT2ValentDigraph">
 ##  <ManSection>
-##  <Attr Name="IdOfATD2ValentDigraph"
+##  <Attr Name="IdOfAT2ValentDigraph"
 ##   Arg='gamma'/>
 ##  <Returns>An integer</Returns>
 ##	
@@ -158,28 +158,28 @@ DeclareGlobalVariable( "ATD_2VALENT_INFO" );
 ##  The index <C>i</C> of a graph <C>gamma</C> in this library is the position 
 ##  at which the graph is stored relative to its number of vertices. 
 ##  In particular, if <C>gamma</C> has <C>n</C> vertices, then <C>gamma</C> will
-##   be the <C>i</C>th entry of <C>AllATD2ValentDigraphs(n)</C> and the <C>i</C>th 
-##  graph found when iterating through <C>IteratorOfATD2ValentDigraphs(n)</C>.
+##   be the <C>i</C>th entry of <C>AllAT2ValentDigraphs(n)</C> and the <C>i</C>th 
+##  graph found when iterating through <C>IteratorOfAT2ValentDigraphs(n)</C>.
 ##    <Example>
 ##      <![CDATA[
-##gap> gamma:=ATD2ValentDigraph(200,2);;
-##gap> IdOfATD2ValentDigraph(gamma);
-##2
+##gap> gamma:=AT2ValentDigraph(100,5);;
+##gap> IdOfAT2ValentDigraph(gamma);
+##5
 ##      ]]>
 ##    </Example>
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-DeclareAttribute( "IdOfATD2ValentDigraph", IsDigraph );
+DeclareAttribute( "IdOfAT2ValentDigraph", IsDigraph );
 
 ################################################################################
 ##
-#F  SetATD2ValentDigraphPropsNC( <digraph>, <integer>, <integer> )
+#F  SetAT2ValentDigraphPropsNC( <digraph>, <integer>, <integer> )
 ##  
-##  <#GAPDoc Label="SetATD2ValentDigraphPropsNC">
+##  <#GAPDoc Label="SetAT2ValentDigraphPropsNC">
 ##  <ManSection>
-##  <Func Name="SetATD2ValentDigraphPropsNC"
+##  <Func Name="SetAT2ValentDigraphPropsNC"
 ##   Arg='gamma,n,i'/>
 ##  <Returns></Returns>
 ##	
@@ -189,28 +189,28 @@ DeclareAttribute( "IdOfATD2ValentDigraph", IsDigraph );
 #
 ##  The
 ##  properties and attribute set are the same as by the function 
-##  <Ref Func="SetATD2ValentDigraphProps"/>. 
+##  <Ref Func="SetAT2ValentDigraphProps"/>. 
 ##    <Example>
 ##      <![CDATA[
-##gap> gamma:=ATD2ValentDigraph(200,10);;
-##gap> SetATD2ValentDigraphPropsNC(gamma,200,10);
-##gap> IdOATD2ValentDigraph(gamma);
-##10
+##gap> gamma:=AT2ValentDigraph(150,5);;
+##gap> SetAT2ValentDigraphPropsNC(gamma,150,5);
+##gap> IsGeneralizedWreathDigraph(gamma);
+##false
 ##      ]]>
 ##    </Example>
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-DeclareGlobalFunction( "SetATD2ValentDigraphPropsNC" );
+DeclareGlobalFunction( "SetAT2ValentDigraphPropsNC" );
 
 ################################################################################
 ##
-#F  SetATD2ValentDigraphProps( <digraph> )
+#F  SetAT2ValentDigraphProps( <digraph> )
 ##  
-##  <#GAPDoc Label="SetATD2ValentDigraphProps">
+##  <#GAPDoc Label="SetAT2ValentDigraphProps">
 ##  <ManSection>
-##  <Func Name="SetATD2ValentDigraphProps"
+##  <Func Name="SetAT2ValentDigraphProps"
 ##   Arg='gamma'/>
 ##  <Returns></Returns>
 ##	
@@ -220,25 +220,28 @@ DeclareGlobalFunction( "SetATD2ValentDigraphPropsNC" );
 ##  attributes of <A>gamma</A> precomputed in this package.
 ##    <Example>
 ##      <![CDATA[
-##gap> TODO
+##gap> gamma:=AT2ValentDigraph(150,5);;
+##gap> SetAT2ValentDigraphProps(gamma);
+##gap> IsGeneralizedWreathDigraph(gamma);
+##false
 ##      ]]>
 ##    </Example>
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-DeclareGlobalFunction( "SetATD2ValentDigraphProps" );
+DeclareGlobalFunction( "SetAT2ValentDigraphProps" );
 
 ################################################################################
 ##
-#F  NrATD2ValentDigraphs( <integer> )
-#F  NumberATD2ValentDigraphs( <integer> )
+#F  NrAT2ValentDigraphs( <integer> )
+#F  NumberAT2ValentDigraphs( <integer> )
 ##  
-##  <#GAPDoc Label="NrATD2ValentDigraphs">
+##  <#GAPDoc Label="NrAT2ValentDigraphs">
 ##  <ManSection>
-##  <Func Name="NrATD2ValentDigraphs"
+##  <Func Name="NrAT2ValentDigraphs"
 ##   Arg='n'/>
-##  <Func Name="NumberATD2ValentDigraphs"
+##  <Func Name="NumberAT2ValentDigraphs"
 ##   Arg='n' Label="long synonym"/>
 ##  <Returns>An integer</Returns>
 ##	
@@ -251,16 +254,16 @@ DeclareGlobalFunction( "SetATD2ValentDigraphProps" );
 ##  all arc-transitive 2-valent digraphs with <M>n</M> vertices.
 ##    <Example>
 ##      <![CDATA[
-##gap> NrATD2ValentDigraphs(200);
-##40
+##gap> NrAT2ValentDigraphs(500);
+##63
 ##      ]]>
 ##    </Example>
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-DeclareGlobalFunction( "NrATD2ValentDigraphs" );
-DeclareSynonym( "NumberATD2ValentDigraphs", NrATD2ValentDigraphs);
+DeclareGlobalFunction( "NrAT2ValentDigraphs" );
+DeclareSynonym( "NumberAT2ValentDigraphs", NrAT2ValentDigraphs);
 
 ################################################################################
 ##
@@ -270,11 +273,11 @@ DeclareGlobalFunction( "ATD_2valent_Filename" );
 
 #############################################################################
 ##
-#F  ATD2ValentDigraph( <integer> , <integer>[, <bool>] )
+#F  AT2ValentDigraph( <integer> , <integer>[, <bool>] )
 ##  
-##  <#GAPDoc Label="ATD2ValentDigraph">
+##  <#GAPDoc Label="AT2ValentDigraph">
 ##  <ManSection>
-##  <Func Name="ATD2ValentDigraph"
+##  <Func Name="AT2ValentDigraph"
 ##   Arg='n,i[, data]'/>
 ##  <Returns>A digraph.</Returns>
 ##
@@ -286,27 +289,30 @@ DeclareGlobalFunction( "ATD_2valent_Filename" );
 ##  When the optional argument <A>data</A> is specified, it must have value 
 ##  <K>true</K> or <K>false</K>. If <C><A>data</A>=</C><K>true</K>, the graph 
 ##  returned by this function will have been assigned the precomputed properties
-##  and attributes from <Ref Func="SetATD2ValentDigraphProps"/>. If 
+##  and attributes from <Ref Func="SetAT2ValentDigraphProps"/>. If 
 ##  <C><A>data</A>=</C><K>false</K> or not specified, none of these properties 
 ##  or attributes are given to the resulting graph.
 ##    <Example>
 ##      <![CDATA[
-##gap> TODO
+##gap> AT2ValentDigraph(300,40);
+##<immutable digraph with 300 vertices, 600 edges>
+##gap> AT2ValentDigraph(300,100);
+##fail
 ##      ]]>
 ##    </Example>
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-DeclareGlobalFunction( "ATD2ValentDigraph" );
+DeclareGlobalFunction( "AT2ValentDigraph" );
 
 #############################################################################
 ##
-#F  AllATD2ValentDigraphs( <integer>[, <bool>] )
+#F  AllAT2ValentDigraphs( <integer>[, <bool>] )
 ##  
-##  <#GAPDoc Label="AllATD2ValentDigraphs">
+##  <#GAPDoc Label="AllAT2ValentDigraphs">
 ##  <ManSection>
-##  <Func Name="AllATD2ValentDigraphs"
+##  <Func Name="AllAT2ValentDigraphs"
 ##   Arg='n[, data]'/>
 ##  <Returns>A list</Returns>
 ##
@@ -318,27 +324,29 @@ DeclareGlobalFunction( "ATD2ValentDigraph" );
 ##  When the optional argument <A>data</A> is specified, it must have value 
 ##  <K>true</K> or <K>false</K>. If <C><A>data</A>=</C><K>true</K>, the graphs 
 ##  returned by this function will have been assigned the precomputed properties
-##  and attributes from <Ref Func="SetATD2ValentDigraphProps"/>. If 
+##  and attributes from <Ref Func="SetAT2ValentDigraphProps"/>. If 
 ##  <C><A>data</A>=</C><K>false</K> or not specified, none of these properties 
 ##  or attributes are given to the resulting graphs.
 ##    <Example>
 ##      <![CDATA[
-##gap> TODO
+##gap> gammas:=AllAT2ValentDigraphs(300,true);;
+##gap> ForAny(gammas,HasAbelianVertexStabilizer);
+##true
 ##      ]]>
 ##    </Example>
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-DeclareGlobalFunction( "AllATD2ValentDigraphs" );
+DeclareGlobalFunction( "AllAT2ValentDigraphs" );
 
 #############################################################################
 ##
-#F  IteratorOfATD2ValentDigraphs( <integer> )
+#F  IteratorOfAT2ValentDigraphs( <integer> )
 ##  
-##  <#GAPDoc Label="IteratorOfATD2ValentDigraphs">
+##  <#GAPDoc Label="IteratorOfAT2ValentDigraphs">
 ##  <ManSection>
-##  <Func Name="IteratorOfATD2ValentDigraphs"
+##  <Func Name="IteratorOfAT2ValentDigraphs"
 ##   Arg='n'/>
 ##  <Returns>A list</Returns>
 ##
@@ -350,19 +358,26 @@ DeclareGlobalFunction( "AllATD2ValentDigraphs" );
 ##  When the optional argument <A>data</A> is specified, it must have value 
 ##  <K>true</K> or <K>false</K>. If <C><A>data</A>=</C><K>true</K>, the graphs 
 ##  returned by this function will have been assigned the precomputed properties
-##  and attributes from <Ref Func="SetATD2ValentDigraphProps"/>. If 
+##  and attributes from <Ref Func="SetAT2ValentDigraphProps"/>. If 
 ##  <C><A>data</A>=</C><K>false</K> or not specified, none of these properties 
 ##  or attributes are given to the resulting graphs.
 ##    <Example>
 ##      <![CDATA[
-##gap> TODO
+##gap> cnt:=0;; iter:=IteratorOfAT2ValentDigraphs(100,true);;
+##gap> for gamma in iter do
+##> if HasSolvableAutGroup(gamma) then
+##> cnt:=cnt+1;
+##> fi;
+##> od;
+##gap> cnt;
+##15
 ##      ]]>
 ##    </Example>
 ##  </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-DeclareGlobalFunction( "IteratorOfATD2ValentDigraphs" );
+DeclareGlobalFunction( "IteratorOfAT2ValentDigraphs" );
 
 
 ######################
@@ -386,9 +401,11 @@ DeclareGlobalFunction( "IteratorOfATD2ValentDigraphs" );
 ##  (see <Ref BookName="Digraphs" Attr="DigraphReverse"/> ).
 ##    <Example>
 ##      <![CDATA[
-##gap> IsSelfOpposite(CycleDigraph(5));
+##gap> gamma:=AT2ValentDigraph(300,1);;
+##gap> IsSelfOppositeDigraph(gamma);
 ##false
-##gap> IsSelfOpposite(CompleteDigraph(4));
+##gap> gamma:=AT2ValentDigraph(300,20);;
+##gap> IsSelfOppositeDigraph(gamma);
 ##true
 ##      ]]>
 ##    </Example>
@@ -417,9 +434,11 @@ DeclareProperty("IsSelfOppositeDigraph", IsDigraph);
 ##   <Ref Prop="IsArcTransitiveDigraph"/>).
 ##    <Example>
 ##      <![CDATA[
-##gap> IsSelfOpposite(CycleDigraph(5));
+##gap> gamma:=AT2ValentDigraph(300,10);;
+##gap> HasATUnderlyingGraph(gamma);
 ##false
-##gap> IsSelfOpposite(CompleteDigraph(4));
+##gap> gamma:=AT2ValentDigraph(300,30,true);;
+##gap> HasATUnderlyingGraph(gamma);
 ##true
 ##      ]]>
 ##    </Example>
@@ -445,9 +464,8 @@ DeclareProperty("HasATUnderlyingGraph", IsDigraph);
 ##  abelian, and otherwise it returns <K>false</K>.
 ##    <Example>
 ##      <![CDATA[
-##gap> IsSelfOpposite(CycleDigraph(5));
-##false
-##gap> IsSelfOpposite(CompleteDigraph(4));
+##gap> gammas:=AllAT2ValentDigraphs(700,true);;
+##gap> ForAll(gammas,HasAbelianVertexStabilizer);
 ##true
 ##      ]]>
 ##    </Example>
@@ -475,9 +493,9 @@ DeclareProperty("HasAbelianVertexStabilizer", IsDigraph);
 ##  <P/>
 ##  The properties and attributes of an arc-transitive 2-valent digraph that can
 ##  be found in the &GRSYLI; package can be assigned using the function 
-##  <Ref Func="SetATD2ValentDigraphProps"/>, or loaded automatically by the functions
-##  <Ref Func="ATD2ValentDigraph"/>, <Ref Func="AllATD2ValentDigraphs"/> or 
-##  <Ref Func="IteratorOfATD2ValentDigraphs"/>.
+##  <Ref Func="SetAT2ValentDigraphProps"/>, or loaded automatically by the functions
+##  <Ref Func="AT2ValentDigraph"/>, <Ref Func="AllAT2ValentDigraphs"/> or 
+##  <Ref Func="IteratorOfAT2ValentDigraphs"/>.
 ##  <P/>
 ##  Let <M>n</M> be an integer such that <M>n&gt;2</M>. The 
 ##  <E>generalized wreath digraph</E>, <M>&Warw;_n</M>, has vertex-set 
@@ -488,9 +506,11 @@ DeclareProperty("HasAbelianVertexStabilizer", IsDigraph);
 ##  <Cite Key="PSV_2015"/>.
 ##    <Example>
 ##      <![CDATA[
-##gap> IsSelfOpposite(CycleDigraph(5));
+##gap> gamma:=AT2ValentDigraph(700,30,true);;
+##gap> IsGeneralizedWreathDigraph(gamma);
 ##false
-##gap> IsSelfOpposite(CompleteDigraph(4));
+##gap> gamma:=AT2ValentDigraph(700,43,true);;
+##gap> IsGeneralizedWreathDigraph(gamma);
 ##true
 ##      ]]>
 ##    </Example>
@@ -521,19 +541,19 @@ DeclareProperty("IsGeneralizedWreathDigraph", IsDigraph);
 ##  (or reverse) of <A>gamma</A> is stored 
 ##  (see  <Ref BookName="Digraphs" Attr="DigraphReverse"/>). 
 ##  In particular, if <A>gamma</A> has order <M>n</M>, then 
-##  <C>ATD2ValentDigraph(</C><M>n</M><C>,i)</C> is the opposite graph of 
+##  <C>AT2ValentDigraph(</C><M>n</M><C>,i)</C> is the opposite graph of 
 ##  <A>gamma</A>.
 ##  <P/>
 ##  The properties and attributes of an arc-transitive 2-valent digraph that can
 ##  be found in the &GRSYLI; package can be assigned using the function 
-##  <Ref Func="SetATD2ValentDigraphProps"/>, or loaded automatically by the functions
-##  <Ref Func="ATD2ValentDigraph"/>, <Ref Func="AllATD2ValentDigraphs"/> or 
-##  <Ref Func="IteratorOfATD2ValentDigraphs"/>.
+##  <Ref Func="SetAT2ValentDigraphProps"/>, or loaded automatically by the functions
+##  <Ref Func="AT2ValentDigraph"/>, <Ref Func="AllAT2ValentDigraphs"/> or 
+##  <Ref Func="IteratorOfAT2ValentDigraphs"/>.
 ##    <Example>
 ##      <![CDATA[
-##gap> gamma:=CubicVTGraph(102,16,true);;
+##gap> gamma:=AT2ValentDigraph(700,10,true);;
 ##gap> IdOfOppositeDigraph(gamma);
-##3
+##9
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -560,9 +580,9 @@ DeclareAttribute("IdOfOppositeDigraph", IsDigraph);
 ##  <P/>
 ##  The properties and attributes of an arc-transitive 2-valent digraph that can
 ##  be found in the &GRSYLI; package can be assigned using the function 
-##  <Ref Func="SetATD2ValentDigraphProps"/>, or loaded automatically by the functions
-##  <Ref Func="ATD2ValentDigraph"/>, <Ref Func="AllATD2ValentDigraphs"/> or 
-##  <Ref Func="IteratorOfATD2ValentDigraphs"/>.
+##  <Ref Func="SetAT2ValentDigraphProps"/>, or loaded automatically by the functions
+##  <Ref Func="AT2ValentDigraph"/>, <Ref Func="AllAT2ValentDigraphs"/> or 
+##  <Ref Func="IteratorOfAT2ValentDigraphs"/>.
 ##  <P/>
 ##  The string returned will start with 3 or 4 letter, and then contain 2 
 ##  numbers enclosed in the "[" and "]" characters, separated from eachother by
@@ -585,9 +605,9 @@ DeclareAttribute("IdOfOppositeDigraph", IsDigraph);
 ##  indexed by the remaining two integers in the string.
 ##    <Example>
 ##      <![CDATA[
-##gap> gamma:=CubicVTGraph(102,16,true);;
+##gap> gamma:=AT2ValentDigraph(700,40,true);;
 ##gap> NameOfUnderlyingGraph(gamma);
-##3
+##"GHAT[700;12]"
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -614,9 +634,9 @@ DeclareAttribute("NameOfUnderlyingGraph", IsDigraph);
 ##  <P/>
 ##  The properties and attributes of an arc-transitive 2-valent digraph that can
 ##  be found in the &GRSYLI; package can be assigned using the function 
-##  <Ref Func="SetATD2ValentDigraphProps"/>, or loaded automatically by the functions
-##  <Ref Func="ATD2ValentDigraph"/>, <Ref Func="AllATD2ValentDigraphs"/> or 
-##  <Ref Func="IteratorOfATD2ValentDigraphs"/>.
+##  <Ref Func="SetAT2ValentDigraphProps"/>, or loaded automatically by the functions
+##  <Ref Func="AT2ValentDigraph"/>, <Ref Func="AllAT2ValentDigraphs"/> or 
+##  <Ref Func="IteratorOfAT2ValentDigraphs"/>.
 ##  <P/>
 ##  An <M>s</M><E>-arc</E> of a digraph <M>\Gamma</M> is an <M>(s+1)</M>-tuple 
 ##  <M>(v_0, v_1,\dots, v_s)</M> of vertices of <M>\Gamma</M>, such that 
@@ -630,9 +650,9 @@ DeclareAttribute("NameOfUnderlyingGraph", IsDigraph);
 ## TODO REF 
 ##    <Example>
 ##      <![CDATA[
-##gap> gamma:=CubicVTGraph(102,16,true);;
+##gap> gamma:=AT2ValentDigraph(748,18,true);;
 ##gap> MaximumArcTransitiveness(gamma);
-##3
+##373
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -661,9 +681,9 @@ DeclareAttribute("MaximumArcTransitiveness", IsDigraph);
 ##  <P/>
 ##  The properties and attributes of an arc-transitive 2-valent digraph that can
 ##  be found in the &GRSYLI; package can be assigned using the function 
-##  <Ref Func="SetATD2ValentDigraphProps"/>, or loaded automatically by the functions
-##  <Ref Func="ATD2ValentDigraph"/>, <Ref Func="AllATD2ValentDigraphs"/> or 
-##  <Ref Func="IteratorOfATD2ValentDigraphs"/>.
+##  <Ref Func="SetAT2ValentDigraphProps"/>, or loaded automatically by the functions
+##  <Ref Func="AT2ValentDigraph"/>, <Ref Func="AllAT2ValentDigraphs"/> or 
+##  <Ref Func="IteratorOfAT2ValentDigraphs"/>.
 ##  <P/>
 ##  Let <M>\Gamma</M> be an arc-transitive 2-valent digraph stored in this 
 ##  package, with automorphism group <M>G</M>. Further, let <M>T</M> be the 
@@ -676,9 +696,13 @@ DeclareAttribute("MaximumArcTransitiveness", IsDigraph);
 ##  TODO add ref?
 ##    <Example>
 ##      <![CDATA[
-##gap> gamma:=CubicVTGraph(102,16,true);;
-##gap> StabIndexMinATUnd(gamma);
-##3
+##gap> gammas:=AllAT2ValentDigraphs(420,true);;
+##gap> StabIndexMinATUnd(gammas[20]);
+##0
+##gap> StabIndexMinATUnd(gammas[40]);
+##2
+##gap> StabIndexMinATUnd(gammas[76]);
+##8
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -706,9 +730,9 @@ DeclareAttribute("StabIndexMinATUnd", IsDigraph);
 ##  <P/>
 ##  The properties and attributes of an arc-transitive 2-valent digraph that can
 ##  be found in the &GRSYLI; package can be assigned using the function 
-##  <Ref Func="SetATD2ValentDigraphProps"/>, or loaded automatically by the functions
-##  <Ref Func="ATD2ValentDigraph"/>, <Ref Func="AllATD2ValentDigraphs"/> or 
-##  <Ref Func="IteratorOfATD2ValentDigraphs"/>.
+##  <Ref Func="SetAT2ValentDigraphProps"/>, or loaded automatically by the functions
+##  <Ref Func="AT2ValentDigraph"/>, <Ref Func="AllAT2ValentDigraphs"/> or 
+##  <Ref Func="IteratorOfAT2ValentDigraphs"/>.
 ##  <P/>
 ##  Let <M>\Gamma</M> be an arc-transitive 2-valent digraph stored in this 
 ##  package, with automorphism group <M>G</M>. Further, let <M>A</M> be the 
@@ -746,16 +770,16 @@ DeclareAttribute("StabIndexUnd", IsDigraph);
 ##  <P/>
 ##  The properties and attributes of an arc-transitive 2-valent digraph that can
 ##  be found in the &GRSYLI; package can be assigned using the function 
-##  <Ref Func="SetATD2ValentDigraphProps"/>, or loaded automatically by the functions
-##  <Ref Func="ATD2ValentDigraph"/>, <Ref Func="AllATD2ValentDigraphs"/> or 
-##  <Ref Func="IteratorOfATD2ValentDigraphs"/>.
+##  <Ref Func="SetAT2ValentDigraphProps"/>, or loaded automatically by the functions
+##  <Ref Func="AT2ValentDigraph"/>, <Ref Func="AllAT2ValentDigraphs"/> or 
+##  <Ref Func="IteratorOfAT2ValentDigraphs"/>.
 ##  <P/>
 ##  For the definition of radius and more information about this parameter, see
 ##  <Cite Key="PSV_2015"/>.
 ##  TODO add definitions?
 ##    <Example>
 ##      <![CDATA[
-##gap> gamma:=CubicVTGraph(102,16,true);;
+##gap> gamma:=AT2ValentDigraph(48,4,true);;
 ##gap> ATD2ValentRadius(gamma);
 ##3
 ##      ]]>
@@ -783,16 +807,16 @@ DeclareAttribute("ATD2ValentRadius", IsDigraph);
 ##  <P/>
 ##  The properties and attributes of an arc-transitive 2-valent digraph that can
 ##  be found in the &GRSYLI; package can be assigned using the function 
-##  <Ref Func="SetATD2ValentDigraphProps"/>, or loaded automatically by the functions
-##  <Ref Func="ATD2ValentDigraph"/>, <Ref Func="AllATD2ValentDigraphs"/> or 
-##  <Ref Func="IteratorOfATD2ValentDigraphs"/>.
+##  <Ref Func="SetAT2ValentDigraphProps"/>, or loaded automatically by the functions
+##  <Ref Func="AT2ValentDigraph"/>, <Ref Func="AllAT2ValentDigraphs"/> or 
+##  <Ref Func="IteratorOfAT2ValentDigraphs"/>.
 ##  <P/>
 ##  For the definition of attachment number and more information about this 
 ##  parameter, see <Cite Key="PSV_2015"/>.
 ##  TODO add definitions?
 ##    <Example>
 ##      <![CDATA[
-##gap> gamma:=CubicVTGraph(102,16,true);;
+##gap> gamma:=AT2ValentDigraph(48,4,true);;
 ##gap> ATD2ValentAttachmentNo(gamma);
 ##3
 ##      ]]>
@@ -811,7 +835,7 @@ DeclareAttribute("ATD2ValentAttachmentNo", IsDigraph);
 ##  <ManSection>
 ##  <Attr Name="ATD2ValentAttachmentType"
 ##   Arg='gamma'/>
-##  <Returns>An integer.</Returns>
+##  <Returns>An string.</Returns>
 ##	
 ##  <Description>
 ##  Given an arc-transitive 2-valent digraph <A>gamma</A> from in the 
@@ -820,9 +844,9 @@ DeclareAttribute("ATD2ValentAttachmentNo", IsDigraph);
 ##  <P/>
 ##  The properties and attributes of an arc-transitive 2-valent digraph that can
 ##  be found in the &GRSYLI; package can be assigned using the function 
-##  <Ref Func="SetATD2ValentDigraphProps"/>, or loaded automatically by the functions
-##  <Ref Func="ATD2ValentDigraph"/>, <Ref Func="AllATD2ValentDigraphs"/> or 
-##  <Ref Func="IteratorOfATD2ValentDigraphs"/>.
+##  <Ref Func="SetAT2ValentDigraphProps"/>, or loaded automatically by the functions
+##  <Ref Func="AT2ValentDigraph"/>, <Ref Func="AllAT2ValentDigraphs"/> or 
+##  <Ref Func="IteratorOfAT2ValentDigraphs"/>.
 ##  <P/>
 ##  For the definition of attachment type and more information about this 
 ##  parameter, see <Cite Key="PSV_2015"/>.
@@ -857,18 +881,18 @@ DeclareAttribute("ATD2ValentAttachmentType", IsDigraph);
 ##  <P/>
 ##  The properties and attributes of an arc-transitive 2-valent digraph that can
 ##  be found in the &GRSYLI; package can be assigned using the function 
-##  <Ref Func="SetATD2ValentDigraphProps"/>, or loaded automatically by the functions
-##  <Ref Func="ATD2ValentDigraph"/>, <Ref Func="AllATD2ValentDigraphs"/> or 
-##  <Ref Func="IteratorOfATD2ValentDigraphs"/>.
+##  <Ref Func="SetAT2ValentDigraphProps"/>, or loaded automatically by the functions
+##  <Ref Func="AT2ValentDigraph"/>, <Ref Func="AllAT2ValentDigraphs"/> or 
+##  <Ref Func="IteratorOfAT2ValentDigraphs"/>.
 ##  <P/>
 ##  For the definition of alternating cycles and more information about this 
 ##  parameter, see <Cite Key="PSV_2015"/>.
 ##  TODO add definitions?
 ##    <Example>
 ##      <![CDATA[
-##gap> gamma:=CubicVTGraph(102,16,true);;
+##gap> gamma:=AT2ValentDigraph(100,4,true);;
 ##gap> DigraphNrAlterCycles(gamma);
-##3
+##10
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -894,18 +918,18 @@ DeclareAttribute("DigraphNrAlterCycles", IsDigraph);
 ##  <P/>
 ##  The properties and attributes of an arc-transitive 2-valent digraph that can
 ##  be found in the &GRSYLI; package can be assigned using the function 
-##  <Ref Func="SetATD2ValentDigraphProps"/>, or loaded automatically by the functions
-##  <Ref Func="ATD2ValentDigraph"/>, <Ref Func="AllATD2ValentDigraphs"/> or 
-##  <Ref Func="IteratorOfATD2ValentDigraphs"/>.
+##  <Ref Func="SetAT2ValentDigraphProps"/>, or loaded automatically by the functions
+##  <Ref Func="AT2ValentDigraph"/>, <Ref Func="AllAT2ValentDigraphs"/> or 
+##  <Ref Func="IteratorOfAT2ValentDigraphs"/>.
 ##  <P/>
 ##  For the definition of alter-exponent and more information about this 
 ##  parameter, see <Cite Key="PSV_2015"/>.
 ##  TODO add definitions?
 ##    <Example>
 ##      <![CDATA[
-##gap> gamma:=CubicVTGraph(102,16,true);;
+##gap> gamma:=AT2ValentDigraph(100,4,true);;
 ##gap> DigraphAlterExponent(gamma);
-##3
+##1
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -931,18 +955,18 @@ DeclareAttribute("DigraphAlterExponent", IsDigraph);
 ##  <P/>
 ##  The properties and attributes of an arc-transitive 2-valent digraph that can
 ##  be found in the &GRSYLI; package can be assigned using the function 
-##  <Ref Func="SetATD2ValentDigraphProps"/>, or loaded automatically by the functions
-##  <Ref Func="ATD2ValentDigraph"/>, <Ref Func="AllATD2ValentDigraphs"/> or 
-##  <Ref Func="IteratorOfATD2ValentDigraphs"/>.
+##  <Ref Func="SetAT2ValentDigraphProps"/>, or loaded automatically by the functions
+##  <Ref Func="AT2ValentDigraph"/>, <Ref Func="AllAT2ValentDigraphs"/> or 
+##  <Ref Func="IteratorOfAT2ValentDigraphs"/>.
 ##  <P/>
 ##  For the definition of alter-perimeter and more information about this 
 ##  parameter, see <Cite Key="PSV_2015"/>.
 ##  TODO add definitions?
 ##    <Example>
 ##      <![CDATA[
-##gap> gamma:=CubicVTGraph(102,16,true);;
+##gap> gamma:=AT2ValentDigraph(100,4,true);;
 ##gap> DigraphAlterPerimeter(gamma);
-##3
+##10
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -968,18 +992,18 @@ DeclareAttribute("DigraphAlterPerimeter", IsDigraph);
 ##  <P/>
 ##  The properties and attributes of an arc-transitive 2-valent digraph that can
 ##  be found in the &GRSYLI; package can be assigned using the function 
-##  <Ref Func="SetATD2ValentDigraphProps"/>, or loaded automatically by the functions
-##  <Ref Func="ATD2ValentDigraph"/>, <Ref Func="AllATD2ValentDigraphs"/> or 
-##  <Ref Func="IteratorOfATD2ValentDigraphs"/>.
+##  <Ref Func="SetAT2ValentDigraphProps"/>, or loaded automatically by the functions
+##  <Ref Func="AT2ValentDigraph"/>, <Ref Func="AllAT2ValentDigraphs"/> or 
+##  <Ref Func="IteratorOfAT2ValentDigraphs"/>.
 ##  <P/>
 ##  For the definition of alter-sequence and more information about this 
 ##  parameter, see <Cite Key="PSV_2015"/>.
 ##  TODO add definitions?
 ##    <Example>
 ##      <![CDATA[
-##gap> gamma:=CubicVTGraph(102,16,true);;
+##gap> gamma:=AT2ValentDigraph(100,4,true);;
 ##gap> DigraphAlterSequence(gamma);
-##3
+##[ 10 ]
 ##      ]]>
 ##    </Example>
 ##  </Description>

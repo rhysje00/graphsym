@@ -27,13 +27,13 @@ about the arc-transitive 2-valent digraph library and the graphs stored within.
 
 <#Include Label="ATD_2VALENT_INFO">
 
-<#Include Label="NrATD2ValentDigraphs">
+<#Include Label="NrAT2ValentDigraphs">
 
-<#Include Label="IdOfATD2ValentDigraph">
+<#Include Label="IdOfAT2ValentDigraph">
 
-<#Include Label="SetATD2ValentDigraphPropsNC">
+<#Include Label="SetAT2ValentDigraphPropsNC">
 
-<#Include Label="SetATD2ValentDigraphProps">
+<#Include Label="SetAT2ValentDigraphProps">
 
 </Section>
 
@@ -43,11 +43,11 @@ about the arc-transitive 2-valent digraph library and the graphs stored within.
 In this Section we introduce functions for the access to the cubic 
 vertex-transitive graphs stored in the &GRSYLI; package.
 
-<#Include Label="ATD2ValentDigraph">
+<#Include Label="AT2ValentDigraph">
 
-<#Include Label="AllATD2ValentDigraphs">
+<#Include Label="AllAT2ValentDigraphs">
 
-<#Include Label="IteratorOfATD2ValentDigraphs">
+<#Include Label="IteratorOfAT2ValentDigraphs">
 
 </Section>
 

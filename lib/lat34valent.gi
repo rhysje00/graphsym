@@ -41,12 +41,13 @@ function(gamma)
   if n>LAT_34VALENT_ORDER_MAX or LAT_34VALENT_NUMBERS[n]=0 then
     return fail;
   fi;
-  if OutDegreeSet(gamma)<>[2] or InDegreeSet<>[2] then
+  if DigraphHasLoops(gamma) or (not IsSymmetricDigraph(gamma)) then
     return fail;
   fi;
-  if not IsTransitive(AutomorphismGroup(gamma)) then
+  if OutDegreeSet(gamma)<>[3,4] or InDegreeSet(gamma)<>[3,4] then
     return fail;
   fi;
+  ## TODO implement further reduction by local action
 
   iter:=IteratorOfLAT34ValentGraphs(n);
   cnt:=0;

@@ -27,7 +27,7 @@
 ##  package contains all arc-transitive 2-valent digraphs with at most <M>n</M> 
 ##  vertices. The number of arc-transitive 2-valent digraphs stored for each 
 ##  <M>n</M> is stored in the list <Ref Var="ET_4VALENT_NUMBERS"/>. This variable
-##  is currently set to 1000. 
+##  is currently set to 512. 
 ##    <Example>
 ##      <![CDATA[
 ##gap> ET_4VALENT_ORDER_MAX;
@@ -55,8 +55,8 @@
 ##  number of arc-transitive 2-valent graphs available in this package.
 ##    <Example>
 ##      <![CDATA[
-##gap> ET_4VALENT_NUMBERS[200];  
-##40
+##gap> Maximum(ET_4VALENT_NUMBERS);
+##664
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -91,9 +91,12 @@ DeclareGlobalVariable("ET_4VALENT_NUMBERS","Number of arc-transitive 2-valent di
 ##  graph found when iterating through <C>IteratorOfET4ValentGraphs(n)</C>.
 ##    <Example>
 ##      <![CDATA[
-##gap> gamma:=ET4ValentGraph(200,2);;
+##gap> gamma:=CompleteDigraph(5);;
 ##gap> IdOfET4ValentGraph(gamma);
-##2
+##1
+##gap> gamma:=ET4ValentGraph(512,40);;
+##gap> IdOfET4ValentGraph(gamma);
+##40
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -121,10 +124,10 @@ DeclareAttribute( "IdOfET4ValentGraph", IsDigraph );
 ##  <Ref Func="SetET4ValentGraphProps"/>. 
 ##    <Example>
 ##      <![CDATA[
-##gap> gamma:=ET4ValentGraph(200,10);;
-##gap> SetET4ValentGraphPropsNC(gamma,200,10);
-##gap> IdOET4ValentGraph(gamma);
-##10
+##gap> gamma:=ET4ValentGraph(512,40);;
+##gap> SetET4ValentGraphPropsNC(gamma,512,40);
+##gap> IdOfET4ValentGraph(gamma);
+##40
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -149,7 +152,10 @@ DeclareGlobalFunction( "SetET4ValentGraphPropsNC" );
 ##  attributes of <A>gamma</A> precomputed in this package.
 ##    <Example>
 ##      <![CDATA[
-##gap> TODO
+##gap> gamma:=ET4ValentGraph(512,40);;
+##gap> SetET4ValentGraphProps(gamma);
+##gap> IdOfET4ValentGraph(gamma);
+##40
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -180,8 +186,8 @@ DeclareGlobalFunction( "SetET4ValentGraphProps" );
 ##  all arc-transitive 2-valent digraphs with <M>n</M> vertices.
 ##    <Example>
 ##      <![CDATA[
-##gap> NrET4ValentGraphs(200);
-##40
+##gap> NrET4ValentGraphs(400);
+##107
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -220,7 +226,10 @@ DeclareGlobalFunction( "ET_4VALENT_Filename" );
 ##  or attributes are given to the resulting graph.
 ##    <Example>
 ##      <![CDATA[
-##gap> TODO
+##gap> ET4ValentGraph(512,100);
+##<immutable symmetric digraph with 512 vertices, 2048 edges>
+##gap> ET4ValentGraph(512,700);
+##fail
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -252,7 +261,9 @@ DeclareGlobalFunction( "ET4ValentGraph" );
 ##  or attributes are given to the resulting graphs.
 ##    <Example>
 ##      <![CDATA[
-##gap> TODO
+##gap> gammas:=AllET4ValentGraphs(400);;
+##gap> Length(gammas);
+##107
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -284,7 +295,14 @@ DeclareGlobalFunction( "AllET4ValentGraphs" );
 ##  or attributes are given to the resulting graphs.
 ##    <Example>
 ##      <![CDATA[
-##gap> TODO
+##gap> cnt:=0;; iter:=IteratorOfET4ValentGraphs(400);;
+##gap> for gamma in iter do
+##> if HasSolvableAutGroup(gamma) then
+##> cnt:=cnt+1;
+##> fi;
+##> od;
+##gap> cnt;
+##106
 ##      ]]>
 ##    </Example>
 ##  </Description>

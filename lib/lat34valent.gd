@@ -27,11 +27,11 @@
 ##  package contains all arc-transitive 2-valent digraphs with at most <M>n</M> 
 ##  vertices. The number of arc-transitive 2-valent digraphs stored for each 
 ##  <M>n</M> is stored in the list <Ref Var="LAT_34VALENT_NUMBERS"/>. This variable
-##  is currently set to 1000. 
+##  is currently set to 1050. 
 ##    <Example>
 ##      <![CDATA[
 ##gap> LAT_34VALENT_ORDER_MAX;
-##640
+##1050
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -55,8 +55,8 @@
 ##  number of arc-transitive 2-valent graphs available in this package.
 ##    <Example>
 ##      <![CDATA[
-##gap> LAT_34VALENT_NUMBERS[200];  
-##40
+##gap> Maximum(LAT_34VALENT_NUMBERS);
+##249
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -91,9 +91,9 @@ DeclareGlobalVariable("LAT_34VALENT_NUMBERS","Number of arc-transitive 2-valent 
 ##  graph found when iterating through <C>IteratorOfLAT34ValentGraphs(n)</C>.
 ##    <Example>
 ##      <![CDATA[
-##gap> gamma:=LAT34ValentGraph(200,2);;
+##gap> gamma:=LAT34ValentGraph(896,20);;
 ##gap> IdOfLAT34ValentGraph(gamma);
-##2
+##20
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -121,10 +121,10 @@ DeclareAttribute( "IdOfLAT34ValentGraph", IsDigraph );
 ##  <Ref Func="SetLAT34ValentGraphProps"/>. 
 ##    <Example>
 ##      <![CDATA[
-##gap> gamma:=LAT34ValentGraph(200,10);;
-##gap> SetLAT34ValentGraphPropsNC(gamma,200,10);
-##gap> IdOLAT34ValentGraph(gamma);
-##10
+##gap> gamma:=LAT34ValentGraph(896,20);;
+##gap> SetLAT34ValentGraphPropsNC(gamma,896,20);
+##gap> IdOfLAT34ValentGraph(gamma);
+##20
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -149,7 +149,10 @@ DeclareGlobalFunction( "SetLAT34ValentGraphPropsNC" );
 ##  attributes of <A>gamma</A> precomputed in this package.
 ##    <Example>
 ##      <![CDATA[
-##gap> TODO
+##gap> gamma:=LAT34ValentGraph(896,20);;
+##gap> SetLAT34ValentGraphProps(gamma);
+##gap> IdOfLAT34ValentGraph(gamma);
+##20
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -180,8 +183,8 @@ DeclareGlobalFunction( "SetLAT34ValentGraphProps" );
 ##  all arc-transitive 2-valent digraphs with <M>n</M> vertices.
 ##    <Example>
 ##      <![CDATA[
-##gap> NrLAT34ValentGraphs(200);
-##40
+##gap> NrLAT34ValentGraphs(896);
+##249
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -220,7 +223,10 @@ DeclareGlobalFunction( "LAT_34VALENT_Filename" );
 ##  or attributes are given to the resulting graph.
 ##    <Example>
 ##      <![CDATA[
-##gap> TODO
+##gap> LAT34ValentGraph(896,200);
+##<immutable symmetric digraph with 896 vertices, 3072 edges>
+##gap> LAT34ValentGraph(896,300);
+##fail
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -252,7 +258,9 @@ DeclareGlobalFunction( "LAT34ValentGraph" );
 ##  or attributes are given to the resulting graphs.
 ##    <Example>
 ##      <![CDATA[
-##gap> TODO
+##gap> gammas:=AllLAT34ValentGraphs(224);;
+##gap> Length(gammas);
+##22
 ##      ]]>
 ##    </Example>
 ##  </Description>
@@ -284,7 +292,14 @@ DeclareGlobalFunction( "AllLAT34ValentGraphs" );
 ##  or attributes are given to the resulting graphs.
 ##    <Example>
 ##      <![CDATA[
-##gap> TODO
+##gap> cnt:=0;; iter:=IteratorOfLAT34ValentGraphs(224);;
+##gap> for gamma in iter do
+##> if HasSolvableAutGroup(gamma) then
+##> cnt:=cnt+1;
+##> fi;
+##> od;
+##gap> cnt;
+##22
 ##      ]]>
 ##    </Example>
 ##  </Description>

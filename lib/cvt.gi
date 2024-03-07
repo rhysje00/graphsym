@@ -1,6 +1,6 @@
 #############################################################################
 ##
-#W    utils.gi    GRaphs with SYmmetries library       Rhys J. Evans
+#W    utils.gi    GRaphs with SYmmetries LIbrary       Rhys J. Evans
 ##                                                           Primož Potočnik
 ##                                                           Antonio Montero
 ##
@@ -40,10 +40,10 @@ function(gamma)
   if n>CVT_ORDER_MAX or CVT_NUMBER_GRAPHS[n]=0 then
     return fail;
   fi;
-  if OutDegreeSet(gamma)<>[3] then
+  if OutDegreeSet(gamma)<>[3] or DigraphHasLoops(gamma) or (not IsSymmetricDigraph(gamma)) then
     return fail;
   fi;
-  if not IsTransitive(AutomorphismGroup(gamma)) then
+  if not IsVertexTransitive(gamma) then
     return fail;
   fi;
 
