@@ -100,13 +100,13 @@ function(gamma,n,i)
   else 
     SetStabIndexUnd(gamma,EvalString(rc[8])); 
   fi;
-  SetATD2ValentRadius(gamma,rc[10]);
-  SetATD2ValentAttachmentNo(gamma,rc[11]);
-  SetATD2ValentAttachmentType(gamma,rc[12]);
-  SetDigraphNrAlterCycles(gamma,rc[13]);
-  SetDigraphAlterExponent(gamma,rc[14]);
-  SetDigraphAlterPerimeter(gamma,rc[15]);
-  SetDigraphAlterSequence(gamma,rc[16]);
+  SetAlterCycleRadius(gamma,rc[10]);
+  SetAlterCycleAttachmentNo(gamma,rc[11]);
+  SetAlterCycleAttachmentType(gamma,rc[12]);
+  SetNrAlterCycles(gamma,rc[13]);
+  SetAlterExponent(gamma,rc[14]);
+  SetAlterPerimeter(gamma,rc[15]);
+  SetAlterSequence(gamma,rc[16]);
 
   return; 
 end );

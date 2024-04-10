@@ -120,39 +120,39 @@ gap> StabIndexMinATUnd(gamma);
 gap> StabIndexUnd(gamma);
 10141204801825835211973625643008
 
-# ATD2ValentRadius
+# AlterCycleRadius
 gap> gamma:=AT2ValentDigraph(48,4,true);;
-gap> ATD2ValentRadius(gamma);
+gap> AlterCycleRadius(gamma);
 3
 
-# ATD2ValentAttachmentNo
+# AlterCycleAttachmentNo
 gap> gamma:=AT2ValentDigraph(48,4,true);;
-gap> ATD2ValentAttachmentNo(gamma);
+gap> AlterCycleAttachmentNo(gamma);
 3
 
-# ATD2ValentAttachmentType
+# AlterCycleAttachmentType
 gap> gamma:=AT2ValentDigraph(48,4,true);;
-gap> ATD2ValentAttachmentType(gamma);
+gap> AlterCycleAttachmentType(gamma);
 "tight"
 
-# DigraphNrAlterCycles
+# NrAlterCycles
 gap> gamma:=AT2ValentDigraph(100,4,true);;
-gap> DigraphNrAlterCycles(gamma);
+gap> NrAlterCycles(gamma);
 10
 
-# DigraphAlterExponent
+# AlterExponent
 gap> gamma:=AT2ValentDigraph(100,4,true);;
-gap> DigraphAlterExponent(gamma);
+gap> AlterExponent(gamma);
 1
 
-# DigraphAlterPerimeter
+# AlterPerimeter
 gap> gamma:=AT2ValentDigraph(100,4,true);;
-gap> DigraphAlterPerimeter(gamma);
+gap> AlterPerimeter(gamma);
 10
 
-# DigraphAlterSequence
+# AlterSequence
 gap> gamma:=AT2ValentDigraph(100,4,true);;
-gap> DigraphAlterSequence(gamma);
+gap> AlterSequence(gamma);
 [ 10 ]
 
 # End test

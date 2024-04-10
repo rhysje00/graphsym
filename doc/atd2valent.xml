@@ -75,19 +75,19 @@ In this Section we give the properties and attributes of the arc-transitive
 
 <#Include Label="StabIndexUnd">
 
-<#Include Label="ATD2ValentRadius">
+<#Include Label="AlterCycleRadius">
 
-<#Include Label="ATD2ValentAttachmentNo">
+<#Include Label="AlterCycleAttachmentNo">
 
-<#Include Label="ATD2ValentAttachmentType">
+<#Include Label="AlterCycleAttachmentType">
 
-<#Include Label="DigraphNrAlterCycles">
+<#Include Label="NrAlterCycles">
 
-<#Include Label="DigraphAlterExponent">
+<#Include Label="AlterExponent">
 
-<#Include Label="DigraphAlterPerimeter">
+<#Include Label="AlterPerimeter">
 
-<#Include Label="DigraphAlterSequence">
+<#Include Label="AlterSequence">
 
 </Section>
 

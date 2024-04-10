@@ -106,19 +106,19 @@ DeclareGlobalVariable("ATD_2VALENT_NUMBERS","Number of arc-transitive 2-valent d
 ##    <Item>The solvability of the automorphism group of <M>\Gamma</M>
 ##           (see <Ref Prop="HasSolvableAutGroup"/>).</Item>
 ##    <Item>The radius of <M>\Gamma</M> 
-##          (see <Ref Attr="ATD2ValentRadius"/>).</Item>
+##          (see <Ref Attr="AlterCycleRadius"/>).</Item>
 ##    <Item>The attachment number of <M>\Gamma</M> 
-##          (see <Ref Attr="ATD2ValentAttachmentNo"/>).</Item>
-##    <Item>Then attachment type of <M>\Gamma</M> 
-##          (see <Ref Attr="ATD2ValentAttachmentType"/>).</Item>
+##          (see <Ref Attr="AlterCycleAttachmentNo"/>).</Item>
+##    <Item>The attachment type of <M>\Gamma</M> 
+##          (see <Ref Attr="AlterCycleAttachmentType"/>).</Item>
 ##    <Item>The number of alternating cycles in <M>\Gamma</M> 
-##          (see <Ref Attr="DigraphNrAlterCycles"/>).</Item>
+##          (see <Ref Attr="NrAlterCycles"/>).</Item>
 ##    <Item>The alter-exponent of <M>\Gamma</M> 
-##          (see <Ref Attr="DigraphAlterExponent"/>).</Item>
+##          (see <Ref Attr="AlterExponent"/>).</Item>
 ##    <Item>The alter-perimeter of <M>\Gamma</M> 
-##          (see <Ref Attr="DigraphAlterPerimeter"/>).</Item>
+##          (see <Ref Attr="AlterPerimeter"/>).</Item>
 ##    <Item>The alter-sequence of <M>\Gamma</M> 
-##          (see <Ref Attr="DigraphAlterSequence"/>).</Item>
+##          (see <Ref Attr="AlterSequence"/>).</Item>
 ##    <Item>The generalised wreath digraph-ness of <M>\Gamma</M> 
 ##          (see <Ref Prop="IsGeneralizedWreathDigraph"/>).</Item>
 ##  </Enum>
@@ -755,11 +755,11 @@ DeclareAttribute("StabIndexUnd", IsDigraph);
 
 ################################################################################
 ##
-#A  ATD2ValentRadius( <digraph> )
+#A  AlterCycleRadius( <digraph> )
 ##  
-##  <#GAPDoc Label="ATD2ValentRadius">
+##  <#GAPDoc Label="AlterCycleRadius">
 ##  <ManSection>
-##  <Attr Name="ATD2ValentRadius"
+##  <Attr Name="AlterCycleRadius"
 ##   Arg='gamma'/>
 ##  <Returns>An integer.</Returns>
 ##	
@@ -780,7 +780,7 @@ DeclareAttribute("StabIndexUnd", IsDigraph);
 ##    <Example>
 ##      <![CDATA[
 ##gap> gamma:=AT2ValentDigraph(48,4,true);;
-##gap> ATD2ValentRadius(gamma);
+##gap> AlterCycleRadius(gamma);
 ##3
 ##      ]]>
 ##    </Example>
@@ -788,15 +788,15 @@ DeclareAttribute("StabIndexUnd", IsDigraph);
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-DeclareAttribute("ATD2ValentRadius", IsDigraph);
+DeclareAttribute("AlterCycleRadius", IsDigraph);
 
 ################################################################################
 ##
-#A  ATD2ValentAttachmentNo( <digraph> )
+#A  AlterCycleAttachmentNo( <digraph> )
 ##  
-##  <#GAPDoc Label="ATD2ValentAttachmentNo">
+##  <#GAPDoc Label="AlterCycleAttachmentNo">
 ##  <ManSection>
-##  <Attr Name="ATD2ValentAttachmentNo"
+##  <Attr Name="AlterCycleAttachmentNo"
 ##   Arg='gamma'/>
 ##  <Returns>An integer.</Returns>
 ##	
@@ -817,7 +817,7 @@ DeclareAttribute("ATD2ValentRadius", IsDigraph);
 ##    <Example>
 ##      <![CDATA[
 ##gap> gamma:=AT2ValentDigraph(48,4,true);;
-##gap> ATD2ValentAttachmentNo(gamma);
+##gap> AlterCycleAttachmentNo(gamma);
 ##3
 ##      ]]>
 ##    </Example>
@@ -825,15 +825,15 @@ DeclareAttribute("ATD2ValentRadius", IsDigraph);
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-DeclareAttribute("ATD2ValentAttachmentNo", IsDigraph);
+DeclareAttribute("AlterCycleAttachmentNo", IsDigraph);
 
 ################################################################################
 ##
-#A  ATD2ValentAttachmentType( <digraph> )
+#A  AlterCycleAttachmentType( <digraph> )
 ##  
-##  <#GAPDoc Label="ATD2ValentAttachmentType">
+##  <#GAPDoc Label="AlterCycleAttachmentType">
 ##  <ManSection>
-##  <Attr Name="ATD2ValentAttachmentType"
+##  <Attr Name="AlterCycleAttachmentType"
 ##   Arg='gamma'/>
 ##  <Returns>An string.</Returns>
 ##	
@@ -854,7 +854,7 @@ DeclareAttribute("ATD2ValentAttachmentNo", IsDigraph);
 ##    <Example>
 ##      <![CDATA[
 ##gap> gamma:=CubicVTGraph(102,16,true);;
-##gap> ATD2ValentAttachmentType(gamma);
+##gap> AlterCycleAttachmentType(gamma);
 ##3
 ##      ]]>
 ##    </Example>
@@ -862,15 +862,15 @@ DeclareAttribute("ATD2ValentAttachmentNo", IsDigraph);
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-DeclareAttribute("ATD2ValentAttachmentType", IsDigraph);
+DeclareAttribute("AlterCycleAttachmentType", IsDigraph);
 
 ################################################################################
 ##
-#A  DigraphNrAlterCycles( <digraph> )
+#A  NrAlterCycles( <digraph> )
 ##  
-##  <#GAPDoc Label="DigraphNrAlterCycles">
+##  <#GAPDoc Label="NrAlterCycles">
 ##  <ManSection>
-##  <Attr Name="DigraphNrAlterCycles"
+##  <Attr Name="NrAlterCycles"
 ##   Arg='gamma'/>
 ##  <Returns>An integer.</Returns>
 ##	
@@ -891,7 +891,7 @@ DeclareAttribute("ATD2ValentAttachmentType", IsDigraph);
 ##    <Example>
 ##      <![CDATA[
 ##gap> gamma:=AT2ValentDigraph(100,4,true);;
-##gap> DigraphNrAlterCycles(gamma);
+##gap> NrAlterCycles(gamma);
 ##10
 ##      ]]>
 ##    </Example>
@@ -899,15 +899,15 @@ DeclareAttribute("ATD2ValentAttachmentType", IsDigraph);
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-DeclareAttribute("DigraphNrAlterCycles", IsDigraph);
+DeclareAttribute("NrAlterCycles", IsDigraph);
 
 ################################################################################
 ##
-#A  DigraphAlterExponent( <digraph> )
+#A  AlterExponent( <digraph> )
 ##  
-##  <#GAPDoc Label="DigraphAlterExponent">
+##  <#GAPDoc Label="AlterExponent">
 ##  <ManSection>
-##  <Attr Name="DigraphAlterExponent"
+##  <Attr Name="AlterExponent"
 ##   Arg='gamma'/>
 ##  <Returns>An integer.</Returns>
 ##	
@@ -928,7 +928,7 @@ DeclareAttribute("DigraphNrAlterCycles", IsDigraph);
 ##    <Example>
 ##      <![CDATA[
 ##gap> gamma:=AT2ValentDigraph(100,4,true);;
-##gap> DigraphAlterExponent(gamma);
+##gap> AlterExponent(gamma);
 ##1
 ##      ]]>
 ##    </Example>
@@ -936,15 +936,15 @@ DeclareAttribute("DigraphNrAlterCycles", IsDigraph);
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-DeclareAttribute("DigraphAlterExponent", IsDigraph);
+DeclareAttribute("AlterExponent", IsDigraph);
 
 ################################################################################
 ##
-#A  DigraphAlterPerimeter( <digraph> )
+#A  AlterPerimeter( <digraph> )
 ##  
-##  <#GAPDoc Label="DigraphAlterPerimeter">
+##  <#GAPDoc Label="AlterPerimeter">
 ##  <ManSection>
-##  <Attr Name="DigraphAlterPerimeter"
+##  <Attr Name="AlterPerimeter"
 ##   Arg='gamma'/>
 ##  <Returns>An integer.</Returns>
 ##	
@@ -965,7 +965,7 @@ DeclareAttribute("DigraphAlterExponent", IsDigraph);
 ##    <Example>
 ##      <![CDATA[
 ##gap> gamma:=AT2ValentDigraph(100,4,true);;
-##gap> DigraphAlterPerimeter(gamma);
+##gap> AlterPerimeter(gamma);
 ##10
 ##      ]]>
 ##    </Example>
@@ -973,15 +973,15 @@ DeclareAttribute("DigraphAlterExponent", IsDigraph);
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-DeclareAttribute("DigraphAlterPerimeter", IsDigraph);
+DeclareAttribute("AlterPerimeter", IsDigraph);
 
 ################################################################################
 ##
-#A  DigraphAlterSequence( <digraph> )
+#A  AlterSequence( <digraph> )
 ##  
-##  <#GAPDoc Label="DigraphAlterSequence">
+##  <#GAPDoc Label="AlterSequence">
 ##  <ManSection>
-##  <Attr Name="DigraphAlterSequence"
+##  <Attr Name="AlterSequence"
 ##   Arg='gamma'/>
 ##  <Returns>A list.</Returns>
 ##	
@@ -1002,7 +1002,7 @@ DeclareAttribute("DigraphAlterPerimeter", IsDigraph);
 ##    <Example>
 ##      <![CDATA[
 ##gap> gamma:=AT2ValentDigraph(100,4,true);;
-##gap> DigraphAlterSequence(gamma);
+##gap> AlterSequence(gamma);
 ##[ 10 ]
 ##      ]]>
 ##    </Example>
@@ -1010,7 +1010,7 @@ DeclareAttribute("DigraphAlterPerimeter", IsDigraph);
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-DeclareAttribute("DigraphAlterSequence", IsDigraph);
+DeclareAttribute("AlterSequence", IsDigraph);
 
 #############################################################################
 ##

@@ -57,6 +57,10 @@
 
 <#Include SYSTEM "atd2valent.xml">
 
+<#Include SYSTEM "ghat4valent.xml">
+
+<#Include SYSTEM "hat4valent.xml">
+
 <#Include SYSTEM "at4valent.xml">
 
 <#Include SYSTEM "2at4valent.xml">
