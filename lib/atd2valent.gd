@@ -217,7 +217,20 @@ DeclareGlobalFunction( "SetAT2ValentDigraphPropsNC" );
 ##  <Description>
 ##  Given a digraph <A>gamma</A>, if this graph is isomorphic to a graph 
 ##  stored in this library, this function sets the properties and 
-##  attributes of <A>gamma</A> precomputed in this package.
+##  attributes of <A>gamma</A> precomputed in this package. This includes
+##  <List>
+##  <Item> All properties and attributes found in 
+##         <Ref Var="ATD_2VALENT_INFO"/>.
+##  </Item>
+##  <Item> <Ref Prop="IsArcTransitiveDigraph"/>.</Item>
+##  <Item> <Ref BookName="Digraphs" Prop="IsVertexTransitive"/>.</Item>
+##  <Item> <Ref BookName="Digraphs" Prop="DigraphReverse"/>, 
+##         which stores the opposite graph of <A>gamma</A> with it's library id 
+##         as defined in <Ref Attr="IdOfAT2ValentDigraph"/>).</Item>
+##  <Item> <Ref BookName="Digraphs" Prop="DigraphSymmetricClosure"/>, 
+##         which stores the underlying graph of <A>gamma</A> as described in
+##         <Ref Attr="NameOfUnderlyingGraph"/>.</Item>
+##  </List>
 ##    <Example>
 ##      <![CDATA[
 ##gap> gamma:=AT2ValentDigraph(150,5);;

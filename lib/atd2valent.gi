@@ -70,7 +70,7 @@ end );
 ##  
 InstallGlobalFunction(SetAT2ValentDigraphPropsNC, 
 function(gamma,n,i)
-  local nr,rc;
+  local nr,rc,str,id,ty,opp,clo;
 
   if not (IsPosInt(n) and IsPosInt(i) and IsDigraph(gamma)) then
     Error("usage: SetCubicVTGraphPropsNC( <gamma>, <n>, <i> ), where <gamma> is a digraph, \
@@ -107,6 +107,27 @@ function(gamma,n,i)
   SetAlterExponent(gamma,rc[14]);
   SetAlterPerimeter(gamma,rc[15]);
   SetAlterSequence(gamma,rc[16]);
+
+  # TODO Recursion problem with loading attributes for reverse
+  # Consider setting both in this function (for loop), or another function on 
+  # top with depth input
+  opp:=AT2ValentDigraph(n,rc[2],false);
+  SetIdOfAT2ValentDigraph(opp,rc[2]);
+  SetDigraphReverseAttr(gamma,opp);
+
+  str:=SplitString(rc[4],"()[];");
+  ty:=str[1];
+  id:=EvalString(str[3]);
+  if ty="GHAT" then
+    clo:=GHAT4ValentGraph(n,id,true);
+    SetDigraphSymmetricClosureAttr(gamma,clo);
+  elif ty="HAT" then
+    clo:=HAT4ValentGraph(n,id,true);
+    SetDigraphSymmetricClosureAttr(gamma,clo);
+  elif ty="GWG" then
+    clo:=GW4ValentGraph(n,id,true);
+    SetDigraphSymmetricClosureAttr(gamma,clo);
+  fi;
 
   return; 
 end );
