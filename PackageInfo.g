@@ -15,7 +15,7 @@ SetPackageInfo( rec(
 ##  <#GAPDoc Label="PKGVERSIONDATA">
 ##  <!ENTITY VERSION "0.1">
 ##  <!ENTITY RELEASEDATE "1 January 2024">
-##  <!ENTITY PKGWWWHOME "https://rhysje00.github.io/cvt/">
+##  <!ENTITY PKGWWWHOME "https://rhysje00.github.io/grsyli/">
 ##  <#/GAPDoc>
 
   PackageWWWHome :=
@@ -101,9 +101,11 @@ SetPackageInfo( rec(
 
   AbstractHTML   := 
     "The <span class=\"pkgname\">GrSyLi</span> package contains various \
-     collections of small graphs with ceratin symmetry properties, and provides \
-     functionality for the access to these graphs, along with several \
-     precomputed properties for each graph available.",
+     collections of graphs with interesting symmetry properties. Each \
+     collection of graphs are attained from complete or partial enumerations \
+     published in international journals. This package provides functionality \
+     enabling easy access to these graphs, along with several precomputed \
+     properties related to many of the graphs stored within.",
 
   PackageDoc := rec(
     BookName  := "grsyli",

@@ -4,21 +4,38 @@
 
   This is the manual for the &GRSYLI; package version &VERSION;.
   <P/>
-  The &GRSYLI; package contains various collections of small graphs with
-  certain symmetry properties, and provides functionality for the access to these graphs, along 
-  with several precomputed properties for each graph available.
+  The &GRSYLI; package contains various collections of graphs with interesting 
+  symmetry properties. Each collection of graphs are attained from complete or 
+  partial enumerations published in international journals. The papers 
+  containing these enumerations are referenced throughout this document, and 
+  their authors are included as contributors (unless they are an author of this
+  package). The &GRSYLI; package provides functionality enabling easy access to 
+  these graphs, along with several precomputed properties related to many of 
+  the graphs stored within.",
   <P/>
-  All of the functions in this package deal with finite graphs in 
-  &DIGRAPHS; format <Cite Key="DIGRAPHS_2019"/>. 
+  Currently, all of the functions in this package deal with finite graphs in 
+  &DIGRAPHS; format <Cite Key="DIGRAPHS_2019"/>, and much of the functionality
+  provided is based on the very nice code found in 
+  <Ref BookName="digraphs" Chap="Visualising and IO"/>.
 
 <Section Label="install">
 <Heading>Installing &GRSYLI;</Heading>
 <Index>&GRSYLI;</Index>
 
-To install the &GRSYLI; package, you will need to download the most recent 
-<C>tar.gz</C> file, found at &PKGWWWHOME;. Once downloaded, you can install the 
+To install the &GRSYLI; package, you first need to download or clone the 
+package, found at &PKGWWWHOME;. Once downloaded, there is no need for any extra
+compiling. 
+
+If possible, it is recommended that you place the &GRSYLI; directory into the 
+package directory of your &GAP; distribution. For guidance on how to load
+&GRSYLI; package if you cannot move the directory directly into your &GAP; 
+package directory, see Section <Ref Sect="load"/>.
+<!-- To install the &GRSYLI; package, you will need to download the most recent 
+<C>tar.gz</C> file, found at &PKGWWWHOME;. Once downloaded, 
+ you can install the 
 package by following the instructions found in the &GAP; reference manual, 
 <URL Text="chapter 76">https://docs.gap-system.org/doc/ref/chap76.html</URL>.
+-->
 <P/>
 The &GRSYLI; package requires the following &GAP; packages:
 <List>
@@ -32,12 +49,24 @@ Each of the above packages are part of the standard &GAP; distribution.
 <Section Label="load">
 <Heading>Loading &GRSYLI;</Heading>
 
-Once correctly installed, you can load the &GRSYLI; package at the &GAP; prompt by
-typing the following.
+If the &GRSYLI; package has been downloaded and placed in the &GAP; package 
+directory, it can by loaded at the &GAP; prompt by typing the following.
 <Example>
 gap> LoadPackage("grsyli");
 true
 </Example>
+
+Otherwise, you can follow the methods found in the &GAP; reference manual, 
+<URL Text="chapter 76">https://docs.gap-system.org/doc/ref/chap76.html</URL>. 
+For example, if <C>path/to/grsyli</C> is the path to the &GRSYLI; package 
+directory relative to your &GAP; session, it can be loaded at the &GAP; prompt 
+by typing the following.
+<Example>
+gap> SetPackagePath("grsyli","path/to/grsyli");
+gap> LoadPackage("grsyli");
+true
+</Example>
+
 </Section>
 
 <Section Label="cite">
@@ -62,7 +91,7 @@ true
         year = {2024}
 </Listing>
 </Section>
-
+<!--
 <Section>
 <Heading>Examples of the use of &GRSYLI;</Heading>
 
@@ -80,4 +109,5 @@ gap>
 </Example>
 
 </Section>
+-->
 </Chapter>

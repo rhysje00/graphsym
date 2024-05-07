@@ -2,12 +2,13 @@
 <Heading>The cubic vertex-transitive graph library</Heading>
 
 In this Chapter we give functions for accessing the cubic vertex-transitive 
-graphs stored in this package, and related properties. Currently, this package 
-contains all cubic vertex-transitive on up to 1280 vertices. For information 
-and references on these graphs, see <Cite Key="PSV_2013b"/>.
+graphs stored in this package, and related properties. Currently, this
+package contains all connected cubic vertex-transitive graphs on up to 1280
+vertices. For information and references on these graphs, see 
+<Cite Key="PSV_2013b"/>. 
 <P/>
 Let <M>\Gamma</M> be a simple graph (undirected, loopless, without multiple 
-edges). Then <M>\Gamma</M> is <E>cubic</E> (or <E>trivalent</E>, 
+edges). Then <M>\Gamma</M> is <E>cubic</E> (or <E>trivalent</E>, or 
 <M>3</M><E>-valent</E>) if each vertex of the graph has exactly 3 neighbours.
 <P/>
 The graph <M>\Gamma</M> is <E>vertex-transitive</E> if the automorphism group 
