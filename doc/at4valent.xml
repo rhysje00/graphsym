@@ -15,38 +15,33 @@ The graph <M>\Gamma</M> is <E>arc-transitive</E> if the automorphism group
 of <M>\Gamma</M> acts transitively on the arcs of <M>\Gamma</M>.
 
 
-
-<Section Label="at 4-valent stored values">
-<Heading>Global variables for the arc-transitive 4-valent graph library</Heading>
-
-In this Section we introduce functions and variables which give information
-about the arc-transitive 4-valent graph library and the graphs stored within.
-
-<#Include Label="AT_4VALENT_ORDER_MAX">
-
-<#Include Label="AT_4VALENT_NUMBERS">
-
-<#Include Label="NrAT4ValentGraphs">
-
-<#Include Label="IdOfAT4ValentGraph">
-
-<#Include Label="SetAT4ValentGraphPropsNC">
-
-<#Include Label="SetAT4ValentGraphProps">
-
-</Section>
-
 <Section Label="Accessing the at 4-valent graphs">
 <Heading>Accessing the arc-transitive 4-valent graphs</Heading>
 
-In this Section we introduce functions for the access to the arc-transitive 
-4-valent graphs stored in the &GRSYLI; package.
+In this Section we introduce functions for the access to the 
+arc-transitive 4-valent graphs stored in the &GRSYLI; package.
 
 <#Include Label="AT4ValentGraph">
 
 <#Include Label="AllAT4ValentGraphs">
 
-<#Include Label="IteratorOfAT4ValentGraphs">
+<#Include Label="AT4ValentGraphIterator">
+
+</Section>
+
+
+<Section Label="at 4-valent library info">
+<Heading>Properties of the arc-transitive 4-valent graphs and library</Heading>
+
+In this Section we give the functions which give information about the 
+arc-transitive 4-valent graph library, and the properties and attributes of 
+the graphs it contains.
+
+<#Include Label="NrAT4ValentGraphs">
+
+<#Include Label="AT4ValentGraphId">
+
+<#Include Label="SetAT4ValentGraphProps">
 
 </Section>
 

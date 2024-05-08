@@ -2,17 +2,20 @@
 
 The GrSyLi package contains various collections of small graphs with certain 
 symmetry properties, and provides functionality for the access to these graphs, 
-along with several precomputed properties for each graph available.",
+along with several precomputed properties for each graph available.
   
 ## Documentation
 
 Currently, the pdf version of the manual can be found at
 
-  <https://rhysje00.github.io/grsyli/doc/>
+  <https://rhysje00.github.io/grsyli/doc/>.
+
+In particular, simple instructions on the installation and usage of this package
+can be found in the first chapter of the manual.
 
 After the package is downloaded, it is recommended to build all package 
-documentation by running <C>gap path/to/grsyli/makedoc.g</C> from the command 
-line. This will build a pdf version of this manual and save it in the directory <C>path/to/grsyli/doc/</C>, as well as provide the &GAP; help viewer with the 
+documentation by running `gap path/to/grsyli/makedoc.g` from the command 
+line. This will build a pdf version of this manual and save it in the directory `path/to/grsyli/doc/`, as well as provide the GAP help viewer with the 
 content of the manual. 
 <!--
 Full information and documentation can be found in the manual, available

@@ -23,9 +23,9 @@ gap> ATD_2VALENT_INFO[8,1];
 [ true, 1, true, "GWG(4;1)", 1, true, 2, 72, true, 4, 8, "---", 2, 1, 2, 
   [ 4 ], false ]
 
-# IdOfAT2ValentDigraph
+# AT2ValentDigraphId
 gap> gamma:=AT2ValentDigraph(100,5);;
-gap> IdOfAT2ValentDigraph(gamma);
+gap> AT2ValentDigraphId(gamma);
 5
 
 # SetAT2ValentDigraphPropsNC
@@ -55,8 +55,8 @@ gap> gammas:=AllAT2ValentDigraphs(300,true);;
 gap> ForAny(gammas,HasAbelianVertexStabilizer);
 true
 
-# IteratorOfAT2ValentDigraphs
-gap> cnt:=0;; iter:=IteratorOfAT2ValentDigraphs(100,true);;
+# AT2ValentDigraphIterator
+gap> cnt:=0;; iter:=AT2ValentDigraphIterator(100,true);;
 gap> for gamma in iter do
 > if HasSolvableAutGroup(gamma) then
 > cnt:=cnt+1;
@@ -65,12 +65,12 @@ gap> for gamma in iter do
 gap> cnt;
 15
 
-# IsSelfOppositeDigraph
+# IsSelfReverseDigraph
 gap> gamma:=AT2ValentDigraph(300,1);;
-gap> IsSelfOppositeDigraph(gamma);
+gap> IsSelfReverseDigraph(gamma);
 false
 gap> gamma:=AT2ValentDigraph(300,20);;
-gap> IsSelfOppositeDigraph(gamma);
+gap> IsSelfReverseDigraph(gamma);
 true
 
 # HasATUnderlyingGraph

@@ -23,18 +23,18 @@ gap> CVT_GRAPH_INFO[8];
 [ [ 2, 4, false, true, false, false, true, 1 ], 
   [ 3, 4, true, true, true, false, true, 1 ] ]
 
-# IdOfCubicVTGraph
+# CubicVTGraphId
 gap> gamma:=CubicVTGraph(8,2);;
-gap> IdOfCubicVTGraph(gamma);
+gap> CubicVTGraphId(gamma);
 2
 gap> gamma:=CycleDigraph(8);;
-gap> IdOfCubicVTGraph(gamma);
+gap> CubicVTGraphId(gamma);
 fail
 
 # SetCubicVTGraphPropsNC
 gap> gamma:=CubicVTGraph(50,4);;
 gap> SetCubicVTGraphPropsNC(gamma,50,4);
-gap> IsSPXDigraphCVT(gamma);
+gap> IsSplitPraegerXuGraph(gamma);
 false
 
 # SetCubicVTGraphProps
@@ -67,17 +67,17 @@ fail
 
 # AllCubicVTGraphs
 gap> gammas:=AllCubicVTGraphs(50,true);;
-gap> List(gammas,IsSPXDigraphCVT);
+gap> List(gammas,IsSplitPraegerXuGraph);
 [ false, false, false, false, false, false, false, false, false ]
 gap> gammas:=AllCubicVTGraphs(100,true);;
-gap> ForAny(gammas,IsSPXDigraphCVT);
+gap> ForAny(gammas,IsSplitPraegerXuGraph);
 true
 
-# IteratorOfCubicVTGraphs
-gap> cnt:=0;; iter:=IteratorOfCubicVTGraphs(912,true);
+# CubicVTGraphIterator
+gap> cnt:=0;; iter:=CubicVTGraphIterator(912,true);
 <iterator>
 gap> for gamma in iter do
-> if IsSPXDigraphCVT(gamma) then cnt:=cnt+1; fi;
+> if IsSplitPraegerXuGraph(gamma) then cnt:=cnt+1; fi;
 > od;
 gap> cnt;
 3
@@ -88,12 +88,12 @@ false
 gap> IsCubicDigraph(CompleteDigraph(4));
 true
 
-# IsCayleyDigraphCVT
+# IsCayleyGraph
 gap> gamma:=CubicVTGraph(50,2,true);;
-gap> IsCayleyDigraphCVT(gamma);
+gap> IsCayleyGraph(gamma);
 true
 gap> gamma:=CubicVTGraph(50,9,true);;
-gap> IsCayleyDigraphCVT(gamma);
+gap> IsCayleyGraph(gamma);
 false
 
 # IsArcTransitiveDigraph
@@ -104,12 +104,12 @@ gap> gamma:=CubicVTGraph(50,8,true);;
 gap> IsArcTransitiveDigraph(gamma);
 true
 
-# IsSPXDigraphCVT
+# IsSplitPraegerXuGraph
 gap> gamma:=CubicVTGraph(48,6,true);;
-gap> IsSPXDigraphCVT(gamma);
+gap> IsSplitPraegerXuGraph(gamma);
 false
 gap> gamma:=CubicVTGraph(48,7,true);;
-gap> IsSPXDigraphCVT(gamma);
+gap> IsSplitPraegerXuGraph(gamma);
 true
 
 # HasSolvableAutGroup

@@ -2,8 +2,8 @@
 <Heading>The <M>G</M>-half-arc-transitive graph library</Heading>
 
 In this Chapter we give functions for accessing the <M>G</M>-half-arc-transitive 
-4 valent graphs stored in this package, and related properties. Currently, this package 
-contains all <M>G</M>-half-arc-transitive 4 valent on up to 1000 vertices. For information 
+4-valent graphs stored in this package, and related properties. Currently, this package 
+contains all <M>G</M>-half-arc-transitive 4-valent graphs on up to 1000 vertices. For information 
 and references on these graphs, see <Cite Key="PSV_2013a"/>.
 <P/>
 Let <M>\Gamma</M> be a simple graph (undirected, loopless, without multiple 
@@ -13,31 +13,6 @@ vertex of the graph has exactly 4 neighbours.
 The graph <M>\Gamma</M> is <M>G</M><E>-half-arc-transitive</E> if <M>G</M> is a group
 of automorphisms of <M>\Gamma</M> which acts transitively on the vertices and edges of 
 <M>\Gamma</M>, but not on the arcs of <M>\Gamma</M>.
-
-
-<Section Label="ghat 4v variables">
-<Heading>Global variables for the <M>G</M>-half-arc-transitive 4-valent graph library</Heading>
-
-In this Section we introduce functions and variables which give information
-about the <M>G</M>-half-arc-transitive 4-valent graph library and the graphs stored within.
-
-<#Include Label="GHAT_4VALENT_ORDER_MAX">
-
-<#Include Label="GHAT_4VALENT_NUMBERS">
-
-<#Include Label="GHAT_4VALENT_GRAPH_INFO">
-
-<#Include Label="NrGHAT4ValentGraphs">
-
-<#Include Label="IdOfGHAT4ValentGraph">
-
-<#Include Label="SetGHAT4ValentGraphPropsNC">
-
-<#Include Label="SetGHAT4ValentGraphProps">
-
-<#Include Label="SmallGHAT4ValentGraphsInfo">
-
-</Section>
 
 <Section Label="Accessing the ghat graphs">
 <Heading>Accessing the <M>G</M>-half-arc-transitive 4-valent graphs</Heading>
@@ -49,42 +24,56 @@ In this Section we introduce functions for the access to the
 
 <#Include Label="AllGHAT4ValentGraphs">
 
-<#Include Label="IteratorOfGHAT4ValentGraphs">
+<#Include Label="GHAT4ValentGraphIterator">
 
 </Section>
 
-<Section Label="Properties and attributes ghat">
-<Heading>Properties and attributes of the <M>G</M>-half-arc-transitive 4-valent graphs</Heading>
+<Section Label="ghat 4-valent library info">
+<Heading>Properties of the <M>G</M>-half-arc-transitive 4-valent graphs and library</Heading>
 
-In this Section we give the properties and attributes of the 
-<M>G</M>-half-arc-transitive 4-valent graphs which are stored in this library.
+In this Section we give the functions which give information about the 
+<M>G</M>-half-arc-transitive 4-valent graph library, and the properties and attributes of 
+the graphs it contains.
 
-<Subsection Label="Properties from the Digraphs package ghat">
-<Heading>Properties from the &DIGRAPHS; package</Heading>
+<Subsection Label="Precomputed data ghat">
+<Heading>Precomputed attributes of the <M>G</M>-half-arc-transitive 4-valent graphs</Heading>
 
-A few of the properties we have precomputed for the graphs of this library 
-are already defined in the &DIGRAPHS; package. These are;
+For a given <M>G</M>-half-arc-transitive 4-valent graph <M>\Gamma</M> stored in this package, 
+there are several precomputed attributes stored in the &GRSYLI; package. These 
+include the following:
 
 <List>
-<Item> Diameter, in the attribute 
-       <Ref BookName="digraphs" Attr="DigraphDiameter"/>. </Item>
-<Item> Girth, in the attribute 
-       <Ref BookName="digraphs" Attr="DigraphUndirectedGirth"/>. </Item>
-<Item> Bipartiteness, in the property 
-       <Ref BookName="digraphs" Prop="IsBipartiteDigraph"/>. </Item>
-<Item> Arc-transitivity, in the property 
-       <Ref BookName="digraphs" Prop="IsEdgeTransitive"/>. </Item>
+<Item> Diameter of <M>\Gamma</M>
+       (<Ref BookName="digraphs" Attr="DigraphDiameter"/>). </Item>
+<Item> Girth of <M>\Gamma</M> 
+       (<Ref BookName="digraphs" Attr="DigraphUndirectedGirth"/>). </Item>
+<Item> Bipartiteness of <M>\Gamma</M>
+       (<Ref BookName="digraphs" Prop="IsBipartiteDigraph"/>). </Item>
+<Item> Arc-transitivity of <M>\Gamma</M> 
+       (<Ref Prop="IsArcTransitiveDigraph"/>). </Item>
+<Item>The Cayley type of <M>\Gamma</M>
+      (<Ref Attr="CayleyType"/>).</Item>
+<Item>The size of the stabilizer of a vertex in the automorphism group
+      of <M>\Gamma</M> (<Ref Attr="SizeStabAut"/>).</Item>   
+<Item>The size of the stabilizer of a vertex in the half-arc-transitive 
+      group of automorphisms of <M>\Gamma</M> 
+      (<Ref Attr="SizeStabGHATGroups"/>).</Item>   
+<Item>The solvability of the automorphism group of <M>\Gamma</M>
+      (<Ref Prop="HasSolvableAutGroup"/>).</Item>
+<Item>The consistent cycle types of <M>\Gamma</M>
+      (<Ref Attr="ConsistentCycleTypes"/>).</Item>
 </List>
-
-Whenever we wish to store these as &GAP; properties or attributes, we will use 
-the aforementioned &DIGRAPHS; functionality. We also give a synonym for 
-arc-transitivity, <Ref Prop="IsArcTransitiveDigraph"/>.  
 
 </Subsection>
 
-Now we introduce properties and attributes which have been 
-precomputed and stored in the &GRSYLI; package, and are not defined in the 
-functionality of the &DIGRAPHS; package.
+Now we introduce functions which are used to find information about
+the library and each of the graphs it stores.
+
+<#Include Label="NrGHAT4ValentGraphs">
+
+<#Include Label="GHAT4ValentGraphId">
+
+<#Include Label="SetGHAT4ValentGraphProps">
 
 <#Include Label="CayleyType">
 
@@ -93,7 +82,6 @@ functionality of the &DIGRAPHS; package.
 <#Include Label="SizeStabGHATGroups">
 
 <#Include Label="ConsistentCycleTypes">
-
 
 </Section>
 

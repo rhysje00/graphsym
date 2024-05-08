@@ -79,7 +79,7 @@ DeclareGlobalVariable("GWG_4VALENT_NUMBERS","Number of 4-valent GWGs stored");
 ##  <ManSection>
 ##  <Attr Name="IdOfGW4ValentGraph"
 ##   Arg='gamma'/>
-##  <Returns>An integer</Returns>
+##  <Returns>An integer.</Returns>
 ##	
 ##  <Description>
 ##  Given a digraph <A>gamma</A>, if <A>gamma</A> is isomorphic to a graph 
@@ -151,7 +151,7 @@ DeclareGlobalFunction( "SetGW4ValentGraphPropsNC" );
 ##  <List>
 ##  <Item> All properties and attributes found in <Ref Var="GWG_4VALENT_GRAPH_INFO"/>.
 ##  </Item>
-##  <Item> (<Ref Prop="IsCayleyDigraphCVT"/>).</Item>
+##  <Item> (<Ref Prop="IsCayleyGraph"/>).</Item>
 ##  <Item> <Ref BookName="Digraphs" Prop="IsVertexTransitive"/>.</Item>
 ##  </List>
 ##    <Example>
@@ -179,7 +179,7 @@ DeclareGlobalFunction( "SetGW4ValentGraphProps" );
 ##   Arg='n'/>
 ##  <Func Name="NumberGW4ValentGraphs"
 ##   Arg='n' Label="long synonym"/>
-##  <Returns>An integer</Returns>
+##  <Returns>An integer.</Returns>
 ##	
 ##  <Description>
 ##  Given a positive integer <A>n</A>, this function returns the number of 
@@ -243,7 +243,7 @@ DeclareGlobalFunction( "GW4ValentGraph" );
 ##  <ManSection>
 ##  <Func Name="AllGW4ValentGraphs"
 ##   Arg='n[, data]'/>
-##  <Returns>A list</Returns>
+##  <Returns>A list.</Returns>
 ##
 ##  <Description>
 ##  Given a positive integer <A>n</A>, this function returns a list containing
@@ -309,7 +309,7 @@ DeclareGlobalFunction( "IteratorOfGW4ValentGraphs" );
 ##  <Returns><K>true</K> or <K>false</K>.</Returns>
 ##	
 ##  <Description>
-##  Given a 4-valent generalised wreath graph <A>gamma</A> from in the &GRSYLI; 
+##  Given a 4-valent generalised wreath graph <A>gamma</A> from the &GRSYLI; 
 ##  package such that its properties and attributes have been assigned, 
 ##  this function returns <K>true</K>.
 ##    <Example>

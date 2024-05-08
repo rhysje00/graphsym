@@ -121,13 +121,13 @@ DeclareGlobalVariable( "GHAT_4VALENT_GRAPH_INFO" );
 
 ################################################################################
 ##
-#A  IdOfGHAT4ValentGraph( <digraph> )
+#A  GHAT4ValentGraphId( <digraph> )
 ##  
-##  <#GAPDoc Label="IdOfGHAT4ValentGraph">
+##  <#GAPDoc Label="GHAT4ValentGraphId">
 ##  <ManSection>
-##  <Attr Name="IdOfGHAT4ValentGraph"
+##  <Attr Name="GHAT4ValentGraphId"
 ##   Arg='gamma'/>
-##  <Returns>An integer</Returns>
+##  <Returns>An integer.</Returns>
 ##	
 ##  <Description>
 ##  Given a digraph <A>gamma</A>, if <A>gamma</A> is isomorphic to a graph 
@@ -138,11 +138,11 @@ DeclareGlobalVariable( "GHAT_4VALENT_GRAPH_INFO" );
 ##  at which the graph is stored relative to its number of vertices. 
 ##  In particular, if <C>gamma</C> has <C>n</C> vertices, then <C>gamma</C> will
 ##  be the <C>i</C>th entry of <C>AllGHAT4ValentGraphs(n)</C> and the <C>i</C>th 
-##  graph found when iterating through <C>IteratorOfGHAT4ValentGraphs(n)</C>.
+##  graph found when iterating through <C>GHAT4ValentGraphIterator(n)</C>.
 ##    <Example>
 ##      <![CDATA[
 ##gap> gamma:=GHAT4ValentGraph(768,20);;
-##gap> IdOfGHAT4ValentGraph(gamma);
+##gap> GHAT4ValentGraphId(gamma);
 ##20
 ##      ]]>
 ##    </Example>
@@ -150,7 +150,7 @@ DeclareGlobalVariable( "GHAT_4VALENT_GRAPH_INFO" );
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-DeclareAttribute( "IdOfGHAT4ValentGraph", IsDigraph );
+DeclareAttribute( "GHAT4ValentGraphId", IsDigraph );
 
 ################################################################################
 ##
@@ -195,12 +195,16 @@ DeclareGlobalFunction( "SetGHAT4ValentGraphPropsNC" );
 ##  <Description>
 ##  Given a digraph <A>gamma</A>, if this graph is isomorphic to a graph 
 ##  stored in this library, this function sets the properties and 
-##  attributes of <A>gamma</A> precomputed in this package. This includes
+##  attributes of <A>gamma</A> precomputed in this package. This includes:
 ##  <List>
-##  <Item> All properties and attributes found in <Ref Var="GHAT_4VALENT_GRAPH_INFO"/>.
+##  <Item> All properties and attributes found in Subsection 
+##         <Ref Sect="Precomputed data ghat"/>.
 ##  </Item>
-##  <Item> (<Ref Prop="IsCayleyDigraphCVT"/>).</Item>
-##  <Item> <Ref BookName="Digraphs" Prop="IsVertexTransitive"/>.</Item>
+##  <Item><Ref Attr="GHAT4ValentGraphId"/>.</Item>
+##  <Item> <Ref Prop="IsCayleyGraph"/>.
+##  </Item>
+##  <Item> <Ref BookName="Digraphs" Prop="IsVertexTransitive"/>.
+##  </Item>
 ##  </List>
 ##    <Example>
 ##      <![CDATA[
@@ -262,7 +266,7 @@ DeclareGlobalFunction( "SetGHAT4ValentGraphProps" );
 ##   Arg='n'/>
 ##  <Func Name="NumberGHAT4ValentGraphs"
 ##   Arg='n' Label="long synonym"/>
-##  <Returns>An integer</Returns>
+##  <Returns>An integer.</Returns>
 ##	
 ##  <Description>
 ##  Given a positive integer <A>n</A>, this function returns the number of 
@@ -333,7 +337,7 @@ DeclareGlobalFunction( "GHAT4ValentGraph" );
 ##  <ManSection>
 ##  <Func Name="AllGHAT4ValentGraphs"
 ##   Arg='n[, data]'/>
-##  <Returns>A list</Returns>
+##  <Returns>A list.</Returns>
 ##
 ##  <Description>
 ##  Given a positive integer <A>n</A>, this function returns a list containing
@@ -362,13 +366,13 @@ DeclareGlobalFunction( "AllGHAT4ValentGraphs" );
 
 #############################################################################
 ##
-#F  IteratorOfGHAT4ValentGraphs( <integer> )
+#F  GHAT4ValentGraphIterator( <integer> )
 ##  
-##  <#GAPDoc Label="IteratorOfGHAT4ValentGraphs">
+##  <#GAPDoc Label="GHAT4ValentGraphIterator">
 ##  <ManSection>
-##  <Func Name="IteratorOfGHAT4ValentGraphs"
-##   Arg='n'/>
-##  <Returns>A list</Returns>
+##  <Func Name="GHAT4ValentGraphIterator"
+##   Arg='n[, data]'/>
+##  <Returns>An iterator.</Returns>
 ##
 ##  <Description>
 ##  Given a positive integer <A>n</A>, this function returns an iterator over
@@ -384,7 +388,7 @@ DeclareGlobalFunction( "AllGHAT4ValentGraphs" );
 ##  or attributes are given to the resulting graphs.
 ##    <Example>
 ##      <![CDATA[
-##gap> cnt:=0;; iter:=IteratorOfGHAT4ValentGraphs(600);;
+##gap> cnt:=0;; iter:=GHAT4ValentGraphIterator(600);;
 ##gap> for gamma in iter do
 ##> if HasSolvableAutGroup(gamma) then
 ##> cnt:=cnt+1;
@@ -398,7 +402,7 @@ DeclareGlobalFunction( "AllGHAT4ValentGraphs" );
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-DeclareGlobalFunction( "IteratorOfGHAT4ValentGraphs" );
+DeclareGlobalFunction( "GHAT4ValentGraphIterator" );
 
 ######################
 ##    ATTRIBUTES    ##
@@ -415,24 +419,24 @@ DeclareGlobalFunction( "IteratorOfGHAT4ValentGraphs" );
 ##  <Returns>A string.</Returns>
 ##	
 ##  <Description>
-##  Given a <M>G</M>-half-arc-transitive 4-valent graph <A>gamma</A> from in the
+##  Given a <M>G</M>-half-arc-transitive 4-valent graph <A>gamma</A> from the
 ##  &GRSYLI; package such that its properties and attributes have been assigned, 
 ##  this function returns the Cayley type of <A>gamma</A>.
 ##  <P/>
 ##  Let <M>\Gamma</M> be a graph. Then <C>CayleyType(</C><M>\Gamma</M><C>)</C>
 ##  takes value as one of the following strings:
 ##  <List>
-##  <Mark>Circ</Mark>
+##  <Mark><C>"Circ"</C></Mark>
 ##  <Item>if <M>\Gamma</M> is isomorphic to a circulant graph (a Cayley graph 
 ##  defined on a cyclic group).</Item>
-##  <Mark>AbCay</Mark>
+##  <Mark><C>"AbCay"</C></Mark>
 ##  <Item>if <M>\Gamma</M> is isomorphic to a Cayley graph defined on an 
 ##  abelian group, but not isomorphic to a circulant graph.</Item>
-##  <Mark>Cay</Mark>
+##  <Mark><C>"Cay"</C></Mark>
 ##  <Item>if <M>\Gamma</M> is isomorphic to a Cayley graph defined on a  
 ##  nonabelian group, but not isomorphic to a Cayley graph defined on an
 ##  abelian group.</Item>
-##  <Mark>n-Cay</Mark>
+##  <Mark><C>"n-Cay"</C></Mark>
 ##  <Item>if <M>\Gamma</M> is not isomorphic to a Cayley graph.</Item>
 ##  </List>
 ##    <Example>
@@ -459,7 +463,7 @@ DeclareAttribute("CayleyType", IsDigraph);
 ##  <Returns>An integer.</Returns>
 ##	
 ##  <Description>
-##  Given a <M>G</M>-half-arc-transitive 4-valent graph <A>gamma</A> from in the
+##  Given a <M>G</M>-half-arc-transitive 4-valent graph <A>gamma</A> from the
 ##  &GRSYLI; package such that its properties and attributes have been assigned, 
 ##  this function returns the size of the stabilizer of a vertex in the 
 ##  automorphism group of <A>gamma</A>.
@@ -469,7 +473,7 @@ DeclareAttribute("CayleyType", IsDigraph);
 ##  function <Ref Func="SetGHAT4ValentGraphProps"/>, or loaded automatically by 
 ##  the functions <Ref Func="GHAT4ValentGraph"/>, 
 ##  <Ref Func="AllGHAT4ValentGraphs"/> or 
-##  <Ref Func="IteratorOfGHAT4ValentGraphs"/>.
+##  <Ref Func="GHAT4ValentGraphIterator"/>.
 ##    <Example>
 ##      <![CDATA[
 ##gap> gamma:=GHAT4ValentGraph(768,20,true);;
@@ -494,7 +498,7 @@ DeclareAttribute("SizeStabAut", IsDigraph);
 ##  <Returns>A list.</Returns>
 ##	
 ##  <Description>
-##  Given a <M>G</M>-half-arc-transitive 4-valent graph <A>gamma</A> from in the &GRSYLI; 
+##  Given a <M>G</M>-half-arc-transitive 4-valent graph <A>gamma</A> from the &GRSYLI; 
 ##  package such that its properties and attributes have been assigned, 
 ##  this function returns a list containing the size of the stabilizer of a 
 ##  vertex in each maximal group <M>H</M> for which <A>gamma</A> is  
@@ -504,7 +508,7 @@ DeclareAttribute("SizeStabAut", IsDigraph);
 ##  be found in the &GRSYLI; package can be assigned using the function 
 ##  <Ref Func="SetGHAT4ValentGraphProps"/>, or loaded automatically by the functions
 ##  <Ref Func="GHAT4ValentGraph"/>, <Ref Func="AllGHAT4ValentGraphs"/> or 
-##  <Ref Func="IteratorOfGHAT4ValentGraphs"/>.
+##  <Ref Func="GHAT4ValentGraphIterator"/>.
 ##    <Example>
 ##      <![CDATA[
 ##gap> gamma:=GHAT4ValentGraph(768,20,true);;
@@ -529,7 +533,7 @@ DeclareAttribute("SizeStabGHATGroups", IsDigraph);
 ##  <Returns>A list.</Returns>
 ##	
 ##  <Description>
-##  Given a <M>G</M>-half-arc-transitive 4-valent graph <A>gamma</A> from in the &GRSYLI; 
+##  Given a <M>G</M>-half-arc-transitive 4-valent graph <A>gamma</A> from the &GRSYLI; 
 ##  package such that its properties and attributes have been assigned, 
 ##  this function returns the list of consistent cycle types of the graph <A>gamma</A>. 
 ##  For a <M>G</M>-consistent cycle <C>C</C> in <A>gamma</A>, the consistent 
@@ -541,7 +545,7 @@ DeclareAttribute("SizeStabGHATGroups", IsDigraph);
 ##  be found in the &GRSYLI; package can be assigned using the function 
 ##  <Ref Func="SetGHAT4ValentGraphProps"/>, or loaded automatically by the functions
 ##  <Ref Func="GHAT4ValentGraph"/>, <Ref Func="AllGHAT4ValentGraphs"/> or 
-##  <Ref Func="IteratorOfGHAT4ValentGraphs"/>.
+##  <Ref Func="GHAT4ValentGraphIterator"/>.
 ##  <P/>
 ##  Let <M>\Gamma</M> be a graph with group of automorphisms <M>G</M>, and cycle 
 ##  <M>C</M>. The cycle <M>C</M> is <M>G</M><E>-consistent</E> if there is an 
@@ -549,9 +553,11 @@ DeclareAttribute("SizeStabGHATGroups", IsDigraph);
 ##  <M>G</M>-consistent cycle <M>C</M> is <M>G</M><E>-symmetric</E> if there is
 ##  an element of <M>G</M> which reverses the orientation of <M>C</M>. A 
 ##  <M>G</M>-consistent cycle <M>C</M> is <M>G</M><E>-chiral</E> if there is
-##  no element of <M>G</M> which reverses the orientation of <M>C</M>. For 
-##  information and references on consistent cycles, see <Cite Key="PSV_2013a"/>.
-##   
+##  no element of <M>G</M> which reverses the orientation of <M>C</M>. 
+##  TODO finish definition
+##  <P/>
+##  For information and references on consistent cycles, see 
+##  <Cite Key="PSV_2013a"/>. 
 ##    <Example>
 ##      <![CDATA[
 ##gap> gamma:=GHAT4ValentGraph(768,20,true);;

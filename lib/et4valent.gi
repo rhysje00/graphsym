@@ -28,13 +28,13 @@ end );
 
 ################################################################################
 ##
-#F  IdOfET4ValentGraph( <digraph> )
+#F  ET4ValentGraphId( <digraph> )
 ##  
-InstallMethod(IdOfET4ValentGraph, "for a digraph", [IsDigraph],
+InstallMethod(ET4ValentGraphId, "for a digraph", [IsDigraph],
 function(gamma)
   local n, iter, cnt, delta, edges;
   if not IsDigraph(gamma) then
-    Error("usage: IdOfET4ValentGraph( <gamma> ), where <gamma> is a digraph");
+    Error("usage: ET4ValentGraphId( <gamma> ), where <gamma> is a digraph");
   fi;
 
   n:=DigraphNrVertices(gamma);
@@ -50,7 +50,7 @@ function(gamma)
     return fail;
   fi;
 
-  iter:=IteratorOfET4ValentGraphs(n);
+  iter:=ET4ValentGraphIterator(n);
   cnt:=0;
   for delta in iter do
     cnt:=cnt+1;
@@ -82,7 +82,7 @@ function(gamma,n,i)
   fi;
   
   # Set all Props and attributes for this record (Id is already set)  
-  SetIdOfCubicVTGraph(gamma,i);
+  SetCubicVTGraphId(gamma,i);
 
   return; 
 end );
@@ -95,7 +95,7 @@ InstallGlobalFunction(SetET4ValentGraphProps,
 function(gamma)
   local idx;
 
-  idx:=IdOfET4ValentGraph(gamma);
+  idx:=ET4ValentGraphId(gamma);
 
   if idx<>fail then
     SetET4ValentGraphPropsNC(gamma,DigraphNrVertices(gamma),idx);
@@ -197,9 +197,9 @@ end );
 
 #############################################################################
 ##
-#F  IteratorOfET4ValentGraphs( <integer> )
+#F  ET4ValentGraphIterator( <integer> )
 ##  
-InstallGlobalFunction(IteratorOfET4ValentGraphs,
+InstallGlobalFunction(ET4ValentGraphIterator,
 function(args...)
   local n, data, filename, decoder, file, record;
 
@@ -213,7 +213,7 @@ function(args...)
     data:=args[2];
   fi;
   if not (IsPosInt(n) and IsBool(data)) then
-    Error("usage: IteratorOfET4ValentGraphs( <n>[, <data>] ), where <n> is a \
+    Error("usage: ET4ValentGraphIterator( <n>[, <data>] ), where <n> is a \
                   positive integer and <data> is a boolean");
   fi;
 

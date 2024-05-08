@@ -89,7 +89,7 @@ DeclareGlobalVariable("HAT_4VALENT_NUMBERS","Number of half-arc-transitive 4-val
 ##    <Item>The bipartiteness of <M>\Gamma</M> 
 ##          (<Ref BookName="Digraphs" Attr="IsBipartiteDigraph"/>).</Item>
 ##    <Item>The Cayleyness of <M>\Gamma</M>
-##          (<Ref Prop="IsCayleyDigraphCVT"/>).</Item>
+##          (<Ref Prop="IsCayleyGraph"/>).</Item>
 ##    <Item>The size of the stabilizer of a vertex in the automorphism group
 ##          of <M>\Gamma</M> (<Ref Attr="SizeStabAut"/>).</Item>   
 ##    <Item>The solvability of the automorphism group of <M>\Gamma</M>
@@ -131,13 +131,13 @@ DeclareGlobalVariable( "HAT_4VALENT_GRAPH_INFO" );
 
 ################################################################################
 ##
-#A  IdOfHAT4ValentGraph( <digraph> )
+#A  HAT4ValentGraphId( <digraph> )
 ##  
-##  <#GAPDoc Label="IdOfHAT4ValentGraph">
+##  <#GAPDoc Label="HAT4ValentGraphId">
 ##  <ManSection>
-##  <Attr Name="IdOfHAT4ValentGraph"
+##  <Attr Name="HAT4ValentGraphId"
 ##   Arg='gamma'/>
-##  <Returns>An integer</Returns>
+##  <Returns>An integer.</Returns>
 ##	
 ##  <Description>
 ##  Given a digraph <A>gamma</A>, if <A>gamma</A> is isomorphic to a graph 
@@ -148,11 +148,11 @@ DeclareGlobalVariable( "HAT_4VALENT_GRAPH_INFO" );
 ##  at which the graph is stored relative to its number of vertices. 
 ##  In particular, if <C>gamma</C> has <C>n</C> vertices, then <C>gamma</C> will
 ##  be the <C>i</C>th entry of <C>AllHAT4ValentGraphs(n)</C> and the <C>i</C>th 
-##  graph found when iterating through <C>IteratorOfHAT4ValentGraphs(n)</C>.
+##  graph found when iterating through <C>HAT4ValentGraphIterator(n)</C>.
 ##    <Example>
 ##      <![CDATA[
 ##gap> gamma:=HAT4ValentGraph(768,20);;
-##gap> IdOfHAT4ValentGraph(gamma);
+##gap> HAT4ValentGraphId(gamma);
 ##20
 ##      ]]>
 ##    </Example>
@@ -160,7 +160,7 @@ DeclareGlobalVariable( "HAT_4VALENT_GRAPH_INFO" );
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-DeclareAttribute( "IdOfHAT4ValentGraph", IsDigraph );
+DeclareAttribute( "HAT4ValentGraphId", IsDigraph );
 
 ################################################################################
 ##
@@ -207,9 +207,11 @@ DeclareGlobalFunction( "SetHAT4ValentGraphPropsNC" );
 ##  stored in this library, this function sets the properties and 
 ##  attributes of <A>gamma</A> precomputed in this package. This includes
 ##  <List>
-##  <Item> All properties and attributes found in <Ref Var="HAT_4VALENT_GRAPH_INFO"/>.
+##  <Item> All properties and attributes found in Subsection 
+##         <Ref Sect="Precomputed data hat"/>.
 ##  </Item>
-##  <Item> (<Ref Prop="IsCayleyDigraphCVT"/>).</Item>
+##  <Item> <Ref Attr="HAT4ValentGraphId"/>.</Item>
+##  <Item> <Ref Prop="IsCayleyGraph"/>.</Item>
 ##  <Item> <Ref BookName="Digraphs" Prop="IsVertexTransitive"/>.</Item>
 ##  </List>
 ##    <Example>
@@ -272,7 +274,7 @@ DeclareGlobalFunction( "SetHAT4ValentGraphProps" );
 ##   Arg='n'/>
 ##  <Func Name="NumberHAT4ValentGraphs"
 ##   Arg='n' Label="long synonym"/>
-##  <Returns>An integer</Returns>
+##  <Returns>An integer.</Returns>
 ##	
 ##  <Description>
 ##  Given a positive integer <A>n</A>, this function returns the number of 
@@ -343,7 +345,7 @@ DeclareGlobalFunction( "HAT4ValentGraph" );
 ##  <ManSection>
 ##  <Func Name="AllHAT4ValentGraphs"
 ##   Arg='n[, data]'/>
-##  <Returns>A list</Returns>
+##  <Returns>A list.</Returns>
 ##
 ##  <Description>
 ##  Given a positive integer <A>n</A>, this function returns a list containing
@@ -372,13 +374,13 @@ DeclareGlobalFunction( "AllHAT4ValentGraphs" );
 
 #############################################################################
 ##
-#F  IteratorOfHAT4ValentGraphs( <integer> )
+#F  HAT4ValentGraphIterator( <integer> )
 ##  
-##  <#GAPDoc Label="IteratorOfHAT4ValentGraphs">
+##  <#GAPDoc Label="HAT4ValentGraphIterator">
 ##  <ManSection>
-##  <Func Name="IteratorOfHAT4ValentGraphs"
-##   Arg='n'/>
-##  <Returns>A list</Returns>
+##  <Func Name="HAT4ValentGraphIterator"
+##   Arg='n[, data]'/>
+##  <Returns>An iterator.</Returns>
 ##
 ##  <Description>
 ##  Given a positive integer <A>n</A>, this function returns an iterator over
@@ -394,7 +396,7 @@ DeclareGlobalFunction( "AllHAT4ValentGraphs" );
 ##  or attributes are given to the resulting graphs.
 ##    <Example>
 ##      <![CDATA[
-##gap> cnt:=0;; iter:=IteratorOfHAT4ValentGraphs(600);;
+##gap> cnt:=0;; iter:=HAT4ValentGraphIterator(600);;
 ##gap> for gamma in iter do
 ##> if HasSolvableAutGroup(gamma) then
 ##> cnt:=cnt+1;
@@ -408,7 +410,7 @@ DeclareGlobalFunction( "AllHAT4ValentGraphs" );
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-DeclareGlobalFunction( "IteratorOfHAT4ValentGraphs" );
+DeclareGlobalFunction( "HAT4ValentGraphIterator" );
 
 ######################
 ##    ATTRIBUTES    ##
@@ -425,13 +427,13 @@ DeclareGlobalFunction( "IteratorOfHAT4ValentGraphs" );
 ##  <Returns>A list.</Returns>
 ##	
 ##  <Description>
-##  Given a half-arc-transitive 4-valent graph <A>gamma</A> from in the
+##  Given a half-arc-transitive 4-valent graph <A>gamma</A> from the
 ##  &GRSYLI; package such that its properties and attributes have been assigned, 
 ##  this function returns the meta-circulant classes of <A>gamma</A>.
 ##  <P/>
 ##  Let <M>\Gamma</M> be a graph. Then the graph <M>\Gamma</M> is 
-##  <E>meta-circulant</E> if the automorphism group of <M>\Gamma</M> has 
-##  metacycli subgroup generated by <M>\rho,\sigma</M> such that 
+##  <E>meta-circulant</E> if the automorphism group of <M>\Gamma</M> contains a 
+##  metacyclic subgroup generated by <M>\rho,\sigma</M> such that 
 ##  <M>\langle \rho\rangle</M> acts semiregularly on the vertices of 
 ##  <M>\Gamma</M>. Any half-arc-transitive 4-valent graph could fall into 
 ##  one of four known classes. 

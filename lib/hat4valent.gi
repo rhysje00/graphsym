@@ -28,13 +28,13 @@ end );
 
 ################################################################################
 ##
-#F  IdOfHAT4ValentGraph( <digraph> )
+#F  HAT4ValentGraphId( <digraph> )
 ##  
-InstallMethod(IdOfHAT4ValentGraph, "for a digraph", [IsDigraph],
+InstallMethod(HAT4ValentGraphId, "for a digraph", [IsDigraph],
 function(gamma)
   local n, iter, cnt, delta;
   if not IsDigraph(gamma) then
-    Error("usage: IdOfHAT4ValentGraph( <gamma> ), where <gamma> is a digraph");
+    Error("usage: HAT4ValentGraphId( <gamma> ), where <gamma> is a digraph");
   fi;
 
   n:=DigraphNrVertices(gamma);
@@ -48,7 +48,7 @@ function(gamma)
     return fail;
   fi;
 
-  iter:=IteratorOfHAT4ValentGraphs(n);
+  iter:=HAT4ValentGraphIterator(n);
   cnt:=0;
   for delta in iter do
     cnt:=cnt+1;
@@ -82,9 +82,9 @@ function(gamma,n,i)
   rc:=HAT_4VALENT_GRAPH_INFO[n,i];
 
   # Set all Props and attributes for this record (Id is already set)  
-  SetIdOfHAT4ValentGraph(gamma,i);
+  SetHAT4ValentGraphId(gamma,i);
   SetIsVertexTransitive(gamma,true);
-  SetIsCayleyDigraphCVT(gamma,rc[3]); #  SetFilterObj(gamma, IsCayleyDigraph);
+  SetIsCayleyGraph(gamma,rc[3]); #  SetFilterObj(gamma, IsCayleyDigraph);
   SetIsBipartiteDigraph(gamma,rc[2]);
   SetIsArcTransitiveDigraph(gamma,false);
   SetHasSolvableAutGroup(gamma,rc[5]);
@@ -111,7 +111,7 @@ InstallGlobalFunction(SetHAT4ValentGraphProps,
 function(gamma)
   local idx;
 
-  idx:=IdOfHAT4ValentGraph(gamma);
+  idx:=HAT4ValentGraphId(gamma);
 
   if idx<>fail then
     SetHAT4ValentGraphPropsNC(gamma,DigraphNrVertices(gamma),idx);
@@ -288,9 +288,9 @@ end );
 
 #############################################################################
 ##
-#F  IteratorOfHAT4ValentGraphs( <integer> )
+#F  HAT4ValentGraphIterator( <integer> )
 ##  
-InstallGlobalFunction(IteratorOfHAT4ValentGraphs,
+InstallGlobalFunction(HAT4ValentGraphIterator,
 function(args...)
   local n, data, filename, decoder, file, record;
 
@@ -304,7 +304,7 @@ function(args...)
     data:=args[2];
   fi;
   if not (IsPosInt(n) and IsBool(data)) then
-    Error("usage: IteratorOfHAT4ValentGraphs( <n>[, <data>] ), where <n> is a \
+    Error("usage: HAT4ValentGraphIterator( <n>[, <data>] ), where <n> is a \
                   positive integer and <data> is a boolean");
   fi;
 

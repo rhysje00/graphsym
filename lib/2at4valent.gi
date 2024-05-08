@@ -28,13 +28,13 @@ end );
 
 ################################################################################
 ##
-#F  IdOf2AT4ValentGraph( <digraph> )
+#F  2AT4ValentGraphId( <digraph> )
 ##  
-InstallMethod(IdOf2AT4ValentGraph, "for a digraph", [IsDigraph],
+InstallMethod(2AT4ValentGraphId, "for a digraph", [IsDigraph],
 function(gamma)
   local n, iter, cnt, delta;
   if not IsDigraph(gamma) then
-    Error("usage: IdOf2AT4ValentGraph( <gamma> ), where <gamma> is a digraph");
+    Error("usage: 2AT4ValentGraphId( <gamma> ), where <gamma> is a digraph");
   fi;
 
   n:=DigraphNrVertices(gamma);
@@ -51,7 +51,7 @@ function(gamma)
     return fail;
   fi;
 
-  iter:=IteratorOf2AT4ValentGraphs(n);
+  iter:=2AT4ValentGraphIterator(n);
   cnt:=0;
   for delta in iter do
     cnt:=cnt+1;
@@ -83,7 +83,7 @@ function(gamma,n,i)
   fi;
   
   # Set all Props and attributes for this record (Id is already set)  
-  SetIdOfCubicVTGraph(gamma,i);
+  SetCubicVTGraphId(gamma,i);
 
   return; 
 end );
@@ -96,7 +96,7 @@ InstallGlobalFunction(Set2AT4ValentGraphProps,
 function(gamma)
   local idx;
 
-  idx:=IdOf2AT4ValentGraph(gamma);
+  idx:=2AT4ValentGraphId(gamma);
 
   if idx<>fail then
     Set2AT4ValentGraphPropsNC(gamma,DigraphNrVertices(gamma),idx);
@@ -198,9 +198,9 @@ end );
 
 #############################################################################
 ##
-#F  IteratorOf2AT4ValentGraphs( <integer> )
+#F  2AT4ValentGraphIterator( <integer> )
 ##  
-InstallGlobalFunction(IteratorOf2AT4ValentGraphs,
+InstallGlobalFunction(2AT4ValentGraphIterator,
 function(args...)
   local n, data, filename, decoder, file, record;
 
@@ -214,7 +214,7 @@ function(args...)
     data:=args[2];
   fi;
   if not (IsPosInt(n) and IsBool(data)) then
-    Error("usage: IteratorOf2AT4ValentGraphs( <n>[, <data>] ), where <n> is a \
+    Error("usage: 2AT4ValentGraphIterator( <n>[, <data>] ), where <n> is a \
                   positive integer and <data> is a boolean");
   fi;
 

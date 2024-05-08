@@ -18,21 +18,21 @@ gap> LAT_34VALENT_ORDER_MAX;
 gap> Maximum(LAT_34VALENT_NUMBERS);
 249
 
-# IdOfLAT34ValentGraph
+# LAT34ValentGraphId
 gap> gamma:=LAT34ValentGraph(896,20);;
-gap> IdOfLAT34ValentGraph(gamma);
+gap> LAT34ValentGraphId(gamma);
 20
 
 # SetLAT34ValentGraphPropsNC
 gap> gamma:=LAT34ValentGraph(896,20);;
 gap> SetLAT34ValentGraphPropsNC(gamma,896,20);
-gap> IdOfLAT34ValentGraph(gamma);
+gap> LAT34ValentGraphId(gamma);
 20
 
 # SetLAT34ValentGraphProps
 gap> gamma:=LAT34ValentGraph(896,20);;
 gap> SetLAT34ValentGraphProps(gamma);
-gap> IdOfLAT34ValentGraph(gamma);
+gap> LAT34ValentGraphId(gamma);
 20
 
 # NrLAT34ValentGraphs
@@ -51,8 +51,8 @@ gap> gammas:=AllLAT34ValentGraphs(224);;
 gap> Length(gammas);
 22
 
-# IteratorOfLAT34ValentGraphs
-gap> cnt:=0;; iter:=IteratorOfET4ValentGraphs(300);;
+# LAT34ValentGraphIterator
+gap> cnt:=0;; iter:=ET4ValentGraphIterator(300);;
 gap> for gamma in iter do
 > if HasSolvableAutGroup(gamma) then
 > cnt:=cnt+1;

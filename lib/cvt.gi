@@ -27,13 +27,13 @@ end );
 
 ################################################################################
 ##
-#F  IdOfCubicVTGraph( <digraph> )
+#F  CubicVTGraphId( <digraph> )
 ##  
-InstallMethod(IdOfCubicVTGraph, "for a digraph", [IsDigraph],
+InstallMethod(CubicVTGraphId, "for a digraph", [IsDigraph],
 function(gamma)
   local n, iter, cnt, delta;
   if not IsDigraph(gamma) then
-    Error("usage: IdOfCubicVTGraph( <gamma> ), where <gamma> is a digraph");
+    Error("usage: CubicVTGraphId( <gamma> ), where <gamma> is a digraph");
   fi;
 
   n:=DigraphNrVertices(gamma);
@@ -47,7 +47,7 @@ function(gamma)
     return fail;
   fi;
 
-  iter:=IteratorOfCubicVTGraphs(n);
+  iter:=CubicVTGraphIterator(n);
   cnt:=0;
   for delta in iter do
     cnt:=cnt+1;
@@ -81,13 +81,13 @@ function(gamma,n,i)
   rc:=CVT_GRAPH_INFO[n,i];
 
   # Set all Props and attributes for this record (Id is already set)  
-  SetIdOfCubicVTGraph(gamma,i);
+  SetCubicVTGraphId(gamma,i);
   SetIsCubicDigraph(gamma,true);
   SetIsVertexTransitive(gamma,true);
-  SetIsCayleyDigraphCVT(gamma,rc[4]); #  SetFilterObj(gamma, IsCayleyDigraph);
+  SetIsCayleyGraph(gamma,rc[4]); #  SetFilterObj(gamma, IsCayleyDigraph);
   SetIsBipartiteDigraph(gamma,rc[3]);
   SetIsArcTransitiveDigraph(gamma,rc[5]);
-  SetIsSPXDigraphCVT(gamma,rc[6]);
+  SetIsSplitPraegerXuGraph(gamma,rc[6]);
   SetHasSolvableAutGroup(gamma,rc[7]);
 
   SetDigraphDiameter(gamma,rc[1]);
@@ -105,7 +105,7 @@ InstallGlobalFunction(SetCubicVTGraphProps,
 function(gamma)
   local idx;
 
-  idx:=IdOfCubicVTGraph(gamma);
+  idx:=CubicVTGraphId(gamma);
 
   if idx<>fail then
     SetCubicVTGraphPropsNC(gamma,DigraphNrVertices(gamma),idx);
@@ -282,9 +282,9 @@ end );
 
 #############################################################################
 ##
-#F  IteratorOfCubicVTGraphs( <integer> )
+#F  CubicVTGraphIterator( <integer> )
 ##  
-InstallGlobalFunction(IteratorOfCubicVTGraphs,
+InstallGlobalFunction(CubicVTGraphIterator,
 function(args...)
   local n, data, filename, decoder, file, record;
 
@@ -298,7 +298,7 @@ function(args...)
     data:=args[2];
   fi;
   if not (IsPosInt(n) and IsBool(data)) then
-    Error("usage: IteratorOfCubicVTGraphs( <n>[, <data>] ), where <n> is a \
+    Error("usage: CubicVTGraphIterator( <n>[, <data>] ), where <n> is a \
                   positive integer and <data> is a boolean");
   fi;
 

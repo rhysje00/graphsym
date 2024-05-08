@@ -71,13 +71,13 @@ DeclareGlobalVariable("2AT_4VALENT_NUMBERS","Number of arc-transitive 2-valent d
 
 ################################################################################
 ##
-#A  IdOf2AT4ValentGraph( <digraph> )
+#A  2AT4ValentGraphId( <digraph> )
 ##  
-##  <#GAPDoc Label="IdOf2AT4ValentGraph">
+##  <#GAPDoc Label="2AT4ValentGraphId">
 ##  <ManSection>
-##  <Attr Name="IdOf2AT4ValentGraph"
+##  <Attr Name="2AT4ValentGraphId"
 ##   Arg='gamma'/>
-##  <Returns>An integer</Returns>
+##  <Returns>An integer.</Returns>
 ##	
 ##  <Description>
 ##  Given a digraph <A>gamma</A>, if <A>gamma</A> is isomorphic to a graph 
@@ -88,14 +88,14 @@ DeclareGlobalVariable("2AT_4VALENT_NUMBERS","Number of arc-transitive 2-valent d
 ##  at which the graph is stored relative to its number of vertices. 
 ##  In particular, if <C>gamma</C> has <C>n</C> vertices, then <C>gamma</C> will
 ##   be the <C>i</C>th entry of <C>All2AT4ValentGraphs(n)</C> and the <C>i</C>th 
-##  graph found when iterating through <C>IteratorOf2AT4ValentGraphs(n)</C>.
+##  graph found when iterating through <C>2AT4ValentGraphIterator(n)</C>.
 ##    <Example>
 ##      <![CDATA[
 ##gap> gamma:=CompleteDigraph(5);;
-##gap> IdOf2AT4ValentGraph(gamma);
+##gap> 2AT4ValentGraphId(gamma);
 ##1
 ##gap> gamma:=2AT4ValentGraph(1920,10);;
-##gap> IdOf2AT4ValentGraph(gamma);
+##gap> 2AT4ValentGraphId(gamma);
 ##10
 ##      ]]>
 ##    </Example>
@@ -103,7 +103,7 @@ DeclareGlobalVariable("2AT_4VALENT_NUMBERS","Number of arc-transitive 2-valent d
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-DeclareAttribute( "IdOf2AT4ValentGraph", IsDigraph );
+DeclareAttribute( "2AT4ValentGraphId", IsDigraph );
 
 ################################################################################
 ##
@@ -126,7 +126,7 @@ DeclareAttribute( "IdOf2AT4ValentGraph", IsDigraph );
 ##      <![CDATA[
 ##gap> gamma:=2AT4ValentGraph(1920,10);;
 ##gap> Set2AT4ValentGraphPropsNC(gamma,1920,10);
-##gap> IdOf2AT4ValentGraph(gamma);
+##gap> 2AT4ValentGraphId(gamma);
 ##10
 ##      ]]>
 ##    </Example>
@@ -149,12 +149,15 @@ DeclareGlobalFunction( "Set2AT4ValentGraphPropsNC" );
 ##  <Description>
 ##  Given a digraph <A>gamma</A>, if this graph is isomorphic to a graph 
 ##  stored in this library, this function sets the properties and 
-##  attributes of <A>gamma</A> precomputed in this package.
+##  attributes of <A>gamma</A> precomputed in this package. This includes:
+##  <List>
+##  <Item><Ref Attr="2AT4ValentGraphId"/>.</Item>
+##  </List>  
 ##    <Example>
 ##      <![CDATA[
 ##gap> gamma:=2AT4ValentGraph(1920,5);;
 ##gap> Set2AT4ValentGraphProps(gamma);
-##gap> IdOf2AT4ValentGraph(gamma);
+##gap> 2AT4ValentGraphId(gamma);
 ##5
 ##      ]]>
 ##    </Example>
@@ -175,7 +178,7 @@ DeclareGlobalFunction( "Set2AT4ValentGraphProps" );
 ##   Arg='n'/>
 ##  <Func Name="Number2AT4ValentGraphs"
 ##   Arg='n' Label="long synonym"/>
-##  <Returns>An integer</Returns>
+##  <Returns>An integer.</Returns>
 ##	
 ##  <Description>
 ##  Given a positive integer <A>n</A>, this function returns the number of 
@@ -246,7 +249,7 @@ DeclareGlobalFunction( "2AT4ValentGraph" );
 ##  <ManSection>
 ##  <Func Name="All2AT4ValentGraphs"
 ##   Arg='n[, data]'/>
-##  <Returns>A list</Returns>
+##  <Returns>A list.</Returns>
 ##
 ##  <Description>
 ##  Given a positive integer <A>n</A>, this function returns a list containing
@@ -274,13 +277,13 @@ DeclareGlobalFunction( "All2AT4ValentGraphs" );
 
 #############################################################################
 ##
-#F  IteratorOf2AT4ValentGraphs( <integer> )
+#F  2AT4ValentGraphIterator( <integer> )
 ##  
-##  <#GAPDoc Label="IteratorOf2AT4ValentGraphs">
+##  <#GAPDoc Label="2AT4ValentGraphIterator">
 ##  <ManSection>
-##  <Func Name="IteratorOf2AT4ValentGraphs"
-##   Arg='n'/>
-##  <Returns>A list</Returns>
+##  <Func Name="2AT4ValentGraphIterator"
+##   Arg='n[, data]'/>
+##  <Returns>An iterator.</Returns>
 ##
 ##  <Description>
 ##  Given a positive integer <A>n</A>, this function returns an iterator over
@@ -295,7 +298,7 @@ DeclareGlobalFunction( "All2AT4ValentGraphs" );
 ##  or attributes are given to the resulting graphs.
 ##    <Example>
 ##      <![CDATA[
-##gap> cnt:=0;; iter:=IteratorOf2AT4ValentGraphs(1920);;
+##gap> cnt:=0;; iter:=2AT4ValentGraphIterator(1920);;
 ##gap> for gamma in iter do
 ##> if HasSolvableAutGroup(gamma) then
 ##> cnt:=cnt+1;
@@ -309,7 +312,7 @@ DeclareGlobalFunction( "All2AT4ValentGraphs" );
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-DeclareGlobalFunction( "IteratorOf2AT4ValentGraphs" );
+DeclareGlobalFunction( "2AT4ValentGraphIterator" );
 
 #############################################################################
 ##

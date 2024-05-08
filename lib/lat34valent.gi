@@ -28,13 +28,13 @@ end );
 
 ################################################################################
 ##
-#F  IdOfLAT34ValentGraph( <digraph> )
+#F  LAT34ValentGraphId( <digraph> )
 ##  
-InstallMethod(IdOfLAT34ValentGraph, "for a digraph", [IsDigraph],
+InstallMethod(LAT34ValentGraphId, "for a digraph", [IsDigraph],
 function(gamma)
   local n, iter, cnt, delta;
   if not IsDigraph(gamma) then
-    Error("usage: IdOfLAT34ValentGraph( <gamma> ), where <gamma> is a digraph");
+    Error("usage: LAT34ValentGraphId( <gamma> ), where <gamma> is a digraph");
   fi;
 
   n:=DigraphNrVertices(gamma);
@@ -49,7 +49,7 @@ function(gamma)
   fi;
   ## TODO implement further reduction by local action
 
-  iter:=IteratorOfLAT34ValentGraphs(n);
+  iter:=LAT34ValentGraphIterator(n);
   cnt:=0;
   for delta in iter do
     cnt:=cnt+1;
@@ -81,7 +81,7 @@ function(gamma,n,i)
   fi;
   
   # Set all Props and attributes for this record (Id is already set)  
-  SetIdOfCubicVTGraph(gamma,i);
+  SetCubicVTGraphId(gamma,i);
 
   return; 
 end );
@@ -94,7 +94,7 @@ InstallGlobalFunction(SetLAT34ValentGraphProps,
 function(gamma)
   local idx;
 
-  idx:=IdOfLAT34ValentGraph(gamma);
+  idx:=LAT34ValentGraphId(gamma);
 
   if idx<>fail then
     SetLAT34ValentGraphPropsNC(gamma,DigraphNrVertices(gamma),idx);
@@ -196,9 +196,9 @@ end );
 
 #############################################################################
 ##
-#F  IteratorOfLAT34ValentGraphs( <integer> )
+#F  LAT34ValentGraphIterator( <integer> )
 ##  
-InstallGlobalFunction(IteratorOfLAT34ValentGraphs,
+InstallGlobalFunction(LAT34ValentGraphIterator,
 function(args...)
   local n, data, filename, decoder, file, record;
 
@@ -212,7 +212,7 @@ function(args...)
     data:=args[2];
   fi;
   if not (IsPosInt(n) and IsBool(data)) then
-    Error("usage: IteratorOfLAT34ValentGraphs( <n>[, <data>] ), where <n> is a \
+    Error("usage: LAT34ValentGraphIterator( <n>[, <data>] ), where <n> is a \
                   positive integer and <data> is a boolean");
   fi;
 

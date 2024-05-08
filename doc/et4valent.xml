@@ -15,37 +15,33 @@ The graph <M>\Gamma</M> is <E>edge-transitive</E> if the automorphism group
 of <M>\Gamma</M> acts transitively on the edges of <M>\Gamma</M>.
 
 
-<Section Label="et 4-valent stored values">
-<Heading>Global variables for the edge-transitive 4-valent graph library</Heading>
-
-In this Section we introduce functions and variables which give information
-about the edge-transitive 4-valent graph library and the graphs stored within.
-
-<#Include Label="ET_4VALENT_ORDER_MAX">
-
-<#Include Label="ET_4VALENT_NUMBERS">
-
-<#Include Label="NrET4ValentGraphs">
-
-<#Include Label="IdOfET4ValentGraph">
-
-<#Include Label="SetET4ValentGraphPropsNC">
-
-<#Include Label="SetET4ValentGraphProps">
-
-</Section>
-
 <Section Label="Accessing the et 4-valent graphs">
 <Heading>Accessing the edge-transitive 4-valent graphs</Heading>
 
-In this Section we introduce functions for the access to the edge-transitive 
-4-valent graphs stored in the &GRSYLI; package.
+In this Section we introduce functions for the access to the 
+edge-transitive 4-valent graphs stored in the &GRSYLI; package.
 
 <#Include Label="ET4ValentGraph">
 
 <#Include Label="AllET4ValentGraphs">
 
-<#Include Label="IteratorOfET4ValentGraphs">
+<#Include Label="ET4ValentGraphIterator">
+
+</Section>
+
+
+<Section Label="et 4-valent library info">
+<Heading>Properties of the edge-transitive 4-valent graphs and library</Heading>
+
+In this Section we give the functions which give information about the 
+edge-transitive 4-valent graph library, and the properties and attributes of 
+the graphs it contains.
+
+<#Include Label="NrET4ValentGraphs">
+
+<#Include Label="ET4ValentGraphId">
+
+<#Include Label="SetET4ValentGraphProps">
 
 </Section>
 

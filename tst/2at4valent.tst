@@ -18,24 +18,24 @@ gap> AT_4VALENT_ORDER_MAX;
 gap> Maximum(2AT_4VALENT_NUMBERS);
 11
 
-# IdOf2AT4ValentGraph
+# 2AT4ValentGraphId
 gap> gamma:=CompleteDigraph(5);;
-gap> IdOf2AT4ValentGraph(gamma);
+gap> 2AT4ValentGraphId(gamma);
 1
 gap> gamma:=2AT4ValentGraph(1920,10);;
-gap> IdOf2AT4ValentGraph(gamma);
+gap> 2AT4ValentGraphId(gamma);
 10
 
 # Set2AT4ValentGraphPropsNC
 gap> gamma:=2AT4ValentGraph(1920,10);;
 gap> Set2AT4ValentGraphPropsNC(gamma,1920,10);
-gap> IdOf2AT4ValentGraph(gamma);
+gap> 2AT4ValentGraphId(gamma);
 10
 
 # Set2AT4ValentGraphProps
 gap> gamma:=2AT4ValentGraph(1920,5);;
 gap> Set2AT4ValentGraphProps(gamma);
-gap> IdOf2AT4ValentGraph(gamma);
+gap> 2AT4ValentGraphId(gamma);
 5
 
 # Nr2AT4ValentGraphs
@@ -53,8 +53,8 @@ gap> gammas:=All2AT4ValentGraphs(1920);;
 gap> Length(gammas);
 11
 
-# IteratorOf2AT4ValentGraphs
-gap> cnt:=0;; iter:=IteratorOf2AT4ValentGraphs(1920);;
+# 2AT4ValentGraphIterator
+gap> cnt:=0;; iter:=2AT4ValentGraphIterator(1920);;
 gap> for gamma in iter do
 > if HasSolvableAutGroup(gamma) then
 > cnt:=cnt+1;

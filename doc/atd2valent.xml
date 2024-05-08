@@ -7,35 +7,13 @@ this package contains all arc-transitive 2-valent connected asymmetric digraphs
 on up to 1000 vertices. For information and references about these digraphs, see 
 <Cite Key="PSV_2013a"/>.
 <P/>
-Let <M>\Gamma</M> be a digraph. Then, <M>\Gamma</M> is <E>asymmetric</E> if
-it has no arcs for which the opposite arc is also in <M>\Gamma</M>, and is 
+Let <M>\Gamma</M> be a digraph. Then <M>\Gamma</M> is <E>asymmetric</E> if
+it has no arcs for which the reverse arc is also in <M>\Gamma</M>, and is 
 <E>connected</E> if the underlying graph of <M>\Gamma</M> is connected. The digraph
 <M>\Gamma</M> is <E>arc-transitive</E> if the automorphism group of 
 <M>\Gamma</M> acts transitively on the arcs of <M>\Gamma</M>. Further, the 
 digraph <M>\Gamma</M> is <M>2</M><E>-valent</E> if each vertex of <M>\Gamma</M>
 has 2 in-neighbours and 2 out-neighbours.
-
-<Section Label="atd 2-valent stored values">
-<Heading>Global variables for the arc-transitive 2-valent digraph library</Heading>
-
-In this Section we introduce functions and variables which give information
-about the arc-transitive 2-valent digraph library and the graphs stored within.
-
-<#Include Label="ATD_2VALENT_ORDER_MAX">
-
-<#Include Label="ATD_2VALENT_NUMBERS">
-
-<#Include Label="ATD_2VALENT_INFO">
-
-<#Include Label="NrAT2ValentDigraphs">
-
-<#Include Label="IdOfAT2ValentDigraph">
-
-<#Include Label="SetAT2ValentDigraphPropsNC">
-
-<#Include Label="SetAT2ValentDigraphProps">
-
-</Section>
 
 <Section Label="Accessing the atd 2-valent graphs">
 <Heading>Accessing the arc-transitive 2-valent digraphs</Heading>
@@ -47,17 +25,76 @@ vertex-transitive graphs stored in the &GRSYLI; package.
 
 <#Include Label="AllAT2ValentDigraphs">
 
-<#Include Label="IteratorOfAT2ValentDigraphs">
+<#Include Label="AT2ValentDigraphIterator">
 
 </Section>
 
-<Section Label="Properties and attributes atd2valent">
-<Heading>Properties and attributes of the arc-transitive 2-valent graphs</Heading>
+<Section Label="atd 2-valent library info">
+<Heading>Properties of the arc-transitive 2-valent digraphs and library</Heading>
 
-In this Section we give the properties and attributes of the arc-transitive 
-2-valent graphs which are stored in this library.
+In this Section we give the functions which give information about the 
+arc-transitive 2-valent digraph library, and the properties and attributes of 
+the graphs it contains.
 
-<#Include Label="IsSelfOppositeDigraph">
+<Subsection Label="Precomputed data atd2">
+<Heading>Precomputed attributes of the arc-transitive 2-valent digraphs</Heading>
+
+For a given arc-transitive 2-valent digraph <M>\Gamma</M> stored in this package, 
+there are several precomputed attributes stored in the &GRSYLI; package. These 
+include the following:
+
+<List>
+  <Item>The self-reverseness of <M>\Gamma</M> 
+        (<Ref Prop="IsSelfReverseDigraph"/>).</Item>
+  <Item>The index of the reverse graph of <M>\Gamma</M> 
+        (<Ref Attr="AT2ValentReverseDigraphId"/>).</Item>
+  <Item>The arc-transitiveness of the underlying graph of <M>\Gamma</M> 
+        (<Ref Prop="HasATUnderlyingGraph"/>).</Item>
+  <Item>The underlying graph of <M>\Gamma</M>. This is a string giving 
+        the position of the underlying graph in one of the collections of graphs 
+        found in this package 
+        (<Ref Attr="NameOfUnderlyingGraph"/>).</Item>
+  <Item>The maximum <M>s</M> such that <M>\Gamma</M> is 
+        <M>s</M>-arc-transitive 
+        (<Ref Attr="MaximumArcTransitiveness"/>).</Item>   
+  <Item>The abelian-ness of a vertex stabiliser of <M>\Gamma</M> 
+        (<Ref Prop="HasAbelianVertexStabilizer"/>).</Item>
+  <Item><M>|T_v:G_v|</M> of a vertex of <M>\Gamma</M> 
+        (<Ref Attr="StabIndexMinATUnd"/>).</Item>
+  <Item><M>|A_v:G_v|</M> of a vertex of <M>\Gamma</M> 
+        (<Ref Attr="StabIndexUnd"/>).</Item>
+  <Item>The solvability of the automorphism group of <M>\Gamma</M>
+         (<Ref Prop="HasSolvableAutGroup"/>).</Item>
+  <Item>The radius of <M>\Gamma</M> 
+        (<Ref Attr="AlterCycleRadius"/>).</Item>
+  <Item>The attachment number of <M>\Gamma</M> 
+        (<Ref Attr="AlterCycleAttachmentNo"/>).</Item>
+  <Item>The attachment type of <M>\Gamma</M> 
+        (<Ref Attr="AlterCycleAttachmentType"/>).</Item>
+  <Item>The number of alternating cycles in <M>\Gamma</M> 
+        (<Ref Attr="NrAlterCycles"/>).</Item>
+  <Item>The alter-exponent of <M>\Gamma</M> 
+        (<Ref Attr="AlterExponent"/>).</Item>
+  <Item>The alter-perimeter of <M>\Gamma</M> 
+        (<Ref Attr="AlterPerimeter"/>).</Item>
+  <Item>The alter-sequence of <M>\Gamma</M> 
+        (<Ref Attr="AlterSequence"/>).</Item>
+  <Item>The generalised wreath digraph-ness of <M>\Gamma</M> 
+        (<Ref Prop="IsGeneralizedWreathDigraph"/>).</Item>
+</List>
+
+</Subsection>
+
+Now we introduce functions which are used to find information about
+the library and each of the graphs it stores.
+
+<#Include Label="NrAT2ValentDigraphs">
+
+<#Include Label="AT2ValentDigraphId">
+
+<#Include Label="SetAT2ValentDigraphProps">
+
+<#Include Label="IsSelfReverseDigraph">
 
 <#Include Label="HasATUnderlyingGraph">
 
@@ -65,7 +102,7 @@ In this Section we give the properties and attributes of the arc-transitive
 
 <#Include Label="IsGeneralizedWreathDigraph">
 
-<#Include Label="IdOfOppositeDigraph">
+<#Include Label="AT2ValentReverseDigraphId">
 
 <#Include Label="NameOfUnderlyingGraph">
 

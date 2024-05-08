@@ -25,14 +25,14 @@ vertex-transitive graphs stored in the &GRSYLI; package.
 
 <#Include Label="AllCubicVTGraphs">
 
-<#Include Label="IteratorOfCubicVTGraphs">
+<#Include Label="CubicVTGraphIterator">
 
 </Section>
 
 <Section Label="cvt library info">
 <Heading>Properties of the cubic vertex-transitive graphs and library</Heading>
 
-In this Section we give the functions which give information abuot the cubic
+In this Section we give the functions which give information about the cubic
 vertex-transitive graphs library, and the properties and attributes of the 
 graphs it contains.
 
@@ -51,11 +51,11 @@ include the following:
 <Item>The bipartiteness of <M>\Gamma</M> 
       (<Ref BookName="Digraphs" Attr="IsBipartiteDigraph"/>).</Item>
 <Item>The Cayleyness of <M>\Gamma</M>
-      (<Ref Prop="IsCayleyDigraphCVT"/>).</Item>
+      (<Ref Prop="IsCayleyGraph"/>).</Item>
 <Item>The arc-transitiveness of <M>\Gamma</M>
       (<Ref Prop="IsArcTransitiveDigraph"/>).</Item>   
 <Item>The property of <M>\Gamma</M> being isomorphic to a a split 
-      Praeger-Xu graph (<Ref Prop="IsSPXDigraphCVT"/>).</Item>
+      Praeger-Xu graph (<Ref Prop="IsSplitPraegerXuGraph"/>).</Item>
 <Item>The solvability of the automorphism group of <M>\Gamma</M>
       (<Ref Prop="HasSolvableAutGroup"/>).</Item>
 </List>
@@ -67,7 +67,7 @@ the library and each of the graphs it stores.
 
 <#Include Label="NrCubicVTGraphs">
 
-<#Include Label="IdOfCubicVTGraph">
+<#Include Label="CubicVTGraphId">
 
 <#Include Label="SetCubicVTGraphProps">
 
@@ -75,11 +75,11 @@ the library and each of the graphs it stores.
 
 <#Include Label="IsCubicDigraph">
 
-<#Include Label="IsCayleyDigraphCVT">
+<#Include Label="IsCayleyGraph">
 
 <#Include Label="IsArcTransitiveDigraph">
 
-<#Include Label="IsSPXDigraphCVT">
+<#Include Label="IsSplitPraegerXuGraph">
 
 <#Include Label="HasSolvableAutGroup">
 

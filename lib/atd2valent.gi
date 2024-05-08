@@ -28,13 +28,13 @@ end );
 
 ################################################################################
 ##
-#F  IdOfAT2ValentDigraph( <digraph> )
+#F  AT2ValentDigraphId( <digraph> )
 ##  
-InstallMethod(IdOfAT2ValentDigraph, "for a digraph", [IsDigraph],
+InstallMethod(AT2ValentDigraphId, "for a digraph", [IsDigraph],
 function(gamma)
   local n, iter, cnt, delta;
   if not IsDigraph(gamma) then
-    Error("usage: IdOfAT2ValentDigraph( <gamma> ), where <gamma> is a digraph");
+    Error("usage: AT2ValentDigraphId( <gamma> ), where <gamma> is a digraph");
   fi;
 
   n:=DigraphNrVertices(gamma);
@@ -51,7 +51,7 @@ function(gamma)
     return fail;
   fi;
 
-  iter:=IteratorOfAT2ValentDigraphs(n);
+  iter:=AT2ValentDigraphIterator(n);
   cnt:=0;
   for delta in iter do
     cnt:=cnt+1;
@@ -84,14 +84,14 @@ function(gamma,n,i)
   
   rc:=ATD_2VALENT_INFO[n,i];
   # Set all Props and attributes for this record (Id is already set)  
-  SetIdOfAT2ValentDigraph(gamma,i);
-  SetIsSelfOppositeDigraph(gamma,rc[1]);
+  SetAT2ValentDigraphId(gamma,i);
+  SetIsSelfReverseDigraph(gamma,rc[1]);
   SetHasATUnderlyingGraph(gamma,rc[3]);
   SetHasAbelianVertexStabilizer(gamma,rc[6]);
   SetHasSolvableAutGroup(gamma,rc[9]);
   SetIsGeneralizedWreathDigraph(gamma,rc[17]);
 
-  SetIdOfOppositeDigraph(gamma,rc[2]);
+  SetAT2ValentReverseDigraphId(gamma,rc[2]);
   SetNameOfUnderlyingGraph(gamma,rc[4]);
   SetMaximumArcTransitiveness(gamma,rc[5]);
   SetStabIndexMinATUnd(gamma,rc[7]);
@@ -112,7 +112,7 @@ function(gamma,n,i)
   # Consider setting both in this function (for loop), or another function on 
   # top with depth input
   opp:=AT2ValentDigraph(n,rc[2],false);
-  SetIdOfAT2ValentDigraph(opp,rc[2]);
+  SetAT2ValentDigraphId(opp,rc[2]);
   SetDigraphReverseAttr(gamma,opp);
 
   str:=SplitString(rc[4],"()[];");
@@ -140,7 +140,7 @@ InstallGlobalFunction(SetAT2ValentDigraphProps,
 function(gamma)
   local idx;
 
-  idx:=IdOfAT2ValentDigraph(gamma);
+  idx:=AT2ValentDigraphId(gamma);
 
   if idx<>fail then
     SetAT2ValentDigraphPropsNC(gamma,DigraphNrVertices(gamma),idx);
@@ -242,9 +242,9 @@ end );
 
 #############################################################################
 ##
-#F  IteratorOfAT2ValentDigraphs( <integer> )
+#F  AT2ValentDigraphIterator( <integer> )
 ##  
-InstallGlobalFunction(IteratorOfAT2ValentDigraphs,
+InstallGlobalFunction(AT2ValentDigraphIterator,
 function(args...)
   local n, data, filename, decoder, file, record;
 
@@ -258,7 +258,7 @@ function(args...)
     data:=args[2];
   fi;
   if not (IsPosInt(n) and IsBool(data)) then
-    Error("usage: IteratorOfAT2ValentDigraphs( <n>[, <data>] ), where <n> is a \
+    Error("usage: AT2ValentDigraphIterator( <n>[, <data>] ), where <n> is a \
                   positive integer and <data> is a boolean");
   fi;
 
@@ -325,9 +325,9 @@ end );
 
 #############################################################################
 ##
-#P  IsSelfOppositeDigraph( <digraph> )
+#P  IsSelfReverseDigraph( <digraph> )
 ##  
-InstallMethod(IsSelfOppositeDigraph, "for a digraph", [IsDigraph],
+InstallMethod(IsSelfReverseDigraph, "for a digraph", [IsDigraph],
 function(gamma)
   return IsIsomorphicDigraph(gamma,DigraphReverse(gamma));
 end );

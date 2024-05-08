@@ -9,12 +9,12 @@ SetPackageInfo( rec(
   PackageName := "GrSyLi",
   Subtitle := "GRaphs with SYmmetries LIbrary",
   Version := "0.1",
-  Date := "18/01/2024",
+  Date := "25/05/2024",
   License := "GPL-2.0-or-later",
 
 ##  <#GAPDoc Label="PKGVERSIONDATA">
 ##  <!ENTITY VERSION "0.1">
-##  <!ENTITY RELEASEDATE "1 January 2024">
+##  <!ENTITY RELEASEDATE "25 May 2024">
 ##  <!ENTITY PKGWWWHOME "https://rhysje00.github.io/grsyli/">
 ##  <#/GAPDoc>
 

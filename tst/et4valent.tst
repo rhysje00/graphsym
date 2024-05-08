@@ -18,24 +18,24 @@ gap> ET_4VALENT_ORDER_MAX;
 gap> Maximum(ET_4VALENT_NUMBERS);
 664
 
-# IdOfET4ValentGraph
+# ET4ValentGraphId
 gap> gamma:=CompleteDigraph(5);;
-gap> IdOfET4ValentGraph(gamma);
+gap> ET4ValentGraphId(gamma);
 1
 gap> gamma:=ET4ValentGraph(512,40);;
-gap> IdOfET4ValentGraph(gamma);
+gap> ET4ValentGraphId(gamma);
 40
 
 # SetET4ValentGraphPropsNC
 gap> gamma:=ET4ValentGraph(512,40);;
 gap> SetET4ValentGraphPropsNC(gamma,512,40);
-gap> IdOfET4ValentGraph(gamma);
+gap> ET4ValentGraphId(gamma);
 40
 
 # SetET4ValentGraphProps
 gap> gamma:=ET4ValentGraph(512,40);;
 gap> SetET4ValentGraphProps(gamma);
-gap> IdOfET4ValentGraph(gamma);
+gap> ET4ValentGraphId(gamma);
 40
 
 # NrET4ValentGraphs
@@ -53,8 +53,8 @@ gap> gammas:=AllET4ValentGraphs(400);;
 gap> Length(gammas);
 107
 
-# IteratorOfET4ValentGraphs
-gap> cnt:=0;; iter:=IteratorOfET4ValentGraphs(300);;
+# ET4ValentGraphIterator
+gap> cnt:=0;; iter:=ET4ValentGraphIterator(300);;
 gap> for gamma in iter do
 > if HasSolvableAutGroup(gamma) then
 > cnt:=cnt+1;

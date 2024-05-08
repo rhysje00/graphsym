@@ -71,13 +71,13 @@ DeclareGlobalVariable("LAT_34VALENT_NUMBERS","Number of arc-transitive 2-valent 
 
 ################################################################################
 ##
-#A  IdOfLAT34ValentGraph( <digraph> )
+#A  LAT34ValentGraphId( <digraph> )
 ##  
-##  <#GAPDoc Label="IdOfLAT34ValentGraph">
+##  <#GAPDoc Label="LAT34ValentGraphId">
 ##  <ManSection>
-##  <Attr Name="IdOfLAT34ValentGraph"
+##  <Attr Name="LAT34ValentGraphId"
 ##   Arg='gamma'/>
-##  <Returns>An integer</Returns>
+##  <Returns>An integer.</Returns>
 ##	
 ##  <Description>
 ##  Given a digraph <A>gamma</A>, if <A>gamma</A> is isomorphic to a graph 
@@ -88,11 +88,11 @@ DeclareGlobalVariable("LAT_34VALENT_NUMBERS","Number of arc-transitive 2-valent 
 ##  at which the graph is stored relative to its number of vertices. 
 ##  In particular, if <C>gamma</C> has <C>n</C> vertices, then <C>gamma</C> will
 ##   be the <C>i</C>th entry of <C>AllLAT34ValentGraphs(n)</C> and the <C>i</C>th 
-##  graph found when iterating through <C>IteratorOfLAT34ValentGraphs(n)</C>.
+##  graph found when iterating through <C>LAT34ValentGraphIterator(n)</C>.
 ##    <Example>
 ##      <![CDATA[
 ##gap> gamma:=LAT34ValentGraph(896,20);;
-##gap> IdOfLAT34ValentGraph(gamma);
+##gap> LAT34ValentGraphId(gamma);
 ##20
 ##      ]]>
 ##    </Example>
@@ -100,7 +100,7 @@ DeclareGlobalVariable("LAT_34VALENT_NUMBERS","Number of arc-transitive 2-valent 
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-DeclareAttribute( "IdOfLAT34ValentGraph", IsDigraph );
+DeclareAttribute( "LAT34ValentGraphId", IsDigraph );
 
 ################################################################################
 ##
@@ -123,7 +123,7 @@ DeclareAttribute( "IdOfLAT34ValentGraph", IsDigraph );
 ##      <![CDATA[
 ##gap> gamma:=LAT34ValentGraph(896,20);;
 ##gap> SetLAT34ValentGraphPropsNC(gamma,896,20);
-##gap> IdOfLAT34ValentGraph(gamma);
+##gap> LAT34ValentGraphId(gamma);
 ##20
 ##      ]]>
 ##    </Example>
@@ -146,12 +146,15 @@ DeclareGlobalFunction( "SetLAT34ValentGraphPropsNC" );
 ##  <Description>
 ##  Given a digraph <A>gamma</A>, if this graph is isomorphic to a graph 
 ##  stored in this library, this function sets the properties and 
-##  attributes of <A>gamma</A> precomputed in this package.
+##  attributes of <A>gamma</A> precomputed in this package. This includes:
+##  <List>
+##  <Item><Ref Attr="LAT34ValentGraphId"/>.</Item>
+##  </List>  
 ##    <Example>
 ##      <![CDATA[
 ##gap> gamma:=LAT34ValentGraph(896,20);;
 ##gap> SetLAT34ValentGraphProps(gamma);
-##gap> IdOfLAT34ValentGraph(gamma);
+##gap> LAT34ValentGraphId(gamma);
 ##20
 ##      ]]>
 ##    </Example>
@@ -172,7 +175,7 @@ DeclareGlobalFunction( "SetLAT34ValentGraphProps" );
 ##   Arg='n'/>
 ##  <Func Name="NumberLAT34ValentGraphs"
 ##   Arg='n' Label="long synonym"/>
-##  <Returns>An integer</Returns>
+##  <Returns>An integer.</Returns>
 ##	
 ##  <Description>
 ##  Given a positive integer <A>n</A>, this function returns the number of 
@@ -243,7 +246,7 @@ DeclareGlobalFunction( "LAT34ValentGraph" );
 ##  <ManSection>
 ##  <Func Name="AllLAT34ValentGraphs"
 ##   Arg='n[, data]'/>
-##  <Returns>A list</Returns>
+##  <Returns>A list.</Returns>
 ##
 ##  <Description>
 ##  Given a positive integer <A>n</A>, this function returns a list containing
@@ -271,13 +274,13 @@ DeclareGlobalFunction( "AllLAT34ValentGraphs" );
 
 #############################################################################
 ##
-#F  IteratorOfLAT34ValentGraphs( <integer> )
+#F  LAT34ValentGraphIterator( <integer> )
 ##  
-##  <#GAPDoc Label="IteratorOfLAT34ValentGraphs">
+##  <#GAPDoc Label="LAT34ValentGraphIterator">
 ##  <ManSection>
-##  <Func Name="IteratorOfLAT34ValentGraphs"
-##   Arg='n'/>
-##  <Returns>A list</Returns>
+##  <Func Name="LAT34ValentGraphIterator"
+##   Arg='n[, data]'/>
+##  <Returns>An iterator.</Returns>
 ##
 ##  <Description>
 ##  Given a positive integer <A>n</A>, this function returns an iterator over
@@ -292,7 +295,7 @@ DeclareGlobalFunction( "AllLAT34ValentGraphs" );
 ##  or attributes are given to the resulting graphs.
 ##    <Example>
 ##      <![CDATA[
-##gap> cnt:=0;; iter:=IteratorOfLAT34ValentGraphs(224);;
+##gap> cnt:=0;; iter:=LAT34ValentGraphIterator(224);;
 ##gap> for gamma in iter do
 ##> if HasSolvableAutGroup(gamma) then
 ##> cnt:=cnt+1;
@@ -306,7 +309,7 @@ DeclareGlobalFunction( "AllLAT34ValentGraphs" );
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-DeclareGlobalFunction( "IteratorOfLAT34ValentGraphs" );
+DeclareGlobalFunction( "LAT34ValentGraphIterator" );
 
 #############################################################################
 ##

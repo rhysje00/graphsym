@@ -89,11 +89,11 @@ DeclareGlobalVariable("CVT_NUMBER_GRAPHS","Number of cubic v-t graphs stored");
 ##    <Item>The bipartiteness of <M>\Gamma</M> 
 ##          (<Ref BookName="Digraphs" Attr="IsBipartiteDigraph"/>).</Item>
 ##    <Item>The Cayleyness of <M>\Gamma</M>
-##          (<Ref Prop="IsCayleyDigraphCVT"/>).</Item>
+##          (<Ref Prop="IsCayleyGraph"/>).</Item>
 ##    <Item>The arc-transitiveness of <M>\Gamma</M>
 ##          (<Ref Prop="IsArcTransitiveDigraph"/>).</Item>   
 ##    <Item>The property of <M>\Gamma</M> being isomorphic to a a split 
-##          Praeger-Xu graph (<Ref Prop="IsSPXDigraphCVT"/>).</Item>
+##          Praeger-Xu graph (<Ref Prop="IsSplitPraegerXuGraph"/>).</Item>
 ##    <Item>The sovlability of the automorphism group of <M>\Gamma</M>
 ##          (<Ref Prop="HasSolvableAutGroup"/>).</Item>
 ##    <Item>TODO <C>("|Aut_v|_(2)")</C> 
@@ -118,13 +118,13 @@ DeclareGlobalVariable( "CVT_GRAPH_INFO" );
 
 ################################################################################
 ##
-#A  IdOfCubicVTGraph( <digraph> )
+#A  CubicVTGraphId( <digraph> )
 ##  
-##  <#GAPDoc Label="IdOfCubicVTGraph">
+##  <#GAPDoc Label="CubicVTGraphId">
 ##  <ManSection>
-##  <Attr Name="IdOfCubicVTGraph"
+##  <Attr Name="CubicVTGraphId"
 ##   Arg='gamma'/>
-##  <Returns>An integer</Returns>
+##  <Returns>An integer.</Returns>
 ##	
 ##  <Description>
 ##  Given a digraph <A>gamma</A>, if <A>gamma</A> is isomorphic to a graph 
@@ -135,14 +135,14 @@ DeclareGlobalVariable( "CVT_GRAPH_INFO" );
 ##  at which the graph is stored relative to its number of vertices. 
 ##  In particular, if <C>gamma</C> has <C>n</C> vertices, then <C>gamma</C> will
 ##   be the <C>i</C>th entry of <C>AllCubicVTGraphs(n)</C> and the <C>i</C>th 
-##  graph found when iterating through <C>IteratorOfCubicVTGraphs(n)</C>.
+##  graph found when iterating through <C>CubicVTGraphIterator(n)</C>.
 ##    <Example>
 ##      <![CDATA[
 ##gap> gamma:=CubicVTGraph(8,2);;
-##gap> IdOfCubicVTGraph(gamma);
+##gap> CubicVTGraphId(gamma);
 ##2
 ##gap> gamma:=CycleDigraph(8);;
-##gap> IdOfCubicVTGraph(gamma);
+##gap> CubicVTGraphId(gamma);
 ##fail
 ##      ]]>
 ##    </Example>
@@ -150,7 +150,7 @@ DeclareGlobalVariable( "CVT_GRAPH_INFO" );
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-DeclareAttribute( "IdOfCubicVTGraph", IsDigraph );
+DeclareAttribute( "CubicVTGraphId", IsDigraph );
 
 ################################################################################
 ##
@@ -172,7 +172,7 @@ DeclareAttribute( "IdOfCubicVTGraph", IsDigraph );
 ##      <![CDATA[
 ##gap> gamma:=CubicVTGraph(50,4);;
 ##gap> SetCubicVTGraphPropsNC(gamma,50,4);
-##gap> IsSPXDigraphCVT(gamma);
+##gap> IsSplitPraegerXuGraph(gamma);
 ##false
 ##      ]]>
 ##    </Example>
@@ -200,6 +200,7 @@ DeclareGlobalFunction( "SetCubicVTGraphPropsNC" );
 ##  <Item> All properties and attributes found in Subsection
 ##         <Ref Sect="Precomputed data cvt"/>.
 ##  </Item>
+##  <Item><Ref Attr="CubicVTGraphId"/>.</Item>
 ##  <Item> <Ref Prop="IsCubicDigraph"/>.</Item>
 ##  <Item> <Ref BookName="Digraphs" Prop="IsVertexTransitive"/>.</Item>
 ##  </List>
@@ -263,7 +264,7 @@ DeclareGlobalFunction( "SmallCubicVTGraphsInfo" );
 ##   Arg='n'/>
 ##  <Func Name="NumberCubicVTGraphs"
 ##   Arg='n' Label="long synonym"/>
-##  <Returns>An integer</Returns>
+##  <Returns>An integer.</Returns>
 ##	
 ##  <Description>
 ##  Given a positive integer <A>n</A>, this function returns the number of 
@@ -334,7 +335,7 @@ DeclareGlobalFunction( "CubicVTGraph" );
 ##  <ManSection>
 ##  <Func Name="AllCubicVTGraphs"
 ##   Arg='n[, data]'/>
-##  <Returns>A list</Returns>
+##  <Returns>A list.</Returns>
 ##
 ##  <Description>
 ##  Given a positive integer <A>n</A>, this function returns a list containing
@@ -350,10 +351,10 @@ DeclareGlobalFunction( "CubicVTGraph" );
 ##    <Example>
 ##      <![CDATA[
 ##gap> gammas:=AllCubicVTGraphs(50,true);;
-##gap> List(gammas,IsSPXDigraphCVT);
+##gap> List(gammas,IsSplitPraegerXuGraph);
 ##[ false, false, false, false, false, false, false, false, false ]
 ##gap> gammas:=AllCubicVTGraphs(100,true);;
-##gap> ForAny(gammas,IsSPXDigraphCVT);
+##gap> ForAny(gammas,IsSplitPraegerXuGraph);
 ##true
 ##      ]]>
 ##    </Example>
@@ -365,11 +366,11 @@ DeclareGlobalFunction( "AllCubicVTGraphs" );
 
 #############################################################################
 ##
-#F  IteratorOfCubicVTGraphs( <integer>[, <bool>] )
+#F  CubicVTGraphIterator( <integer>[, <bool>] )
 ##  
-##  <#GAPDoc Label="IteratorOfCubicVTGraphs">
+##  <#GAPDoc Label="CubicVTGraphIterator">
 ##  <ManSection>
-##  <Func Name="IteratorOfCubicVTGraphs"
+##  <Func Name="CubicVTGraphIterator"
 ##   Arg='n[, data]'/>
 ##  <Returns>A list</Returns>
 ##
@@ -386,10 +387,10 @@ DeclareGlobalFunction( "AllCubicVTGraphs" );
 ##  or attributes are given to the resulting graphs.
 ##    <Example>
 ##      <![CDATA[
-##gap> cnt:=0;; iter:=IteratorOfCubicVTGraphs(1152,true);
+##gap> cnt:=0;; iter:=CubicVTGraphIterator(1152,true);
 ##<iterator>
 ##gap> for gamma in iter do
-##> if IsSPXDigraphCVT(gamma) then cnt:=cnt+1; fi;
+##> if IsSplitPraegerXuGraph(gamma) then cnt:=cnt+1; fi;
 ##> od;
 ##gap> cnt;
 ##6
@@ -399,7 +400,7 @@ DeclareGlobalFunction( "AllCubicVTGraphs" );
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-DeclareGlobalFunction( "IteratorOfCubicVTGraphs" );
+DeclareGlobalFunction( "CubicVTGraphIterator" );
 
 ######################
 ##    PROPERTIES    ##
@@ -434,16 +435,16 @@ DeclareProperty("IsCubicDigraph", IsDigraph);
 
 ################################################################################
 ##
-#P  IsCayleyDigraphCVT( <digraph> )
+#P  IsCayleyGraph( <digraph> )
 ##  
-##  <#GAPDoc Label="IsCayleyDigraphCVT">
+##  <#GAPDoc Label="IsCayleyGraph">
 ##  <ManSection>
-##  <Prop Name="IsCayleyDigraphCVT"
+##  <Prop Name="IsCayleyGraph"
 ##   Arg='gamma'/>
 ##  <Returns><K>true</K> or <K>false</K>.</Returns>
 ##	
 ##  <Description>
-##  Given a cubic vertex-transitive graph <A>gamma</A> from in the &GRSYLI; 
+##  Given a cubic vertex-transitive graph <A>gamma</A> from the &GRSYLI; 
 ##  package such that its properties and attributes have been assigned, 
 ##  this function returns <K>true</K> if <A>gamma</A> is a Cayley (di)graph 
 ##  and <K>false</K> otherwise.
@@ -452,16 +453,16 @@ DeclareProperty("IsCubicDigraph", IsDigraph);
 ##  be found in the &GRSYLI; package can be assigned using the function 
 ##  <Ref Func="SetCubicVTGraphProps"/>, or loaded automatically by the functions
 ##  <Ref Func="CubicVTGraph"/>, <Ref Func="AllCubicVTGraphs"/> or 
-##  <Ref Func="IteratorOfCubicVTGraphs"/>. This property is not equivalent to
+##  <Ref Func="CubicVTGraphIterator"/>. This property is not equivalent to
 ##  <Ref BookName="Digraphs" Prop="IsCayleyDigraph"/>, as a digraph with this 
 ##  property has associated group and generators.
 ##    <Example>
 ##      <![CDATA[
 ##gap> gamma:=CubicVTGraph(50,2,true);;
-##gap> IsCayleyDigraphCVT(gamma);
+##gap> IsCayleyGraph(gamma);
 ##true
 ##gap> gamma:=CubicVTGraph(50,9,true);;
-##gap> IsCayleyDigraphCVT(gamma);
+##gap> IsCayleyGraph(gamma);
 ##false
 ##      ]]>
 ##    </Example>
@@ -469,7 +470,7 @@ DeclareProperty("IsCubicDigraph", IsDigraph);
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-DeclareProperty("IsCayleyDigraphCVT", IsDigraph);
+DeclareProperty("IsCayleyGraph", IsDigraph);
 
 ################################################################################
 ##
@@ -503,16 +504,16 @@ DeclareSynonymAttr("IsArcTransitiveDigraph", IsEdgeTransitive);
 
 ################################################################################
 ##
-#P  IsSPXDigraphCVT( <digraph> )
+#P  IsSplitPraegerXuGraph( <digraph> )
 ##  
-##  <#GAPDoc Label="IsSPXDigraphCVT">
+##  <#GAPDoc Label="IsSplitPraegerXuGraph">
 ##  <ManSection>
-##  <Prop Name="IsSPXDigraphCVT"
+##  <Prop Name="IsSplitPraegerXuGraph"
 ##   Arg='gamma'/>
 ##  <Returns><K>true</K> or <K>false</K>.</Returns>
 ##	
 ##  <Description>
-##  Given a cubic vertex-transitive graph <A>gamma</A> from in the &GRSYLI; 
+##  Given a cubic vertex-transitive graph <A>gamma</A> from the &GRSYLI; 
 ##  package such that its properties and attributes have been assigned, 
 ##  this function returns <K>true</K> if <A>gamma</A> is a split Praeger-Xu 
 ##  graph and <K>false</K> otherwise.
@@ -521,14 +522,14 @@ DeclareSynonymAttr("IsArcTransitiveDigraph", IsEdgeTransitive);
 ##  be found in the &GRSYLI; package can be assigned using the function 
 ##  <Ref Func="SetCubicVTGraphProps"/>, or loaded automatically by the functions
 ##  <Ref Func="CubicVTGraph"/>, <Ref Func="AllCubicVTGraphs"/> or 
-##  <Ref Func="IteratorOfCubicVTGraphs"/>.
+##  <Ref Func="CubicVTGraphIterator"/>.
 ##    <Example>
 ##      <![CDATA[
 ##gap> gamma:=CubicVTGraph(48,6,true);;
-##gap> IsSPXDigraphCVT(gamma);
+##gap> IsSplitPraegerXuGraph(gamma);
 ##false
 ##gap> gamma:=CubicVTGraph(48,7,true);;
-##gap> IsSPXDigraphCVT(gamma);
+##gap> IsSplitPraegerXuGraph(gamma);
 ##true
 ##      ]]>
 ##    </Example>
@@ -536,7 +537,7 @@ DeclareSynonymAttr("IsArcTransitiveDigraph", IsEdgeTransitive);
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-DeclareProperty("IsSPXDigraphCVT", IsDigraph);
+DeclareProperty("IsSplitPraegerXuGraph", IsDigraph);
 
 ################################################################################
 ##
@@ -582,7 +583,7 @@ DeclareProperty("HasSolvableAutGroup", IsDigraph);
 ##  <Returns>An integer.</Returns>
 ##	
 ##  <Description>
-##  Given a cubic vertex-transitive graph <A>gamma</A> from in the &GRSYLI; 
+##  Given a cubic vertex-transitive graph <A>gamma</A> from the &GRSYLI; 
 ##  package such that its properties and attributes have been assigned, 
 ##  this function returns the
 ##  TODO ?????
@@ -591,7 +592,7 @@ DeclareProperty("HasSolvableAutGroup", IsDigraph);
 ##  be found in the &GRSYLI; package can be assigned using the function 
 ##  <Ref Func="SetCubicVTGraphProps"/>, or loaded automatically by the functions
 ##  <Ref Func="CubicVTGraph"/>, <Ref Func="AllCubicVTGraphs"/> or 
-##  <Ref Func="IteratorOfCubicVTGraphs"/>.
+##  <Ref Func="CubicVTGraphIterator"/>.
 ##    <Example>
 ##      <![CDATA[
 ##gap> gamma:=CubicVTGraph(102,16,true);;

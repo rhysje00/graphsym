@@ -18,24 +18,24 @@ gap> AT_4VALENT_ORDER_MAX;
 gap> Maximum(AT_4VALENT_NUMBERS);
 280
 
-# IdOfAT4ValentGraph
+# AT4ValentGraphId
 gap> gamma:=CompleteDigraph(5);;
-gap> IdOfAT4ValentGraph(gamma);
+gap> AT4ValentGraphId(gamma);
 1
 gap> gamma:=AT4ValentGraph(50,2);;
-gap> IdOfAT4ValentGraph(gamma);
+gap> AT4ValentGraphId(gamma);
 2
 
 # SetAT4ValentGraphPropsNC
 gap> gamma:=AT4ValentGraph(50,2);;
 gap> SetAT4ValentGraphPropsNC(gamma,50,2);
-gap> IdOfAT4ValentGraph(gamma);
+gap> AT4ValentGraphId(gamma);
 2
 
 # SetAT4ValentGraphProps
 gap> gamma:=CompleteDigraph(5);;
 gap> SetAT4ValentGraphProps(gamma);
-gap> IdOfAT4ValentGraph(gamma);
+gap> AT4ValentGraphId(gamma);
 1
 
 # NrCubicVTGraphs
@@ -53,8 +53,8 @@ gap> gammas:=AllAT4ValentGraphs(640);;
 gap> Length(gammas);
 158
 
-# IteratorOfAT4ValentGraphs
-gap> cnt:=0;; iter:=IteratorOfAT4ValentGraphs(400);;
+# AT4ValentGraphIterator
+gap> cnt:=0;; iter:=AT4ValentGraphIterator(400);;
 gap> for gamma in iter do
 > if HasSolvableAutGroup(gamma) then
 > cnt:=cnt+1;

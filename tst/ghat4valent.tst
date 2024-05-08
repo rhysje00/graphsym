@@ -18,9 +18,9 @@ gap> GHAT_4VALENT_ORDER_MAX;
 gap> Maximum(GHAT_4VALENT_NUMBERS);
 596
 
-# IdOfGHAT4ValentGraph
+# GHAT4ValentGraphId
 gap> gamma:=GHAT4ValentGraph(768,20);;
-gap> IdOfGHAT4ValentGraph(gamma);
+gap> GHAT4ValentGraphId(gamma);
 20
 
 # SetGHAT4ValentGraphPropsNC
@@ -50,8 +50,8 @@ gap> gammas:=AllGHAT4ValentGraphs(600);;
 gap> Length(gammas);
 80
 
-# IteratorOfGHAT4ValentGraphs
-gap> cnt:=0;; iter:=IteratorOfGHAT4ValentGraphs(600);;
+# GHAT4ValentGraphIterator
+gap> cnt:=0;; iter:=GHAT4ValentGraphIterator(600);;
 gap> for gamma in iter do
 > if HasSolvableAutGroup(gamma) then
 > cnt:=cnt+1;

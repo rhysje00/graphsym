@@ -71,13 +71,13 @@ DeclareGlobalVariable("ET_4VALENT_NUMBERS","Number of arc-transitive 2-valent di
 
 ################################################################################
 ##
-#A  IdOfET4ValentGraph( <digraph> )
+#A  ET4ValentGraphId( <digraph> )
 ##  
-##  <#GAPDoc Label="IdOfET4ValentGraph">
+##  <#GAPDoc Label="ET4ValentGraphId">
 ##  <ManSection>
-##  <Attr Name="IdOfET4ValentGraph"
+##  <Attr Name="ET4ValentGraphId"
 ##   Arg='gamma'/>
-##  <Returns>An integer</Returns>
+##  <Returns>An integer.</Returns>
 ##	
 ##  <Description>
 ##  Given a digraph <A>gamma</A>, if <A>gamma</A> is isomorphic to a graph 
@@ -88,14 +88,14 @@ DeclareGlobalVariable("ET_4VALENT_NUMBERS","Number of arc-transitive 2-valent di
 ##  at which the graph is stored relative to its number of vertices. 
 ##  In particular, if <C>gamma</C> has <C>n</C> vertices, then <C>gamma</C> will
 ##   be the <C>i</C>th entry of <C>AllET4ValentGraphs(n)</C> and the <C>i</C>th 
-##  graph found when iterating through <C>IteratorOfET4ValentGraphs(n)</C>.
+##  graph found when iterating through <C>ET4ValentGraphIterator(n)</C>.
 ##    <Example>
 ##      <![CDATA[
 ##gap> gamma:=CompleteDigraph(5);;
-##gap> IdOfET4ValentGraph(gamma);
+##gap> ET4ValentGraphId(gamma);
 ##1
 ##gap> gamma:=ET4ValentGraph(512,40);;
-##gap> IdOfET4ValentGraph(gamma);
+##gap> ET4ValentGraphId(gamma);
 ##40
 ##      ]]>
 ##    </Example>
@@ -103,7 +103,7 @@ DeclareGlobalVariable("ET_4VALENT_NUMBERS","Number of arc-transitive 2-valent di
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-DeclareAttribute( "IdOfET4ValentGraph", IsDigraph );
+DeclareAttribute( "ET4ValentGraphId", IsDigraph );
 
 ################################################################################
 ##
@@ -126,7 +126,7 @@ DeclareAttribute( "IdOfET4ValentGraph", IsDigraph );
 ##      <![CDATA[
 ##gap> gamma:=ET4ValentGraph(512,40);;
 ##gap> SetET4ValentGraphPropsNC(gamma,512,40);
-##gap> IdOfET4ValentGraph(gamma);
+##gap> ET4ValentGraphId(gamma);
 ##40
 ##      ]]>
 ##    </Example>
@@ -149,12 +149,15 @@ DeclareGlobalFunction( "SetET4ValentGraphPropsNC" );
 ##  <Description>
 ##  Given a digraph <A>gamma</A>, if this graph is isomorphic to a graph 
 ##  stored in this library, this function sets the properties and 
-##  attributes of <A>gamma</A> precomputed in this package.
+##  attributes of <A>gamma</A> precomputed in this package. This includes:
+##  <List>
+##  <Item><Ref Attr="ET4ValentGraphId"/>.</Item>
+##  </List>  
 ##    <Example>
 ##      <![CDATA[
 ##gap> gamma:=ET4ValentGraph(512,40);;
 ##gap> SetET4ValentGraphProps(gamma);
-##gap> IdOfET4ValentGraph(gamma);
+##gap> ET4ValentGraphId(gamma);
 ##40
 ##      ]]>
 ##    </Example>
@@ -175,7 +178,7 @@ DeclareGlobalFunction( "SetET4ValentGraphProps" );
 ##   Arg='n'/>
 ##  <Func Name="NumberET4ValentGraphs"
 ##   Arg='n' Label="long synonym"/>
-##  <Returns>An integer</Returns>
+##  <Returns>An integer.</Returns>
 ##	
 ##  <Description>
 ##  Given a positive integer <A>n</A>, this function returns the number of 
@@ -246,7 +249,7 @@ DeclareGlobalFunction( "ET4ValentGraph" );
 ##  <ManSection>
 ##  <Func Name="AllET4ValentGraphs"
 ##   Arg='n[, data]'/>
-##  <Returns>A list</Returns>
+##  <Returns>A list.</Returns>
 ##
 ##  <Description>
 ##  Given a positive integer <A>n</A>, this function returns a list containing
@@ -274,13 +277,13 @@ DeclareGlobalFunction( "AllET4ValentGraphs" );
 
 #############################################################################
 ##
-#F  IteratorOfET4ValentGraphs( <integer> )
+#F  ET4ValentGraphIterator( <integer> )
 ##  
-##  <#GAPDoc Label="IteratorOfET4ValentGraphs">
+##  <#GAPDoc Label="ET4ValentGraphIterator">
 ##  <ManSection>
-##  <Func Name="IteratorOfET4ValentGraphs"
-##   Arg='n'/>
-##  <Returns>A list</Returns>
+##  <Func Name="ET4ValentGraphIterator"
+##   Arg='n[, data]'/>
+##  <Returns>An iterator.</Returns>
 ##
 ##  <Description>
 ##  Given a positive integer <A>n</A>, this function returns an iterator over
@@ -295,7 +298,7 @@ DeclareGlobalFunction( "AllET4ValentGraphs" );
 ##  or attributes are given to the resulting graphs.
 ##    <Example>
 ##      <![CDATA[
-##gap> cnt:=0;; iter:=IteratorOfET4ValentGraphs(400);;
+##gap> cnt:=0;; iter:=ET4ValentGraphIterator(400);;
 ##gap> for gamma in iter do
 ##> if HasSolvableAutGroup(gamma) then
 ##> cnt:=cnt+1;
@@ -309,7 +312,7 @@ DeclareGlobalFunction( "AllET4ValentGraphs" );
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-DeclareGlobalFunction( "IteratorOfET4ValentGraphs" );
+DeclareGlobalFunction( "ET4ValentGraphIterator" );
 
 #############################################################################
 ##
