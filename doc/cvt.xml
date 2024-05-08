@@ -14,29 +14,6 @@ edges). Then <M>\Gamma</M> is <E>cubic</E> (or <E>trivalent</E>, or
 The graph <M>\Gamma</M> is <E>vertex-transitive</E> if the automorphism group 
 of <M>\Gamma</M> acts transitively on the vertices of <M>\Gamma</M>.
 
-<Section Label="Precomputed data and global variables">
-<Heading>Global variables for the cubic vertex-transitive graph library</Heading>
-
-In this Section we introduce functions and variables which give information
-about the cubic vertex-transitive graph library and the graphs stored within.
-
-<#Include Label="CVT_ORDER_MAX">
-
-<#Include Label="CVT_NUMBER_GRAPHS">
-
-<#Include Label="CVT_GRAPH_INFO">
-
-<#Include Label="NrCubicVTGraphs">
-
-<#Include Label="IdOfCubicVTGraph">
-
-<#Include Label="SetCubicVTGraphPropsNC">
-
-<#Include Label="SetCubicVTGraphProps">
-
-<#Include Label="SmallCubicVTGraphsInfo">
-
-</Section>
 
 <Section Label="Accessing the cvt graphs">
 <Heading>Accessing the cubic vertex-transitive graphs</Heading>
@@ -52,38 +29,49 @@ vertex-transitive graphs stored in the &GRSYLI; package.
 
 </Section>
 
-<Section Label="Properties and attributes cvt">
-<Heading>Properties and attributes of the cubic vertex-transitive graphs</Heading>
+<Section Label="cvt library info">
+<Heading>Properties of the cubic vertex-transitive graphs and library</Heading>
 
-In this Section we give the properties and attributes of the cubic 
-vertex-transitive graphs which are stored in this library.
+In this Section we give the functions which give information abuot the cubic
+vertex-transitive graphs library, and the properties and attributes of the 
+graphs it contains.
 
-<Subsection Label="Properties from the Digraphs package">
-<Heading>Properties from the &DIGRAPHS; package</Heading>
+<Subsection Label="Precomputed data cvt">
+<Heading>Precomputed attributes of the cubic vertex-transitive graphs</Heading>
 
-A few of the properties we have precomputed for the graphs of this library 
-are already defined in the &DIGRAPHS; package. These are;
+For a given cubic vertex-transitive graph <M>\Gamma</M> stored in this package, 
+there are several precomputed attributes stored in the &GRSYLI; package. These 
+include the following:
 
 <List>
-<Item> Diameter, in the attribute 
-       <Ref BookName="digraphs" Attr="DigraphDiameter"/>. </Item>
-<Item> Girth, in the attribute 
-       <Ref BookName="digraphs" Attr="DigraphUndirectedGirth"/>. </Item>
-<Item> Bipartiteness, in the property 
-       <Ref BookName="digraphs" Prop="IsBipartiteDigraph"/>. </Item>
-<Item> Arc-transitivity, in the property 
-       <Ref BookName="digraphs" Prop="IsEdgeTransitive"/>. </Item>
+<Item>The diameter of <M>\Gamma</M> 
+      (<Ref BookName="Digraphs" Attr="DigraphDiameter"/>).</Item>
+<Item>The girth of the <M>\Gamma</M> 
+      (<Ref BookName="Digraphs" Attr="DigraphUndirectedGirth"/>).</Item>
+<Item>The bipartiteness of <M>\Gamma</M> 
+      (<Ref BookName="Digraphs" Attr="IsBipartiteDigraph"/>).</Item>
+<Item>The Cayleyness of <M>\Gamma</M>
+      (<Ref Prop="IsCayleyDigraphCVT"/>).</Item>
+<Item>The arc-transitiveness of <M>\Gamma</M>
+      (<Ref Prop="IsArcTransitiveDigraph"/>).</Item>   
+<Item>The property of <M>\Gamma</M> being isomorphic to a a split 
+      Praeger-Xu graph (<Ref Prop="IsSPXDigraphCVT"/>).</Item>
+<Item>The solvability of the automorphism group of <M>\Gamma</M>
+      (<Ref Prop="HasSolvableAutGroup"/>).</Item>
 </List>
-
-Whenever we wish to store these as &GAP; properties or attributes, we will use 
-the aforementioned &DIGRAPHS; functionality. We also give a synonym for 
-arc-transitivity, <Ref Prop="IsArcTransitiveDigraph"/>.  
 
 </Subsection>
 
-Now we introduce properties and attributes which have been 
-precomputed and stored in the &GRSYLI; package, and are not defined in the 
-functionality of the &DIGRAPHS; package.
+Now we introduce functions which are used to find information about
+the library and each of the graphs it stores.
+
+<#Include Label="NrCubicVTGraphs">
+
+<#Include Label="IdOfCubicVTGraph">
+
+<#Include Label="SetCubicVTGraphProps">
+
+<#Include Label="SmallCubicVTGraphsInfo">
 
 <#Include Label="IsCubicDigraph">
 
@@ -94,8 +82,6 @@ functionality of the &DIGRAPHS; package.
 <#Include Label="IsSPXDigraphCVT">
 
 <#Include Label="HasSolvableAutGroup">
-
-<#Include Label="SizeStabAut2CVT">
 
 </Section>
 

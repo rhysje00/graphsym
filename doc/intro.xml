@@ -46,6 +46,18 @@ Each of the above packages are part of the standard &GAP; distribution.
 
 </Section>
 
+<Section Label="build doc">
+<Heading>Building the documentation for &GRSYLI;</Heading>
+
+Once downloaded, you can build all package documentation by running 
+<C>gap path/to/grsyli/makedoc.g</C> from the command line. This will build a pdf 
+version of this manual and save it in the directory <C>path/to/grsyli/doc/</C>, 
+as well as provide the &GAP; help viewer with the content of the manual. 
+
+</Section>
+
+
+
 <Section Label="load">
 <Heading>Loading &GRSYLI;</Heading>
 

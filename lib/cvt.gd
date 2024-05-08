@@ -197,7 +197,8 @@ DeclareGlobalFunction( "SetCubicVTGraphPropsNC" );
 ##  stored in this library, this function sets the properties and 
 ##  attributes of <A>gamma</A> precomputed in this package. This includes
 ##  <List>
-##  <Item> All properties and attributes found in <Ref Var="CVT_GRAPH_INFO"/>.
+##  <Item> All properties and attributes found in Subsection
+##         <Ref Sect="Precomputed data cvt"/>.
 ##  </Item>
 ##  <Item> <Ref Prop="IsCubicDigraph"/>.</Item>
 ##  <Item> <Ref BookName="Digraphs" Prop="IsVertexTransitive"/>.</Item>
@@ -364,12 +365,12 @@ DeclareGlobalFunction( "AllCubicVTGraphs" );
 
 #############################################################################
 ##
-#F  IteratorOfCubicVTGraphs( <integer> )
+#F  IteratorOfCubicVTGraphs( <integer>[, <bool>] )
 ##  
 ##  <#GAPDoc Label="IteratorOfCubicVTGraphs">
 ##  <ManSection>
 ##  <Func Name="IteratorOfCubicVTGraphs"
-##   Arg='n'/>
+##   Arg='n[, data]'/>
 ##  <Returns>A list</Returns>
 ##
 ##  <Description>
