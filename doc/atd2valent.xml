@@ -68,7 +68,7 @@ include the following:
   <Item>The radius of <M>\Gamma</M> 
         (<Ref Attr="AlterCycleRadius"/>).</Item>
   <Item>The attachment number of <M>\Gamma</M> 
-        (<Ref Attr="AlterCycleAttachmentNo"/>).</Item>
+        (<Ref Attr="AlterCycleAttachmentNr"/>).</Item>
   <Item>The attachment type of <M>\Gamma</M> 
         (<Ref Attr="AlterCycleAttachmentType"/>).</Item>
   <Item>The number of alternating cycles in <M>\Gamma</M> 
@@ -114,7 +114,7 @@ the library and each of the graphs it stores.
 
 <#Include Label="AlterCycleRadius">
 
-<#Include Label="AlterCycleAttachmentNo">
+<#Include Label="AlterCycleAttachmentNr">
 
 <#Include Label="AlterCycleAttachmentType">
 

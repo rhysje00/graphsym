@@ -92,7 +92,7 @@ function(gamma,n,i)
   SetDigraphUndirectedGirth(gamma,rc[1]);
   SetSizeStabAut(gamma,rc[4]);
   SetAlterCycleRadius(gamma,rc[6]);
-  SetAlterCycleAttachmentNo(gamma,rc[7]);
+  SetAlterCycleAttachmentNr(gamma,rc[7]);
   SetAlterCycleAttachmentType(gamma,rc[8]);
   SetAlterExponent(gamma,rc[9]);
   SetAlterPerimeter(gamma,rc[10]);

@@ -125,9 +125,9 @@ gap> gamma:=AT2ValentDigraph(48,4,true);;
 gap> AlterCycleRadius(gamma);
 3
 
-# AlterCycleAttachmentNo
+# AlterCycleAttachmentNr
 gap> gamma:=AT2ValentDigraph(48,4,true);;
-gap> AlterCycleAttachmentNo(gamma);
+gap> AlterCycleAttachmentNr(gamma);
 3
 
 # AlterCycleAttachmentType

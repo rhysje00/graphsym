@@ -101,7 +101,7 @@ function(gamma,n,i)
     SetStabIndexUnd(gamma,EvalString(rc[8])); 
   fi;
   SetAlterCycleRadius(gamma,rc[10]);
-  SetAlterCycleAttachmentNo(gamma,rc[11]);
+  SetAlterCycleAttachmentNr(gamma,rc[11]);
   SetAlterCycleAttachmentType(gamma,rc[12]);
   SetNrAlterCycles(gamma,rc[13]);
   SetAlterExponent(gamma,rc[14]);

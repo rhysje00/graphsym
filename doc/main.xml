@@ -43,8 +43,15 @@
     (at your option) any later version. 
   </Copyright>
   <Acknowledgements>
-    Acknowledgements 
-    TODO 
+    The &GRSYLI; package is based largely on the I/O functionality found in the 
+    &DIGRAPHS; package (homepage: <URL>https://digraphs.github.io/Digraphs/</URL>).
+    The content of this package has been extracted directly from the 
+    <URL Text="project webpage">https://users.fmf.uni-lj.si/potocnik/projects.html</URL>
+    of Primož Potočnik, and is based on the work of Primož Potočnik, 
+    <URL Text="Pablo Spiga">https://en.unimib.it/pablo-spiga</URL>,
+    <URL Text="Gabriel Verret">https://profiles.auckland.ac.nz/g-verret</URL>, and 
+    <URL Text="Steve Wilson">https://www.researchgate.net/profile/Steve-Wilson-12</URL>.
+                              
   </Acknowledgements>
 </TitlePage>
 

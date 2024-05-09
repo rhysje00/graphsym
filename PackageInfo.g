@@ -52,17 +52,6 @@ SetPackageInfo( rec(
     rec(
       IsAuthor := true,
       IsMaintainer := true,
-      FirstNames := "Primož",
-      LastName := "Potočnik",
-      WWWHome := "https://users.fmf.uni-lj.si/potocnik/",
-      Email := "primoz.potocnik@fmf.uni-lj.si",
-      Place := "Ljubljana, Slovenia",
-      Institution := "Fakulteta za Matematiko in Fiziko, Univerza v Ljubljani",
-    ),
-
-    rec(
-      IsAuthor := true,
-      IsMaintainer := true,
       FirstNames := "Antonio",
       LastName := "Montero",
       WWWHome := "https://anteromontonio.github.io/",
@@ -72,13 +61,15 @@ SetPackageInfo( rec(
     ),
 
     rec(
-      LastName      := "Verret",
-      FirstNames    := "Gabriel",
-      IsAuthor      := false,
-      IsMaintainer  := false,
-      Email         := "g.verret@auckland.ac.nz",
-      Place         := "Auckland, New Zealand",
-      Institution   := "University of Auckland"),
+      IsAuthor := true,
+      IsMaintainer := true,
+      FirstNames := "Primož",
+      LastName := "Potočnik",
+      WWWHome := "https://users.fmf.uni-lj.si/potocnik/",
+      Email := "primoz.potocnik@fmf.uni-lj.si",
+      Place := "Ljubljana, Slovenia",
+      Institution := "Fakulteta za Matematiko in Fiziko, Univerza v Ljubljani",
+    ),
 
     rec(
       LastName      := "Spiga",
@@ -88,7 +79,25 @@ SetPackageInfo( rec(
       Email         := "pablo.spiga@unimib.it",
       Place         := "Auckland, New Zealand",
       Institution   := "Università degli Studi di Milano - Bicocca"),
+
+    rec(
+      LastName      := "Verret",
+      FirstNames    := "Gabriel",
+      IsAuthor      := false,
+      IsMaintainer  := false,
+      Email         := "g.verret@auckland.ac.nz",
+      Place         := "Auckland, New Zealand",
+      Institution   := "University of Auckland"),
   
+    rec(
+      LastName      := "Wilson",
+      FirstNames    := "Stephen",
+      IsAuthor      := false,
+      IsMaintainer  := false,
+      Email         := "stephen.wilson@nau.edu",
+      Place         := "Arizona, US",
+      Institution   := "Northern Arizona University"),
+
   ],
 
   Status := "other",

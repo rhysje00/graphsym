@@ -535,7 +535,9 @@ DeclareAttribute("SizeStabGHATGroups", IsDigraph);
 ##  <Description>
 ##  Given a <M>G</M>-half-arc-transitive 4-valent graph <A>gamma</A> from the &GRSYLI; 
 ##  package such that its properties and attributes have been assigned, 
-##  this function returns the list of consistent cycle types of the graph <A>gamma</A>. 
+##  this function returns the list of consistent cycle types of the graph <A>gamma</A>,
+##  with exactly one entry for each orbit of consistent cycles under the action of
+##  the automorphism group of <A>gamma</A>. 
 ##  For a <M>G</M>-consistent cycle <C>C</C> in <A>gamma</A>, the consistent 
 ##  cycle type of <C>C</C> is denoted as a string, starting with length of
 ##  <C>C</C>, and with last character <C>s</C> if <C>C</C> is <M>G</M>-symmetric,
@@ -554,7 +556,6 @@ DeclareAttribute("SizeStabGHATGroups", IsDigraph);
 ##  an element of <M>G</M> which reverses the orientation of <M>C</M>. A 
 ##  <M>G</M>-consistent cycle <M>C</M> is <M>G</M><E>-chiral</E> if there is
 ##  no element of <M>G</M> which reverses the orientation of <M>C</M>. 
-##  TODO finish definition
 ##  <P/>
 ##  For information and references on consistent cycles, see 
 ##  <Cite Key="PSV_2013a"/>. 

@@ -585,8 +585,8 @@ DeclareProperty("HasSolvableAutGroup", IsDigraph);
 ##  <Description>
 ##  Given a cubic vertex-transitive graph <A>gamma</A> from the &GRSYLI; 
 ##  package such that its properties and attributes have been assigned, 
-##  this function returns the
-##  TODO ?????
+##  this function returns the exponent of 2 in the size of the stabiliser of a
+##  vertex in the automorphism group of <A>gamma</A>.
 ##  <P/>
 ##  The properties and attributes of a cubic vertex-transitive graph that can
 ##  be found in the &GRSYLI; package can be assigned using the function 

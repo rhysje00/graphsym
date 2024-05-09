@@ -97,7 +97,7 @@ DeclareGlobalVariable("HAT_4VALENT_NUMBERS","Number of half-arc-transitive 4-val
 ##    <Item>The radius of <M>\Gamma</M> 
 ##          (see <Ref Attr="AlterCycleRadius"/>).</Item>
 ##    <Item>The attachment number of <M>\Gamma</M> 
-##          (see <Ref Attr="AlterCycleAttachmentNo"/>).</Item>
+##          (see <Ref Attr="AlterCycleAttachmentNr"/>).</Item>
 ##    <Item>The attachment type of <M>\Gamma</M> 
 ##          (see <Ref Attr="AlterCycleAttachmentType"/>).</Item>
 ##    <Item>The alter-exponent of <M>\Gamma</M> 

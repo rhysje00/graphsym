@@ -11,12 +11,12 @@
   their authors are included as contributors (unless they are an author of this
   package). The &GRSYLI; package provides functionality enabling easy access to 
   these graphs, along with several precomputed properties related to many of 
-  the graphs stored within.",
+  the graphs stored within. 
   <P/>
   Currently, all of the functions in this package deal with finite graphs in 
   &DIGRAPHS; format <Cite Key="DIGRAPHS_2019"/>, and much of the functionality
   provided is based on the very nice code found in 
-  <Ref BookName="digraphs" Chap="Visualising and IO"/>.
+  <Ref BookName="digraphs" Chap="Visualising and IO"/>. 
 
 <Section Label="install">
 <Heading>Installing &GRSYLI;</Heading>

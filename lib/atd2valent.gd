@@ -108,7 +108,7 @@ DeclareGlobalVariable("ATD_2VALENT_NUMBERS","Number of arc-transitive 2-valent d
 ##    <Item>The radius of <M>\Gamma</M> 
 ##          (see <Ref Attr="AlterCycleRadius"/>).</Item>
 ##    <Item>The attachment number of <M>\Gamma</M> 
-##          (see <Ref Attr="AlterCycleAttachmentNo"/>).</Item>
+##          (see <Ref Attr="AlterCycleAttachmentNr"/>).</Item>
 ##    <Item>The attachment type of <M>\Gamma</M> 
 ##          (see <Ref Attr="AlterCycleAttachmentType"/>).</Item>
 ##    <Item>The number of alternating cycles in <M>\Gamma</M> 
@@ -711,7 +711,6 @@ DeclareAttribute("MaximumArcTransitiveness", IsDigraph);
 ##  in <M>\Gamma</M>. Otherwise, it returns <M>0</M>. 
 ##  <P/>
 ##  For more information on this attribute, see <Cite Key="PSV_2015"/>.
-##  TODO add ref?
 ##    <Example>
 ##      <![CDATA[
 ##gap> gammas:=AllAT2ValentDigraphs(420,true);;
@@ -757,7 +756,8 @@ DeclareAttribute("StabIndexMinATUnd", IsDigraph);
 ##  automorphism group of the underlying graph of <M>\Gamma</M>. Then this 
 ##  function returns the index <M>|A_v:G_v|</M> for a vertex <M>v</M>
 ##  in <M>\Gamma</M>. 
-##  TODO add ref?
+##  <P/>
+##  For more information on this attribute, see <Cite Key="PSV_2015"/>.
 ##    <Example>
 ##      <![CDATA[
 ##gap> gamma:=CubicVTGraph(102,16,true);;
@@ -771,6 +771,7 @@ DeclareAttribute("StabIndexMinATUnd", IsDigraph);
 ##
 DeclareAttribute("StabIndexUnd", IsDigraph);
 
+##  TODO add definitions?
 ################################################################################
 ##
 #A  AlterCycleRadius( <digraph> )
@@ -794,7 +795,6 @@ DeclareAttribute("StabIndexUnd", IsDigraph);
 ##  <P/>
 ##  For the definition of radius and more information about this parameter, see
 ##  <Cite Key="PSV_2015"/>.
-##  TODO add definitions?
 ##    <Example>
 ##      <![CDATA[
 ##gap> gamma:=AT2ValentDigraph(48,4,true);;
@@ -808,13 +808,14 @@ DeclareAttribute("StabIndexUnd", IsDigraph);
 ##
 DeclareAttribute("AlterCycleRadius", IsDigraph);
 
+##  TODO add definitions?
 ################################################################################
 ##
-#A  AlterCycleAttachmentNo( <digraph> )
+#A  AlterCycleAttachmentNr( <digraph> )
 ##  
-##  <#GAPDoc Label="AlterCycleAttachmentNo">
+##  <#GAPDoc Label="AlterCycleAttachmentNr">
 ##  <ManSection>
-##  <Attr Name="AlterCycleAttachmentNo"
+##  <Attr Name="AlterCycleAttachmentNr"
 ##   Arg='gamma'/>
 ##  <Returns>An integer.</Returns>
 ##	
@@ -831,11 +832,10 @@ DeclareAttribute("AlterCycleRadius", IsDigraph);
 ##  <P/>
 ##  For the definition of attachment number and more information about this 
 ##  parameter, see <Cite Key="PSV_2015"/>.
-##  TODO add definitions?
 ##    <Example>
 ##      <![CDATA[
 ##gap> gamma:=AT2ValentDigraph(48,4,true);;
-##gap> AlterCycleAttachmentNo(gamma);
+##gap> AlterCycleAttachmentNr(gamma);
 ##3
 ##      ]]>
 ##    </Example>
@@ -843,8 +843,9 @@ DeclareAttribute("AlterCycleRadius", IsDigraph);
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-DeclareAttribute("AlterCycleAttachmentNo", IsDigraph);
+DeclareAttribute("AlterCycleAttachmentNr", IsDigraph);
 
+##  TODO add definitions?
 ################################################################################
 ##
 #A  AlterCycleAttachmentType( <digraph> )
@@ -868,7 +869,6 @@ DeclareAttribute("AlterCycleAttachmentNo", IsDigraph);
 ##  <P/>
 ##  For the definition of attachment type and more information about this 
 ##  parameter, see <Cite Key="PSV_2015"/>.
-##  TODO add definitions?
 ##    <Example>
 ##      <![CDATA[
 ##gap> gamma:=CubicVTGraph(102,16,true);;
@@ -882,6 +882,7 @@ DeclareAttribute("AlterCycleAttachmentNo", IsDigraph);
 ##
 DeclareAttribute("AlterCycleAttachmentType", IsDigraph);
 
+##  TODO add definitions?
 ################################################################################
 ##
 #A  NrAlterCycles( <digraph> )
@@ -905,7 +906,6 @@ DeclareAttribute("AlterCycleAttachmentType", IsDigraph);
 ##  <P/>
 ##  For the definition of alternating cycles and more information about this 
 ##  parameter, see <Cite Key="PSV_2015"/>.
-##  TODO add definitions?
 ##    <Example>
 ##      <![CDATA[
 ##gap> gamma:=AT2ValentDigraph(100,4,true);;
@@ -919,6 +919,7 @@ DeclareAttribute("AlterCycleAttachmentType", IsDigraph);
 ##
 DeclareAttribute("NrAlterCycles", IsDigraph);
 
+##  TODO add definitions?
 ################################################################################
 ##
 #A  AlterExponent( <digraph> )
@@ -942,7 +943,6 @@ DeclareAttribute("NrAlterCycles", IsDigraph);
 ##  <P/>
 ##  For the definition of alter-exponent and more information about this 
 ##  parameter, see <Cite Key="PSV_2015"/>.
-##  TODO add definitions?
 ##    <Example>
 ##      <![CDATA[
 ##gap> gamma:=AT2ValentDigraph(100,4,true);;
@@ -956,6 +956,7 @@ DeclareAttribute("NrAlterCycles", IsDigraph);
 ##
 DeclareAttribute("AlterExponent", IsDigraph);
 
+##  TODO add definitions?
 ################################################################################
 ##
 #A  AlterPerimeter( <digraph> )
@@ -979,7 +980,6 @@ DeclareAttribute("AlterExponent", IsDigraph);
 ##  <P/>
 ##  For the definition of alter-perimeter and more information about this 
 ##  parameter, see <Cite Key="PSV_2015"/>.
-##  TODO add definitions?
 ##    <Example>
 ##      <![CDATA[
 ##gap> gamma:=AT2ValentDigraph(100,4,true);;
@@ -993,6 +993,7 @@ DeclareAttribute("AlterExponent", IsDigraph);
 ##
 DeclareAttribute("AlterPerimeter", IsDigraph);
 
+##  TODO add definitions?
 ################################################################################
 ##
 #A  AlterSequence( <digraph> )
@@ -1016,7 +1017,6 @@ DeclareAttribute("AlterPerimeter", IsDigraph);
 ##  <P/>
 ##  For the definition of alter-sequence and more information about this 
 ##  parameter, see <Cite Key="PSV_2015"/>.
-##  TODO add definitions?
 ##    <Example>
 ##      <![CDATA[
 ##gap> gamma:=AT2ValentDigraph(100,4,true);;
