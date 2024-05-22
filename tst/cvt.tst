@@ -82,10 +82,10 @@ gap> for gamma in iter do
 gap> cnt;
 3
 
-# IsCubicDigraph
-gap> IsCubicDigraph(CycleDigraph(5));
+# IsCubicGraph
+gap> IsCubicGraph(CycleDigraph(5));
 false
-gap> IsCubicDigraph(CompleteDigraph(4));
+gap> IsCubicGraph(CompleteDigraph(4));
 true
 
 # IsCayleyGraph

@@ -1,5 +1,5 @@
 <Chapter Label="lat34valent">
-<Heading>The locally arc-transitive <M>\{{3,4}\}</M>-valent graph library</Heading>
+<Heading>Locally arc&ndash;transitive <M>\{{3,4}\}</M>&ndash;valent graphs</Heading>
 
 In this chapter we give functions for accessing the locally arc-transitive 
 <M>\{{3,4}\}</M>-valent graphs stored in this package, and related properties. 
@@ -13,7 +13,7 @@ more information and references about these graphs, see <Cite Key="P_2012"/>.
 
 
 <Section Label="Accessing the lat 3,4-valent graphs">
-<Heading>Accessing the locally arc-transitive <M>\{{3,4}\}</M>-valent graphs</Heading>
+<Heading>Accessing the locally arc&ndash;transitive <M>\{{3,4}\}</M>&ndash;valent graphs</Heading>
 
 In this Section we introduce functions for the access to the locally 
 arc-transitive <M>\{{3,4}\}</M>-valent graphs stored in the &GRSYLI; package.
@@ -28,7 +28,7 @@ arc-transitive <M>\{{3,4}\}</M>-valent graphs stored in the &GRSYLI; package.
 
 
 <Section Label="lat 3,4-valent library info">
-<Heading>Properties of the locally arc-transitive graphs and library<M>\{{3,4}\}</M>-valent graph library</Heading>
+<Heading>Properties of the locally arc&ndash;transitive <M>\{{3,4}\}</M>&ndash;valent graphs and library</Heading>
 
 In this Section we give the functions which give information about the 
 locally arc-transitive <M>\{{3,4}\}</M>-valent graph library, and the properties and attributes of 

@@ -1,5 +1,5 @@
 <Chapter Label="hat4valent">
-<Heading>The half-arc-transitive graph library</Heading>
+<Heading>Half&ndash;arc&ndash;transitive graphs</Heading>
 
 In this Chapter we give functions for accessing the half-arc-transitive 
 4-valent graphs stored in this package, and related properties. Currently, this package 
@@ -15,7 +15,7 @@ of <M>\Gamma</M> acts transitively on the vertices and edges of <M>\Gamma</M>,
 but not on the arcs of <M>\Gamma</M>.
 
 <Section Label="Accessing the hat graphs">
-<Heading>Accessing the half-arc-transitive 4-valent graphs</Heading>
+<Heading>Accessing the half&ndash;arc&ndash;transitive 4&ndash;valent graphs</Heading>
 
 In this Section we introduce functions for the access to the 
 half-arc-transitive 4-valent graphs stored in the &GRSYLI; package.
@@ -29,14 +29,14 @@ half-arc-transitive 4-valent graphs stored in the &GRSYLI; package.
 </Section>
 
 <Section Label="hat 4-valent library info">
-<Heading>Properties of the half-arc-transitive 4-valent graphs and library</Heading>
+<Heading>Properties of the half&ndash;arc&ndash;transitive 4&ndash;valent graphs and library</Heading>
 
 In this Section we give the functions which give information about the 
 half-arc-transitive 4-valent graph library, and the properties and attributes of 
 the graphs it contains.
 
 <Subsection Label="Precomputed data hat">
-<Heading>Precomputed attributes of the half-arc-transitive 4-valent graphs</Heading>
+<Heading>Precomputed attributes of the half&ndash;arc&ndash;transitive 4&ndash;valent graphs</Heading>
 
 For a given half-arc-transitive 4-valent graph <M>\Gamma</M> stored in this package, 
 there are several precomputed attributes stored in the &GRSYLI; package. These 
@@ -51,7 +51,7 @@ include the following:
        (<Ref Prop="IsArcTransitiveDigraph"/>). </Item>
 <Item>The Cayleyness of <M>\Gamma</M>
       (<Ref Prop="IsCayleyGraph"/>).</Item>
-<Item>The size of the stabilizer of a vertex in the automorphism group
+<!-- <Item>The size of the stabilizer of a vertex in the automorphism group
       of <M>\Gamma</M> (<Ref Attr="SizeStabAut"/>).</Item>   
 <Item>The solvability of the automorphism group of <M>\Gamma</M>
       (<Ref Prop="HasSolvableAutGroup"/>).</Item>
@@ -66,13 +66,13 @@ include the following:
 <Item>The alter-perimeter of <M>\Gamma</M> 
       (see <Ref Attr="AlterPerimeter"/>).</Item>
 <Item>The alter-sequence of <M>\Gamma</M> 
-      (see <Ref Attr="AlterSequence"/>).</Item>
+      (see <Ref Attr="AlterSequence"/>).</Item> -->
 <Item>The length of the shortest consistent cycle in <M>\Gamma</M> 
       (see <Ref Attr="ConsistentCycleTypes"/>).</Item>
 <Item>The length of the longest consistent cycle in <M>\Gamma</M> 
       (see <Ref Attr="ConsistentCycleTypes"/>).</Item>
-<Item>The meta-cirulant types of <M>\Gamma</M> 
-      (see <Ref Attr="HAT4ValentMetaCirculantClasses"/>).</Item>
+<!-- <Item>The meta-circulant types of <M>\Gamma</M> 
+      (see <Ref Attr="HAT4ValentMetaCirculantClasses"/>).</Item> -->
 </List>
 
 </Subsection>
@@ -86,7 +86,7 @@ the library and each of the graphs it stores.
 
 <#Include Label="SetHAT4ValentGraphProps">
 
-<#Include Label="HAT4ValentMetaCirculantClasses">
+<!-- <#Include Label="HAT4ValentMetaCirculantClasses"> -->
 
 </Section>
 

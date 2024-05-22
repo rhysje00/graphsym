@@ -1,5 +1,5 @@
 <Chapter Label="cvt">
-<Heading>The cubic vertex-transitive graph library</Heading>
+<Heading>Cubic vertex&ndash;transitive graphs</Heading>
 
 In this Chapter we give functions for accessing the cubic vertex-transitive 
 graphs stored in this package, and related properties. Currently, this
@@ -16,7 +16,7 @@ of <M>\Gamma</M> acts transitively on the vertices of <M>\Gamma</M>.
 
 
 <Section Label="Accessing the cvt graphs">
-<Heading>Accessing the cubic vertex-transitive graphs</Heading>
+<Heading>Accessing the cubic vertex&ndash;transitive graphs</Heading>
 
 In this Section we introduce functions for the access to the cubic 
 vertex-transitive graphs stored in the &GRSYLI; package.
@@ -30,14 +30,14 @@ vertex-transitive graphs stored in the &GRSYLI; package.
 </Section>
 
 <Section Label="cvt library info">
-<Heading>Properties of the cubic vertex-transitive graphs and library</Heading>
+<Heading>Properties of the cubic vertex&ndash;transitive graphs and library</Heading>
 
 In this Section we give the functions which give information about the cubic
 vertex-transitive graphs library, and the properties and attributes of the 
 graphs it contains.
 
 <Subsection Label="Precomputed data cvt">
-<Heading>Precomputed attributes of the cubic vertex-transitive graphs</Heading>
+<Heading>Precomputed attributes of the cubic vertex&ndash;transitive graphs</Heading>
 
 For a given cubic vertex-transitive graph <M>\Gamma</M> stored in this package, 
 there are several precomputed attributes stored in the &GRSYLI; package. These 
@@ -56,8 +56,8 @@ include the following:
       (<Ref Prop="IsArcTransitiveDigraph"/>).</Item>   
 <Item>The property of <M>\Gamma</M> being isomorphic to a a split 
       Praeger-Xu graph (<Ref Prop="IsSplitPraegerXuGraph"/>).</Item>
-<Item>The solvability of the automorphism group of <M>\Gamma</M>
-      (<Ref Prop="HasSolvableAutGroup"/>).</Item>
+<!-- <Item>The solvability of the automorphism group of <M>\Gamma</M>
+      (<Ref Prop="HasSolvableAutGroup"/>).</Item> -->
 </List>
 
 </Subsection>
@@ -73,7 +73,7 @@ the library and each of the graphs it stores.
 
 <#Include Label="SmallCubicVTGraphsInfo">
 
-<#Include Label="IsCubicDigraph">
+<#Include Label="IsCubicGraph">
 
 <#Include Label="IsCayleyGraph">
 
@@ -81,7 +81,7 @@ the library and each of the graphs it stores.
 
 <#Include Label="IsSplitPraegerXuGraph">
 
-<#Include Label="HasSolvableAutGroup">
+<!-- <#Include Label="HasSolvableAutGroup"> -->
 
 </Section>
 

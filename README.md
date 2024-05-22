@@ -8,7 +8,7 @@ along with several precomputed properties for each graph available.
 
 Currently, the pdf version of the manual can be found at
 
-  <https://rhysje00.github.io/grsyli/tree/main/doc>.
+  <https://github.com/rhysje00/grsyli/tree/main/doc>.
 
 In particular, simple instructions on the installation and usage of this package
 can be found in the first chapter of the manual.

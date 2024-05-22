@@ -1,5 +1,5 @@
 <Chapter Label="et4valent">
-<Heading>The edge-transitive 4-valent graph library</Heading>
+<Heading>Edge&ndash;transitive 4&ndash;valent graphs</Heading>
 
 In this chapter we give functions for accessing the edge-transitive 4-valent 
 graphs stored in this package, and related properties. Currently, this package
@@ -16,7 +16,7 @@ of <M>\Gamma</M> acts transitively on the edges of <M>\Gamma</M>.
 
 
 <Section Label="Accessing the et 4-valent graphs">
-<Heading>Accessing the edge-transitive 4-valent graphs</Heading>
+<Heading>Accessing the edge&ndash;transitive 4&ndash;valent graphs</Heading>
 
 In this Section we introduce functions for the access to the 
 edge-transitive 4-valent graphs stored in the &GRSYLI; package.
@@ -31,7 +31,7 @@ edge-transitive 4-valent graphs stored in the &GRSYLI; package.
 
 
 <Section Label="et 4-valent library info">
-<Heading>Properties of the edge-transitive 4-valent graphs and library</Heading>
+<Heading>Properties of the edge&ndash;transitive 4&ndash;valent graphs and library</Heading>
 
 In this Section we give the functions which give information about the 
 edge-transitive 4-valent graph library, and the properties and attributes of 

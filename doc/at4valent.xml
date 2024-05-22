@@ -1,5 +1,5 @@
 <Chapter Label="at4valent">
-<Heading>The arc-transitive 4-valent graph library</Heading>
+<Heading>Arc&ndash;transitive 4&ndash;valent graphs</Heading>
 
 In this Chapter we give functions for accessing the arc-transitive 4-valent 
 graphs stored in this package, and related properties. Currently, this package 
@@ -16,7 +16,7 @@ of <M>\Gamma</M> acts transitively on the arcs of <M>\Gamma</M>.
 
 
 <Section Label="Accessing the at 4-valent graphs">
-<Heading>Accessing the arc-transitive 4-valent graphs</Heading>
+<Heading>Accessing the arc&ndash;transitive 4&ndash;valent graphs</Heading>
 
 In this Section we introduce functions for the access to the 
 arc-transitive 4-valent graphs stored in the &GRSYLI; package.
@@ -31,7 +31,7 @@ arc-transitive 4-valent graphs stored in the &GRSYLI; package.
 
 
 <Section Label="at 4-valent library info">
-<Heading>Properties of the arc-transitive 4-valent graphs and library</Heading>
+<Heading>Properties of the arc&ndash;transitive 4&ndash;valent graphs and library</Heading>
 
 In this Section we give the functions which give information about the 
 arc-transitive 4-valent graph library, and the properties and attributes of 

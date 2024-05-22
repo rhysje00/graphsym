@@ -50,11 +50,11 @@
 ##
 ##  <Description>
 ##  This variable stores the number of 4-valent generalised wreath graphs 
-##  graphs stored in this package
+##  stored in this package
 ##  <P/>
 ##  For a positive integer <M>n</M>, 
 ##  <C>GWG_4VALENT_NUMBERS[</C><M>n</M><C>]</C> is the number of 
-##  4-valent generalised wreath graphs graphs available in this package.
+##  4-valent generalised wreath graphs available in this package.
 ##    <Example>
 ##      <![CDATA[
 ##gap> Maximum(GWG_4VALENT_NUMBERS);
@@ -183,11 +183,11 @@ DeclareGlobalFunction( "SetGW4ValentGraphProps" );
 ##	
 ##  <Description>
 ##  Given a positive integer <A>n</A>, this function returns the number of 
-##  4-valent generalised wreath graphs graphs with <A>n</A> vertices stored 
+##  4-valent generalised wreath graphs with <A>n</A> vertices stored 
 ##  in this package.
 ##  <P/>
 ##  For any positive integers <M>n</M> up to 1000, the current package stores
-##  all 4-valent generalised wreath graphs graphs with <M>n</M> vertices.
+##  all 4-valent generalised wreath graphs with <M>n</M> vertices.
 ##    <Example>
 ##      <![CDATA[
 ##gap> NrGW4ValentGraphs(448);
@@ -219,7 +219,7 @@ DeclareGlobalFunction( "GWG_4VALENT_Filename" );
 ##
 ##  <Description>
 ##  Given positive integers <A>n,i</A>, this function returns the <A>i</A>th 
-##  4-valent generalised wreath graphs graph with <A>n</A> vertices available
+##  4-valent generalised wreath graph with <A>n</A> vertices available
 ##  in this package. If there is no such graph, the function returns <K>fail</K>. 
 ##    <Example>
 ##      <![CDATA[
@@ -247,7 +247,7 @@ DeclareGlobalFunction( "GW4ValentGraph" );
 ##
 ##  <Description>
 ##  Given a positive integer <A>n</A>, this function returns a list containing
-##  all 4-valent generalised wreath graphs graphs with <A>n</A> vertices 
+##  all 4-valent generalised wreath graphs with <A>n</A> vertices 
 ##  available in this package. If there are no such graphs, the function returns
 ## <K>fail</K>.
 ##    <Example>
@@ -275,7 +275,7 @@ DeclareGlobalFunction( "AllGW4ValentGraphs" );
 ##
 ##  <Description>
 ##  Given a positive integer <A>n</A>, this function returns an iterator over
-##  all 4-valent generalised wreath graphs graphs with <A>n</A> vertices 
+##  all 4-valent generalised wreath graphs with <A>n</A> vertices 
 ##  available in this package. If there are such no graphs, the function returns
 ##  an empty iterator.
 ##    <Example>

@@ -99,9 +99,9 @@ gap> gamma:=AT2ValentDigraph(700,40,true);;
 gap> NameOfUnderlyingGraph(gamma);
 "GHAT[700;12]"
 
-# MaximumArcTransitiveness
+# MaximumArcTransitivity
 gap> gamma:=AT2ValentDigraph(748,18,true);;
-gap> MaximumArcTransitiveness(gamma);
+gap> MaximumArcTransitivity(gamma);
 373
 
 # StabIndexMinATUnd

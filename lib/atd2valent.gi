@@ -93,7 +93,7 @@ function(gamma,n,i)
 
   SetAT2ValentReverseDigraphId(gamma,rc[2]);
   SetNameOfUnderlyingGraph(gamma,rc[4]);
-  SetMaximumArcTransitiveness(gamma,rc[5]);
+  SetMaximumArcTransitivity(gamma,rc[5]);
   SetStabIndexMinATUnd(gamma,rc[7]);
   if IsInt(rc[8]) then 
     SetStabIndexUnd(gamma,rc[8]);

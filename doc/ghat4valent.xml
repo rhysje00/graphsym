@@ -1,5 +1,5 @@
 <Chapter Label="ghat4valent">
-<Heading>The <M>G</M>-half-arc-transitive graph library</Heading>
+<Heading><M>G</M>&ndash;half&ndash;arc&ndash;transitive graphs</Heading>
 
 In this Chapter we give functions for accessing the <M>G</M>-half-arc-transitive 
 4-valent graphs stored in this package, and related properties. Currently, this package 
@@ -15,7 +15,7 @@ of automorphisms of <M>\Gamma</M> which acts transitively on the vertices and ed
 <M>\Gamma</M>, but not on the arcs of <M>\Gamma</M>.
 
 <Section Label="Accessing the ghat graphs">
-<Heading>Accessing the <M>G</M>-half-arc-transitive 4-valent graphs</Heading>
+<Heading>Accessing the <M>G</M>&ndash;half&ndash;arc&ndash;transitive 4&ndash;valent graphs</Heading>
 
 In this Section we introduce functions for the access to the 
 <M>G</M>-half-arc-transitive 4-valent graphs stored in the &GRSYLI; package.
@@ -29,14 +29,14 @@ In this Section we introduce functions for the access to the
 </Section>
 
 <Section Label="ghat 4-valent library info">
-<Heading>Properties of the <M>G</M>-half-arc-transitive 4-valent graphs and library</Heading>
+<Heading>Properties of the <M>G</M>&ndash;half&ndash;arc&ndash;transitive 4&ndash;valent graphs and library</Heading>
 
 In this Section we give the functions which give information about the 
 <M>G</M>-half-arc-transitive 4-valent graph library, and the properties and attributes of 
 the graphs it contains.
 
 <Subsection Label="Precomputed data ghat">
-<Heading>Precomputed attributes of the <M>G</M>-half-arc-transitive 4-valent graphs</Heading>
+<Heading>Precomputed attributes of the <M>G</M>&ndash;half&ndash;arc&ndash;transitive 4&ndash;valent graphs</Heading>
 
 For a given <M>G</M>-half-arc-transitive 4-valent graph <M>\Gamma</M> stored in this package, 
 there are several precomputed attributes stored in the &GRSYLI; package. These 
@@ -53,13 +53,13 @@ include the following:
        (<Ref Prop="IsArcTransitiveDigraph"/>). </Item>
 <Item>The Cayley type of <M>\Gamma</M>
       (<Ref Attr="CayleyType"/>).</Item>
-<Item>The size of the stabilizer of a vertex in the automorphism group
+<!-- <Item>The size of the stabilizer of a vertex in the automorphism group
       of <M>\Gamma</M> (<Ref Attr="SizeStabAut"/>).</Item>   
 <Item>The size of the stabilizer of a vertex in the half-arc-transitive 
       group of automorphisms of <M>\Gamma</M> 
       (<Ref Attr="SizeStabGHATGroups"/>).</Item>   
 <Item>The solvability of the automorphism group of <M>\Gamma</M>
-      (<Ref Prop="HasSolvableAutGroup"/>).</Item>
+      (<Ref Prop="HasSolvableAutGroup"/>).</Item> -->
 <Item>The consistent cycle types of <M>\Gamma</M>
       (<Ref Attr="ConsistentCycleTypes"/>).</Item>
 </List>
@@ -77,9 +77,9 @@ the library and each of the graphs it stores.
 
 <#Include Label="CayleyType">
 
-<#Include Label="SizeStabAut">
+<!-- <#Include Label="SizeStabAut">
 
-<#Include Label="SizeStabGHATGroups">
+<#Include Label="SizeStabGHATGroups"> -->
 
 <#Include Label="ConsistentCycleTypes">
 

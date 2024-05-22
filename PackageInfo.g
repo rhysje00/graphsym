@@ -51,7 +51,7 @@ SetPackageInfo( rec(
 
     rec(
       IsAuthor := true,
-      IsMaintainer := true,
+      IsMaintainer := false,
       FirstNames := "Antonio",
       LastName := "Montero",
       WWWHome := "https://anteromontonio.github.io/",
@@ -62,7 +62,7 @@ SetPackageInfo( rec(
 
     rec(
       IsAuthor := true,
-      IsMaintainer := true,
+      IsMaintainer := false,
       FirstNames := "Primož",
       LastName := "Potočnik",
       WWWHome := "https://users.fmf.uni-lj.si/potocnik/",
@@ -72,12 +72,22 @@ SetPackageInfo( rec(
     ),
 
     rec(
+      LastName      := "Conder",
+      FirstNames    := "Marston",
+      IsAuthor      := false,
+      IsMaintainer  := false,
+      Email         := "m.conder@auckland.ac.nz",
+      Place         := "Auckland, New Zealand",
+      Institution   := "University of Auckland"),
+
+
+    rec(
       LastName      := "Spiga",
       FirstNames    := "Pablo",
       IsAuthor      := false,
       IsMaintainer  := false,
       Email         := "pablo.spiga@unimib.it",
-      Place         := "Auckland, New Zealand",
+      Place         := "Milan, Italy",
       Institution   := "Università degli Studi di Milano - Bicocca"),
 
     rec(

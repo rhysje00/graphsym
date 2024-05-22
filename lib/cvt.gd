@@ -201,7 +201,7 @@ DeclareGlobalFunction( "SetCubicVTGraphPropsNC" );
 ##         <Ref Sect="Precomputed data cvt"/>.
 ##  </Item>
 ##  <Item><Ref Attr="CubicVTGraphId"/>.</Item>
-##  <Item> <Ref Prop="IsCubicDigraph"/>.</Item>
+##  <Item> <Ref Prop="IsCubicGraph"/>.</Item>
 ##  <Item> <Ref BookName="Digraphs" Prop="IsVertexTransitive"/>.</Item>
 ##  </List>
 ##    <Example>
@@ -408,11 +408,11 @@ DeclareGlobalFunction( "CubicVTGraphIterator" );
 
 ################################################################################
 ##
-#P  IsCubicDigraph( <digraph> )
+#P  IsCubicGraph( <digraph> )
 ##  
-##  <#GAPDoc Label="IsCubicDigraph">
+##  <#GAPDoc Label="IsCubicGraph">
 ##  <ManSection>
-##  <Prop Name="IsCubicDigraph"
+##  <Prop Name="IsCubicGraph"
 ##   Arg='gamma'/>
 ##  <Returns><K>true</K> or <K>false</K>.</Returns>
 ##	
@@ -421,9 +421,9 @@ DeclareGlobalFunction( "CubicVTGraphIterator" );
 ##  <A>gamma</A> is a cubic digraph, and otherwise it returns <K>false</K>.
 ##    <Example>
 ##      <![CDATA[
-##gap> IsCubicDigraph(CycleDigraph(5));
+##gap> IsCubicGraph(CycleDigraph(5));
 ##false
-##gap> IsCubicDigraph(CompleteDigraph(4));
+##gap> IsCubicGraph(CompleteDigraph(4));
 ##true
 ##      ]]>
 ##    </Example>
@@ -431,7 +431,7 @@ DeclareGlobalFunction( "CubicVTGraphIterator" );
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-DeclareProperty("IsCubicDigraph", IsDigraph);
+DeclareProperty("IsCubicGraph", IsDigraph);
 
 ################################################################################
 ##

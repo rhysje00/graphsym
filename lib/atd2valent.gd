@@ -96,7 +96,7 @@ DeclareGlobalVariable("ATD_2VALENT_NUMBERS","Number of arc-transitive 2-valent d
 ##          (see <Ref Attr="NameOfUnderlyingGraph"/>).</Item>
 ##    <Item>The maximum <M>s</M> such that <M>\Gamma</M> is 
 ##          <M>s</M>-arc-transitive 
-##          (see <Ref Attr="MaximumArcTransitiveness"/>).</Item>   
+##          (see <Ref Attr="MaximumArcTransitivity"/>).</Item>   
 ##    <Item>The abelian-ness of a vertex stabiliser of <M>\Gamma</M> 
 ##          (see <Ref Prop="HasAbelianVertexStabilizer"/>).</Item>
 ##    <Item><M>|T_v:G_v|</M> of a vertex of <M>\Gamma</M> 
@@ -604,17 +604,17 @@ DeclareAttribute("AT2ValentReverseDigraphId", IsDigraph);
 ##  letters found in these names, and their meaning:
 ##  <List>
 ##  <Mark><C>"GWD"</C></Mark>
-##  <Item>the underlying graph is a generalized wreath digraph.
+##  <Item>the underlying graph is a generalized wreath graph.
 ##  </Item>
 ##  <Mark><C>"HAT"</C></Mark>
 ##  <Item>the underlying graph is half-arc-transitive, and not a 
-##        generalised wreath digraph
+##        generalised wreath graph
 ##        (see Chapter <Ref Chap="hat4valent"/>).
 ##  </Item>
 ##  <Mark><C>"GHAT"</C></Mark>
 ##  <Item>the underlying graph is <M>G</M>-half-arc-transitive for
 ##        some subgroup of its automorphism group <M>G</M>, but not a 
-##        half-arc-transitive or generalised wreath digraph 
+##        half-arc-transitive or generalised wreath graph 
 ##        (see Chapter <Ref Chap="ghat4valent"/>).      
 ##  </Item>
 ##  </List>
@@ -636,11 +636,11 @@ DeclareAttribute("NameOfUnderlyingGraph", IsDigraph);
 
 ################################################################################
 ##
-#A  MaximumArcTransitiveness( <digraph> )
+#A  MaximumArcTransitivity( <digraph> )
 ##  
-##  <#GAPDoc Label="MaximumArcTransitiveness">
+##  <#GAPDoc Label="MaximumArcTransitivity">
 ##  <ManSection>
-##  <Attr Name="MaximumArcTransitiveness"
+##  <Attr Name="MaximumArcTransitivity"
 ##   Arg='gamma'/>
 ##  <Returns>An integer.</Returns>
 ##	
@@ -669,7 +669,7 @@ DeclareAttribute("NameOfUnderlyingGraph", IsDigraph);
 ##    <Example>
 ##      <![CDATA[
 ##gap> gamma:=AT2ValentDigraph(748,18,true);;
-##gap> MaximumArcTransitiveness(gamma);
+##gap> MaximumArcTransitivity(gamma);
 ##373
 ##      ]]>
 ##    </Example>
@@ -677,7 +677,7 @@ DeclareAttribute("NameOfUnderlyingGraph", IsDigraph);
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-DeclareAttribute("MaximumArcTransitiveness", IsDigraph);
+DeclareAttribute("MaximumArcTransitivity", IsDigraph);
 
 ################################################################################
 ##

@@ -82,7 +82,7 @@ function(gamma,n,i)
 
   # Set all Props and attributes for this record (Id is already set)  
   SetCubicVTGraphId(gamma,i);
-  SetIsCubicDigraph(gamma,true);
+  SetIsCubicGraph(gamma,true);
   SetIsVertexTransitive(gamma,true);
   SetIsCayleyGraph(gamma,rc[4]); #  SetFilterObj(gamma, IsCayleyDigraph);
   SetIsBipartiteDigraph(gamma,rc[3]);
@@ -361,9 +361,9 @@ end );
 
 ################################################################################
 ##
-#O  IsCubicDigraph( <digraph> )
+#O  IsCubicGraph( <digraph> )
 ##  
-InstallMethod(IsCubicDigraph, "for digraphs", [IsDigraph],
+InstallMethod(IsCubicGraph, "for digraphs", [IsDigraph],
 function(gamma)
   return OutDegreeSet(gamma)=[3] and InDegreeSet(gamma)=[3];
 end );
