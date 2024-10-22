@@ -6,7 +6,7 @@
 ##
 SetPackageInfo( rec(
 
-  PackageName := "GrSyLi",
+  PackageName := "GraphSym",
   Subtitle := "GRaphs with SYmmetries LIbrary",
   Version := "0.1",
   Date := "25/05/2024",
@@ -15,7 +15,7 @@ SetPackageInfo( rec(
 ##  <#GAPDoc Label="PKGVERSIONDATA">
 ##  <!ENTITY VERSION "0.1">
 ##  <!ENTITY RELEASEDATE "25 May 2024">
-##  <!ENTITY PKGWWWHOME "https://rhysje00.github.io/grsyli/">
+##  <!ENTITY PKGWWWHOME "https://rhysje00.github.io/graphsym/">
 ##  <#/GAPDoc>
 
   PackageWWWHome :=
@@ -119,7 +119,7 @@ SetPackageInfo( rec(
     Concatenation( ~.PackageWWWHome, "/PackageInfo.g" ),
 
   AbstractHTML   := 
-    "The <span class=\"pkgname\">GrSyLi</span> package contains various \
+    "The <span class=\"pkgname\">GraphSym</span> package contains various \
      collections of graphs with interesting symmetry properties. Each \
      collection of graphs are attained from complete or partial enumerations \
      published in international journals. This package provides functionality \
@@ -127,7 +127,7 @@ SetPackageInfo( rec(
      properties related to many of the graphs stored within.",
 
   PackageDoc := rec(
-    BookName  := "grsyli",
+    BookName  := "graphsym",
     ArchiveURLSubset := ["doc"],
     HTMLStart := "doc/chap0_mj.html",
     PDFFile   := "doc/manual.pdf",

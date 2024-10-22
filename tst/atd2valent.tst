@@ -4,10 +4,10 @@
 ##                                                           Primož Potočnik
 ##                                                           Antonio Montero
 ##
-gap> START_TEST("GrSyLi package: atd2valent.tst");
+gap> START_TEST("GraphSym package: atd2valent.tst");
 
 # Loading package
-gap> LoadPackage("grsyli",false);
+gap> LoadPackage("graphsym",false);
 true
 
 # ATD_2VALENT_ORDER_MAX
@@ -156,4 +156,4 @@ gap> AlterSequence(gamma);
 [ 10 ]
 
 # End test
-gap> STOP_TEST("GrSyLi package: atd2valent.tst",0);  
+gap> STOP_TEST("GraphSym package: atd2valent.tst",0);  

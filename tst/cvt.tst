@@ -4,10 +4,10 @@
 ##                                                           Primož Potočnik
 ##                                                           Antonio Montero
 ##
-gap> START_TEST("GrSyLi package: cvt.tst");
+gap> START_TEST("GraphSym package: cvt.tst");
 
 # Loading package
-gap> LoadPackage("grsyli",false);
+gap> LoadPackage("graphsym",false);
 true
 
 # CVT_ORDER_MAX
@@ -126,4 +126,4 @@ gap> SizeStabAut2CVT(gamma);
 3
 
 # End test
-gap> STOP_TEST("GrSyLi package: cvt.tst",0);  
+gap> STOP_TEST("GraphSym package: cvt.tst",0);  

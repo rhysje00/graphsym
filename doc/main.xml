@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE Book SYSTEM "gapdoc.dtd"
-   [ <!ENTITY GRSYLI "<Package>GrSyLi</Package>">
+   [ <!ENTITY GraphSym "<Package>GraphSym</Package>">
      <!ENTITY DIGRAPHS "<Package>Digraphs</Package>">
      <!ENTITY neq 
       "<Alt Only='Text'>{&lt;&gt;}</Alt><Alt Not='Text'>\not=</Alt>">
@@ -14,11 +14,11 @@
      <#Include Label="PKGVERSIONDATA">
    ]>
 
-<Book Name="GRSYLI"> 
+<Book Name="GraphSym"> 
 
 <TitlePage>
-  <Title>&GRSYLI;</Title>
-  <Subtitle>&GRSYLI; Graphs with Symmetries library</Subtitle>
+  <Title>&GraphSym;</Title>
+  <Subtitle>&GraphSym; Graphs with Symmetries library</Subtitle>
   <Version>Version &VERSION;</Version>
   <Date>&RELEASEDATE;</Date>
   <Author> Rhys J. Evans
@@ -36,14 +36,14 @@
     <Copyright> 
     <Index>License</Index>
     &copyright; 2024 by Rhys J. Evans, Antonio Montero and Primož Potočnik<P/>
-    The &GRSYLI; package is free software: you can redistribute it and/or modify
+    The &GraphSym; package is free software: you can redistribute it and/or modify
     it under the terms of the 
     <URL Text="GNU General Public License">https://www.fsf.org/licenses/gpl.html</URL>
     as published by the Free Software Foundation, either version 2 of the License, or
     (at your option) any later version. 
   </Copyright>
   <Acknowledgements>
-    The &GRSYLI; package is based largely on the I/O functionality found in the 
+    The &GraphSym; package is based largely on the I/O functionality found in the 
     &DIGRAPHS; package (homepage: <URL>https://digraphs.github.io/Digraphs/</URL>).
     The content of this package has been extracted directly from the 
     <URL Text="project webpage">https://users.fmf.uni-lj.si/potocnik/projects.html</URL>

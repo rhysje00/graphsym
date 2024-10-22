@@ -119,7 +119,7 @@ function(n)
   
   fn := Concatenation("LAT34valent_",String(n),".s6");
   
-  return Filename(DirectoriesPackageLibrary("grsyli","graphs/lat34valent"),fn);  
+  return Filename(DirectoriesPackageLibrary("graphsym","graphs/lat34valent"),fn);  
 end );
 
 #############################################################################

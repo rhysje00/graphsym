@@ -4,9 +4,9 @@
 ##                                                           Primož Potočnik
 ##                                                           Antonio Montero
 ##
-LoadPackage( "grsyli" );
+LoadPackage( "graphsym" );
 
-TestDirectory(DirectoriesPackageLibrary( "grsyli", "tst" ),
+TestDirectory(DirectoriesPackageLibrary( "graphsym", "tst" ),
   rec(exitGAP := true, 
   testOptions := rec(compareFunction := "uptowhitespace")));
 

@@ -16,7 +16,7 @@ MakeGAPDocDoc( "doc",     # path to the directory containing the main file
                "../lib/2at4valent.gd", "../lib/et4valent.gd",
                "../lib/lat34valent.gd"
                    ], 
-               "grsyli", # the name of the book used by GAP's online help
+               "graphsym", # the name of the book used by GAP's online help
                "../../..",# optional: relative path to the main GAP root 
                           # directory to produce HTML files with relative 
                           # paths to external books.

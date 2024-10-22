@@ -4,10 +4,10 @@
 ##                                                           Primož Potočnik
 ##                                                           Antonio Montero
 ##
-gap> START_TEST("GrSyLi package: at4valent.tst");
+gap> START_TEST("GraphSym package: at4valent.tst");
 
 # Loading package
-gap> LoadPackage("grsyli",false);
+gap> LoadPackage("graphsym",false);
 true
 
 # AT_4VALENT_ORDER_MAX
@@ -64,4 +64,4 @@ gap> cnt;
 39
 
 # End test
-gap> STOP_TEST("GrSyLi package: at4valent.tst",0);  
+gap> STOP_TEST("GraphSym package: at4valent.tst",0);  

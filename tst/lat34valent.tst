@@ -4,10 +4,10 @@
 ##                                                           Primož Potočnik
 ##                                                           Antonio Montero
 ##
-gap> START_TEST("GrSyLi package: et4valent.tst");
+gap> START_TEST("GraphSym package: et4valent.tst");
 
 # Loading package
-gap> LoadPackage("grsyli",false);
+gap> LoadPackage("graphsym",false);
 true
 
 # LAT_34VALENT_ORDER_MAX
@@ -62,4 +62,4 @@ gap> cnt;
 44
 
 # End test
-gap> STOP_TEST("GrSyLi package: lat34valent.tst",0);  
+gap> STOP_TEST("GraphSym package: lat34valent.tst",0);  

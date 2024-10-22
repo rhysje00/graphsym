@@ -18,7 +18,7 @@ of automorphisms of <M>\Gamma</M> which acts transitively on the vertices and ed
 <Heading>Accessing the <M>G</M>&ndash;half&ndash;arc&ndash;transitive 4&ndash;valent graphs</Heading>
 
 In this Section we introduce functions for the access to the 
-<M>G</M>-half-arc-transitive 4-valent graphs stored in the &GRSYLI; package.
+<M>G</M>-half-arc-transitive 4-valent graphs stored in the &GraphSym; package.
 
 <#Include Label="GHAT4ValentGraph">
 
@@ -39,7 +39,7 @@ the graphs it contains.
 <Heading>Precomputed attributes of the <M>G</M>&ndash;half&ndash;arc&ndash;transitive 4&ndash;valent graphs</Heading>
 
 For a given <M>G</M>-half-arc-transitive 4-valent graph <M>\Gamma</M> stored in this package, 
-there are several precomputed attributes stored in the &GRSYLI; package. These 
+there are several precomputed attributes stored in the &GraphSym; package. These 
 include the following:
 
 <List>

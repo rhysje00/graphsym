@@ -501,12 +501,12 @@ DeclareProperty("HasAbelianVertexStabilizer", IsDigraph);
 ##	
 ##  <Description>
 ##  Given an arc-transitive 2-valent digraph <A>gamma</A> from the 
-##  &GRSYLI; package such that its properties and attributes have been assigned,
+##  &GraphSym; package such that its properties and attributes have been assigned,
 ##  this function returns <K>true</K> if it is isomorphic to a generalized 
 ##  wreath digraph, and otherwise it returns <K>false</K>. 
 ##  <P/>
 ##  The properties and attributes of an arc-transitive 2-valent digraph that can
-##  be found in the &GRSYLI; package can be assigned using the function 
+##  be found in the &GraphSym; package can be assigned using the function 
 ##  <Ref Func="SetAT2ValentDigraphProps"/>, or loaded automatically by the functions
 ##  <Ref Func="AT2ValentDigraph"/>, <Ref Func="AllAT2ValentDigraphs"/> or 
 ##  <Ref Func="AT2ValentDigraphIterator"/>.
@@ -550,7 +550,7 @@ DeclareProperty("IsGeneralizedWreathDigraph", IsDigraph);
 ##	
 ##  <Description>
 ##  Given an arc-transitive 2-valent digraph <A>gamma</A> from the 
-##  &GRSYLI; package such that its properties and attributes have been assigned,
+##  &GraphSym; package such that its properties and attributes have been assigned,
 ##  this function returns the position, <C>i</C>, at which the reverse 
 ##  (or reverse) of <A>gamma</A> is stored 
 ##  (see  <Ref BookName="Digraphs" Attr="DigraphReverse"/>). 
@@ -559,7 +559,7 @@ DeclareProperty("IsGeneralizedWreathDigraph", IsDigraph);
 ##  <A>gamma</A>.
 ##  <P/>
 ##  The properties and attributes of an arc-transitive 2-valent digraph that can
-##  be found in the &GRSYLI; package can be assigned using the function 
+##  be found in the &GraphSym; package can be assigned using the function 
 ##  <Ref Func="SetAT2ValentDigraphProps"/>, or loaded automatically by the functions
 ##  <Ref Func="AT2ValentDigraph"/>, <Ref Func="AllAT2ValentDigraphs"/> or 
 ##  <Ref Func="AT2ValentDigraphIterator"/>.
@@ -588,12 +588,12 @@ DeclareAttribute("AT2ValentReverseDigraphId", IsDigraph);
 ##	
 ##  <Description>
 ##  Given an arc-transitive 2-valent digraph <A>gamma</A> from the 
-##  &GRSYLI; package such that its properties and attributes have been assigned,
+##  &GraphSym; package such that its properties and attributes have been assigned,
 ##   this function returns the name of the underlying graph of <A>gamma</A>
 ##  (see  <Ref BookName="Digraphs" Attr="DigraphSymmetricClosure"/>).  
 ##  <P/>
 ##  The properties and attributes of an arc-transitive 2-valent digraph that can
-##  be found in the &GRSYLI; package can be assigned using the function 
+##  be found in the &GraphSym; package can be assigned using the function 
 ##  <Ref Func="SetAT2ValentDigraphProps"/>, or loaded automatically by the functions
 ##  <Ref Func="AT2ValentDigraph"/>, <Ref Func="AllAT2ValentDigraphs"/> or 
 ##  <Ref Func="AT2ValentDigraphIterator"/>.
@@ -646,12 +646,12 @@ DeclareAttribute("NameOfUnderlyingGraph", IsDigraph);
 ##	
 ##  <Description>
 ##  Given an arc-transitive 2-valent digraph <A>gamma</A> from the 
-##  &GRSYLI; package such that its properties and attributes have been assigned,
+##  &GraphSym; package such that its properties and attributes have been assigned,
 ##  this function returns the maximum integer <M>s</M> such that <A>gamma</A> 
 ##  is <M>s</M>-arc-transitive.
 ##  <P/>
 ##  The properties and attributes of an arc-transitive 2-valent digraph that can
-##  be found in the &GRSYLI; package can be assigned using the function 
+##  be found in the &GraphSym; package can be assigned using the function 
 ##  <Ref Func="SetAT2ValentDigraphProps"/>, or loaded automatically by the functions
 ##  <Ref Func="AT2ValentDigraph"/>, <Ref Func="AllAT2ValentDigraphs"/> or 
 ##  <Ref Func="AT2ValentDigraphIterator"/>.
@@ -691,14 +691,14 @@ DeclareAttribute("MaximumArcTransitivity", IsDigraph);
 ##	
 ##  <Description>
 ##  Given an arc-transitive 2-valent digraph <A>gamma</A> from the 
-##  &GRSYLI; package such that its properties and attributes have been assigned,
+##  &GraphSym; package such that its properties and attributes have been assigned,
 ##  this function returns the index of a vertex stabilizer in the smallest
 ##  arc-transitive group of automorphisms of the underlying graph of 
 ##  <A>gamma</A>, if defined (see <Ref Attr="NameOfUnderlyingGraph"/>). 
 ##  Otherwise, this function returns <C>0</C>
 ##  <P/>
 ##  The properties and attributes of an arc-transitive 2-valent digraph that can
-##  be found in the &GRSYLI; package can be assigned using the function 
+##  be found in the &GraphSym; package can be assigned using the function 
 ##  <Ref Func="SetAT2ValentDigraphProps"/>, or loaded automatically by the functions
 ##  <Ref Func="AT2ValentDigraph"/>, <Ref Func="AllAT2ValentDigraphs"/> or 
 ##  <Ref Func="AT2ValentDigraphIterator"/>.
@@ -740,13 +740,13 @@ DeclareAttribute("StabIndexMinATUnd", IsDigraph);
 ##	
 ##  <Description>
 ##  Given an arc-transitive 2-valent digraph <A>gamma</A> from the 
-##  &GRSYLI; package such that its properties and attributes have been assigned,
+##  &GraphSym; package such that its properties and attributes have been assigned,
 ##  this function returns the index of a vertex stabilizer in the automorphism
 ##  group of the underlying graph of <A>gamma</A>. 
 ##  (see <Ref Attr="NameOfUnderlyingGraph"/>). 
 ##  <P/>
 ##  The properties and attributes of an arc-transitive 2-valent digraph that can
-##  be found in the &GRSYLI; package can be assigned using the function 
+##  be found in the &GraphSym; package can be assigned using the function 
 ##  <Ref Func="SetAT2ValentDigraphProps"/>, or loaded automatically by the functions
 ##  <Ref Func="AT2ValentDigraph"/>, <Ref Func="AllAT2ValentDigraphs"/> or 
 ##  <Ref Func="AT2ValentDigraphIterator"/>.
@@ -784,11 +784,11 @@ DeclareAttribute("StabIndexUnd", IsDigraph);
 ##	
 ##  <Description>
 ##  Given an arc-transitive 2-valent digraph <A>gamma</A> from the 
-##  &GRSYLI; package such that its properties and attributes have been assigned,
+##  &GraphSym; package such that its properties and attributes have been assigned,
 ##  this function returns the radius of <A>gamma</A>.
 ##  <P/>
 ##  The properties and attributes of an arc-transitive 2-valent digraph that can
-##  be found in the &GRSYLI; package can be assigned using the function 
+##  be found in the &GraphSym; package can be assigned using the function 
 ##  <Ref Func="SetAT2ValentDigraphProps"/>, or loaded automatically by the functions
 ##  <Ref Func="AT2ValentDigraph"/>, <Ref Func="AllAT2ValentDigraphs"/> or 
 ##  <Ref Func="AT2ValentDigraphIterator"/>.
@@ -821,11 +821,11 @@ DeclareAttribute("AlterCycleRadius", IsDigraph);
 ##	
 ##  <Description>
 ##  Given an arc-transitive 2-valent digraph <A>gamma</A> from the 
-##  &GRSYLI; package such that its properties and attributes have been assigned,
+##  &GraphSym; package such that its properties and attributes have been assigned,
 ##  this function returns the attachment number of <A>gamma</A>.
 ##  <P/>
 ##  The properties and attributes of an arc-transitive 2-valent digraph that can
-##  be found in the &GRSYLI; package can be assigned using the function 
+##  be found in the &GraphSym; package can be assigned using the function 
 ##  <Ref Func="SetAT2ValentDigraphProps"/>, or loaded automatically by the functions
 ##  <Ref Func="AT2ValentDigraph"/>, <Ref Func="AllAT2ValentDigraphs"/> or 
 ##  <Ref Func="AT2ValentDigraphIterator"/>.
@@ -858,11 +858,11 @@ DeclareAttribute("AlterCycleAttachmentNr", IsDigraph);
 ##	
 ##  <Description>
 ##  Given an arc-transitive 2-valent digraph <A>gamma</A> from the 
-##  &GRSYLI; package such that its properties and attributes have been assigned,
+##  &GraphSym; package such that its properties and attributes have been assigned,
 ##  this function returns the attachment number of <A>gamma</A>.
 ##  <P/>
 ##  The properties and attributes of an arc-transitive 2-valent digraph that can
-##  be found in the &GRSYLI; package can be assigned using the function 
+##  be found in the &GraphSym; package can be assigned using the function 
 ##  <Ref Func="SetAT2ValentDigraphProps"/>, or loaded automatically by the functions
 ##  <Ref Func="AT2ValentDigraph"/>, <Ref Func="AllAT2ValentDigraphs"/> or 
 ##  <Ref Func="AT2ValentDigraphIterator"/>.
@@ -895,11 +895,11 @@ DeclareAttribute("AlterCycleAttachmentType", IsDigraph);
 ##	
 ##  <Description>
 ##  Given an arc-transitive 2-valent digraph <A>gamma</A> from the 
-##  &GRSYLI; package such that its properties and attributes have been assigned,
+##  &GraphSym; package such that its properties and attributes have been assigned,
 ##  this function returns the number of alternating cycles in <A>gamma</A>.
 ##  <P/>
 ##  The properties and attributes of an arc-transitive 2-valent digraph that can
-##  be found in the &GRSYLI; package can be assigned using the function 
+##  be found in the &GraphSym; package can be assigned using the function 
 ##  <Ref Func="SetAT2ValentDigraphProps"/>, or loaded automatically by the functions
 ##  <Ref Func="AT2ValentDigraph"/>, <Ref Func="AllAT2ValentDigraphs"/> or 
 ##  <Ref Func="AT2ValentDigraphIterator"/>.
@@ -932,11 +932,11 @@ DeclareAttribute("NrAlterCycles", IsDigraph);
 ##	
 ##  <Description>
 ##  Given an arc-transitive 2-valent digraph <A>gamma</A> from the 
-##  &GRSYLI; package such that its properties and attributes have been assigned,
+##  &GraphSym; package such that its properties and attributes have been assigned,
 ##  this function returns the alter-exponent of <A>gamma</A>.
 ##  <P/>
 ##  The properties and attributes of an arc-transitive 2-valent digraph that can
-##  be found in the &GRSYLI; package can be assigned using the function 
+##  be found in the &GraphSym; package can be assigned using the function 
 ##  <Ref Func="SetAT2ValentDigraphProps"/>, or loaded automatically by the functions
 ##  <Ref Func="AT2ValentDigraph"/>, <Ref Func="AllAT2ValentDigraphs"/> or 
 ##  <Ref Func="AT2ValentDigraphIterator"/>.
@@ -969,11 +969,11 @@ DeclareAttribute("AlterExponent", IsDigraph);
 ##	
 ##  <Description>
 ##  Given an arc-transitive 2-valent digraph <A>gamma</A> from the 
-##  &GRSYLI; package such that its properties and attributes have been assigned,
+##  &GraphSym; package such that its properties and attributes have been assigned,
 ##  this function returns the alter-perimeter of <A>gamma</A>.
 ##  <P/>
 ##  The properties and attributes of an arc-transitive 2-valent digraph that can
-##  be found in the &GRSYLI; package can be assigned using the function 
+##  be found in the &GraphSym; package can be assigned using the function 
 ##  <Ref Func="SetAT2ValentDigraphProps"/>, or loaded automatically by the functions
 ##  <Ref Func="AT2ValentDigraph"/>, <Ref Func="AllAT2ValentDigraphs"/> or 
 ##  <Ref Func="AT2ValentDigraphIterator"/>.
@@ -1006,11 +1006,11 @@ DeclareAttribute("AlterPerimeter", IsDigraph);
 ##	
 ##  <Description>
 ##  Given an arc-transitive 2-valent digraph <A>gamma</A> from the 
-##  &GRSYLI; package such that its properties and attributes have been assigned,
+##  &GraphSym; package such that its properties and attributes have been assigned,
 ##  this function returns the alter-sequence of <A>gamma</A>.
 ##  <P/>
 ##  The properties and attributes of an arc-transitive 2-valent digraph that can
-##  be found in the &GRSYLI; package can be assigned using the function 
+##  be found in the &GraphSym; package can be assigned using the function 
 ##  <Ref Func="SetAT2ValentDigraphProps"/>, or loaded automatically by the functions
 ##  <Ref Func="AT2ValentDigraph"/>, <Ref Func="AllAT2ValentDigraphs"/> or 
 ##  <Ref Func="AT2ValentDigraphIterator"/>.

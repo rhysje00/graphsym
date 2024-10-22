@@ -428,7 +428,7 @@ DeclareGlobalFunction( "HAT4ValentGraphIterator" );
 ##	
 ##  <Description>
 ##  Given a half-arc-transitive 4-valent graph <A>gamma</A> from the
-##  &GRSYLI; package such that its properties and attributes have been assigned, 
+##  &GraphSym; package such that its properties and attributes have been assigned, 
 ##  this function returns the meta-circulant classes of <A>gamma</A>.
 ##  <P/>
 ##  Let <M>\Gamma</M> be a graph. Then the graph <M>\Gamma</M> is 

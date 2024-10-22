@@ -206,7 +206,7 @@ function(n)
   
   fn := Concatenation("GHAT_4valent_",String(n),".s6");
   
-  return Filename(DirectoriesPackageLibrary("grsyli","graphs/ghat4valent"),fn);  
+  return Filename(DirectoriesPackageLibrary("graphsym","graphs/ghat4valent"),fn);  
 end );
 
 #############################################################################

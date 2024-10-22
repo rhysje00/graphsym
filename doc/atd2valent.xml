@@ -19,7 +19,7 @@ has 2 in-neighbours and 2 out-neighbours.
 <Heading>Accessing the arc&ndash;transitive 2&ndash;valent digraphs</Heading>
 
 In this Section we introduce functions for the access to the cubic 
-vertex-transitive graphs stored in the &GRSYLI; package.
+vertex-transitive graphs stored in the &GraphSym; package.
 
 <#Include Label="AT2ValentDigraph">
 
@@ -40,7 +40,7 @@ the graphs it contains.
 <Heading>Precomputed attributes of the arc&ndash;transitive 2&ndash;valent digraphs</Heading>
 
 For a given arc-transitive 2-valent digraph <M>\Gamma</M> stored in this package, 
-there are several precomputed attributes stored in the &GRSYLI; package. These 
+there are several precomputed attributes stored in the &GraphSym; package. These 
 include the following:
 
 <List>

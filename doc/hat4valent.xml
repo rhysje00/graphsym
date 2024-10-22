@@ -18,7 +18,7 @@ but not on the arcs of <M>\Gamma</M>.
 <Heading>Accessing the half&ndash;arc&ndash;transitive 4&ndash;valent graphs</Heading>
 
 In this Section we introduce functions for the access to the 
-half-arc-transitive 4-valent graphs stored in the &GRSYLI; package.
+half-arc-transitive 4-valent graphs stored in the &GraphSym; package.
 
 <#Include Label="HAT4ValentGraph">
 
@@ -39,7 +39,7 @@ the graphs it contains.
 <Heading>Precomputed attributes of the half&ndash;arc&ndash;transitive 4&ndash;valent graphs</Heading>
 
 For a given half-arc-transitive 4-valent graph <M>\Gamma</M> stored in this package, 
-there are several precomputed attributes stored in the &GRSYLI; package. These 
+there are several precomputed attributes stored in the &GraphSym; package. These 
 include the following:
 
 <List>

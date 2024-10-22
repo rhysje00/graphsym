@@ -420,7 +420,7 @@ DeclareGlobalFunction( "GHAT4ValentGraphIterator" );
 ##	
 ##  <Description>
 ##  Given a <M>G</M>-half-arc-transitive 4-valent graph <A>gamma</A> from the
-##  &GRSYLI; package such that its properties and attributes have been assigned, 
+##  &GraphSym; package such that its properties and attributes have been assigned, 
 ##  this function returns the Cayley type of <A>gamma</A>.
 ##  <P/>
 ##  Let <M>\Gamma</M> be a graph. Then <C>CayleyType(</C><M>\Gamma</M><C>)</C>
@@ -464,12 +464,12 @@ DeclareAttribute("CayleyType", IsDigraph);
 ##	
 ##  <Description>
 ##  Given a <M>G</M>-half-arc-transitive 4-valent graph <A>gamma</A> from the
-##  &GRSYLI; package such that its properties and attributes have been assigned, 
+##  &GraphSym; package such that its properties and attributes have been assigned, 
 ##  this function returns the size of the stabilizer of a vertex in the 
 ##  automorphism group of <A>gamma</A>.
 ##  <P/>
 ##  The properties and attributes of a <M>G</M>-half-arc-transitive 4-valent 
-##  graph that can be found in the &GRSYLI; package can be assigned using the 
+##  graph that can be found in the &GraphSym; package can be assigned using the 
 ##  function <Ref Func="SetGHAT4ValentGraphProps"/>, or loaded automatically by 
 ##  the functions <Ref Func="GHAT4ValentGraph"/>, 
 ##  <Ref Func="AllGHAT4ValentGraphs"/> or 
@@ -498,14 +498,14 @@ DeclareAttribute("SizeStabAut", IsDigraph);
 ##  <Returns>A list.</Returns>
 ##	
 ##  <Description>
-##  Given a <M>G</M>-half-arc-transitive 4-valent graph <A>gamma</A> from the &GRSYLI; 
+##  Given a <M>G</M>-half-arc-transitive 4-valent graph <A>gamma</A> from the &GraphSym; 
 ##  package such that its properties and attributes have been assigned, 
 ##  this function returns a list containing the size of the stabilizer of a 
 ##  vertex in each maximal group <M>H</M> for which <A>gamma</A> is  
 ##  <M>H</M>-half-arc-transitive.
 ##  <P/>
 ##  The properties and attributes of a <M>G</M>-half-arc-transitive 4-valent graph that can
-##  be found in the &GRSYLI; package can be assigned using the function 
+##  be found in the &GraphSym; package can be assigned using the function 
 ##  <Ref Func="SetGHAT4ValentGraphProps"/>, or loaded automatically by the functions
 ##  <Ref Func="GHAT4ValentGraph"/>, <Ref Func="AllGHAT4ValentGraphs"/> or 
 ##  <Ref Func="GHAT4ValentGraphIterator"/>.
@@ -533,7 +533,7 @@ DeclareAttribute("SizeStabGHATGroups", IsDigraph);
 ##  <Returns>A list.</Returns>
 ##	
 ##  <Description>
-##  Given a <M>G</M>-half-arc-transitive 4-valent graph <A>gamma</A> from the &GRSYLI; 
+##  Given a <M>G</M>-half-arc-transitive 4-valent graph <A>gamma</A> from the &GraphSym; 
 ##  package such that its properties and attributes have been assigned, 
 ##  this function returns the list of consistent cycle types of the graph <A>gamma</A>,
 ##  with exactly one entry for each orbit of consistent cycles under the action of
@@ -544,7 +544,7 @@ DeclareAttribute("SizeStabGHATGroups", IsDigraph);
 ##  or <C>c</C> if <C>C</C> is <M>G</M>-chiral.
 ##  <P/>
 ##  The properties and attributes of a <M>G</M>-half-arc-transitive 4-valent graph that can
-##  be found in the &GRSYLI; package can be assigned using the function 
+##  be found in the &GraphSym; package can be assigned using the function 
 ##  <Ref Func="SetGHAT4ValentGraphProps"/>, or loaded automatically by the functions
 ##  <Ref Func="GHAT4ValentGraph"/>, <Ref Func="AllGHAT4ValentGraphs"/> or 
 ##  <Ref Func="GHAT4ValentGraphIterator"/>.

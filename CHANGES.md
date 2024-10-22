@@ -1,4 +1,4 @@
-# GrSyLi package for GAP - CHANGES.md
+# GraphSym package for GAP - CHANGES.md
 
 Copyright (C) 2024 by Rhys J. Evans. 
 

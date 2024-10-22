@@ -202,7 +202,7 @@ function(n)
   
   fn := Concatenation("GWG_4valent_",String(n),".s6");
   
-  return Filename(DirectoriesPackageLibrary("grsyli","graphs/gwg4valent"),fn);  
+  return Filename(DirectoriesPackageLibrary("graphsym","graphs/gwg4valent"),fn);  
 end );
 
 #############################################################################

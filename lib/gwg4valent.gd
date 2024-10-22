@@ -309,7 +309,7 @@ DeclareGlobalFunction( "IteratorOfGW4ValentGraphs" );
 ##  <Returns><K>true</K> or <K>false</K>.</Returns>
 ##	
 ##  <Description>
-##  Given a 4-valent generalised wreath graph <A>gamma</A> from the &GRSYLI; 
+##  Given a 4-valent generalised wreath graph <A>gamma</A> from the &GraphSym; 
 ##  package such that its properties and attributes have been assigned, 
 ##  this function returns <K>true</K>.
 ##    <Example>

@@ -444,13 +444,13 @@ DeclareProperty("IsCubicGraph", IsDigraph);
 ##  <Returns><K>true</K> or <K>false</K>.</Returns>
 ##	
 ##  <Description>
-##  Given a cubic vertex-transitive graph <A>gamma</A> from the &GRSYLI; 
+##  Given a cubic vertex-transitive graph <A>gamma</A> from the &GraphSym; 
 ##  package such that its properties and attributes have been assigned, 
 ##  this function returns <K>true</K> if <A>gamma</A> is a Cayley (di)graph 
 ##  and <K>false</K> otherwise.
 ##  <P/>
 ##  The properties and attributes of a cubic vertex-transitive graph that can
-##  be found in the &GRSYLI; package can be assigned using the function 
+##  be found in the &GraphSym; package can be assigned using the function 
 ##  <Ref Func="SetCubicVTGraphProps"/>, or loaded automatically by the functions
 ##  <Ref Func="CubicVTGraph"/>, <Ref Func="AllCubicVTGraphs"/> or 
 ##  <Ref Func="CubicVTGraphIterator"/>. This property is not equivalent to
@@ -513,13 +513,13 @@ DeclareSynonymAttr("IsArcTransitiveDigraph", IsEdgeTransitive);
 ##  <Returns><K>true</K> or <K>false</K>.</Returns>
 ##	
 ##  <Description>
-##  Given a cubic vertex-transitive graph <A>gamma</A> from the &GRSYLI; 
+##  Given a cubic vertex-transitive graph <A>gamma</A> from the &GraphSym; 
 ##  package such that its properties and attributes have been assigned, 
 ##  this function returns <K>true</K> if <A>gamma</A> is a split Praeger-Xu 
 ##  graph and <K>false</K> otherwise.
 ##  <P/>
 ##  The properties and attributes of a cubic vertex-transitive graph that can
-##  be found in the &GRSYLI; package can be assigned using the function 
+##  be found in the &GraphSym; package can be assigned using the function 
 ##  <Ref Func="SetCubicVTGraphProps"/>, or loaded automatically by the functions
 ##  <Ref Func="CubicVTGraph"/>, <Ref Func="AllCubicVTGraphs"/> or 
 ##  <Ref Func="CubicVTGraphIterator"/>.
@@ -583,13 +583,13 @@ DeclareProperty("HasSolvableAutGroup", IsDigraph);
 ##  <Returns>An integer.</Returns>
 ##	
 ##  <Description>
-##  Given a cubic vertex-transitive graph <A>gamma</A> from the &GRSYLI; 
+##  Given a cubic vertex-transitive graph <A>gamma</A> from the &GraphSym; 
 ##  package such that its properties and attributes have been assigned, 
 ##  this function returns the exponent of 2 in the size of the stabiliser of a
 ##  vertex in the automorphism group of <A>gamma</A>.
 ##  <P/>
 ##  The properties and attributes of a cubic vertex-transitive graph that can
-##  be found in the &GRSYLI; package can be assigned using the function 
+##  be found in the &GraphSym; package can be assigned using the function 
 ##  <Ref Func="SetCubicVTGraphProps"/>, or loaded automatically by the functions
 ##  <Ref Func="CubicVTGraph"/>, <Ref Func="AllCubicVTGraphs"/> or 
 ##  <Ref Func="CubicVTGraphIterator"/>.

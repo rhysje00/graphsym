@@ -9,15 +9,15 @@
 ##
 #R  Read the declaration files.
 ##
-ReadPackage( "grsyli", "lib/cvt.gd" );
-ReadPackage( "grsyli", "lib/atd2valent.gd" );
-ReadPackage( "grsyli", "lib/ghat4valent.gd" );
-ReadPackage( "grsyli", "lib/hat4valent.gd" );
-ReadPackage( "grsyli", "lib/gwg4valent.gd" );
-ReadPackage( "grsyli", "lib/at4valent.gd" );
-ReadPackage( "grsyli", "lib/2at4valent.gd" );
-ReadPackage( "grsyli", "lib/et4valent.gd" );
-ReadPackage( "grsyli", "lib/lat34valent.gd" );
+ReadPackage( "graphsym", "lib/cvt.gd" );
+ReadPackage( "graphsym", "lib/atd2valent.gd" );
+ReadPackage( "graphsym", "lib/ghat4valent.gd" );
+ReadPackage( "graphsym", "lib/hat4valent.gd" );
+ReadPackage( "graphsym", "lib/gwg4valent.gd" );
+ReadPackage( "graphsym", "lib/at4valent.gd" );
+ReadPackage( "graphsym", "lib/2at4valent.gd" );
+ReadPackage( "graphsym", "lib/et4valent.gd" );
+ReadPackage( "graphsym", "lib/lat34valent.gd" );
 
 
 #############################################################################

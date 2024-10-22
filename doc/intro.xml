@@ -1,15 +1,15 @@
-<Chapter Label="The GrSyLi package">
-<Heading>The &GRSYLI; package</Heading>
-<Index Key="GRSYLI">&GRSYLI; package overview</Index>
+<Chapter Label="The GraphSym package">
+<Heading>The &GraphSym; package</Heading>
+<Index Key="GraphSym">&GraphSym; package overview</Index>
 
-  This is the manual for the &GRSYLI; package version &VERSION;.
+  This is the manual for the &GraphSym; package version &VERSION;.
   <P/>
-  The &GRSYLI; package contains various collections of graphs with interesting 
+  The &GraphSym; package contains various collections of graphs with interesting 
   symmetry properties. Each collection of graphs are attained from complete or 
   partial enumerations published in international journals. The papers 
   containing these enumerations are referenced throughout this document, and 
   their authors are included as contributors (unless they are an author of this
-  package). The &GRSYLI; package provides functionality enabling easy access to 
+  package). The &GraphSym; package provides functionality enabling easy access to 
   these graphs, along with several precomputed properties related to many of 
   the graphs stored within. 
   <P/>
@@ -19,25 +19,25 @@
   <Ref BookName="digraphs" Chap="Visualising and IO"/>. 
 
 <Section Label="install">
-<Heading>Installing &GRSYLI;</Heading>
-<Index>&GRSYLI;</Index>
+<Heading>Installing &GraphSym;</Heading>
+<Index>&GraphSym;</Index>
 
-To install the &GRSYLI; package, you first need to download or clone the 
+To install the &GraphSym; package, you first need to download or clone the 
 package, found at &PKGWWWHOME;. Once downloaded, there is no need for any extra
 compiling. 
 
-If possible, it is recommended that you place the &GRSYLI; directory into the 
+If possible, it is recommended that you place the &GraphSym; directory into the 
 package directory of your &GAP; distribution. For guidance on how to load
-&GRSYLI; package if you cannot move the directory directly into your &GAP; 
+&GraphSym; package if you cannot move the directory directly into your &GAP; 
 package directory, see Section <Ref Sect="load"/>.
-<!-- To install the &GRSYLI; package, you will need to download the most recent 
+<!-- To install the &GraphSym; package, you will need to download the most recent 
 <C>tar.gz</C> file, found at &PKGWWWHOME;. Once downloaded, 
  you can install the 
 package by following the instructions found in the &GAP; reference manual, 
 <URL Text="chapter 76">https://docs.gap-system.org/doc/ref/chap76.html</URL>.
 -->
 <P/>
-The &GRSYLI; package requires the following &GAP; packages:
+The &GraphSym; package requires the following &GAP; packages:
 <List>
 <Item><Package>GAPDoc</Package> <Cite Key="GAPDOC_2019"/>, version 1.6.6 or higher;</Item>
 <Item><Package>Digraphs</Package> <Cite Key="DIGRAPHS_2019"/>, version 1.6.1 or higher.</Item>
@@ -47,56 +47,56 @@ Each of the above packages are part of the standard &GAP; distribution.
 </Section>
 
 <Section Label="build doc">
-<Heading>Building the documentation for &GRSYLI;</Heading>
+<Heading>Building the documentation for &GraphSym;</Heading>
 
 Once downloaded, you can build all package documentation by running 
-<C>gap path/to/grsyli/makedoc.g</C> from the command line. This will build a pdf 
-version of this manual and save it in the directory <C>path/to/grsyli/doc/</C>, 
+<C>gap path/to/graphsym/makedoc.g</C> from the command line. This will build a pdf 
+version of this manual and save it in the directory <C>path/to/graphsym/doc/</C>, 
 as well as provide the &GAP; help viewer with the content of the manual. 
 
 </Section>
 
 
 <Section Label="load">
-<Heading>Loading &GRSYLI;</Heading>
+<Heading>Loading &GraphSym;</Heading>
 
-If the &GRSYLI; package has been downloaded and placed in the &GAP; package 
+If the &GraphSym; package has been downloaded and placed in the &GAP; package 
 directory, it can by loaded at the &GAP; prompt by typing the following.
 <Example>
-gap> LoadPackage("grsyli");
+gap> LoadPackage("graphsym");
 true
 </Example>
 
 Otherwise, you can follow the methods found in the &GAP; reference manual, 
 <URL Text="chapter 76">https://docs.gap-system.org/doc/ref/chap76.html</URL>. 
-For example, if <C>path/to/grsyli</C> is the path to the &GRSYLI; package 
+For example, if <C>path/to/graphsym</C> is the path to the &GraphSym; package 
 directory relative to your &GAP; session, it can be loaded at the &GAP; prompt 
 by typing the following.
 <Example>
-gap> SetPackagePath("grsyli","path/to/grsyli");
-gap> LoadPackage("grsyli");
+gap> SetPackagePath("graphsym","path/to/graphsym");
+gap> LoadPackage("graphsym");
 true
 </Example>
 
 </Section>
 
 <Section Label="cite">
-<Heading>Citing &GRSYLI;</Heading>
+<Heading>Citing &GraphSym;</Heading>
 
-  If you use the &GRSYLI; package in your research, please tell us about it by 
+  If you use the &GraphSym; package in your research, please tell us about it by 
   emailing <Email>rhysjevans00@gmail.com</Email>. We are interested in any research
-  involving the use of the &GRSYLI; package and might refer to your work in the future.
+  involving the use of the &GraphSym; package and might refer to your work in the future.
   
-  If you wish to refer to the &GRSYLI; package in a published work, please cite 
-  &GRSYLI; like a journal article. The following is a BibTeX entry for the
-  current &GRSYLI; version:
+  If you wish to refer to the &GraphSym; package in a published work, please cite 
+  &GraphSym; like a journal article. The following is a BibTeX entry for the
+  current &GraphSym; version:
 
 <Listing Type="bibtex">
 @Manual{cvt,
         author = {Evans, Rhys J. and Montero, Antonio and
                   Poto\v{c}nik, Primo\v{z}},
         key = {cvt},
-        title = {{GrSyLi -- GRaphs with SYmmetries LIbrary for GAP, 
+        title = {{GraphSym -- GRaphs with SYmmetries LIbrary for GAP, 
                   Version &VERSION;}},
         url = {\verb+(&PKGWWWHOME;)+},
         year = {2024}
@@ -104,15 +104,15 @@ true
 </Section>
 <!--
 <Section>
-<Heading>Examples of the use of &GRSYLI;</Heading>
+<Heading>Examples of the use of &GraphSym;</Heading>
 
-We will give a simple example of how to use the &GRSYLI; package here.
+We will give a simple example of how to use the &GraphSym; package here.
 
 In this example, we will examine the cubic vertex-transitive graphs with 
 <M>50</M> vertices.
 
 <Example>
-gap> LoadPackage("grsyli");
+gap> LoadPackage("graphsym");
 true
 gap> 
 gap> 

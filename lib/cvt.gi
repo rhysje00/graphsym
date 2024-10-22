@@ -205,7 +205,7 @@ function(n)
   
   fn := Concatenation("CubicVTgraphs_",String(n),".s6");
   
-  return Filename(DirectoriesPackageLibrary("grsyli","graphs/cvt"),fn);  
+  return Filename(DirectoriesPackageLibrary("graphsym","graphs/cvt"),fn);  
 end );
 
 #############################################################################

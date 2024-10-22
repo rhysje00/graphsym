@@ -121,7 +121,7 @@ function(n)
   
   fn := Concatenation("AT_4valent_",String(n),".s6");
   
-  return Filename(DirectoriesPackageLibrary("grsyli","graphs/at4valent"),fn);  
+  return Filename(DirectoriesPackageLibrary("graphsym","graphs/at4valent"),fn);  
 end );
 
 #############################################################################

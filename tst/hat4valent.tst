@@ -4,10 +4,10 @@
 ##                                                           Primož Potočnik
 ##                                                           Antonio Montero
 ##
-gap> START_TEST("GrSyLi package: hat4valent.tst");
+gap> START_TEST("GraphSym package: hat4valent.tst");
 
 # Loading package
-gap> LoadPackage("grsyli",false);
+gap> LoadPackage("graphsym",false);
 true
 
 # HAT_4VALENT_ORDER_MAX
@@ -66,4 +66,4 @@ gap> HAT4ValentMetaCirculantClasses(gamma);
 [ 2, 4 ]
 
 # End test
-gap> STOP_TEST("GrSyLi package: hat4valent.tst",0);  
+gap> STOP_TEST("GraphSym package: hat4valent.tst",0);  
