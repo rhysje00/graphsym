@@ -11,6 +11,8 @@
 ##
 ReadPackage( "graphsym", "graphs/cvt/data.g" );
 ReadPackage( "graphsym", "lib/cvt.gi" );
+ReadPackage( "graphsym", "graphs/cet/data.g" );
+ReadPackage( "graphsym", "lib/cet.gi" );
 ReadPackage( "graphsym", "graphs/atd2valent/data.g" );
 ReadPackage( "graphsym", "lib/atd2valent.gi" );
 ReadPackage( "graphsym", "graphs/ghat4valent/data.g" );

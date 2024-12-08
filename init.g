@@ -10,6 +10,7 @@
 #R  Read the declaration files.
 ##
 ReadPackage( "graphsym", "lib/cvt.gd" );
+ReadPackage( "graphsym", "lib/cet.gd" );
 ReadPackage( "graphsym", "lib/atd2valent.gd" );
 ReadPackage( "graphsym", "lib/ghat4valent.gd" );
 ReadPackage( "graphsym", "lib/hat4valent.gd" );

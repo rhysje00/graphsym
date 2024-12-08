@@ -294,7 +294,7 @@ DeclareGlobalFunction( "SetHAT4ValentGraphProps" );
 ##  <#/GAPDoc>
 ##
 DeclareGlobalFunction( "NrHAT4ValentGraphs" );
-DeclareSynonym( "NumberAllHAT4ValentGraphs", NrHAT4ValentGraphs);
+DeclareSynonym( "NumberHAT4ValentGraphs", NrHAT4ValentGraphs);
 
 ################################################################################
 ##

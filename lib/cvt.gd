@@ -284,7 +284,7 @@ DeclareGlobalFunction( "SmallCubicVTGraphsInfo" );
 ##  <#/GAPDoc>
 ##
 DeclareGlobalFunction( "NrCubicVTGraphs" );
-DeclareSynonym( "NumberAllCubicVTGraphs", NrCubicVTGraphs);
+DeclareSynonym( "NumberCubicVTGraphs", NrCubicVTGraphs);
 
 ################################################################################
 ##

@@ -9,6 +9,7 @@ MakeGAPDocDoc( "doc",     # path to the directory containing the main file
                           # to path which contain pieces of documentation 
                           # which must be included in the document
                [ "../PackageInfo.g", "../lib/cvt.gd", 
+               "../lib/cet.gd",
                "../lib/atd2valent.gd", 
                "../lib/ghat4valent.gd",
                "../lib/hat4valent.gd", 

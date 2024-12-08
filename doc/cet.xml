@@ -1,0 +1,98 @@
+<Chapter Label="cet">
+<Heading>Cubic edge-transitive graphs</Heading>
+
+In this Chapter we give functions for accessing the cubic edge-transitive 
+graphs stored in this package, and related properties. Currently, this
+package contains all connected cubic edge-transitive graphs on up to 10000
+vertices. For information and references on these graphs, see 
+<Cite Key="CD_2002"/> and <Cite Key="CMMP_2006"/> (note: these references do 
+not cover the enumeration of graphs on more than 768 vertices, but the authors
+are currently writing up the extended computations for publishing).
+<P/>
+Let <M>\Gamma</M> be a simple graph (undirected, loopless, without multiple 
+edges). Then <M>\Gamma</M> is <E>cubic</E> (or <E>trivalent</E>, or 
+<M>3</M><E>-valent</E>) if each vertex of the graph has exactly 3 neighbours.
+<P/>
+The graph <M>\Gamma</M> is <E>edge-transitive</E> if the automorphism group 
+of <M>\Gamma</M> acts transitively on the edges of <M>\Gamma</M>.
+<P/>
+A regular edge-transitive graph can be either vertex-transitive or 
+non-vertex-transitive. In the former case the graph is arc-transitive, and in 
+the latter case it is said to be <E>semisymmetric</E>. Currently in the 
+&GraphSym; package, if a user wants access to a cubic edge-transitive graph they
+must also specify if the graph is arc-transitive or semisymmetric.
+
+
+<Section Label="Accessing the cet graphs">
+<Heading>Accessing the cubic edge&ndash;transitive graphs</Heading>
+
+In this Section we introduce functions for the access to the cubic 
+edge-transitive graphs stored in the &GraphSym; package.
+
+<#Include Label="CubicATGraph">
+
+<#Include Label="CubicSSGraph">
+
+<#Include Label="AllCubicATGraphs">
+
+<#Include Label="AllCubicSSGraphs">
+
+<#Include Label="CubicATGraphIterator">
+
+<#Include Label="CubicSSGraphIterator">
+
+</Section>
+
+<Section Label="cet library info">
+<Heading>Properties of the cubic edge&ndash;transitive graphs and library</Heading>
+
+In this Section we give the functions which give information about the cubic
+edge-transitive graphs library, and the properties and attributes of the 
+graphs it contains.
+
+<Subsection Label="Precomputed data cet">
+<Heading>Precomputed attributes of the cubic edge&ndash;transitive graphs</Heading>
+
+Currently, there are no precomputed attributes available for the cubic 
+edge-transitive graphs stored in this package. In the near future, we plan to
+provide several attributes for each of the cubic edge-transitive graphs stored, 
+including diameter, girth and bipartiteness. 
+<!--
+For a given cubic edge-transitive graph <M>\Gamma</M> stored in this package, 
+there are several precomputed attributes stored in the &GraphSym; package. These 
+include the following:
+
+<List>
+<Item>The diameter of <M>\Gamma</M> 
+      (<Ref BookName="Digraphs" Attr="DigraphDiameter"/>).</Item>
+<Item>The girth of the <M>\Gamma</M> 
+      (<Ref BookName="Digraphs" Attr="DigraphUndirectedGirth"/>).</Item>
+<Item>The bipartiteness of <M>\Gamma</M> 
+      (<Ref BookName="Digraphs" Attr="IsBipartiteDigraph"/>).</Item>
+<Item>The Cayleyness of <M>\Gamma</M>
+      (<Ref Prop="IsCayleyGraph"/>).</Item>
+<Item>The arc-transitiveness of <M>\Gamma</M>
+      (<Ref Prop="IsArcTransitiveDigraph"/>).</Item>   
+</List>
+-->
+
+</Subsection>
+
+Now we introduce functions which are used to find information about
+the library and each of the graphs it stores.
+
+<#Include Label="NrCubicATGraphs">
+
+<#Include Label="NrCubicSSGraphs">
+
+<#Include Label="CubicATGraphId">
+
+<#Include Label="CubicSSGraphId">
+
+<#Include Label="SetCubicATGraphProps">
+
+<#Include Label="SetCubicSSGraphProps">
+
+</Section>
+
+</Chapter>
