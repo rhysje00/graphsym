@@ -1,5 +1,5 @@
 <Chapter Label="hat4valent">
-<Heading>Half&ndash;arc&ndash;transitive graphs</Heading>
+<Heading>Half&ndash;arc&ndash;transitive 4&ndash;valent graphs</Heading>
 
 In this Chapter we give functions for accessing the half-arc-transitive 
 4-valent graphs stored in this package, and related properties. Currently, this package 
