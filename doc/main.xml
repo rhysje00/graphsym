@@ -46,7 +46,7 @@
     The &GraphSym; package is based largely on the I/O functionality found in the 
     &DIGRAPHS; package (homepage: <URL>https://digraphs.github.io/Digraphs/</URL>).
     The content of this package has been extracted directly from the 
-    <URL Text="project webpage">https://users.fmf.uni-lj.si/potocnik/projects.html</URL>
+    <URL Text="project webpage">https://graphsym.net/</URL>
     of Primož Potočnik, and is based on the work of himself, 
     <URL Text="Marston Conder">https://www.math.auckland.ac.nz/~conder/</URL>, 
     <URL Text="Pablo Spiga">https://en.unimib.it/pablo-spiga</URL>,
