@@ -1,0 +1,51 @@
+  
+  
+  [1XReferences[101X
+  
+  [[20XCD02[120X] [16XConder, M. and Dobcs\'{a}nyi, P.[116X, [17XTrivalent symmetric graphs on up to
+  768   vertices[117X,   [18XJCMCC.   The  Journal  of  Combinatorial  Mathematics  and
+  Combinatorial Computing[118X, [19X40[119X (2002), 41--63.
+  
+  [[20XCMMP06[120X]  [16XConder,  M., Malni\v{c}, A., Maru\v{s}i\v{c}, D. and Poto\v{c}nik,
+  P.[116X, [17XA census of semisymmetric cubic graphs on up to 768 vertices[117X, [18XJournal of
+  Algebraic  Combinatorics[118X,  Kluwer  Academic  Publishers,  [19X23[119X, 3, USA (2006),
+  255--294.
+  
+  [[20XDBJM+19[120X]  [16XDe Beule, J., Jonu{\~s}as, J., Mitchell, J. D., Torpey, M. C. and
+  Wilson,  W.  A.[116X, [17XDigraphs -- A GAP package, Version 0.15.3[117X (2019), (Refereed
+  GAP                  package,                  available                  at
+  \href{https://gap-packages.github.io/Digraphs/}{https://gap-packages.github.io/Digraphs/}).
+  
+  [[20XGR01[120X]  [16XGodsil, C. and Royle, G.[116X, [17XAlgebraic Graph Theory[117X, Springer, Graduate
+  Texts in Mathematics, [19X207[119X (2001).
+  
+  [[20XLN19[120X]  [16XL{\"u}beck,  F.  and  Neunh{\"o}ffer,  M.[116X,  [17XGAPDoc -- A GAP package,
+  Version    1.6.1[117X    (2019),    (Refereed    GAP    package,   available   at
+  \href{http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc/index.html}{http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc/index.html}).
+  
+  [[20XPot09[120X]  [16XPoto\v{c}nik,  P.[116X,  [17XA  list of 4-valent 2-arc-transitive graphs and
+  finite faithful amalgams of index (4, 2)[117X, [18XEuropean Journal of Combinatorics[118X,
+  [19X30[119X, 5 (2009), 1323--1336, (Part Special Issue on Metric Graph Theory).
+  
+  [[20XPot12[120X]  [16XPoto\v{c}nik,  P.[116X,  [17XLocally  arc-transitive graphs of valence {3,4}
+  with trivial edge kernel[117X, [18XJournal of Algebraic Combinatorics[118X, [19X38[119X (2012).
+  
+  [[20XPSV13a[120X]  [16XPoto\v{c}nik,  P.,  Spiga, P. and Verret, G.[116X, [17XA census of 4-valent
+  half-arc-transitive  graphs  and arc-transitive digraphs of valence two[117X, [18XArs
+  Mathematica Contemporanea[118X, [19X8[119X (2013).
+  
+  [[20XPSV13b[120X] [16XPoto\v{c}nik, P., Spiga, P. and Verret, G.[116X, [17XCubic vertex-transitive
+  graphs  on  up to 1280 vertices[117X, [18XJournal of Symbolic Computation[118X, [19X50[119X (2013),
+  465--477.
+  
+  [[20XPSV15[120X]  [16XPoto\v{c}nik,  P.,  Spiga, P. and Verret, G.[116X, [17XBounding the order of
+  the   vertex-stabiliser   in   3-valent   vertex-transitive   and   4-valent
+  arc-transitive  graphs[117X,  [18XJournal  of  Combinatorial  Theory,  Series  B[118X, [19X111[119X
+  (2015), 148--180.
+  
+  [[20XPW16[120X]   [16XPoto\v{c}nik,  P.  and  Wilson,  S.[116X,  [17XRecipes  for  Edge-Transitive
+  Tetravalent Graphs[117X, [18XThe Art of Discrete and Applied Mathematics[118X, [19X3[119X (2016).
+  
+  
+  
+  [32X

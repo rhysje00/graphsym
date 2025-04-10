@@ -1,0 +1,173 @@
+  
+  [1X8 [33X[0;0Y2–arc–transitive 4–valent graphs[133X[101X
+  
+  [33X[0;0YIn  this  Chapter  we  give  functions  for  accessing  the 2-arc-transitive
+  4-valent  graphs  stored in this package, and related properties. Currently,
+  this  package  contains  all  2-arc-transitive  4-valent graphs on up to 727
+  vertices,  and  many  more  on  up  to  2000  vertices.  For information and
+  references about these graphs, see [Pot09].[133X
+  
+  [33X[0;0YLet [22XΓ[122X be a simple graph (undirected, loopless, without multiple edges). Then
+  [22XΓ[122X  is  [13X4-valent[113X  (or  [13Xtetravalent[113X) if each vertex of the graph has exactly 4
+  neighbours.[133X
+  
+  [33X[0;0YThe  graph  [22XΓ[122X  is  [13X2-arc-transitive[113X  if  the  automorphism  group  of [22XΓ[122X acts
+  transitively on the 2-arcs of [22XΓ[122X.[133X
+  
+  
+  [1X8.1 [33X[0;0YAccessing the 2–arc–transitive 4–valent graphs[133X[101X
+  
+  [33X[0;0YIn   this   Section   we   introduce   functions   for  the  access  to  the
+  2-arc-transitive 4-valent graphs stored in the [5XGraphSym[105X package.[133X
+  
+  [1X8.1-1 2AT4ValentGraph[101X
+  
+  [33X[1;0Y[29X[2X2AT4ValentGraph[102X( [3Xn[103X, [3Xi[103X[, [3Xdata[103X] ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10YA digraph.[133X
+  
+  [33X[0;0YGiven  positive  integers  [3Xn,i[103X, this function returns the [3Xi[103Xth arc-transitive
+  2-valent  digraph  with [3Xn[103X vertices available in this package. If there is no
+  such graph, the function returns [9Xfail[109X.[133X
+  
+  [33X[0;0YWhen  the  optional  argument  [3Xdata[103X is specified, it must have value [9Xtrue[109X or
+  [9Xfalse[109X.  If  [10X[3Xdata[103X[10X=[110X[9Xtrue[109X,  the  graph  returned by this function will have been
+  assigned     the     precomputed     properties    and    attributes    from
+  [2XSet2AT4ValentGraphProps[102X  ([14X8.2-3[114X).  If  [10X[3Xdata[103X[10X=[110X[9Xfalse[109X  or not specified, none of
+  these properties or attributes are given to the resulting graph.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27X2AT4ValentGraph(1920,3);[127X[104X
+    [4X[28X<immutable symmetric digraph with 1920 vertices, 7680 edges>[128X[104X
+    [4X[25Xgap>[125X [27X2AT4ValentGraph(1920,12);[127X[104X
+    [4X[28Xfail[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X8.1-2 All2AT4ValentGraphs[101X
+  
+  [33X[1;0Y[29X[2XAll2AT4ValentGraphs[102X( [3Xn[103X[, [3Xdata[103X] ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10YA list.[133X
+  
+  [33X[0;0YGiven  a  positive  integer  [3Xn[103X,  this function returns a list containing all
+  arc-transitive  digraphs with [3Xn[103X vertices available in this package. If there
+  are no such graphs, the function returns [9Xfail[109X.[133X
+  
+  [33X[0;0YWhen  the  optional  argument  [3Xdata[103X is specified, it must have value [9Xtrue[109X or
+  [9Xfalse[109X.  If  [10X[3Xdata[103X[10X=[110X[9Xtrue[109X,  the  graphs returned by this function will have been
+  assigned     the     precomputed     properties    and    attributes    from
+  [2XSet2AT4ValentGraphProps[102X  ([14X8.2-3[114X).  If  [10X[3Xdata[103X[10X=[110X[9Xfalse[109X  or not specified, none of
+  these properties or attributes are given to the resulting graphs.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27Xgammas:=All2AT4ValentGraphs(1920);;[127X[104X
+    [4X[25Xgap>[125X [27XLength(gammas);[127X[104X
+    [4X[28X11[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X8.1-3 2AT4ValentGraphIterator[101X
+  
+  [33X[1;0Y[29X[2X2AT4ValentGraphIterator[102X( [3Xn[103X[, [3Xdata[103X] ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10YAn iterator.[133X
+  
+  [33X[0;0YGiven  a  positive  integer  [3Xn[103X,  this  function returns an iterator over all
+  arc-transitive  2-valent digraphs with [3Xn[103X vertices available in this package.
+  If there are such no graphs, the function returns an empty iterator.[133X
+  
+  [33X[0;0YWhen  the  optional  argument  [3Xdata[103X is specified, it must have value [9Xtrue[109X or
+  [9Xfalse[109X.  If  [10X[3Xdata[103X[10X=[110X[9Xtrue[109X,  the  graphs returned by this function will have been
+  assigned     the     precomputed     properties    and    attributes    from
+  [2XSet2AT4ValentGraphProps[102X  ([14X8.2-3[114X).  If  [10X[3Xdata[103X[10X=[110X[9Xfalse[109X  or not specified, none of
+  these properties or attributes are given to the resulting graphs.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27Xcnt:=0;; iter:=2AT4ValentGraphIterator(1920);;[127X[104X
+    [4X[25Xgap>[125X [27Xfor gamma in iter do[127X[104X
+    [4X[25X>[125X [27Xif HasSolvableAutGroup(gamma) then[127X[104X
+    [4X[25X>[125X [27Xcnt:=cnt+1;[127X[104X
+    [4X[25X>[125X [27Xfi;[127X[104X
+    [4X[25X>[125X [27Xod;[127X[104X
+    [4X[25Xgap>[125X [27Xcnt;[127X[104X
+    [4X[28X0[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  
+  [1X8.2 [33X[0;0YProperties of the 2–arc–transitive 4–valent graphs and library[133X[101X
+  
+  [33X[0;0YIn  this  Section  we  give  the  functions which give information about the
+  2-arc-transitive  4-valent  graph library, and the properties and attributes
+  of the graphs it contains.[133X
+  
+  [1X8.2-1 Nr2AT4ValentGraphs[101X
+  
+  [33X[1;0Y[29X[2XNr2AT4ValentGraphs[102X( [3Xn[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XNumber2AT4ValentGraphs[102X( [3Xn[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10YAn integer.[133X
+  
+  [33X[0;0YGiven   a   positive   integer  [3Xn[103X,  this  function  returns  the  number  of
+  arc-transitive 2-valent digraphs with [3Xn[103X vertices stored in this package.[133X
+  
+  [33X[0;0YFor  any  positive  integers  [22Xn[122X  up  to 1000, the current package stores all
+  arc-transitive 2-valent digraphs with [22Xn[122X vertices.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27XNr2AT4ValentGraphs(1920);[127X[104X
+    [4X[28X11[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X8.2-2 2AT4ValentGraphId[101X
+  
+  [33X[1;0Y[29X[2X2AT4ValentGraphId[102X( [3Xgamma[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YAn integer.[133X
+  
+  [33X[0;0YGiven  a  digraph  [3Xgamma[103X,  if  [3Xgamma[103X is isomorphic to a graph stored in this
+  package,  this  function returns the index of the graph isomorphic to [3Xgamma[103X.
+  Otherwise, this function returns [9Xfail[109X.[133X
+  
+  [33X[0;0YThe  index  [10Xi[110X  of a graph [10Xgamma[110X in this library is the position at which the
+  graph  is stored relative to its number of vertices. In particular, if [10Xgamma[110X
+  has  [10Xn[110X  vertices, then [10Xgamma[110X will be the [10Xi[110Xth entry of [10XAll2AT4ValentGraphs(n)[110X
+  and the [10Xi[110Xth graph found when iterating through [10X2AT4ValentGraphIterator(n)[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27Xgamma:=CompleteDigraph(5);;[127X[104X
+    [4X[25Xgap>[125X [27X2AT4ValentGraphId(gamma);[127X[104X
+    [4X[28X1[128X[104X
+    [4X[25Xgap>[125X [27Xgamma:=2AT4ValentGraph(1920,10);;[127X[104X
+    [4X[25Xgap>[125X [27X2AT4ValentGraphId(gamma);[127X[104X
+    [4X[28X10[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X8.2-3 Set2AT4ValentGraphProps[101X
+  
+  [33X[1;0Y[29X[2XSet2AT4ValentGraphProps[102X( [3Xgamma[103X ) [32X function[133X
+  
+  [33X[0;0YGiven a digraph [3Xgamma[103X, if this graph is isomorphic to a graph stored in this
+  library,   this  function  sets  the  properties  and  attributes  of  [3Xgamma[103X
+  precomputed in this package. This includes:[133X
+  
+  [30X    [33X[0;6Y[2X2AT4ValentGraphId[102X ([14X8.2-2[114X).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27Xgamma:=2AT4ValentGraph(1920,5);;[127X[104X
+    [4X[25Xgap>[125X [27XSet2AT4ValentGraphProps(gamma);[127X[104X
+    [4X[25Xgap>[125X [27X2AT4ValentGraphId(gamma);[127X[104X
+    [4X[28X5[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  

@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<title>GAP (GraphSym) - Chapter 2: Cubic vertex–transitive graphs</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap2"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chap7_mj.html">7</a>  <a href="chap8_mj.html">8</a>  <a href="chap9_mj.html">9</a>  <a href="chap10_mj.html">10</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap2.html">[MathJax off]</a></p>
+<p><a id="X7940F32E84892050" name="X7940F32E84892050"></a></p>
+<div class="ChapSects"><a href="chap2_mj.html#X7940F32E84892050">2 <span class="Heading">Cubic vertex–transitive graphs</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X8383D73A79EE4F26">2.1 <span class="Heading">Accessing the cubic vertex–transitive graphs</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X82A00F4782B01C08">2.1-1 CubicVTGraph</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X848310E984646899">2.1-2 AllCubicVTGraphs</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X8601BF8C8188B7CC">2.1-3 CubicVTGraphIterator</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X7D258A2A83816322">2.2 <span class="Heading">Properties of the cubic vertex–transitive graphs and library</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X819D9220816F934A">2.2-1 <span class="Heading">Precomputed attributes of the cubic vertex–transitive graphs</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X78D7F6C881578BF3">2.2-2 NrCubicVTGraphs</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7C7BA5F57F7998D7">2.2-3 CubicVTGraphId</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7C27828A7AAC12F6">2.2-4 SetCubicVTGraphProps</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X83D57C2678E64CCE">2.2-5 SmallCubicVTGraphsInfo</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7CE5BD297EB1A37B">2.2-6 IsCubicGraph</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X844782877BB15F30">2.2-7 IsCayleyGraph</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X79AA37B085A4C47B">2.2-8 IsArcTransitiveDigraph</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7AC800B7822F31FF">2.2-9 IsSplitPraegerXuGraph</a></span>
+</div></div>
+</div>
+
+<h3>2 <span class="Heading">Cubic vertex–transitive graphs</span></h3>
+
+<p>In this Chapter we give functions for accessing the cubic vertex-transitive graphs stored in this package, and related properties. Currently, this package contains all connected cubic vertex-transitive graphs on up to 1280 vertices. For information and references on these graphs, see <a href="chapBib_mj.html#biBPSV_2013b">[PSV13b]</a>.</p>
+
+<p>Let <span class="SimpleMath">\(\Gamma\)</span> be a simple graph (undirected, loopless, without multiple edges). Then <span class="SimpleMath">\(\Gamma\)</span> is <em>cubic</em> (or <em>trivalent</em>, or <span class="SimpleMath">\(3\)</span><em>-valent</em>) if each vertex of the graph has exactly 3 neighbours.</p>
+
+<p>The graph <span class="SimpleMath">\(\Gamma\)</span> is <em>vertex-transitive</em> if the automorphism group of <span class="SimpleMath">\(\Gamma\)</span> acts transitively on the vertices of <span class="SimpleMath">\(\Gamma\)</span>.</p>
+
+<p><a id="X8383D73A79EE4F26" name="X8383D73A79EE4F26"></a></p>
+
+<h4>2.1 <span class="Heading">Accessing the cubic vertex–transitive graphs</span></h4>
+
+<p>In this Section we introduce functions for the access to the cubic vertex-transitive graphs stored in the <strong class="pkg">GraphSym</strong> package.</p>
+
+<p><a id="X82A00F4782B01C08" name="X82A00F4782B01C08"></a></p>
+
+<h5>2.1-1 CubicVTGraph</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CubicVTGraph</code>( <var class="Arg">n</var>, <var class="Arg">i</var>[, <var class="Arg">data</var>] )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns: A digraph.</p>
+
+<p>Given positive integers <var class="Arg">n,i</var>, this function returns the <var class="Arg">i</var>th cubic vertex-transitive graph with <var class="Arg">n</var> vertices available in this package. If there is no such graph, the function returns <code class="keyw">fail</code>.</p>
+
+<p>When the optional argument <var class="Arg">data</var> is specified, it must have value <code class="keyw">true</code> or <code class="keyw">false</code>. If <code class="code"><var class="Arg">data</var>=</code><code class="keyw">true</code>, the graph returned by this function will have been assigned the precomputed properties and attributes from <code class="func">SetCubicVTGraphProps</code> (<a href="chap2_mj.html#X7C27828A7AAC12F6"><span class="RefLink">2.2-4</span></a>). If <code class="code"><var class="Arg">data</var>=</code><code class="keyw">false</code> or not specified, none of these properties or attributes are given to the resulting graph.</p>
+
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CubicVTGraph(50,4);</span>
+&lt;immutable symmetric digraph with 50 vertices, 150 edges&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CubicVTGraph(50,10);</span>
+fail
+    
+  </pre></div>
+
+<p><a id="X848310E984646899" name="X848310E984646899"></a></p>
+
+<h5>2.1-2 AllCubicVTGraphs</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AllCubicVTGraphs</code>( <var class="Arg">n</var>[, <var class="Arg">data</var>] )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns: A list.</p>
+
+<p>Given a positive integer <var class="Arg">n</var>, this function returns a list containing all cubic vertex-transitive graphs with <var class="Arg">n</var> vertices available in this package. If there are no such graphs, the function returns <code class="keyw">fail</code>.</p>
+
+<p>When the optional argument <var class="Arg">data</var> is specified, it must have value <code class="keyw">true</code> or <code class="keyw">false</code>. If <code class="code"><var class="Arg">data</var>=</code><code class="keyw">true</code>, the graphs returned by this function will have been assigned the precomputed properties and attributes from <code class="func">SetCubicVTGraphProps</code> (<a href="chap2_mj.html#X7C27828A7AAC12F6"><span class="RefLink">2.2-4</span></a>). If <code class="code"><var class="Arg">data</var>=</code><code class="keyw">false</code> or not specified, none of these properties or attributes are given to the resulting graphs.</p>
+
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gammas:=AllCubicVTGraphs(50,true);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(gammas,IsSplitPraegerXuGraph);</span>
+[ false, false, false, false, false, false, false, false, false ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gammas:=AllCubicVTGraphs(100,true);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ForAny(gammas,IsSplitPraegerXuGraph);</span>
+true
+    
+  </pre></div>
+
+<p><a id="X8601BF8C8188B7CC" name="X8601BF8C8188B7CC"></a></p>
+
+<h5>2.1-3 CubicVTGraphIterator</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CubicVTGraphIterator</code>( <var class="Arg">n</var>[, <var class="Arg">data</var>] )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns: A list</p>
+
+<p>Given a positive integer <var class="Arg">n</var>, this function returns an iterator over all cubic vertex-transitive graphs with <var class="Arg">n</var> vertices available in this package. If there are such no graphs, the function returns an empty iterator.</p>
+
+<p>When the optional argument <var class="Arg">data</var> is specified, it must have value <code class="keyw">true</code> or <code class="keyw">false</code>. If <code class="code"><var class="Arg">data</var>=</code><code class="keyw">true</code>, the graphs returned by this function will have been assigned the precomputed properties and attributes from <code class="func">SetCubicVTGraphProps</code> (<a href="chap2_mj.html#X7C27828A7AAC12F6"><span class="RefLink">2.2-4</span></a>). If <code class="code"><var class="Arg">data</var>=</code><code class="keyw">false</code> or not specified, none of these properties or attributes are given to the resulting graphs.</p>
+
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">cnt:=0;; iter:=CubicVTGraphIterator(1152,true);</span>
+&lt;iterator&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for gamma in iter do</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">if IsSplitPraegerXuGraph(gamma) then cnt:=cnt+1; fi;</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">od;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">cnt;</span>
+6
+    
+  </pre></div>
+
+<p><a id="X7D258A2A83816322" name="X7D258A2A83816322"></a></p>
+
+<h4>2.2 <span class="Heading">Properties of the cubic vertex–transitive graphs and library</span></h4>
+
+<p>In this Section we give the functions which give information about the cubic vertex-transitive graphs library, and the properties and attributes of the graphs it contains.</p>
+
+<p><a id="X819D9220816F934A" name="X819D9220816F934A"></a></p>
+
+<h5>2.2-1 <span class="Heading">Precomputed attributes of the cubic vertex–transitive graphs</span></h5>
+
+<p>For a given cubic vertex-transitive graph <span class="SimpleMath">\(\Gamma\)</span> stored in this package, there are several precomputed attributes stored in the <strong class="pkg">GraphSym</strong> package. These include the following:</p>
+
+
+<ul>
+<li><p>The diameter of <span class="SimpleMath">\(\Gamma\)</span> (<code class="func">DigraphDiameter</code> (<a href="../../../pkg/digraphs/doc/chap5_mj.html#X7F16B9EB8398459C"><span class="RefLink">Digraphs: DigraphDiameter</span></a>)).</p>
+
+</li>
+<li><p>The girth of the <span class="SimpleMath">\(\Gamma\)</span> (<code class="func">DigraphUndirectedGirth</code> (<a href="../../../pkg/digraphs/doc/chap5_mj.html#X84688B337BDDBB09"><span class="RefLink">Digraphs: DigraphUndirectedGirth</span></a>)).</p>
+
+</li>
+<li><p>The bipartiteness of <span class="SimpleMath">\(\Gamma\)</span> (<code class="func">IsBipartiteDigraph</code> (<a href="../../../pkg/digraphs/doc/chap6_mj.html#X860CFB0C8665F356"><span class="RefLink">Digraphs: IsBipartiteDigraph</span></a>)).</p>
+
+</li>
+<li><p>The Cayleyness of <span class="SimpleMath">\(\Gamma\)</span> (<code class="func">IsCayleyGraph</code> (<a href="chap2_mj.html#X844782877BB15F30"><span class="RefLink">2.2-7</span></a>)).</p>
+
+</li>
+<li><p>The arc-transitiveness of <span class="SimpleMath">\(\Gamma\)</span> (<code class="func">IsArcTransitiveDigraph</code> (<a href="chap2_mj.html#X79AA37B085A4C47B"><span class="RefLink">2.2-8</span></a>)).</p>
+
+</li>
+<li><p>The property of <span class="SimpleMath">\(\Gamma\)</span> being isomorphic to a a split Praeger-Xu graph (<code class="func">IsSplitPraegerXuGraph</code> (<a href="chap2_mj.html#X7AC800B7822F31FF"><span class="RefLink">2.2-9</span></a>)).</p>
+
+</li>
+</ul>
+<p>Now we introduce functions which are used to find information about the library and each of the graphs it stores.</p>
+
+<p><a id="X78D7F6C881578BF3" name="X78D7F6C881578BF3"></a></p>
+
+<h5>2.2-2 NrCubicVTGraphs</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NrCubicVTGraphs</code>( <var class="Arg">n</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumberCubicVTGraphs</code>( <var class="Arg">n</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns: An integer.</p>
+
+<p>Given a positive integer <var class="Arg">n</var>, this function returns the number of cubic vertex-transitive graphs with <var class="Arg">n</var> vertices stored in this package.</p>
+
+<p>For any positive integers <span class="SimpleMath">\(n\)</span> up to 1280, the current package stores all cubic vertex-transitive graphs with <span class="SimpleMath">\(n\)</span> vertices.</p>
+
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NrCubicVTGraphs(50);</span>
+9
+    
+  </pre></div>
+
+<p><a id="X7C7BA5F57F7998D7" name="X7C7BA5F57F7998D7"></a></p>
+
+<h5>2.2-3 CubicVTGraphId</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CubicVTGraphId</code>( <var class="Arg">gamma</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: An integer.</p>
+
+<p>Given a digraph <var class="Arg">gamma</var>, if <var class="Arg">gamma</var> is isomorphic to a graph stored in this package, this function returns the index of the graph isomorphic to <var class="Arg">gamma</var>. Otherwise, this function returns <code class="keyw">fail</code>.</p>
+
+<p>The index <code class="code">i</code> of a graph <code class="code">gamma</code> in this library is the position at which the graph is stored relative to its number of vertices. In particular, if <code class="code">gamma</code> has <code class="code">n</code> vertices, then <code class="code">gamma</code> will be the <code class="code">i</code>th entry of <code class="code">AllCubicVTGraphs(n)</code> and the <code class="code">i</code>th graph found when iterating through <code class="code">CubicVTGraphIterator(n)</code>.</p>
+
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gamma:=CubicVTGraph(8,2);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CubicVTGraphId(gamma);</span>
+2
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gamma:=CycleDigraph(8);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">CubicVTGraphId(gamma);</span>
+fail
+    
+  </pre></div>
+
+<p><a id="X7C27828A7AAC12F6" name="X7C27828A7AAC12F6"></a></p>
+
+<h5>2.2-4 SetCubicVTGraphProps</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SetCubicVTGraphProps</code>( <var class="Arg">gamma</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Given a digraph <var class="Arg">gamma</var>, if this graph is isomorphic to a graph stored in this library, this function sets the properties and attributes of <var class="Arg">gamma</var> precomputed in this package. This includes</p>
+
+
+<ul>
+<li><p>All properties and attributes found in Subsection <a href="chap2_mj.html#X819D9220816F934A"><span class="RefLink">2.2-1</span></a>.</p>
+
+</li>
+<li><p><code class="func">CubicVTGraphId</code> (<a href="chap2_mj.html#X7C7BA5F57F7998D7"><span class="RefLink">2.2-3</span></a>).</p>
+
+</li>
+<li><p><code class="func">IsCubicGraph</code> (<a href="chap2_mj.html#X7CE5BD297EB1A37B"><span class="RefLink">2.2-6</span></a>).</p>
+
+</li>
+<li><p><code class="func">IsVertexTransitive</code> (<a href="../../../pkg/digraphs/doc/chap6_mj.html#X7B26E4447A1611E9"><span class="RefLink">Digraphs: IsVertexTransitive</span></a>).</p>
+
+</li>
+</ul>
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gamma:=CompleteDigraph(4);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetCubicVTGraphProps(gamma);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsArcTransitiveDigraph(gamma);</span>
+true
+    
+  </pre></div>
+
+<p><a id="X83D57C2678E64CCE" name="X83D57C2678E64CCE"></a></p>
+
+<h5>2.2-5 SmallCubicVTGraphsInfo</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SmallCubicVTGraphsInfo</code>( <var class="Arg">n</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Given a positive integer <var class="Arg">n</var>, this function prints information on the cubic vertex-transitive graphs on <var class="Arg">n</var> vertices currently stored in this package. This includes the total number of graphs, the enumeration status of these graphs, and the number of graphs with several properties precomputed and stored in this library.</p>
+
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SmallCubicVTGraphsInfo(50);</span>
+CVT: There are 9 cubic vertex-transitive graphs on 50 vertices.
+
+Of these 9 graphs, there are;
+   - 6 bipartite graphs, 
+   - 8 Cayley graphs, 
+   - 1 arc-transitive graphs, 
+   - 0 split Praeger-Xu graphs, 
+   - 9 graphs with solvable automorphism group. 
+
+    
+  </pre></div>
+
+<p><a id="X7CE5BD297EB1A37B" name="X7CE5BD297EB1A37B"></a></p>
+
+<h5>2.2-6 IsCubicGraph</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCubicGraph</code>( <var class="Arg">gamma</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code>.</p>
+
+<p>Given a digraph <var class="Arg">gamma</var>, this function returns <code class="keyw">true</code> if <var class="Arg">gamma</var> is a cubic digraph, and otherwise it returns <code class="keyw">false</code>.</p>
+
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsCubicGraph(CycleDigraph(5));</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsCubicGraph(CompleteDigraph(4));</span>
+true
+    
+  </pre></div>
+
+<p><a id="X844782877BB15F30" name="X844782877BB15F30"></a></p>
+
+<h5>2.2-7 IsCayleyGraph</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsCayleyGraph</code>( <var class="Arg">gamma</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code>.</p>
+
+<p>Given a cubic vertex-transitive graph <var class="Arg">gamma</var> from the <strong class="pkg">GraphSym</strong> package such that its properties and attributes have been assigned, this function returns <code class="keyw">true</code> if <var class="Arg">gamma</var> is a Cayley (di)graph and <code class="keyw">false</code> otherwise.</p>
+
+<p>The properties and attributes of a cubic vertex-transitive graph that can be found in the <strong class="pkg">GraphSym</strong> package can be assigned using the function <code class="func">SetCubicVTGraphProps</code> (<a href="chap2_mj.html#X7C27828A7AAC12F6"><span class="RefLink">2.2-4</span></a>), or loaded automatically by the functions <code class="func">CubicVTGraph</code> (<a href="chap2_mj.html#X82A00F4782B01C08"><span class="RefLink">2.1-1</span></a>), <code class="func">AllCubicVTGraphs</code> (<a href="chap2_mj.html#X848310E984646899"><span class="RefLink">2.1-2</span></a>) or <code class="func">CubicVTGraphIterator</code> (<a href="chap2_mj.html#X8601BF8C8188B7CC"><span class="RefLink">2.1-3</span></a>). This property is not equivalent to <code class="func">IsCayleyDigraph</code> (<a href="../../../pkg/digraphs/doc/chap3_mj.html#X7E749324800B38A5"><span class="RefLink">Digraphs: IsCayleyDigraph</span></a>), as a digraph with this property has associated group and generators.</p>
+
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gamma:=CubicVTGraph(50,2,true);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsCayleyGraph(gamma);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gamma:=CubicVTGraph(50,9,true);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsCayleyGraph(gamma);</span>
+false
+    
+  </pre></div>
+
+<p><a id="X79AA37B085A4C47B" name="X79AA37B085A4C47B"></a></p>
+
+<h5>2.2-8 IsArcTransitiveDigraph</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsArcTransitiveDigraph</code>( <var class="Arg">gamma</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code>.</p>
+
+<p>Given a digraph <var class="Arg">gamma</var>, this function returns <code class="keyw">true</code> if <var class="Arg">gamma</var> is arc-transitive and <code class="keyw">false</code> otherwise. This is a synonym for the function <code class="func">IsEdgeTransitive</code> (<a href="../../../pkg/digraphs/doc/chap6_mj.html#X8361CA6E8401FF26"><span class="RefLink">Digraphs: IsEdgeTransitive</span></a>).</p>
+
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gamma:=CubicVTGraph(50,4,true);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsArcTransitiveDigraph(gamma);</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gamma:=CubicVTGraph(50,8,true);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsArcTransitiveDigraph(gamma);</span>
+true
+    
+  </pre></div>
+
+<p><a id="X7AC800B7822F31FF" name="X7AC800B7822F31FF"></a></p>
+
+<h5>2.2-9 IsSplitPraegerXuGraph</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSplitPraegerXuGraph</code>( <var class="Arg">gamma</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code>.</p>
+
+<p>Given a cubic vertex-transitive graph <var class="Arg">gamma</var> from the <strong class="pkg">GraphSym</strong> package such that its properties and attributes have been assigned, this function returns <code class="keyw">true</code> if <var class="Arg">gamma</var> is a split Praeger-Xu graph and <code class="keyw">false</code> otherwise.</p>
+
+<p>The properties and attributes of a cubic vertex-transitive graph that can be found in the <strong class="pkg">GraphSym</strong> package can be assigned using the function <code class="func">SetCubicVTGraphProps</code> (<a href="chap2_mj.html#X7C27828A7AAC12F6"><span class="RefLink">2.2-4</span></a>), or loaded automatically by the functions <code class="func">CubicVTGraph</code> (<a href="chap2_mj.html#X82A00F4782B01C08"><span class="RefLink">2.1-1</span></a>), <code class="func">AllCubicVTGraphs</code> (<a href="chap2_mj.html#X848310E984646899"><span class="RefLink">2.1-2</span></a>) or <code class="func">CubicVTGraphIterator</code> (<a href="chap2_mj.html#X8601BF8C8188B7CC"><span class="RefLink">2.1-3</span></a>).</p>
+
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gamma:=CubicVTGraph(48,6,true);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSplitPraegerXuGraph(gamma);</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gamma:=CubicVTGraph(48,7,true);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSplitPraegerXuGraph(gamma);</span>
+true
+    
+  </pre></div>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chap7_mj.html">7</a>  <a href="chap8_mj.html">8</a>  <a href="chap9_mj.html">9</a>  <a href="chap10_mj.html">10</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<title>GAP (GraphSym) - Chapter 9: Edge–transitive 4–valent graphs</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap9"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chap7_mj.html">7</a>  <a href="chap8_mj.html">8</a>  <a href="chap9_mj.html">9</a>  <a href="chap10_mj.html">10</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap8_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap10_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap9.html">[MathJax off]</a></p>
+<p><a id="X84898D8F7D6E3E78" name="X84898D8F7D6E3E78"></a></p>
+<div class="ChapSects"><a href="chap9_mj.html#X84898D8F7D6E3E78">9 <span class="Heading">Edge–transitive 4–valent graphs</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap9_mj.html#X81CF86CD7CD29D16">9.1 <span class="Heading">Accessing the edge–transitive 4–valent graphs</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9_mj.html#X87A436EB7C367458">9.1-1 ET4ValentGraph</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9_mj.html#X7B08EB74806113D9">9.1-2 AllET4ValentGraphs</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9_mj.html#X7E0DA218839104CA">9.1-3 ET4ValentGraphIterator</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap9_mj.html#X79310EE384CFC63E">9.2 <span class="Heading">Properties of the edge–transitive 4–valent graphs and library</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9_mj.html#X78832DB679DC7D9D">9.2-1 NrET4ValentGraphs</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9_mj.html#X81C9AA207ED80270">9.2-2 ET4ValentGraphId</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap9_mj.html#X781D982F84B002F6">9.2-3 SetET4ValentGraphProps</a></span>
+</div></div>
+</div>
+
+<h3>9 <span class="Heading">Edge–transitive 4–valent graphs</span></h3>
+
+<p>In this chapter we give functions for accessing the edge-transitive 4-valent graphs stored in this package, and related properties. Currently, this package contains an incomplete list of edge-transitive 4-valent graphs on up to 512 vertices. For information and references about these graphs, see <a href="chapBib_mj.html#biBPW_2016">[PW16]</a>.</p>
+
+<p>Let <span class="SimpleMath">\(\Gamma\)</span> be a simple graph (undirected, loopless, without multiple edges). Then <span class="SimpleMath">\(\Gamma\)</span> is <em>4-valent</em> (or <em>tetravalent</em>) if each vertex of the graph has exactly 4 neighbours.</p>
+
+<p>The graph <span class="SimpleMath">\(\Gamma\)</span> is <em>edge-transitive</em> if the automorphism group of <span class="SimpleMath">\(\Gamma\)</span> acts transitively on the edges of <span class="SimpleMath">\(\Gamma\)</span>.</p>
+
+<p><a id="X81CF86CD7CD29D16" name="X81CF86CD7CD29D16"></a></p>
+
+<h4>9.1 <span class="Heading">Accessing the edge–transitive 4–valent graphs</span></h4>
+
+<p>In this Section we introduce functions for the access to the edge-transitive 4-valent graphs stored in the <strong class="pkg">GraphSym</strong> package.</p>
+
+<p><a id="X87A436EB7C367458" name="X87A436EB7C367458"></a></p>
+
+<h5>9.1-1 ET4ValentGraph</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ET4ValentGraph</code>( <var class="Arg">n</var>, <var class="Arg">i</var>[, <var class="Arg">data</var>] )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns: A digraph.</p>
+
+<p>Given positive integers <var class="Arg">n,i</var>, this function returns the <var class="Arg">i</var>th arc-transitive 2-valent digraph with <var class="Arg">n</var> vertices available in this package. If there is no such graph, the function returns <code class="keyw">fail</code>.</p>
+
+<p>When the optional argument <var class="Arg">data</var> is specified, it must have value <code class="keyw">true</code> or <code class="keyw">false</code>. If <code class="code"><var class="Arg">data</var>=</code><code class="keyw">true</code>, the graph returned by this function will have been assigned the precomputed properties and attributes from <code class="func">SetET4ValentGraphProps</code> (<a href="chap9_mj.html#X781D982F84B002F6"><span class="RefLink">9.2-3</span></a>). If <code class="code"><var class="Arg">data</var>=</code><code class="keyw">false</code> or not specified, none of these properties or attributes are given to the resulting graph.</p>
+
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ET4ValentGraph(512,100);</span>
+&lt;immutable symmetric digraph with 512 vertices, 2048 edges&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ET4ValentGraph(512,700);</span>
+fail
+    
+  </pre></div>
+
+<p><a id="X7B08EB74806113D9" name="X7B08EB74806113D9"></a></p>
+
+<h5>9.1-2 AllET4ValentGraphs</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AllET4ValentGraphs</code>( <var class="Arg">n</var>[, <var class="Arg">data</var>] )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns: A list.</p>
+
+<p>Given a positive integer <var class="Arg">n</var>, this function returns a list containing all arc-transitive digraphs with <var class="Arg">n</var> vertices available in this package. If there are no such graphs, the function returns <code class="keyw">fail</code>.</p>
+
+<p>When the optional argument <var class="Arg">data</var> is specified, it must have value <code class="keyw">true</code> or <code class="keyw">false</code>. If <code class="code"><var class="Arg">data</var>=</code><code class="keyw">true</code>, the graphs returned by this function will have been assigned the precomputed properties and attributes from <code class="func">SetET4ValentGraphProps</code> (<a href="chap9_mj.html#X781D982F84B002F6"><span class="RefLink">9.2-3</span></a>). If <code class="code"><var class="Arg">data</var>=</code><code class="keyw">false</code> or not specified, none of these properties or attributes are given to the resulting graphs.</p>
+
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gammas:=AllET4ValentGraphs(400);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Length(gammas);</span>
+107
+    
+  </pre></div>
+
+<p><a id="X7E0DA218839104CA" name="X7E0DA218839104CA"></a></p>
+
+<h5>9.1-3 ET4ValentGraphIterator</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ET4ValentGraphIterator</code>( <var class="Arg">n</var>[, <var class="Arg">data</var>] )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns: An iterator.</p>
+
+<p>Given a positive integer <var class="Arg">n</var>, this function returns an iterator over all arc-transitive 2-valent digraphs with <var class="Arg">n</var> vertices available in this package. If there are such no graphs, the function returns an empty iterator.</p>
+
+<p>When the optional argument <var class="Arg">data</var> is specified, it must have value <code class="keyw">true</code> or <code class="keyw">false</code>. If <code class="code"><var class="Arg">data</var>=</code><code class="keyw">true</code>, the graphs returned by this function will have been assigned the precomputed properties and attributes from <code class="func">SetET4ValentGraphProps</code> (<a href="chap9_mj.html#X781D982F84B002F6"><span class="RefLink">9.2-3</span></a>). If <code class="code"><var class="Arg">data</var>=</code><code class="keyw">false</code> or not specified, none of these properties or attributes are given to the resulting graphs.</p>
+
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">cnt:=0;; iter:=ET4ValentGraphIterator(400);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for gamma in iter do</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">if HasSolvableAutGroup(gamma) then</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">cnt:=cnt+1;</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">fi;</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">od;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">cnt;</span>
+106
+    
+  </pre></div>
+
+<p><a id="X79310EE384CFC63E" name="X79310EE384CFC63E"></a></p>
+
+<h4>9.2 <span class="Heading">Properties of the edge–transitive 4–valent graphs and library</span></h4>
+
+<p>In this Section we give the functions which give information about the edge-transitive 4-valent graph library, and the properties and attributes of the graphs it contains.</p>
+
+<p><a id="X78832DB679DC7D9D" name="X78832DB679DC7D9D"></a></p>
+
+<h5>9.2-1 NrET4ValentGraphs</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NrET4ValentGraphs</code>( <var class="Arg">n</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumberET4ValentGraphs</code>( <var class="Arg">n</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns: An integer.</p>
+
+<p>Given a positive integer <var class="Arg">n</var>, this function returns the number of arc-transitive 2-valent digraphs with <var class="Arg">n</var> vertices stored in this package.</p>
+
+<p>For any positive integers <span class="SimpleMath">\(n\)</span> up to 1000, the current package stores all arc-transitive 2-valent digraphs with <span class="SimpleMath">\(n\)</span> vertices.</p>
+
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NrET4ValentGraphs(400);</span>
+107
+    
+  </pre></div>
+
+<p><a id="X81C9AA207ED80270" name="X81C9AA207ED80270"></a></p>
+
+<h5>9.2-2 ET4ValentGraphId</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ET4ValentGraphId</code>( <var class="Arg">gamma</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: An integer.</p>
+
+<p>Given a digraph <var class="Arg">gamma</var>, if <var class="Arg">gamma</var> is isomorphic to a graph stored in this package, this function returns the index of the graph isomorphic to <var class="Arg">gamma</var>. Otherwise, this function returns <code class="keyw">fail</code>.</p>
+
+<p>The index <code class="code">i</code> of a graph <code class="code">gamma</code> in this library is the position at which the graph is stored relative to its number of vertices. In particular, if <code class="code">gamma</code> has <code class="code">n</code> vertices, then <code class="code">gamma</code> will be the <code class="code">i</code>th entry of <code class="code">AllET4ValentGraphs(n)</code> and the <code class="code">i</code>th graph found when iterating through <code class="code">ET4ValentGraphIterator(n)</code>.</p>
+
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gamma:=CompleteDigraph(5);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ET4ValentGraphId(gamma);</span>
+1
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gamma:=ET4ValentGraph(512,40);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ET4ValentGraphId(gamma);</span>
+40
+    
+  </pre></div>
+
+<p><a id="X781D982F84B002F6" name="X781D982F84B002F6"></a></p>
+
+<h5>9.2-3 SetET4ValentGraphProps</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SetET4ValentGraphProps</code>( <var class="Arg">gamma</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Given a digraph <var class="Arg">gamma</var>, if this graph is isomorphic to a graph stored in this library, this function sets the properties and attributes of <var class="Arg">gamma</var> precomputed in this package. This includes:</p>
+
+
+<ul>
+<li><p><code class="func">ET4ValentGraphId</code> (<a href="chap9_mj.html#X81C9AA207ED80270"><span class="RefLink">9.2-2</span></a>).</p>
+
+</li>
+</ul>
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gamma:=ET4ValentGraph(512,40);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetET4ValentGraphProps(gamma);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ET4ValentGraphId(gamma);</span>
+40
+    
+  </pre></div>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap8_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap10_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chap7_mj.html">7</a>  <a href="chap8_mj.html">8</a>  <a href="chap9_mj.html">9</a>  <a href="chap10_mj.html">10</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

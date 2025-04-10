@@ -1,0 +1,393 @@
+  
+  [1X4 [33X[0;0YArc–transitive 2–valent digraphs[133X[101X
+  
+  [33X[0;0YIn  this Chapter we give functions for accessing the arc-transitive 2-valent
+  asymmetric   digraphs  stored  in  this  package,  and  related  properties.
+  Currently,  this  package  contains  all  arc-transitive  2-valent connected
+  asymmetric  digraphs  on up to 1000 vertices. For information and references
+  about these digraphs, see [PSV13a].[133X
+  
+  [33X[0;0YLet  [22XΓ[122X  be  a  digraph. Then [22XΓ[122X is [13Xasymmetric[113X if it has no arcs for which the
+  reverse  arc  is also in [22XΓ[122X, and is [13Xconnected[113X if the underlying graph of [22XΓ[122X is
+  connected.  The  digraph  [22XΓ[122X is [13Xarc-transitive[113X if the automorphism group of [22XΓ[122X
+  acts  transitively  on  the arcs of [22XΓ[122X. Further, the digraph [22XΓ[122X is [22X2[122X[13X-valent[113X if
+  each vertex of [22XΓ[122X has 2 in-neighbours and 2 out-neighbours.[133X
+  
+  
+  [1X4.1 [33X[0;0YAccessing the arc–transitive 2–valent digraphs[133X[101X
+  
+  [33X[0;0YIn  this  Section  we  introduce  functions  for  the  access  to  the cubic
+  vertex-transitive graphs stored in the [5XGraphSym[105X package.[133X
+  
+  [1X4.1-1 AT2ValentDigraph[101X
+  
+  [33X[1;0Y[29X[2XAT2ValentDigraph[102X( [3Xn[103X, [3Xi[103X[, [3Xdata[103X] ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10YA digraph.[133X
+  
+  [33X[0;0YGiven  positive  integers  [3Xn,i[103X, this function returns the [3Xi[103Xth arc-transitive
+  2-valent  digraph  with [3Xn[103X vertices available in this package. If there is no
+  such graph, the function returns [9Xfail[109X.[133X
+  
+  [33X[0;0YWhen  the  optional  argument  [3Xdata[103X is specified, it must have value [9Xtrue[109X or
+  [9Xfalse[109X.  If  [10X[3Xdata[103X[10X=[110X[9Xtrue[109X,  the  graph  returned by this function will have been
+  assigned     the     precomputed     properties    and    attributes    from
+  [2XSetAT2ValentDigraphProps[102X  ([14X4.2-4[114X).  If  [10X[3Xdata[103X[10X=[110X[9Xfalse[109X or not specified, none of
+  these properties or attributes are given to the resulting graph.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27XAT2ValentDigraph(300,40);[127X[104X
+    [4X[28X<immutable digraph with 300 vertices, 600 edges>[128X[104X
+    [4X[25Xgap>[125X [27XAT2ValentDigraph(300,100);[127X[104X
+    [4X[28Xfail[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X4.1-2 AllAT2ValentDigraphs[101X
+  
+  [33X[1;0Y[29X[2XAllAT2ValentDigraphs[102X( [3Xn[103X[, [3Xdata[103X] ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10YA list.[133X
+  
+  [33X[0;0YGiven  a  positive  integer  [3Xn[103X,  this function returns a list containing all
+  arc-transitive  digraphs with [3Xn[103X vertices available in this package. If there
+  are no such graphs, the function returns [9Xfail[109X.[133X
+  
+  [33X[0;0YWhen  the  optional  argument  [3Xdata[103X is specified, it must have value [9Xtrue[109X or
+  [9Xfalse[109X.  If  [10X[3Xdata[103X[10X=[110X[9Xtrue[109X,  the  graphs returned by this function will have been
+  assigned     the     precomputed     properties    and    attributes    from
+  [2XSetAT2ValentDigraphProps[102X  ([14X4.2-4[114X).  If  [10X[3Xdata[103X[10X=[110X[9Xfalse[109X or not specified, none of
+  these properties or attributes are given to the resulting graphs.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27Xgammas:=AllAT2ValentDigraphs(300,true);;[127X[104X
+    [4X[25Xgap>[125X [27XForAny(gammas,HasAbelianVertexStabilizer);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X4.1-3 AT2ValentDigraphIterator[101X
+  
+  [33X[1;0Y[29X[2XAT2ValentDigraphIterator[102X( [3Xn[103X[, [3Xdata[103X] ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10YA list.[133X
+  
+  [33X[0;0YGiven  a  positive  integer  [3Xn[103X,  this  function returns an iterator over all
+  arc-transitive  2-valent digraphs with [3Xn[103X vertices available in this package.
+  If there are such no graphs, the function returns an empty iterator.[133X
+  
+  [33X[0;0YWhen  the  optional  argument  [3Xdata[103X is specified, it must have value [9Xtrue[109X or
+  [9Xfalse[109X.  If  [10X[3Xdata[103X[10X=[110X[9Xtrue[109X,  the  graphs returned by this function will have been
+  assigned     the     precomputed     properties    and    attributes    from
+  [2XSetAT2ValentDigraphProps[102X  ([14X4.2-4[114X).  If  [10X[3Xdata[103X[10X=[110X[9Xfalse[109X or not specified, none of
+  these properties or attributes are given to the resulting graphs.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27Xcnt:=0;; iter:=AT2ValentDigraphIterator(100,true);;[127X[104X
+    [4X[25Xgap>[125X [27Xfor gamma in iter do[127X[104X
+    [4X[25X>[125X [27Xif HasSolvableAutGroup(gamma) then[127X[104X
+    [4X[25X>[125X [27Xcnt:=cnt+1;[127X[104X
+    [4X[25X>[125X [27Xfi;[127X[104X
+    [4X[25X>[125X [27Xod;[127X[104X
+    [4X[25Xgap>[125X [27Xcnt;[127X[104X
+    [4X[28X15[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  
+  [1X4.2 [33X[0;0YProperties of the arc–transitive 2–valent digraphs and library[133X[101X
+  
+  [33X[0;0YIn  this  Section  we  give  the  functions which give information about the
+  arc-transitive  2-valent  digraph library, and the properties and attributes
+  of the graphs it contains.[133X
+  
+  
+  [1X4.2-1 [33X[0;0YPrecomputed attributes of the arc–transitive 2–valent digraphs[133X[101X
+  
+  [33X[0;0YFor  a given arc-transitive 2-valent digraph [22XΓ[122X stored in this package, there
+  are  several  precomputed  attributes  stored in the [5XGraphSym[105X package. These
+  include the following:[133X
+  
+  [30X    [33X[0;6YThe self-reverseness of [22XΓ[122X ([2XIsSelfReverseDigraph[102X ([14X4.2-5[114X)).[133X
+  
+  [30X    [33X[0;6YThe  index  of  the  reverse  graph  of  [22XΓ[122X  ([2XAT2ValentReverseDigraphId[102X
+        ([14X4.2-8[114X)).[133X
+  
+  [30X    [33X[0;6YThe    arc-transitiveness    of    the    underlying    graph   of   [22XΓ[122X
+        ([2XHasATUnderlyingGraph[102X ([14X4.2-6[114X)).[133X
+  
+  [30X    [33X[0;6YThe underlying graph of [22XΓ[122X. This is a string giving the position of the
+        underlying  graph  in  one  of the collections of graphs found in this
+        package ([2XNameOfUnderlyingGraph[102X ([14X4.2-9[114X)).[133X
+  
+  [30X    [33X[0;6YThe  maximum [22Xs[122X such that [22XΓ[122X is [22Xs[122X-arc-transitive ([2XMaximumArcTransitivity[102X
+        ([14X4.2-10[114X)).[133X
+  
+  [30X    [33X[0;6YThe  generalised  wreath digraph-ness of [22XΓ[122X ([2XIsGeneralizedWreathDigraph[102X
+        ([14X4.2-7[114X)).[133X
+  
+  [33X[0;0YNow  we  introduce  functions  which  are used to find information about the
+  library and each of the graphs it stores.[133X
+  
+  [1X4.2-2 NrAT2ValentDigraphs[101X
+  
+  [33X[1;0Y[29X[2XNrAT2ValentDigraphs[102X( [3Xn[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XNumberAT2ValentDigraphs[102X( [3Xn[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10YAn integer.[133X
+  
+  [33X[0;0YGiven   a   positive   integer  [3Xn[103X,  this  function  returns  the  number  of
+  arc-transitive 2-valent digraphs with [3Xn[103X vertices stored in this package.[133X
+  
+  [33X[0;0YFor  any  positive  integers [22Xn[122X up to 1000, arc-transitive 2-valent connected
+  asymmetric digraphs with [22Xn[122X vertices.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27XNrAT2ValentDigraphs(500);[127X[104X
+    [4X[28X63[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X4.2-3 AT2ValentDigraphId[101X
+  
+  [33X[1;0Y[29X[2XAT2ValentDigraphId[102X( [3Xgamma[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YAn integer.[133X
+  
+  [33X[0;0YGiven  a  digraph  [3Xgamma[103X,  if  [3Xgamma[103X is isomorphic to a graph stored in this
+  package,  this  function returns the index of the graph isomorphic to [3Xgamma[103X.
+  Otherwise, this function returns [9Xfail[109X.[133X
+  
+  [33X[0;0YThe  index  [10Xi[110X  of a graph [10Xgamma[110X in this library is the position at which the
+  graph  is stored relative to its number of vertices. In particular, if [10Xgamma[110X
+  has  [10Xn[110X vertices, then [10Xgamma[110X will be the [10Xi[110Xth entry of [10XAllAT2ValentDigraphs(n)[110X
+  and the [10Xi[110Xth graph found when iterating through [10XAT2ValentDigraphIterator(n)[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27Xgamma:=AT2ValentDigraph(100,5);;[127X[104X
+    [4X[25Xgap>[125X [27XAT2ValentDigraphId(gamma);[127X[104X
+    [4X[28X5[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X4.2-4 SetAT2ValentDigraphProps[101X
+  
+  [33X[1;0Y[29X[2XSetAT2ValentDigraphProps[102X( [3Xgamma[103X ) [32X function[133X
+  
+  [33X[0;0YGiven a digraph [3Xgamma[103X, if this graph is isomorphic to a graph stored in this
+  library,   this  function  sets  the  properties  and  attributes  of  [3Xgamma[103X
+  precomputed in this package. This includes[133X
+  
+  [30X    [33X[0;6YAll properties and attributes found in Subsection [14X4.2-1[114X.[133X
+  
+  [30X    [33X[0;6Y[2XAT2ValentDigraphId[102X ([14X4.2-3[114X).[133X
+  
+  [30X    [33X[0;6Y[2XIsArcTransitiveDigraph[102X ([14X2.2-8[114X).[133X
+  
+  [30X    [33X[0;6Y[2XIsVertexTransitive[102X ([14XDigraphs: IsVertexTransitive[114X).[133X
+  
+  [30X    [33X[0;6Y[2XDigraphReverse[102X  ([14XDigraphs:  DigraphReverse[114X),  which stores the reverse
+        graph  of  [3Xgamma[103X with it's library id as defined in [2XAT2ValentDigraphId[102X
+        ([14X4.2-3[114X)).[133X
+  
+  [30X    [33X[0;6Y[2XDigraphSymmetricClosure[102X   ([14XDigraphs:  DigraphSymmetricClosure[114X),  which
+        stores    the    underlying   graph   of   [3Xgamma[103X   as   described   in
+        [2XNameOfUnderlyingGraph[102X ([14X4.2-9[114X).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27Xgamma:=AT2ValentDigraph(150,5);;[127X[104X
+    [4X[25Xgap>[125X [27XSetAT2ValentDigraphProps(gamma);[127X[104X
+    [4X[25Xgap>[125X [27XIsGeneralizedWreathDigraph(gamma);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X4.2-5 IsSelfReverseDigraph[101X
+  
+  [33X[1;0Y[29X[2XIsSelfReverseDigraph[102X( [3Xgamma[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X.[133X
+  
+  [33X[0;0YGiven  a digraph [3Xgamma[103X, this function returns [9Xtrue[109X if [3Xgamma[103X is isomorphic to
+  the  reverse  (or  reverse)  of  [3Xgamma[103X,  and otherwise it returns [9Xfalse[109X (see
+  [2XDigraphReverse[102X ([14XDigraphs: DigraphReverse[114X) ).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27Xgamma:=AT2ValentDigraph(300,1);;[127X[104X
+    [4X[25Xgap>[125X [27XIsSelfReverseDigraph(gamma);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27Xgamma:=AT2ValentDigraph(300,20);;[127X[104X
+    [4X[25Xgap>[125X [27XIsSelfReverseDigraph(gamma);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X4.2-6 HasATUnderlyingGraph[101X
+  
+  [33X[1;0Y[29X[2XHasATUnderlyingGraph[102X( [3Xgamma[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X.[133X
+  
+  [33X[0;0YGiven a digraph [3Xgamma[103X, this function returns [9Xtrue[109X if the underlying graph of
+  [3Xgamma[103X   is   arc-transitive,   and   otherwise   it   returns   [9Xfalse[109X   (see
+  [2XDigraphSymmetricClosure[102X         ([14XDigraphs:         DigraphSymmetricClosure[114X),
+  [2XIsEdgeTransitive[102X  ([14XDigraphs:  IsEdgeTransitive[114X)  and  [2XIsArcTransitiveDigraph[102X
+  ([14X2.2-8[114X)).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27Xgamma:=AT2ValentDigraph(300,10);;[127X[104X
+    [4X[25Xgap>[125X [27XHasATUnderlyingGraph(gamma);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27Xgamma:=AT2ValentDigraph(300,30,true);;[127X[104X
+    [4X[25Xgap>[125X [27XHasATUnderlyingGraph(gamma);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X4.2-7 IsGeneralizedWreathDigraph[101X
+  
+  [33X[1;0Y[29X[2XIsGeneralizedWreathDigraph[102X( [3Xgamma[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X.[133X
+  
+  [33X[0;0YGiven  an  arc-transitive  2-valent  digraph [3Xgamma[103X from the [5XGraphSym[105X package
+  such  that  its  properties and attributes have been assigned, this function
+  returns  [9Xtrue[109X  if  it  is  isomorphic  to  a generalized wreath digraph, and
+  otherwise it returns [9Xfalse[109X.[133X
+  
+  [33X[0;0YThe properties and attributes of an arc-transitive 2-valent digraph that can
+  be  found  in  the  [5XGraphSym[105X  package  can  be  assigned  using the function
+  [2XSetAT2ValentDigraphProps[102X  ([14X4.2-4[114X),  or loaded automatically by the functions
+  [2XAT2ValentDigraph[102X      ([14X4.1-1[114X),      [2XAllAT2ValentDigraphs[102X      ([14X4.1-2[114X)     or
+  [2XAT2ValentDigraphIterator[102X ([14X4.1-3[114X).[133X
+  
+  [33X[0;0YLet [22Xn[122X be an integer such that [22Xn>2[122X. The [13Xgeneralized wreath digraph[113X, [22XWarrow_n[122X,
+  has  vertex-set  [22Xℤ_n  ×  ℤ_2[122X.  Then,  two  distinct vertices [22X(i,a),(j,b)[122X are
+  adjacent if and only if [22Xj-i≡ 1 mod n[122X.[133X
+  
+  [33X[0;0YFor more information on the generalized wreath digraphs, see [PSV15].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27Xgamma:=AT2ValentDigraph(700,30,true);;[127X[104X
+    [4X[25Xgap>[125X [27XIsGeneralizedWreathDigraph(gamma);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27Xgamma:=AT2ValentDigraph(700,43,true);;[127X[104X
+    [4X[25Xgap>[125X [27XIsGeneralizedWreathDigraph(gamma);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X4.2-8 AT2ValentReverseDigraphId[101X
+  
+  [33X[1;0Y[29X[2XAT2ValentReverseDigraphId[102X( [3Xgamma[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YAn integer.[133X
+  
+  [33X[0;0YGiven  an  arc-transitive  2-valent  digraph [3Xgamma[103X from the [5XGraphSym[105X package
+  such  that  its  properties and attributes have been assigned, this function
+  returns  the  position,  [10Xi[110X,  at  which  the reverse (or reverse) of [3Xgamma[103X is
+  stored  (see  [2XDigraphReverse[102X  ([14XDigraphs: DigraphReverse[114X)). In particular, if
+  [3Xgamma[103X has order [22Xn[122X, then [10XAT2ValentDigraph([110X[22Xn[122X[10X,i)[110X is the reverse graph of [3Xgamma[103X.[133X
+  
+  [33X[0;0YThe properties and attributes of an arc-transitive 2-valent digraph that can
+  be  found  in  the  [5XGraphSym[105X  package  can  be  assigned  using the function
+  [2XSetAT2ValentDigraphProps[102X  ([14X4.2-4[114X),  or loaded automatically by the functions
+  [2XAT2ValentDigraph[102X      ([14X4.1-1[114X),      [2XAllAT2ValentDigraphs[102X      ([14X4.1-2[114X)     or
+  [2XAT2ValentDigraphIterator[102X ([14X4.1-3[114X).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27Xgamma:=AT2ValentDigraph(700,10,true);;[127X[104X
+    [4X[25Xgap>[125X [27XAT2ValentReverseDigraphId(gamma);[127X[104X
+    [4X[28X9[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X4.2-9 NameOfUnderlyingGraph[101X
+  
+  [33X[1;0Y[29X[2XNameOfUnderlyingGraph[102X( [3Xgamma[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YA string.[133X
+  
+  [33X[0;0YGiven  an  arc-transitive  2-valent  digraph [3Xgamma[103X from the [5XGraphSym[105X package
+  such  that  its  properties and attributes have been assigned, this function
+  returns    the    name    of    the   underlying   graph   of   [3Xgamma[103X   (see
+  [2XDigraphSymmetricClosure[102X ([14XDigraphs: DigraphSymmetricClosure[114X)).[133X
+  
+  [33X[0;0YThe properties and attributes of an arc-transitive 2-valent digraph that can
+  be  found  in  the  [5XGraphSym[105X  package  can  be  assigned  using the function
+  [2XSetAT2ValentDigraphProps[102X  ([14X4.2-4[114X),  or loaded automatically by the functions
+  [2XAT2ValentDigraph[102X      ([14X4.1-1[114X),      [2XAllAT2ValentDigraphs[102X      ([14X4.1-2[114X)     or
+  [2XAT2ValentDigraphIterator[102X ([14X4.1-3[114X).[133X
+  
+  [33X[0;0YThe  string  returned  will  start  with  3 or 4 letters, and then contain 2
+  numbers  enclosed  within  "["  and  "]"  characters  and  separated  by the
+  character  ";".  In  the following we give the 3 possible strings of letters
+  found in these names, and their meaning:[133X
+  
+  [8X[10X"GWD"[110X[8X[108X
+        [33X[0;6Ythe underlying graph is a generalized wreath graph.[133X
+  
+  [8X[10X"HAT"[110X[8X[108X
+        [33X[0;6Ythe  underlying  graph  is  half-arc-transitive, and not a generalised
+        wreath graph (see Chapter [14X6[114X).[133X
+  
+  [8X[10X"GHAT"[110X[8X[108X
+        [33X[0;6Ythe underlying graph is [22XG[122X-half-arc-transitive for some subgroup of its
+        automorphism  group  [22XG[122X,  but  not a half-arc-transitive or generalised
+        wreath graph (see Chapter [14X5[114X).[133X
+  
+  [33X[0;0YThe  underlying  graph corresponding to this string is then the graph in the
+  list  found  in [PSV15] with the same name as the string, and indexed by the
+  remaining two integers in the string.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27Xgamma:=AT2ValentDigraph(700,40,true);;[127X[104X
+    [4X[25Xgap>[125X [27XNameOfUnderlyingGraph(gamma);[127X[104X
+    [4X[28X"GHAT[700;12]"[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X4.2-10 MaximumArcTransitivity[101X
+  
+  [33X[1;0Y[29X[2XMaximumArcTransitivity[102X( [3Xgamma[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YAn integer.[133X
+  
+  [33X[0;0YGiven  an  arc-transitive  2-valent  digraph [3Xgamma[103X from the [5XGraphSym[105X package
+  such  that  its  properties and attributes have been assigned, this function
+  returns the maximum integer [22Xs[122X such that [3Xgamma[103X is [22Xs[122X-arc-transitive.[133X
+  
+  [33X[0;0YThe properties and attributes of an arc-transitive 2-valent digraph that can
+  be  found  in  the  [5XGraphSym[105X  package  can  be  assigned  using the function
+  [2XSetAT2ValentDigraphProps[102X  ([14X4.2-4[114X),  or loaded automatically by the functions
+  [2XAT2ValentDigraph[102X      ([14X4.1-1[114X),      [2XAllAT2ValentDigraphs[102X      ([14X4.1-2[114X)     or
+  [2XAT2ValentDigraphIterator[102X ([14X4.1-3[114X).[133X
+  
+  [33X[0;0YAn  [22Xs[122X[13X-arc[113X  of a digraph [22XΓ[122X is an [22X(s+1)[122X-tuple [22X(v_0, v_1,dots, v_s)[122X of vertices
+  of  [22XΓ[122X,  such that [22X(v_{i−1}, v_i)[122X is an arc of [22XΓ[122X for every [22Xi∈ {1,dots, s}[122X and
+  [22Xv_{i−1}   <>   v_{i+1}[122X   for   every   [22Xi∈   {1,dots,s-1}[122X.  A  digraph  [22XΓ[122X  is
+  [22Xs[122X[13X-arc-transitive[113X if the automorphism group of [22XΓ[122X acts transitively on the set
+  of [22Xs[122X-arcs of [22XΓ[122X.[133X
+  
+  [33X[0;0YFor more information on [22Xs[122X-arc-transitive graphs, see [GR01].[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27Xgamma:=AT2ValentDigraph(748,18,true);;[127X[104X
+    [4X[25Xgap>[125X [27XMaximumArcTransitivity(gamma);[127X[104X
+    [4X[28X373[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  

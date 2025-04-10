@@ -1,0 +1,326 @@
+  
+  [1X2 [33X[0;0YCubic vertex–transitive graphs[133X[101X
+  
+  [33X[0;0YIn  this Chapter we give functions for accessing the cubic vertex-transitive
+  graphs  stored  in  this  package,  and  related properties. Currently, this
+  package  contains all connected cubic vertex-transitive graphs on up to 1280
+  vertices. For information and references on these graphs, see [PSV13b].[133X
+  
+  [33X[0;0YLet [22XΓ[122X be a simple graph (undirected, loopless, without multiple edges). Then
+  [22XΓ[122X  is  [13Xcubic[113X  (or  [13Xtrivalent[113X,  or  [22X3[122X[13X-valent[113X) if each vertex of the graph has
+  exactly 3 neighbours.[133X
+  
+  [33X[0;0YThe  graph  [22XΓ[122X  is  [13Xvertex-transitive[113X  if  the  automorphism  group of [22XΓ[122X acts
+  transitively on the vertices of [22XΓ[122X.[133X
+  
+  
+  [1X2.1 [33X[0;0YAccessing the cubic vertex–transitive graphs[133X[101X
+  
+  [33X[0;0YIn  this  Section  we  introduce  functions  for  the  access  to  the cubic
+  vertex-transitive graphs stored in the [5XGraphSym[105X package.[133X
+  
+  [1X2.1-1 CubicVTGraph[101X
+  
+  [33X[1;0Y[29X[2XCubicVTGraph[102X( [3Xn[103X, [3Xi[103X[, [3Xdata[103X] ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10YA digraph.[133X
+  
+  [33X[0;0YGiven   positive   integers   [3Xn,i[103X,  this  function  returns  the  [3Xi[103Xth  cubic
+  vertex-transitive  graph with [3Xn[103X vertices available in this package. If there
+  is no such graph, the function returns [9Xfail[109X.[133X
+  
+  [33X[0;0YWhen  the  optional  argument  [3Xdata[103X is specified, it must have value [9Xtrue[109X or
+  [9Xfalse[109X.  If  [10X[3Xdata[103X[10X=[110X[9Xtrue[109X,  the  graph  returned by this function will have been
+  assigned the precomputed properties and attributes from [2XSetCubicVTGraphProps[102X
+  ([14X2.2-4[114X).  If  [10X[3Xdata[103X[10X=[110X[9Xfalse[109X  or  not  specified,  none  of  these properties or
+  attributes are given to the resulting graph.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27XCubicVTGraph(50,4);[127X[104X
+    [4X[28X<immutable symmetric digraph with 50 vertices, 150 edges>[128X[104X
+    [4X[25Xgap>[125X [27XCubicVTGraph(50,10);[127X[104X
+    [4X[28Xfail[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X2.1-2 AllCubicVTGraphs[101X
+  
+  [33X[1;0Y[29X[2XAllCubicVTGraphs[102X( [3Xn[103X[, [3Xdata[103X] ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10YA list.[133X
+  
+  [33X[0;0YGiven  a  positive  integer  [3Xn[103X,  this function returns a list containing all
+  cubic vertex-transitive graphs with [3Xn[103X vertices available in this package. If
+  there are no such graphs, the function returns [9Xfail[109X.[133X
+  
+  [33X[0;0YWhen  the  optional  argument  [3Xdata[103X is specified, it must have value [9Xtrue[109X or
+  [9Xfalse[109X.  If  [10X[3Xdata[103X[10X=[110X[9Xtrue[109X,  the  graphs returned by this function will have been
+  assigned the precomputed properties and attributes from [2XSetCubicVTGraphProps[102X
+  ([14X2.2-4[114X).  If  [10X[3Xdata[103X[10X=[110X[9Xfalse[109X  or  not  specified,  none  of  these properties or
+  attributes are given to the resulting graphs.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27Xgammas:=AllCubicVTGraphs(50,true);;[127X[104X
+    [4X[25Xgap>[125X [27XList(gammas,IsSplitPraegerXuGraph);[127X[104X
+    [4X[28X[ false, false, false, false, false, false, false, false, false ][128X[104X
+    [4X[25Xgap>[125X [27Xgammas:=AllCubicVTGraphs(100,true);;[127X[104X
+    [4X[25Xgap>[125X [27XForAny(gammas,IsSplitPraegerXuGraph);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X2.1-3 CubicVTGraphIterator[101X
+  
+  [33X[1;0Y[29X[2XCubicVTGraphIterator[102X( [3Xn[103X[, [3Xdata[103X] ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10YA list[133X
+  
+  [33X[0;0YGiven a positive integer [3Xn[103X, this function returns an iterator over all cubic
+  vertex-transitive graphs with [3Xn[103X vertices available in this package. If there
+  are such no graphs, the function returns an empty iterator.[133X
+  
+  [33X[0;0YWhen  the  optional  argument  [3Xdata[103X is specified, it must have value [9Xtrue[109X or
+  [9Xfalse[109X.  If  [10X[3Xdata[103X[10X=[110X[9Xtrue[109X,  the  graphs returned by this function will have been
+  assigned the precomputed properties and attributes from [2XSetCubicVTGraphProps[102X
+  ([14X2.2-4[114X).  If  [10X[3Xdata[103X[10X=[110X[9Xfalse[109X  or  not  specified,  none  of  these properties or
+  attributes are given to the resulting graphs.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27Xcnt:=0;; iter:=CubicVTGraphIterator(1152,true);[127X[104X
+    [4X[28X<iterator>[128X[104X
+    [4X[25Xgap>[125X [27Xfor gamma in iter do[127X[104X
+    [4X[25X>[125X [27Xif IsSplitPraegerXuGraph(gamma) then cnt:=cnt+1; fi;[127X[104X
+    [4X[25X>[125X [27Xod;[127X[104X
+    [4X[25Xgap>[125X [27Xcnt;[127X[104X
+    [4X[28X6[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  
+  [1X2.2 [33X[0;0YProperties of the cubic vertex–transitive graphs and library[133X[101X
+  
+  [33X[0;0YIn this Section we give the functions which give information about the cubic
+  vertex-transitive  graphs  library, and the properties and attributes of the
+  graphs it contains.[133X
+  
+  
+  [1X2.2-1 [33X[0;0YPrecomputed attributes of the cubic vertex–transitive graphs[133X[101X
+  
+  [33X[0;0YFor  a  given  cubic vertex-transitive graph [22XΓ[122X stored in this package, there
+  are  several  precomputed  attributes  stored in the [5XGraphSym[105X package. These
+  include the following:[133X
+  
+  [30X    [33X[0;6YThe diameter of [22XΓ[122X ([2XDigraphDiameter[102X ([14XDigraphs: DigraphDiameter[114X)).[133X
+  
+  [30X    [33X[0;6YThe    girth    of    the    [22XΓ[122X    ([2XDigraphUndirectedGirth[102X   ([14XDigraphs:
+        DigraphUndirectedGirth[114X)).[133X
+  
+  [30X    [33X[0;6YThe     bipartiteness     of    [22XΓ[122X    ([2XIsBipartiteDigraph[102X    ([14XDigraphs:
+        IsBipartiteDigraph[114X)).[133X
+  
+  [30X    [33X[0;6YThe Cayleyness of [22XΓ[122X ([2XIsCayleyGraph[102X ([14X2.2-7[114X)).[133X
+  
+  [30X    [33X[0;6YThe arc-transitiveness of [22XΓ[122X ([2XIsArcTransitiveDigraph[102X ([14X2.2-8[114X)).[133X
+  
+  [30X    [33X[0;6YThe  property  of  [22XΓ[122X  being  isomorphic  to a a split Praeger-Xu graph
+        ([2XIsSplitPraegerXuGraph[102X ([14X2.2-9[114X)).[133X
+  
+  [33X[0;0YNow  we  introduce  functions  which  are used to find information about the
+  library and each of the graphs it stores.[133X
+  
+  [1X2.2-2 NrCubicVTGraphs[101X
+  
+  [33X[1;0Y[29X[2XNrCubicVTGraphs[102X( [3Xn[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XNumberCubicVTGraphs[102X( [3Xn[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10YAn integer.[133X
+  
+  [33X[0;0YGiven  a  positive  integer  [3Xn[103X,  this  function  returns the number of cubic
+  vertex-transitive graphs with [3Xn[103X vertices stored in this package.[133X
+  
+  [33X[0;0YFor any positive integers [22Xn[122X up to 1280, the current package stores all cubic
+  vertex-transitive graphs with [22Xn[122X vertices.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27XNrCubicVTGraphs(50);[127X[104X
+    [4X[28X9[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-3 CubicVTGraphId[101X
+  
+  [33X[1;0Y[29X[2XCubicVTGraphId[102X( [3Xgamma[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YAn integer.[133X
+  
+  [33X[0;0YGiven  a  digraph  [3Xgamma[103X,  if  [3Xgamma[103X is isomorphic to a graph stored in this
+  package,  this  function returns the index of the graph isomorphic to [3Xgamma[103X.
+  Otherwise, this function returns [9Xfail[109X.[133X
+  
+  [33X[0;0YThe  index  [10Xi[110X  of a graph [10Xgamma[110X in this library is the position at which the
+  graph  is stored relative to its number of vertices. In particular, if [10Xgamma[110X
+  has  [10Xn[110X vertices, then [10Xgamma[110X will be the [10Xi[110Xth entry of [10XAllCubicVTGraphs(n)[110X and
+  the [10Xi[110Xth graph found when iterating through [10XCubicVTGraphIterator(n)[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27Xgamma:=CubicVTGraph(8,2);;[127X[104X
+    [4X[25Xgap>[125X [27XCubicVTGraphId(gamma);[127X[104X
+    [4X[28X2[128X[104X
+    [4X[25Xgap>[125X [27Xgamma:=CycleDigraph(8);;[127X[104X
+    [4X[25Xgap>[125X [27XCubicVTGraphId(gamma);[127X[104X
+    [4X[28Xfail[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-4 SetCubicVTGraphProps[101X
+  
+  [33X[1;0Y[29X[2XSetCubicVTGraphProps[102X( [3Xgamma[103X ) [32X function[133X
+  
+  [33X[0;0YGiven a digraph [3Xgamma[103X, if this graph is isomorphic to a graph stored in this
+  library,   this  function  sets  the  properties  and  attributes  of  [3Xgamma[103X
+  precomputed in this package. This includes[133X
+  
+  [30X    [33X[0;6YAll properties and attributes found in Subsection [14X2.2-1[114X.[133X
+  
+  [30X    [33X[0;6Y[2XCubicVTGraphId[102X ([14X2.2-3[114X).[133X
+  
+  [30X    [33X[0;6Y[2XIsCubicGraph[102X ([14X2.2-6[114X).[133X
+  
+  [30X    [33X[0;6Y[2XIsVertexTransitive[102X ([14XDigraphs: IsVertexTransitive[114X).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27Xgamma:=CompleteDigraph(4);;[127X[104X
+    [4X[25Xgap>[125X [27XSetCubicVTGraphProps(gamma);[127X[104X
+    [4X[25Xgap>[125X [27XIsArcTransitiveDigraph(gamma);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-5 SmallCubicVTGraphsInfo[101X
+  
+  [33X[1;0Y[29X[2XSmallCubicVTGraphsInfo[102X( [3Xn[103X ) [32X function[133X
+  
+  [33X[0;0YGiven  a  positive  integer [3Xn[103X, this function prints information on the cubic
+  vertex-transitive  graphs  on  [3Xn[103X  vertices currently stored in this package.
+  This  includes  the  total number of graphs, the enumeration status of these
+  graphs,  and  the  number  of graphs with several properties precomputed and
+  stored in this library.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27XSmallCubicVTGraphsInfo(50);[127X[104X
+    [4X[28XCVT: There are 9 cubic vertex-transitive graphs on 50 vertices.[128X[104X
+    [4X[28X[128X[104X
+    [4X[28XOf these 9 graphs, there are;[128X[104X
+    [4X[28X   - 6 bipartite graphs, [128X[104X
+    [4X[28X   - 8 Cayley graphs, [128X[104X
+    [4X[28X   - 1 arc-transitive graphs, [128X[104X
+    [4X[28X   - 0 split Praeger-Xu graphs, [128X[104X
+    [4X[28X   - 9 graphs with solvable automorphism group. [128X[104X
+    [4X[28X[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-6 IsCubicGraph[101X
+  
+  [33X[1;0Y[29X[2XIsCubicGraph[102X( [3Xgamma[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X.[133X
+  
+  [33X[0;0YGiven  a  digraph  [3Xgamma[103X,  this  function  returns  [9Xtrue[109X if [3Xgamma[103X is a cubic
+  digraph, and otherwise it returns [9Xfalse[109X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27XIsCubicGraph(CycleDigraph(5));[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XIsCubicGraph(CompleteDigraph(4));[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-7 IsCayleyGraph[101X
+  
+  [33X[1;0Y[29X[2XIsCayleyGraph[102X( [3Xgamma[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X.[133X
+  
+  [33X[0;0YGiven  a  cubic vertex-transitive graph [3Xgamma[103X from the [5XGraphSym[105X package such
+  that its properties and attributes have been assigned, this function returns
+  [9Xtrue[109X if [3Xgamma[103X is a Cayley (di)graph and [9Xfalse[109X otherwise.[133X
+  
+  [33X[0;0YThe properties and attributes of a cubic vertex-transitive graph that can be
+  found   in   the  [5XGraphSym[105X  package  can  be  assigned  using  the  function
+  [2XSetCubicVTGraphProps[102X  ([14X2.2-4[114X),  or  loaded  automatically  by  the functions
+  [2XCubicVTGraph[102X   ([14X2.1-1[114X),  [2XAllCubicVTGraphs[102X  ([14X2.1-2[114X)  or  [2XCubicVTGraphIterator[102X
+  ([14X2.1-3[114X).  This  property  is  not  equivalent  to [2XIsCayleyDigraph[102X ([14XDigraphs:
+  IsCayleyDigraph[114X),  as  a digraph with this property has associated group and
+  generators.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27Xgamma:=CubicVTGraph(50,2,true);;[127X[104X
+    [4X[25Xgap>[125X [27XIsCayleyGraph(gamma);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27Xgamma:=CubicVTGraph(50,9,true);;[127X[104X
+    [4X[25Xgap>[125X [27XIsCayleyGraph(gamma);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-8 IsArcTransitiveDigraph[101X
+  
+  [33X[1;0Y[29X[2XIsArcTransitiveDigraph[102X( [3Xgamma[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X.[133X
+  
+  [33X[0;0YGiven a digraph [3Xgamma[103X, this function returns [9Xtrue[109X if [3Xgamma[103X is arc-transitive
+  and  [9Xfalse[109X  otherwise.  This  is a synonym for the function [2XIsEdgeTransitive[102X
+  ([14XDigraphs: IsEdgeTransitive[114X).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27Xgamma:=CubicVTGraph(50,4,true);;[127X[104X
+    [4X[25Xgap>[125X [27XIsArcTransitiveDigraph(gamma);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27Xgamma:=CubicVTGraph(50,8,true);;[127X[104X
+    [4X[25Xgap>[125X [27XIsArcTransitiveDigraph(gamma);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X2.2-9 IsSplitPraegerXuGraph[101X
+  
+  [33X[1;0Y[29X[2XIsSplitPraegerXuGraph[102X( [3Xgamma[103X ) [32X property[133X
+  [6XReturns:[106X  [33X[0;10Y[9Xtrue[109X or [9Xfalse[109X.[133X
+  
+  [33X[0;0YGiven  a  cubic vertex-transitive graph [3Xgamma[103X from the [5XGraphSym[105X package such
+  that its properties and attributes have been assigned, this function returns
+  [9Xtrue[109X if [3Xgamma[103X is a split Praeger-Xu graph and [9Xfalse[109X otherwise.[133X
+  
+  [33X[0;0YThe properties and attributes of a cubic vertex-transitive graph that can be
+  found   in   the  [5XGraphSym[105X  package  can  be  assigned  using  the  function
+  [2XSetCubicVTGraphProps[102X  ([14X2.2-4[114X),  or  loaded  automatically  by  the functions
+  [2XCubicVTGraph[102X   ([14X2.1-1[114X),  [2XAllCubicVTGraphs[102X  ([14X2.1-2[114X)  or  [2XCubicVTGraphIterator[102X
+  ([14X2.1-3[114X).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27Xgamma:=CubicVTGraph(48,6,true);;[127X[104X
+    [4X[25Xgap>[125X [27XIsSplitPraegerXuGraph(gamma);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27Xgamma:=CubicVTGraph(48,7,true);;[127X[104X
+    [4X[25Xgap>[125X [27XIsSplitPraegerXuGraph(gamma);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  

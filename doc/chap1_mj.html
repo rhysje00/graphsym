@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<title>GAP (GraphSym) - Chapter 1: The GraphSym package</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap1"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chap7_mj.html">7</a>  <a href="chap8_mj.html">8</a>  <a href="chap9_mj.html">9</a>  <a href="chap10_mj.html">10</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap0_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap2_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap1.html">[MathJax off]</a></p>
+<p><a id="X871E7F7B8426407A" name="X871E7F7B8426407A"></a></p>
+<div class="ChapSects"><a href="chap1_mj.html#X871E7F7B8426407A">1 <span class="Heading">The <strong class="pkg">GraphSym</strong> package</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap1_mj.html#X7865F1B284536FAF">1.1 <span class="Heading">Installing <strong class="pkg">GraphSym</strong></span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap1_mj.html#X83438EE483014369">1.2 <span class="Heading">Building the documentation for <strong class="pkg">GraphSym</strong></span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap1_mj.html#X7C9913627D1C9D8A">1.3 <span class="Heading">Loading <strong class="pkg">GraphSym</strong></span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap1_mj.html#X7C291DF17AFF63B9">1.4 <span class="Heading">Citing <strong class="pkg">GraphSym</strong></span></a>
+</span>
+</div>
+</div>
+
+<h3>1 <span class="Heading">The <strong class="pkg">GraphSym</strong> package</span></h3>
+
+<p>This is the manual for the <strong class="pkg">GraphSym</strong> package version 0.1.</p>
+
+<p>The <strong class="pkg">GraphSym</strong> package contains various collections of graphs with interesting symmetry properties. Each collection of graphs are attained from complete or partial enumerations published in international journals. The papers containing these enumerations are referenced throughout this document, and their authors are included as contributors (unless they are an author of this package). The <strong class="pkg">GraphSym</strong> package provides functionality enabling easy access to these graphs, along with several precomputed properties related to many of the graphs stored within.</p>
+
+<p>Currently, all of the functions in this package deal with finite graphs in <strong class="pkg">Digraphs</strong> format <a href="chapBib_mj.html#biBDIGRAPHS_2019">[DBJM+19]</a>, and much of the functionality provided is based on the very nice code found in <a href="../../../pkg/digraphs/doc/chap9_mj.html#X81714DBC80CC4BCB"><span class="RefLink">Digraphs: Visualising and IO</span></a>.</p>
+
+<p><a id="X7865F1B284536FAF" name="X7865F1B284536FAF"></a></p>
+
+<h4>1.1 <span class="Heading">Installing <strong class="pkg">GraphSym</strong></span></h4>
+
+<p>To install the <strong class="pkg">GraphSym</strong> package, you first need to download or clone the package, found at https://rhysje00.github.io/graphsym/. Once downloaded, there is no need for any extra compiling. If possible, it is recommended that you place the <strong class="pkg">GraphSym</strong> directory into the package directory of your <strong class="pkg">GAP</strong> distribution. For guidance on how to load <strong class="pkg">GraphSym</strong> package if you cannot move the directory directly into your <strong class="pkg">GAP</strong> package directory, see Section <a href="chap1_mj.html#X7C9913627D1C9D8A"><span class="RefLink">1.3</span></a>.</p>
+
+<p>The <strong class="pkg">GraphSym</strong> package requires the following <strong class="pkg">GAP</strong> packages:</p>
+
+
+<ul>
+<li><p><strong class="pkg">GAPDoc</strong> <a href="chapBib_mj.html#biBGAPDOC_2019">[LN19]</a>, version 1.6.6 or higher;</p>
+
+</li>
+<li><p><strong class="pkg">Digraphs</strong> <a href="chapBib_mj.html#biBDIGRAPHS_2019">[DBJM+19]</a>, version 1.6.1 or higher.</p>
+
+</li>
+</ul>
+<p>Each of the above packages are part of the standard <strong class="pkg">GAP</strong> distribution.</p>
+
+<p><a id="X83438EE483014369" name="X83438EE483014369"></a></p>
+
+<h4>1.2 <span class="Heading">Building the documentation for <strong class="pkg">GraphSym</strong></span></h4>
+
+<p>Once downloaded, you can build all package documentation by running <code class="code">gap path/to/graphsym/makedoc.g</code> from the command line. This will build a pdf version of this manual and save it in the directory <code class="code">path/to/graphsym/doc/</code>, as well as provide the <strong class="pkg">GAP</strong> help viewer with the content of the manual.</p>
+
+<p><a id="X7C9913627D1C9D8A" name="X7C9913627D1C9D8A"></a></p>
+
+<h4>1.3 <span class="Heading">Loading <strong class="pkg">GraphSym</strong></span></h4>
+
+<p>If the <strong class="pkg">GraphSym</strong> package has been downloaded and placed in the <strong class="pkg">GAP</strong> package directory, it can by loaded at the <strong class="pkg">GAP</strong> prompt by typing the following.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LoadPackage("graphsym");</span>
+true
+</pre></div>
+
+<p>Otherwise, you can follow the methods found in the <strong class="pkg">GAP</strong> reference manual, <span class="URL"><a href="https://docs.gap-system.org/doc/ref/chap76.html">chapter 76</a></span>. For example, if <code class="code">path/to/graphsym</code> is the path to the <strong class="pkg">GraphSym</strong> package directory relative to your <strong class="pkg">GAP</strong> session, it can be loaded at the <strong class="pkg">GAP</strong> prompt by typing the following.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetPackagePath("graphsym","path/to/graphsym");</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LoadPackage("graphsym");</span>
+true
+</pre></div>
+
+<p><a id="X7C291DF17AFF63B9" name="X7C291DF17AFF63B9"></a></p>
+
+<h4>1.4 <span class="Heading">Citing <strong class="pkg">GraphSym</strong></span></h4>
+
+<p>If you use the <strong class="pkg">GraphSym</strong> package in your research, please tell us about it by emailing <span class="URL"><a href="mailto:rhysjevans00@gmail.com">rhysjevans00@gmail.com</a></span>. We are interested in any research involving the use of the <strong class="pkg">GraphSym</strong> package and might refer to your work in the future. If you wish to refer to the <strong class="pkg">GraphSym</strong> package in a published work, please cite <strong class="pkg">GraphSym</strong> like a journal article. The following is a BibTeX entry for the current <strong class="pkg">GraphSym</strong> version:</p>
+
+
+<div class="example"><pre>
+@Manual{cvt,
+        author = {Evans, Rhys J. and Montero, Antonio and
+                  Poto\v{c}nik, Primo\v{z}},
+        key = {cvt},
+        title = {{GraphSym -- GRaphs with SYmmetries LIbrary for GAP, 
+                  Version 0.1}},
+        url = {\verb+(https://rhysje00.github.io/graphsym/)+},
+        year = {2024}
+</pre></div>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap0_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap2_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chap7_mj.html">7</a>  <a href="chap8_mj.html">8</a>  <a href="chap9_mj.html">9</a>  <a href="chap10_mj.html">10</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

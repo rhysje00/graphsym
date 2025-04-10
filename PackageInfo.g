@@ -7,14 +7,14 @@
 SetPackageInfo( rec(
 
   PackageName := "GraphSym",
-  Subtitle := "GRaphs with SYmmetries LIbrary",
+  Subtitle := "Graphs with symmetries library",
   Version := "0.1",
-  Date := "25/05/2024",
+  Date := "10/04/2025",
   License := "GPL-2.0-or-later",
 
 ##  <#GAPDoc Label="PKGVERSIONDATA">
 ##  <!ENTITY VERSION "0.1">
-##  <!ENTITY RELEASEDATE "25 May 2024">
+##  <!ENTITY RELEASEDATE "10 April 2025">
 ##  <!ENTITY PKGWWWHOME "https://rhysje00.github.io/graphsym/">
 ##  <#/GAPDoc>
 
@@ -133,7 +133,7 @@ SetPackageInfo( rec(
     PDFFile   := "doc/manual.pdf",
     # the path to the .six file used by GAP's help system
     SixFile   := "doc/manual.six",
-    LongTitle := "GRaphs with SYmmetries LIbrary",
+    LongTitle := "Graphs with symmetries library",
   ),
 
   Dependencies := rec(

@@ -1,0 +1,333 @@
+  
+  [1X3 [33X[0;0YCubic edge-transitive graphs[133X[101X
+  
+  [33X[0;0YIn  this  Chapter  we give functions for accessing the cubic edge-transitive
+  graphs  stored  in  this  package,  and  related properties. Currently, this
+  package  contains  all connected cubic edge-transitive graphs on up to 10000
+  vertices.  For  information  and  references on these graphs, see [CD02] and
+  [CMMP06]  (note:  these references do not cover the enumeration of graphs on
+  more  than  768  vertices,  but  the  authors  are  currently writing up the
+  extended computations for publishing).[133X
+  
+  [33X[0;0YLet [22XΓ[122X be a simple graph (undirected, loopless, without multiple edges). Then
+  [22XΓ[122X  is  [13Xcubic[113X  (or  [13Xtrivalent[113X,  or  [22X3[122X[13X-valent[113X) if each vertex of the graph has
+  exactly 3 neighbours.[133X
+  
+  [33X[0;0YThe  graph  [22XΓ[122X  is  [13Xedge-transitive[113X  if  the  automorphism  group  of  [22XΓ[122X acts
+  transitively on the edges of [22XΓ[122X.[133X
+  
+  [33X[0;0YA   regular   edge-transitive  graph  can  be  either  vertex-transitive  or
+  non-vertex-transitive.  In  the former case the graph is arc-transitive, and
+  in the latter case it is said to be [13Xsemisymmetric[113X. Currently in the [5XGraphSym[105X
+  package,  if  a user wants access to a cubic edge-transitive graph they must
+  also specify if the graph is arc-transitive or semisymmetric.[133X
+  
+  
+  [1X3.1 [33X[0;0YAccessing the cubic edge–transitive graphs[133X[101X
+  
+  [33X[0;0YIn  this  Section  we  introduce  functions  for  the  access  to  the cubic
+  edge-transitive graphs stored in the [5XGraphSym[105X package.[133X
+  
+  [1X3.1-1 CubicATGraph[101X
+  
+  [33X[1;0Y[29X[2XCubicATGraph[102X( [3Xn[103X, [3Xi[103X[, [3Xdata[103X] ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10YA digraph.[133X
+  
+  [33X[0;0YGiven   positive   integers   [3Xn,i[103X,  this  function  returns  the  [3Xi[103Xth  cubic
+  arc-transitive  graph with [3Xn[103X vertices available in this package. If there is
+  no such graph, the function returns [9Xfail[109X.[133X
+  
+  [33X[0;0YWhen  the  optional  argument  [3Xdata[103X is specified, it must have value [9Xtrue[109X or
+  [9Xfalse[109X.  If  [10X[3Xdata[103X[10X=[110X[9Xtrue[109X,  the  graph  returned by this function will have been
+  assigned the precomputed properties and attributes from [2XSetCubicATGraphProps[102X
+  ([14X3.2-6[114X).  If  [10X[3Xdata[103X[10X=[110X[9Xfalse[109X  or  not  specified,  none  of  these properties or
+  attributes are given to the resulting graph.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27XCubicATGraph(2048,4);[127X[104X
+    [4X[28X<immutable symmetric digraph with 2048 vertices, 6144 edges>[128X[104X
+    [4X[25Xgap>[125X [27XCubicATGraph(2048,26);[127X[104X
+    [4X[28Xfail[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X3.1-2 CubicSSGraph[101X
+  
+  [33X[1;0Y[29X[2XCubicSSGraph[102X( [3Xn[103X, [3Xi[103X[, [3Xdata[103X] ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10YA digraph.[133X
+  
+  [33X[0;0YGiven   positive   integers   [3Xn,i[103X,  this  function  returns  the  [3Xi[103Xth  cubic
+  semisymmetric  graph  with [3Xn[103X vertices available in this package. If there is
+  no such graph, the function returns [9Xfail[109X.[133X
+  
+  [33X[0;0YWhen  the  optional  argument  [3Xdata[103X is specified, it must have value [9Xtrue[109X or
+  [9Xfalse[109X.  If  [10X[3Xdata[103X[10X=[110X[9Xtrue[109X,  the  graph  returned by this function will have been
+  assigned the precomputed properties and attributes from [2XSetCubicSSGraphProps[102X
+  ([14X3.2-7[114X).  If  [10X[3Xdata[103X[10X=[110X[9Xfalse[109X  or  not  specified,  none  of  these properties or
+  attributes are given to the resulting graph.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27XCubicSSGraph(4374,10);[127X[104X
+    [4X[28X<immutable symmetric digraph with 4374 vertices, 13122 edges>[128X[104X
+    [4X[25Xgap>[125X [27XCubicSSGraph(4374,30);[127X[104X
+    [4X[28Xfail[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X3.1-3 AllCubicATGraphs[101X
+  
+  [33X[1;0Y[29X[2XAllCubicATGraphs[102X( [3Xn[103X[, [3Xdata[103X] ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10YA list.[133X
+  
+  [33X[0;0YGiven  a  positive  integer  [3Xn[103X,  this function returns a list containing all
+  cubic  arc-transitive  graphs  with [3Xn[103X vertices available in this package. If
+  there are no such graphs, the function returns [9Xfail[109X.[133X
+  
+  [33X[0;0YWhen  the  optional  argument  [3Xdata[103X is specified, it must have value [9Xtrue[109X or
+  [9Xfalse[109X.  If  [10X[3Xdata[103X[10X=[110X[9Xtrue[109X,  the  graphs returned by this function will have been
+  assigned the precomputed properties and attributes from [2XSetCubicATGraphProps[102X
+  ([14X3.2-6[114X).  If  [10X[3Xdata[103X[10X=[110X[9Xfalse[109X  or  not  specified,  none  of  these properties or
+  attributes are given to the resulting graphs.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27Xgammas:=AllCubicATGraphs(3072,true);;[127X[104X
+    [4X[25Xgap>[125X [27XLength(gammas);[127X[104X
+    [4X[28X21[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X3.1-4 AllCubicSSGraphs[101X
+  
+  [33X[1;0Y[29X[2XAllCubicSSGraphs[102X( [3Xn[103X[, [3Xdata[103X] ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10YA list.[133X
+  
+  [33X[0;0YGiven  a  positive  integer  [3Xn[103X,  this function returns a list containing all
+  cubic  semisymmetric  graphs  with  [3Xn[103X vertices available in this package. If
+  there are no such graphs, the function returns [9Xfail[109X.[133X
+  
+  [33X[0;0YWhen  the  optional  argument  [3Xdata[103X is specified, it must have value [9Xtrue[109X or
+  [9Xfalse[109X.  If  [10X[3Xdata[103X[10X=[110X[9Xtrue[109X,  the  graphs returned by this function will have been
+  assigned the precomputed properties and attributes from [2XSetCubicSSGraphProps[102X
+  ([14X3.2-7[114X).  If  [10X[3Xdata[103X[10X=[110X[9Xfalse[109X  or  not  specified,  none  of  these properties or
+  attributes are given to the resulting graphs.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27Xgammas:=AllCubicSSGraphs(7680,true);;[127X[104X
+    [4X[25Xgap>[125X [27XLength(gammas);[127X[104X
+    [4X[28X21[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X3.1-5 CubicATGraphIterator[101X
+  
+  [33X[1;0Y[29X[2XCubicATGraphIterator[102X( [3Xn[103X[, [3Xdata[103X] ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10YA list[133X
+  
+  [33X[0;0YGiven a positive integer [3Xn[103X, this function returns an iterator over all cubic
+  arc-transitive  graphs  with  [3Xn[103X vertices available in this package. If there
+  are such no graphs, the function returns an empty iterator.[133X
+  
+  [33X[0;0YWhen  the  optional  argument  [3Xdata[103X is specified, it must have value [9Xtrue[109X or
+  [9Xfalse[109X.  If  [10X[3Xdata[103X[10X=[110X[9Xtrue[109X,  the  graphs returned by this function will have been
+  assigned the precomputed properties and attributes from [2XSetCubicATGraphProps[102X
+  ([14X3.2-6[114X).  If  [10X[3Xdata[103X[10X=[110X[9Xfalse[109X  or  not  specified,  none  of  these properties or
+  attributes are given to the resulting graphs.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[28X[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X3.1-6 CubicSSGraphIterator[101X
+  
+  [33X[1;0Y[29X[2XCubicSSGraphIterator[102X( [3Xn[103X[, [3Xdata[103X] ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10YA list[133X
+  
+  [33X[0;0YGiven a positive integer [3Xn[103X, this function returns an iterator over all cubic
+  semisymmetric graphs with [3Xn[103X vertices available in this package. If there are
+  such no graphs, the function returns an empty iterator.[133X
+  
+  [33X[0;0YWhen  the  optional  argument  [3Xdata[103X is specified, it must have value [9Xtrue[109X or
+  [9Xfalse[109X.  If  [10X[3Xdata[103X[10X=[110X[9Xtrue[109X,  the  graphs returned by this function will have been
+  assigned the precomputed properties and attributes from [2XSetCubicSSGraphProps[102X
+  ([14X3.2-7[114X).  If  [10X[3Xdata[103X[10X=[110X[9Xfalse[109X  or  not  specified,  none  of  these properties or
+  attributes are given to the resulting graphs.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[28X[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  
+  [1X3.2 [33X[0;0YProperties of the cubic edge–transitive graphs and library[133X[101X
+  
+  [33X[0;0YIn this Section we give the functions which give information about the cubic
+  edge-transitive  graphs  library,  and  the properties and attributes of the
+  graphs it contains.[133X
+  
+  
+  [1X3.2-1 [33X[0;0YPrecomputed attributes of the cubic edge–transitive graphs[133X[101X
+  
+  [33X[0;0YCurrently,  there  are  no  precomputed  attributes  available for the cubic
+  edge-transitive  graphs  stored in this package. In the near future, we plan
+  to  provide  several attributes for each of the cubic edge-transitive graphs
+  stored, including diameter, girth and bipartiteness.[133X
+  
+  [33X[0;0YNow  we  introduce  functions  which  are used to find information about the
+  library and each of the graphs it stores.[133X
+  
+  [1X3.2-2 NrCubicATGraphs[101X
+  
+  [33X[1;0Y[29X[2XNrCubicATGraphs[102X( [3Xn[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XNumberCubicATGraphs[102X( [3Xn[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10YAn integer.[133X
+  
+  [33X[0;0YGiven  a  positive  integer  [3Xn[103X,  this  function  returns the number of cubic
+  arc-transitive graphs with [3Xn[103X vertices stored in this package.[133X
+  
+  [33X[0;0YFor any positive integers [22Xn[122X up to 1280, the current package stores all cubic
+  arc-transitive graphs with [22Xn[122X vertices.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27XNrCubicATGraphs(8192);[127X[104X
+    [4X[28X93[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X3.2-3 NrCubicSSGraphs[101X
+  
+  [33X[1;0Y[29X[2XNrCubicSSGraphs[102X( [3Xn[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XNumberCubicSSGraphs[102X( [3Xn[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10YAn integer.[133X
+  
+  [33X[0;0YGiven  a  positive  integer  [3Xn[103X,  this  function  returns the number of cubic
+  semisymmetric graphs with [3Xn[103X vertices stored in this package.[133X
+  
+  [33X[0;0YFor any positive integers [22Xn[122X up to 1280, the current package stores all cubic
+  semisymmetric graphs with [22Xn[122X vertices.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27XNrCubicSSGraphs(3888);[127X[104X
+    [4X[28X35[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X3.2-4 CubicATGraphId[101X
+  
+  [33X[1;0Y[29X[2XCubicATGraphId[102X( [3Xgamma[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YAn integer.[133X
+  
+  [33X[0;0YGiven  a  digraph  [3Xgamma[103X,  if  [3Xgamma[103X is isomorphic to a cubic arc-transitive
+  graph  stored  in this package, this function returns the index of the graph
+  isomorphic to [3Xgamma[103X. Otherwise, this function returns [9Xfail[109X.[133X
+  
+  [33X[0;0YThe  index  [10Xi[110X  of  a cubic arc-transitive graph [10Xgamma[110X in this library is the
+  position at which the graph is stored relative to its number of vertices. In
+  particular,  if  [10Xgamma[110X  has  [10Xn[110X vertices, then [10Xgamma[110X will be the [10Xi[110Xth entry of
+  [10XAllCubicATGraphs(n)[110X   and   the  [10Xi[110Xth  graph  found  when  iterating  through
+  [10XCubicATGraphIterator(n)[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27Xgamma:=CubicATGraph(8192,40);;[127X[104X
+    [4X[25Xgap>[125X [27XCubicATGraphId(gamma);[127X[104X
+    [4X[28X40[128X[104X
+    [4X[25Xgap>[125X [27Xgamma:=PetersenGraph();;[127X[104X
+    [4X[25Xgap>[125X [27XCubicATGraphId(gamma);[127X[104X
+    [4X[28X1[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X3.2-5 CubicSSGraphId[101X
+  
+  [33X[1;0Y[29X[2XCubicSSGraphId[102X( [3Xgamma[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YAn integer.[133X
+  
+  [33X[0;0YGiven a digraph [3Xgamma[103X, if [3Xgamma[103X is isomorphic to a cubic semisymmetric graph
+  stored  in  this  package,  this  function  returns  the  index of the graph
+  isomorphic to [3Xgamma[103X. Otherwise, this function returns [9Xfail[109X.[133X
+  
+  [33X[0;0YThe  index  [10Xi[110X  of  a  cubic semisymmetric graph [10Xgamma[110X in this library is the
+  position at which the graph is stored relative to its number of vertices. In
+  particular,  if  [10Xgamma[110X  has  [10Xn[110X vertices, then [10Xgamma[110X will be the [10Xi[110Xth entry of
+  [10XAllCubicSSGraphs(n)[110X   and   the  [10Xi[110Xth  graph  found  when  iterating  through
+  [10XCubicSSGraphIterator(n)[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27Xgamma:=CubicSSGraph(6912,20);;[127X[104X
+    [4X[25Xgap>[125X [27XCubicSSGraphId(gamma);[127X[104X
+    [4X[28X20[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X3.2-6 SetCubicATGraphProps[101X
+  
+  [33X[1;0Y[29X[2XSetCubicATGraphProps[102X( [3Xgamma[103X ) [32X function[133X
+  
+  [33X[0;0YGiven a digraph [3Xgamma[103X, if this graph is isomorphic to a cubic arc-transitive
+  graph  stored  in  this  library,  this  function  sets  the  properties and
+  attributes of [3Xgamma[103X precomputed in this package. This includes[133X
+  
+  [30X    [33X[0;6YAll properties and attributes found in Subsection [14X3.2-1[114X.[133X
+  
+  [30X    [33X[0;6Y[2XCubicATGraphId[102X ([14X3.2-4[114X).[133X
+  
+  [30X    [33X[0;6Y[2XIsCubicGraph[102X ([14X2.2-6[114X).[133X
+  
+  [30X    [33X[0;6Y[2XIsVertexTransitive[102X ([14XDigraphs: IsVertexTransitive[114X).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27Xgamma:=CompleteDigraph(4);;[127X[104X
+    [4X[25Xgap>[125X [27XSetCubicATGraphProps(gamma);[127X[104X
+    [4X[25Xgap>[125X [27XIsArcTransitiveDigraph(gamma);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X3.2-7 SetCubicSSGraphProps[101X
+  
+  [33X[1;0Y[29X[2XSetCubicSSGraphProps[102X( [3Xgamma[103X ) [32X function[133X
+  
+  [33X[0;0YGiven  a digraph [3Xgamma[103X, if this graph is isomorphic to a cubic semisymmetric
+  graph  stored  in  this  library,  this  function  sets  the  properties and
+  attributes of [3Xgamma[103X precomputed in this package. This includes[133X
+  
+  [30X    [33X[0;6YAll properties and attributes found in Subsection [14X3.2-1[114X.[133X
+  
+  [30X    [33X[0;6Y[2XCubicSSGraphId[102X ([14X3.2-5[114X).[133X
+  
+  [30X    [33X[0;6Y[2XIsCubicGraph[102X ([14X2.2-6[114X).[133X
+  
+  [30X    [33X[0;6Y[2XIsVertexTransitive[102X ([14XDigraphs: IsVertexTransitive[114X).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27Xgamma:=CubicSSGraph(6912,25);;[127X[104X
+    [4X[25Xgap>[125X [27XSetCubicSSGraphProps(gamma);[127X[104X
+    [4X[25Xgap>[125X [27XIsVertexTransitive(gamma);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  

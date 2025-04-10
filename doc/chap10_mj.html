@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<title>GAP (GraphSym) - Chapter 10: Locally arc–transitive \(\{{3,4}\}\)–valent graphs</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap10"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chap7_mj.html">7</a>  <a href="chap8_mj.html">8</a>  <a href="chap9_mj.html">9</a>  <a href="chap10_mj.html">10</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap9_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapBib_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap10.html">[MathJax off]</a></p>
+<p><a id="X7E10BAE480DCE0FE" name="X7E10BAE480DCE0FE"></a></p>
+<div class="ChapSects"><a href="chap10_mj.html#X7E10BAE480DCE0FE">10 <span class="Heading">Locally arc–transitive <span class="SimpleMath">\(\{{3,4}\}\)</span>–valent graphs</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap10_mj.html#X7A6113B47B1D838C">10.1 <span class="Heading">Accessing the locally arc–transitive <span class="SimpleMath">\(\{{3,4}\}\)</span>–valent graphs</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X7D37D151780731DE">10.1-1 LAT34ValentGraph</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X782DC5F37AB63F25">10.1-2 AllLAT34ValentGraphs</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X7BAD5C5B86C2B7B9">10.1-3 LAT34ValentGraphIterator</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap10_mj.html#X86056404820BD4A4">10.2 <span class="Heading">Properties of the locally arc–transitive <span class="SimpleMath">\(\{{3,4}\}\)</span>–valent graphs and library</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X8616A0CD788805BB">10.2-1 NrLAT34ValentGraphs</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X796BEC6A7E2A343B">10.2-2 LAT34ValentGraphId</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap10_mj.html#X7EF935847FBBC8DE">10.2-3 SetLAT34ValentGraphProps</a></span>
+</div></div>
+</div>
+
+<h3>10 <span class="Heading">Locally arc–transitive <span class="SimpleMath">\(\{{3,4}\}\)</span>–valent graphs</span></h3>
+
+<p>In this chapter we give functions for accessing the locally arc-transitive <span class="SimpleMath">\(\{{3,4}\}\)</span>-valent graphs stored in this package, and related properties.</p>
+
+<p>In this package, we collect bipartite biregular graphs of valence <span class="SimpleMath">\(\{{3,4}\}\)</span> that are locally <span class="SimpleMath">\(G\)</span>-arc-transitive for some group of automorphisms <span class="SimpleMath">\(G\)</span> with the edge stabiliser acting faithfully on the union of the neighbourhoods of the vertices of the edge. Currently, this package stores all such graphs on up to 350 vertices, and many more on up to 1050. For more information and references about these graphs, see <a href="chapBib_mj.html#biBP_2012">[Pot12]</a>.</p>
+
+<p><a id="X7A6113B47B1D838C" name="X7A6113B47B1D838C"></a></p>
+
+<h4>10.1 <span class="Heading">Accessing the locally arc–transitive <span class="SimpleMath">\(\{{3,4}\}\)</span>–valent graphs</span></h4>
+
+<p>In this Section we introduce functions for the access to the locally arc-transitive <span class="SimpleMath">\(\{{3,4}\}\)</span>-valent graphs stored in the <strong class="pkg">GraphSym</strong> package.</p>
+
+<p><a id="X7D37D151780731DE" name="X7D37D151780731DE"></a></p>
+
+<h5>10.1-1 LAT34ValentGraph</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LAT34ValentGraph</code>( <var class="Arg">n</var>, <var class="Arg">i</var>[, <var class="Arg">data</var>] )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns: A digraph.</p>
+
+<p>Given positive integers <var class="Arg">n,i</var>, this function returns the <var class="Arg">i</var>th arc-transitive 2-valent digraph with <var class="Arg">n</var> vertices available in this package. If there is no such graph, the function returns <code class="keyw">fail</code>.</p>
+
+<p>When the optional argument <var class="Arg">data</var> is specified, it must have value <code class="keyw">true</code> or <code class="keyw">false</code>. If <code class="code"><var class="Arg">data</var>=</code><code class="keyw">true</code>, the graph returned by this function will have been assigned the precomputed properties and attributes from <code class="func">SetLAT34ValentGraphProps</code> (<a href="chap10_mj.html#X7EF935847FBBC8DE"><span class="RefLink">10.2-3</span></a>). If <code class="code"><var class="Arg">data</var>=</code><code class="keyw">false</code> or not specified, none of these properties or attributes are given to the resulting graph.</p>
+
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LAT34ValentGraph(896,200);</span>
+&lt;immutable symmetric digraph with 896 vertices, 3072 edges&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LAT34ValentGraph(896,300);</span>
+fail
+    
+  </pre></div>
+
+<p><a id="X782DC5F37AB63F25" name="X782DC5F37AB63F25"></a></p>
+
+<h5>10.1-2 AllLAT34ValentGraphs</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AllLAT34ValentGraphs</code>( <var class="Arg">n</var>[, <var class="Arg">data</var>] )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns: A list.</p>
+
+<p>Given a positive integer <var class="Arg">n</var>, this function returns a list containing all arc-transitive digraphs with <var class="Arg">n</var> vertices available in this package. If there are no such graphs, the function returns <code class="keyw">fail</code>.</p>
+
+<p>When the optional argument <var class="Arg">data</var> is specified, it must have value <code class="keyw">true</code> or <code class="keyw">false</code>. If <code class="code"><var class="Arg">data</var>=</code><code class="keyw">true</code>, the graphs returned by this function will have been assigned the precomputed properties and attributes from <code class="func">SetLAT34ValentGraphProps</code> (<a href="chap10_mj.html#X7EF935847FBBC8DE"><span class="RefLink">10.2-3</span></a>). If <code class="code"><var class="Arg">data</var>=</code><code class="keyw">false</code> or not specified, none of these properties or attributes are given to the resulting graphs.</p>
+
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gammas:=AllLAT34ValentGraphs(224);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Length(gammas);</span>
+22
+    
+  </pre></div>
+
+<p><a id="X7BAD5C5B86C2B7B9" name="X7BAD5C5B86C2B7B9"></a></p>
+
+<h5>10.1-3 LAT34ValentGraphIterator</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LAT34ValentGraphIterator</code>( <var class="Arg">n</var>[, <var class="Arg">data</var>] )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns: An iterator.</p>
+
+<p>Given a positive integer <var class="Arg">n</var>, this function returns an iterator over all arc-transitive 2-valent digraphs with <var class="Arg">n</var> vertices available in this package. If there are such no graphs, the function returns an empty iterator.</p>
+
+<p>When the optional argument <var class="Arg">data</var> is specified, it must have value <code class="keyw">true</code> or <code class="keyw">false</code>. If <code class="code"><var class="Arg">data</var>=</code><code class="keyw">true</code>, the graphs returned by this function will have been assigned the precomputed properties and attributes from <code class="func">SetLAT34ValentGraphProps</code> (<a href="chap10_mj.html#X7EF935847FBBC8DE"><span class="RefLink">10.2-3</span></a>). If <code class="code"><var class="Arg">data</var>=</code><code class="keyw">false</code> or not specified, none of these properties or attributes are given to the resulting graphs.</p>
+
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">cnt:=0;; iter:=LAT34ValentGraphIterator(224);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for gamma in iter do</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">if HasSolvableAutGroup(gamma) then</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">cnt:=cnt+1;</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">fi;</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">od;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">cnt;</span>
+22
+    
+  </pre></div>
+
+<p><a id="X86056404820BD4A4" name="X86056404820BD4A4"></a></p>
+
+<h4>10.2 <span class="Heading">Properties of the locally arc–transitive <span class="SimpleMath">\(\{{3,4}\}\)</span>–valent graphs and library</span></h4>
+
+<p>In this Section we give the functions which give information about the locally arc-transitive <span class="SimpleMath">\(\{{3,4}\}\)</span>-valent graph library, and the properties and attributes of the graphs it contains.</p>
+
+<p><a id="X8616A0CD788805BB" name="X8616A0CD788805BB"></a></p>
+
+<h5>10.2-1 NrLAT34ValentGraphs</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NrLAT34ValentGraphs</code>( <var class="Arg">n</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumberLAT34ValentGraphs</code>( <var class="Arg">n</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns: An integer.</p>
+
+<p>Given a positive integer <var class="Arg">n</var>, this function returns the number of arc-transitive 2-valent digraphs with <var class="Arg">n</var> vertices stored in this package.</p>
+
+<p>For any positive integers <span class="SimpleMath">\(n\)</span> up to 1000, the current package stores all arc-transitive 2-valent digraphs with <span class="SimpleMath">\(n\)</span> vertices.</p>
+
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NrLAT34ValentGraphs(896);</span>
+249
+    
+  </pre></div>
+
+<p><a id="X796BEC6A7E2A343B" name="X796BEC6A7E2A343B"></a></p>
+
+<h5>10.2-2 LAT34ValentGraphId</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LAT34ValentGraphId</code>( <var class="Arg">gamma</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: An integer.</p>
+
+<p>Given a digraph <var class="Arg">gamma</var>, if <var class="Arg">gamma</var> is isomorphic to a graph stored in this package, this function returns the index of the graph isomorphic to <var class="Arg">gamma</var>. Otherwise, this function returns <code class="keyw">fail</code>.</p>
+
+<p>The index <code class="code">i</code> of a graph <code class="code">gamma</code> in this library is the position at which the graph is stored relative to its number of vertices. In particular, if <code class="code">gamma</code> has <code class="code">n</code> vertices, then <code class="code">gamma</code> will be the <code class="code">i</code>th entry of <code class="code">AllLAT34ValentGraphs(n)</code> and the <code class="code">i</code>th graph found when iterating through <code class="code">LAT34ValentGraphIterator(n)</code>.</p>
+
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gamma:=LAT34ValentGraph(896,20);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LAT34ValentGraphId(gamma);</span>
+20
+    
+  </pre></div>
+
+<p><a id="X7EF935847FBBC8DE" name="X7EF935847FBBC8DE"></a></p>
+
+<h5>10.2-3 SetLAT34ValentGraphProps</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SetLAT34ValentGraphProps</code>( <var class="Arg">gamma</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Given a digraph <var class="Arg">gamma</var>, if this graph is isomorphic to a graph stored in this library, this function sets the properties and attributes of <var class="Arg">gamma</var> precomputed in this package. This includes:</p>
+
+
+<ul>
+<li><p><code class="func">LAT34ValentGraphId</code> (<a href="chap10_mj.html#X796BEC6A7E2A343B"><span class="RefLink">10.2-2</span></a>).</p>
+
+</li>
+</ul>
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gamma:=LAT34ValentGraph(896,20);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetLAT34ValentGraphProps(gamma);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LAT34ValentGraphId(gamma);</span>
+20
+    
+  </pre></div>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap9_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapBib_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chap7_mj.html">7</a>  <a href="chap8_mj.html">8</a>  <a href="chap9_mj.html">9</a>  <a href="chap10_mj.html">10</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

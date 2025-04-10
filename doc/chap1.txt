@@ -1,0 +1,89 @@
+  
+  [1X1 [33X[0;0YThe [5XGraphSym[105X[101X[1X package[133X[101X
+  
+  [33X[0;0YThis is the manual for the [5XGraphSym[105X package version 0.1.[133X
+  
+  [33X[0;0YThe [5XGraphSym[105X package contains various collections of graphs with interesting
+  symmetry properties. Each collection of graphs are attained from complete or
+  partial   enumerations  published  in  international  journals.  The  papers
+  containing  these  enumerations are referenced throughout this document, and
+  their  authors  are  included  as contributors (unless they are an author of
+  this  package).  The  [5XGraphSym[105X  package provides functionality enabling easy
+  access to these graphs, along with several precomputed properties related to
+  many of the graphs stored within.[133X
+  
+  [33X[0;0YCurrently,  all  of the functions in this package deal with finite graphs in
+  [5XDigraphs[105X  format  [DBJM+19], and much of the functionality provided is based
+  on the very nice code found in [14X'Digraphs: Visualising and IO'[114X.[133X
+  
+  
+  [1X1.1 [33X[0;0YInstalling [5XGraphSym[105X[101X[1X[133X[101X
+  
+  [33X[0;0YTo  install  the  [5XGraphSym[105X  package, you first need to download or clone the
+  package,  found  at  https://rhysje00.github.io/graphsym/.  Once downloaded,
+  there  is  no  need  for any extra compiling. If possible, it is recommended
+  that you place the [5XGraphSym[105X directory into the package directory of your [5XGAP[105X
+  distribution.  For  guidance  on  how to load [5XGraphSym[105X package if you cannot
+  move  the  directory  directly  into your [5XGAP[105X package directory, see Section
+  [14X1.3[114X.[133X
+  
+  [33X[0;0YThe [5XGraphSym[105X package requires the following [5XGAP[105X packages:[133X
+  
+  [30X    [33X[0;6Y[5XGAPDoc[105X [LN19], version 1.6.6 or higher;[133X
+  
+  [30X    [33X[0;6Y[5XDigraphs[105X [DBJM+19], version 1.6.1 or higher.[133X
+  
+  [33X[0;0YEach of the above packages are part of the standard [5XGAP[105X distribution.[133X
+  
+  
+  [1X1.2 [33X[0;0YBuilding the documentation for [5XGraphSym[105X[101X[1X[133X[101X
+  
+  [33X[0;0YOnce  downloaded,  you  can  build  all package documentation by running [10Xgap
+  path/to/graphsym/makedoc.g[110X  from  the  command  line.  This will build a pdf
+  version  of  this manual and save it in the directory [10Xpath/to/graphsym/doc/[110X,
+  as well as provide the [5XGAP[105X help viewer with the content of the manual.[133X
+  
+  
+  [1X1.3 [33X[0;0YLoading [5XGraphSym[105X[101X[1X[133X[101X
+  
+  [33X[0;0YIf  the  [5XGraphSym[105X  package has been downloaded and placed in the [5XGAP[105X package
+  directory, it can by loaded at the [5XGAP[105X prompt by typing the following.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XLoadPackage("graphsym");[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YOtherwise,  you  can  follow  the methods found in the [5XGAP[105X reference manual,
+  chapter  76  ([7Xhttps://docs.gap-system.org/doc/ref/chap76.html[107X). For example,
+  if  [10Xpath/to/graphsym[110X  is the path to the [5XGraphSym[105X package directory relative
+  to  your  [5XGAP[105X  session,  it  can  be  loaded at the [5XGAP[105X prompt by typing the
+  following.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XSetPackagePath("graphsym","path/to/graphsym");[127X[104X
+    [4X[25Xgap>[125X [27XLoadPackage("graphsym");[127X[104X
+    [4X[28Xtrue[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X1.4 [33X[0;0YCiting [5XGraphSym[105X[101X[1X[133X[101X
+  
+  [33X[0;0YIf you use the [5XGraphSym[105X package in your research, please tell us about it by
+  emailing  [7Xmailto:rhysjevans00@gmail.com[107X.  We  are interested in any research
+  involving  the  use  of the [5XGraphSym[105X package and might refer to your work in
+  the  future.  If  you  wish  to refer to the [5XGraphSym[105X package in a published
+  work, please cite [5XGraphSym[105X like a journal article. The following is a BibTeX
+  entry for the current [5XGraphSym[105X version:[133X
+  
+  [4X[32X  bibtex  [32X[104X
+    [4X@Manual{cvt,[104X
+    [4X        author = {Evans, Rhys J. and Montero, Antonio and[104X
+    [4X                  Poto\v{c}nik, Primo\v{z}},[104X
+    [4X        key = {cvt},[104X
+    [4X        title = {{GraphSym -- GRaphs with SYmmetries LIbrary for GAP, [104X
+    [4X                  Version 0.1}},[104X
+    [4X        url = {\verb+(https://rhysje00.github.io/graphsym/)+},[104X
+    [4X        year = {2024}[104X
+  [4X[32X[104X
+  

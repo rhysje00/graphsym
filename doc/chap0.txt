@@ -1,1 +1,175 @@
-Placeholder
+  
+  
+                                    [1X[5XGraphSym[105X[101X
+  
+  
+                    [1X[5XGraphSym[105X Graphs with Symmetries library[101X
+  
+  
+                                  Version 0.1
+  
+  
+                                 10 April 2025
+  
+  
+                                 Rhys J. Evans
+  
+                                Antonio Montero
+  
+                                Primož Potočnik
+  
+  
+  
+  Rhys J. Evans
+      Email:    [7Xmailto:rhysjevans00@gmail.com[107X
+      Homepage: [7Xhttps://rhysje00.github.io/[107X
+  Antonio Montero
+      Email:    [7Xmailto:antonio.montero@fmf.uni-lj.si[107X
+      Homepage: [7Xhttps://anteromontonio.github.io/[107X
+  Primož Potočnik
+      Email:    [7Xmailto:primoz.potocnik@fmf.uni-lj.si[107X
+      Homepage: [7Xhttps://users.fmf.uni-lj.si/potocnik/work.htm[107X
+  
+  -------------------------------------------------------
+  [1XCopyright[101X
+  [33X[0;0Y© 2024 by Rhys J. Evans, Antonio Montero and Primož Potočnik[133X
+  
+  [33X[0;0YThe [5XGraphSym[105X package is free software: you can redistribute it and/or modify
+  it    under    the    terms    of    the    GNU   General   Public   License
+  ([7Xhttps://www.fsf.org/licenses/gpl.html[107X)  as  published  by the Free Software
+  Foundation,  either  version 2 of the License, or (at your option) any later
+  version.[133X
+  
+  
+  -------------------------------------------------------
+  [1XAcknowledgements[101X
+  [33X[0;0YThe  [5XGraphSym[105X package is based largely on the I/O functionality found in the
+  [5XDigraphs[105X   package   (homepage:  [7Xhttps://digraphs.github.io/Digraphs/[107X).  The
+  content of this package has been extracted directly from the project webpage
+  ([7Xhttps://graphsym.net/[107X)  of  Primož  Potočnik,  and  is based on the work of
+  himself,  Marston  Conder  ([7Xhttps://www.math.auckland.ac.nz/~conder/[107X), Pablo
+  Spiga        ([7Xhttps://en.unimib.it/pablo-spiga[107X),        Gabriel       Verret
+  ([7Xhttps://profiles.auckland.ac.nz/g-verret[107X),       and      Steve      Wilson
+  ([7Xhttps://www.researchgate.net/profile/Steve-Wilson-12[107X).[133X
+  
+  
+  -------------------------------------------------------
+  
+  
+  [1XContents (GraphSym)[101X
+  
+  1 [33X[0;0YThe [5XGraphSym[105X package[133X
+    1.1 [33X[0;0YInstalling [5XGraphSym[105X[133X
+    1.2 [33X[0;0YBuilding the documentation for [5XGraphSym[105X[133X
+    1.3 [33X[0;0YLoading [5XGraphSym[105X[133X
+    1.4 [33X[0;0YCiting [5XGraphSym[105X[133X
+  2 [33X[0;0YCubic vertex–transitive graphs[133X
+    2.1 [33X[0;0YAccessing the cubic vertex–transitive graphs[133X
+      2.1-1 CubicVTGraph
+      2.1-2 AllCubicVTGraphs
+      2.1-3 CubicVTGraphIterator
+    2.2 [33X[0;0YProperties of the cubic vertex–transitive graphs and library[133X
+      2.2-1 [33X[0;0YPrecomputed attributes of the cubic vertex–transitive graphs[133X
+      2.2-2 NrCubicVTGraphs
+      2.2-3 CubicVTGraphId
+      2.2-4 SetCubicVTGraphProps
+      2.2-5 SmallCubicVTGraphsInfo
+      2.2-6 IsCubicGraph
+      2.2-7 IsCayleyGraph
+      2.2-8 IsArcTransitiveDigraph
+      2.2-9 IsSplitPraegerXuGraph
+  3 [33X[0;0YCubic edge-transitive graphs[133X
+    3.1 [33X[0;0YAccessing the cubic edge–transitive graphs[133X
+      3.1-1 CubicATGraph
+      3.1-2 CubicSSGraph
+      3.1-3 AllCubicATGraphs
+      3.1-4 AllCubicSSGraphs
+      3.1-5 CubicATGraphIterator
+      3.1-6 CubicSSGraphIterator
+    3.2 [33X[0;0YProperties of the cubic edge–transitive graphs and library[133X
+      3.2-1 [33X[0;0YPrecomputed attributes of the cubic edge–transitive graphs[133X
+      3.2-2 NrCubicATGraphs
+      3.2-3 NrCubicSSGraphs
+      3.2-4 CubicATGraphId
+      3.2-5 CubicSSGraphId
+      3.2-6 SetCubicATGraphProps
+      3.2-7 SetCubicSSGraphProps
+  4 [33X[0;0YArc–transitive 2–valent digraphs[133X
+    4.1 [33X[0;0YAccessing the arc–transitive 2–valent digraphs[133X
+      4.1-1 AT2ValentDigraph
+      4.1-2 AllAT2ValentDigraphs
+      4.1-3 AT2ValentDigraphIterator
+    4.2 [33X[0;0YProperties of the arc–transitive 2–valent digraphs and library[133X
+      4.2-1 [33X[0;0YPrecomputed attributes of the arc–transitive 2–valent digraphs[133X
+      4.2-2 NrAT2ValentDigraphs
+      4.2-3 AT2ValentDigraphId
+      4.2-4 SetAT2ValentDigraphProps
+      4.2-5 IsSelfReverseDigraph
+      4.2-6 HasATUnderlyingGraph
+      4.2-7 IsGeneralizedWreathDigraph
+      4.2-8 AT2ValentReverseDigraphId
+      4.2-9 NameOfUnderlyingGraph
+      4.2-10 MaximumArcTransitivity
+  5 [33X[0;0Y[22XG[122X–half–arc–transitive 4–valent graphs[133X
+    5.1 [33X[0;0YAccessing the [22XG[122X–half–arc–transitive 4–valent graphs[133X
+      5.1-1 GHAT4ValentGraph
+      5.1-2 AllGHAT4ValentGraphs
+      5.1-3 GHAT4ValentGraphIterator
+    5.2 [33X[0;0YProperties of the [22XG[122X–half–arc–transitive 4–valent graphs and library[133X
+      5.2-1 [33X[0;0YPrecomputed attributes of the [22XG[122X–half–arc–transitive 4–valent
+      graphs[133X
+      5.2-2 NrGHAT4ValentGraphs
+      5.2-3 GHAT4ValentGraphId
+      5.2-4 SetGHAT4ValentGraphProps
+      5.2-5 CayleyType
+      5.2-6 ConsistentCycleTypes
+  6 [33X[0;0YHalf–arc–transitive 4–valent graphs[133X
+    6.1 [33X[0;0YAccessing the half–arc–transitive 4–valent graphs[133X
+      6.1-1 HAT4ValentGraph
+      6.1-2 AllHAT4ValentGraphs
+      6.1-3 HAT4ValentGraphIterator
+    6.2 [33X[0;0YProperties of the half–arc–transitive 4–valent graphs and library[133X
+      6.2-1 [33X[0;0YPrecomputed attributes of the half–arc–transitive 4–valent graphs[133X
+      6.2-2 NrHAT4ValentGraphs
+      6.2-3 HAT4ValentGraphId
+      6.2-4 SetHAT4ValentGraphProps
+  7 [33X[0;0YArc–transitive 4–valent graphs[133X
+    7.1 [33X[0;0YAccessing the arc–transitive 4–valent graphs[133X
+      7.1-1 AT4ValentGraph
+      7.1-2 AllAT4ValentGraphs
+      7.1-3 AT4ValentGraphIterator
+    7.2 [33X[0;0YProperties of the arc–transitive 4–valent graphs and library[133X
+      7.2-1 NrAT4ValentGraphs
+      7.2-2 AT4ValentGraphId
+      7.2-3 SetAT4ValentGraphProps
+  8 [33X[0;0Y2–arc–transitive 4–valent graphs[133X
+    8.1 [33X[0;0YAccessing the 2–arc–transitive 4–valent graphs[133X
+      8.1-1 2AT4ValentGraph
+      8.1-2 All2AT4ValentGraphs
+      8.1-3 2AT4ValentGraphIterator
+    8.2 [33X[0;0YProperties of the 2–arc–transitive 4–valent graphs and library[133X
+      8.2-1 Nr2AT4ValentGraphs
+      8.2-2 2AT4ValentGraphId
+      8.2-3 Set2AT4ValentGraphProps
+  9 [33X[0;0YEdge–transitive 4–valent graphs[133X
+    9.1 [33X[0;0YAccessing the edge–transitive 4–valent graphs[133X
+      9.1-1 ET4ValentGraph
+      9.1-2 AllET4ValentGraphs
+      9.1-3 ET4ValentGraphIterator
+    9.2 [33X[0;0YProperties of the edge–transitive 4–valent graphs and library[133X
+      9.2-1 NrET4ValentGraphs
+      9.2-2 ET4ValentGraphId
+      9.2-3 SetET4ValentGraphProps
+  10 [33X[0;0YLocally arc–transitive [22X{3,4}[122X–valent graphs[133X
+    10.1 [33X[0;0YAccessing the locally arc–transitive [22X{3,4}[122X–valent graphs[133X
+      10.1-1 LAT34ValentGraph
+      10.1-2 AllLAT34ValentGraphs
+      10.1-3 LAT34ValentGraphIterator
+    10.2 [33X[0;0YProperties of the locally arc–transitive [22X{3,4}[122X–valent graphs and
+    library[133X
+      10.2-1 NrLAT34ValentGraphs
+      10.2-2 LAT34ValentGraphId
+      10.2-3 SetLAT34ValentGraphProps
+  
+  
+  [32X

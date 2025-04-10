@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>GAP (GraphSym) - Chapter 4: Arc–transitive 2–valent digraphs</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap4"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chap9.html">9</a>  <a href="chap10.html">10</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap3.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap5.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap4_mj.html">[MathJax on]</a></p>
+<p><a id="X8000F22D86EE7806" name="X8000F22D86EE7806"></a></p>
+<div class="ChapSects"><a href="chap4.html#X8000F22D86EE7806">4 <span class="Heading">Arc–transitive 2–valent digraphs</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X845841E17F91F365">4.1 <span class="Heading">Accessing the arc–transitive 2–valent digraphs</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7D0BEAE683C85D32">4.1-1 AT2ValentDigraph</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X84BD3BC08373E26A">4.1-2 AllAT2ValentDigraphs</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X86AA45E57D0DDB55">4.1-3 AT2ValentDigraphIterator</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X80FB15A3834DB34D">4.2 <span class="Heading">Properties of the arc–transitive 2–valent digraphs and library</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7F3351217BC4524A">4.2-1 <span class="Heading">Precomputed attributes of the arc–transitive 2–valent digraphs</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7A865EFE7DC52067">4.2-2 NrAT2ValentDigraphs</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7CE1F85585E558D7">4.2-3 AT2ValentDigraphId</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X82356701867E1591">4.2-4 SetAT2ValentDigraphProps</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7B258ACA864BB74C">4.2-5 IsSelfReverseDigraph</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X80BEC5307BE5A611">4.2-6 HasATUnderlyingGraph</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X80B191667F330FD1">4.2-7 IsGeneralizedWreathDigraph</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7B8B5F8B86488428">4.2-8 AT2ValentReverseDigraphId</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X8225730E7ECEA95D">4.2-9 NameOfUnderlyingGraph</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7ECF0C50817A8070">4.2-10 MaximumArcTransitivity</a></span>
+</div></div>
+</div>
+
+<h3>4 <span class="Heading">Arc–transitive 2–valent digraphs</span></h3>
+
+<p>In this Chapter we give functions for accessing the arc-transitive 2-valent asymmetric digraphs stored in this package, and related properties. Currently, this package contains all arc-transitive 2-valent connected asymmetric digraphs on up to 1000 vertices. For information and references about these digraphs, see <a href="chapBib.html#biBPSV_2013a">[PSV13a]</a>.</p>
+
+<p>Let <span class="SimpleMath">Γ</span> be a digraph. Then <span class="SimpleMath">Γ</span> is <em>asymmetric</em> if it has no arcs for which the reverse arc is also in <span class="SimpleMath">Γ</span>, and is <em>connected</em> if the underlying graph of <span class="SimpleMath">Γ</span> is connected. The digraph <span class="SimpleMath">Γ</span> is <em>arc-transitive</em> if the automorphism group of <span class="SimpleMath">Γ</span> acts transitively on the arcs of <span class="SimpleMath">Γ</span>. Further, the digraph <span class="SimpleMath">Γ</span> is <span class="SimpleMath">2</span><em>-valent</em> if each vertex of <span class="SimpleMath">Γ</span> has 2 in-neighbours and 2 out-neighbours.</p>
+
+<p><a id="X845841E17F91F365" name="X845841E17F91F365"></a></p>
+
+<h4>4.1 <span class="Heading">Accessing the arc–transitive 2–valent digraphs</span></h4>
+
+<p>In this Section we introduce functions for the access to the cubic vertex-transitive graphs stored in the <strong class="pkg">GraphSym</strong> package.</p>
+
+<p><a id="X7D0BEAE683C85D32" name="X7D0BEAE683C85D32"></a></p>
+
+<h5>4.1-1 AT2ValentDigraph</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AT2ValentDigraph</code>( <var class="Arg">n</var>, <var class="Arg">i</var>[, <var class="Arg">data</var>] )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns: A digraph.</p>
+
+<p>Given positive integers <var class="Arg">n,i</var>, this function returns the <var class="Arg">i</var>th arc-transitive 2-valent digraph with <var class="Arg">n</var> vertices available in this package. If there is no such graph, the function returns <code class="keyw">fail</code>.</p>
+
+<p>When the optional argument <var class="Arg">data</var> is specified, it must have value <code class="keyw">true</code> or <code class="keyw">false</code>. If <code class="code"><var class="Arg">data</var>=</code><code class="keyw">true</code>, the graph returned by this function will have been assigned the precomputed properties and attributes from <code class="func">SetAT2ValentDigraphProps</code> (<a href="chap4.html#X82356701867E1591"><span class="RefLink">4.2-4</span></a>). If <code class="code"><var class="Arg">data</var>=</code><code class="keyw">false</code> or not specified, none of these properties or attributes are given to the resulting graph.</p>
+
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AT2ValentDigraph(300,40);</span>
+&lt;immutable digraph with 300 vertices, 600 edges&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AT2ValentDigraph(300,100);</span>
+fail
+    
+  </pre></div>
+
+<p><a id="X84BD3BC08373E26A" name="X84BD3BC08373E26A"></a></p>
+
+<h5>4.1-2 AllAT2ValentDigraphs</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AllAT2ValentDigraphs</code>( <var class="Arg">n</var>[, <var class="Arg">data</var>] )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns: A list.</p>
+
+<p>Given a positive integer <var class="Arg">n</var>, this function returns a list containing all arc-transitive digraphs with <var class="Arg">n</var> vertices available in this package. If there are no such graphs, the function returns <code class="keyw">fail</code>.</p>
+
+<p>When the optional argument <var class="Arg">data</var> is specified, it must have value <code class="keyw">true</code> or <code class="keyw">false</code>. If <code class="code"><var class="Arg">data</var>=</code><code class="keyw">true</code>, the graphs returned by this function will have been assigned the precomputed properties and attributes from <code class="func">SetAT2ValentDigraphProps</code> (<a href="chap4.html#X82356701867E1591"><span class="RefLink">4.2-4</span></a>). If <code class="code"><var class="Arg">data</var>=</code><code class="keyw">false</code> or not specified, none of these properties or attributes are given to the resulting graphs.</p>
+
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gammas:=AllAT2ValentDigraphs(300,true);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ForAny(gammas,HasAbelianVertexStabilizer);</span>
+true
+    
+  </pre></div>
+
+<p><a id="X86AA45E57D0DDB55" name="X86AA45E57D0DDB55"></a></p>
+
+<h5>4.1-3 AT2ValentDigraphIterator</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AT2ValentDigraphIterator</code>( <var class="Arg">n</var>[, <var class="Arg">data</var>] )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns: A list.</p>
+
+<p>Given a positive integer <var class="Arg">n</var>, this function returns an iterator over all arc-transitive 2-valent digraphs with <var class="Arg">n</var> vertices available in this package. If there are such no graphs, the function returns an empty iterator.</p>
+
+<p>When the optional argument <var class="Arg">data</var> is specified, it must have value <code class="keyw">true</code> or <code class="keyw">false</code>. If <code class="code"><var class="Arg">data</var>=</code><code class="keyw">true</code>, the graphs returned by this function will have been assigned the precomputed properties and attributes from <code class="func">SetAT2ValentDigraphProps</code> (<a href="chap4.html#X82356701867E1591"><span class="RefLink">4.2-4</span></a>). If <code class="code"><var class="Arg">data</var>=</code><code class="keyw">false</code> or not specified, none of these properties or attributes are given to the resulting graphs.</p>
+
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">cnt:=0;; iter:=AT2ValentDigraphIterator(100,true);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">for gamma in iter do</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">if HasSolvableAutGroup(gamma) then</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">cnt:=cnt+1;</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">fi;</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">od;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">cnt;</span>
+15
+    
+  </pre></div>
+
+<p><a id="X80FB15A3834DB34D" name="X80FB15A3834DB34D"></a></p>
+
+<h4>4.2 <span class="Heading">Properties of the arc–transitive 2–valent digraphs and library</span></h4>
+
+<p>In this Section we give the functions which give information about the arc-transitive 2-valent digraph library, and the properties and attributes of the graphs it contains.</p>
+
+<p><a id="X7F3351217BC4524A" name="X7F3351217BC4524A"></a></p>
+
+<h5>4.2-1 <span class="Heading">Precomputed attributes of the arc–transitive 2–valent digraphs</span></h5>
+
+<p>For a given arc-transitive 2-valent digraph <span class="SimpleMath">Γ</span> stored in this package, there are several precomputed attributes stored in the <strong class="pkg">GraphSym</strong> package. These include the following:</p>
+
+
+<ul>
+<li><p>The self-reverseness of <span class="SimpleMath">Γ</span> (<code class="func">IsSelfReverseDigraph</code> (<a href="chap4.html#X7B258ACA864BB74C"><span class="RefLink">4.2-5</span></a>)).</p>
+
+</li>
+<li><p>The index of the reverse graph of <span class="SimpleMath">Γ</span> (<code class="func">AT2ValentReverseDigraphId</code> (<a href="chap4.html#X7B8B5F8B86488428"><span class="RefLink">4.2-8</span></a>)).</p>
+
+</li>
+<li><p>The arc-transitiveness of the underlying graph of <span class="SimpleMath">Γ</span> (<code class="func">HasATUnderlyingGraph</code> (<a href="chap4.html#X80BEC5307BE5A611"><span class="RefLink">4.2-6</span></a>)).</p>
+
+</li>
+<li><p>The underlying graph of <span class="SimpleMath">Γ</span>. This is a string giving the position of the underlying graph in one of the collections of graphs found in this package (<code class="func">NameOfUnderlyingGraph</code> (<a href="chap4.html#X8225730E7ECEA95D"><span class="RefLink">4.2-9</span></a>)).</p>
+
+</li>
+<li><p>The maximum <span class="SimpleMath">s</span> such that <span class="SimpleMath">Γ</span> is <span class="SimpleMath">s</span>-arc-transitive (<code class="func">MaximumArcTransitivity</code> (<a href="chap4.html#X7ECF0C50817A8070"><span class="RefLink">4.2-10</span></a>)).</p>
+
+</li>
+<li><p>The generalised wreath digraph-ness of <span class="SimpleMath">Γ</span> (<code class="func">IsGeneralizedWreathDigraph</code> (<a href="chap4.html#X80B191667F330FD1"><span class="RefLink">4.2-7</span></a>)).</p>
+
+</li>
+</ul>
+<p>Now we introduce functions which are used to find information about the library and each of the graphs it stores.</p>
+
+<p><a id="X7A865EFE7DC52067" name="X7A865EFE7DC52067"></a></p>
+
+<h5>4.2-2 NrAT2ValentDigraphs</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NrAT2ValentDigraphs</code>( <var class="Arg">n</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NumberAT2ValentDigraphs</code>( <var class="Arg">n</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Returns: An integer.</p>
+
+<p>Given a positive integer <var class="Arg">n</var>, this function returns the number of arc-transitive 2-valent digraphs with <var class="Arg">n</var> vertices stored in this package.</p>
+
+<p>For any positive integers <span class="SimpleMath">n</span> up to 1000, arc-transitive 2-valent connected asymmetric digraphs with <span class="SimpleMath">n</span> vertices.</p>
+
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NrAT2ValentDigraphs(500);</span>
+63
+    
+  </pre></div>
+
+<p><a id="X7CE1F85585E558D7" name="X7CE1F85585E558D7"></a></p>
+
+<h5>4.2-3 AT2ValentDigraphId</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AT2ValentDigraphId</code>( <var class="Arg">gamma</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: An integer.</p>
+
+<p>Given a digraph <var class="Arg">gamma</var>, if <var class="Arg">gamma</var> is isomorphic to a graph stored in this package, this function returns the index of the graph isomorphic to <var class="Arg">gamma</var>. Otherwise, this function returns <code class="keyw">fail</code>.</p>
+
+<p>The index <code class="code">i</code> of a graph <code class="code">gamma</code> in this library is the position at which the graph is stored relative to its number of vertices. In particular, if <code class="code">gamma</code> has <code class="code">n</code> vertices, then <code class="code">gamma</code> will be the <code class="code">i</code>th entry of <code class="code">AllAT2ValentDigraphs(n)</code> and the <code class="code">i</code>th graph found when iterating through <code class="code">AT2ValentDigraphIterator(n)</code>.</p>
+
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gamma:=AT2ValentDigraph(100,5);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AT2ValentDigraphId(gamma);</span>
+5
+    
+  </pre></div>
+
+<p><a id="X82356701867E1591" name="X82356701867E1591"></a></p>
+
+<h5>4.2-4 SetAT2ValentDigraphProps</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SetAT2ValentDigraphProps</code>( <var class="Arg">gamma</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>Given a digraph <var class="Arg">gamma</var>, if this graph is isomorphic to a graph stored in this library, this function sets the properties and attributes of <var class="Arg">gamma</var> precomputed in this package. This includes</p>
+
+
+<ul>
+<li><p>All properties and attributes found in Subsection <a href="chap4.html#X7F3351217BC4524A"><span class="RefLink">4.2-1</span></a>.</p>
+
+</li>
+<li><p><code class="func">AT2ValentDigraphId</code> (<a href="chap4.html#X7CE1F85585E558D7"><span class="RefLink">4.2-3</span></a>).</p>
+
+</li>
+<li><p><code class="func">IsArcTransitiveDigraph</code> (<a href="chap2.html#X79AA37B085A4C47B"><span class="RefLink">2.2-8</span></a>).</p>
+
+</li>
+<li><p><code class="func">IsVertexTransitive</code> (<a href="../../../pkg/digraphs/doc/chap6.html#X7B26E4447A1611E9"><span class="RefLink">Digraphs: IsVertexTransitive</span></a>).</p>
+
+</li>
+<li><p><code class="func">DigraphReverse</code> (<a href="../../../pkg/digraphs/doc/chap3.html#X78DECD26811EFD7C"><span class="RefLink">Digraphs: DigraphReverse</span></a>), which stores the reverse graph of <var class="Arg">gamma</var> with it's library id as defined in <code class="func">AT2ValentDigraphId</code> (<a href="chap4.html#X7CE1F85585E558D7"><span class="RefLink">4.2-3</span></a>)).</p>
+
+</li>
+<li><p><code class="func">DigraphSymmetricClosure</code> (<a href="../../../pkg/digraphs/doc/chap3.html#X874883DD7DD450C4"><span class="RefLink">Digraphs: DigraphSymmetricClosure</span></a>), which stores the underlying graph of <var class="Arg">gamma</var> as described in <code class="func">NameOfUnderlyingGraph</code> (<a href="chap4.html#X8225730E7ECEA95D"><span class="RefLink">4.2-9</span></a>).</p>
+
+</li>
+</ul>
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gamma:=AT2ValentDigraph(150,5);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetAT2ValentDigraphProps(gamma);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsGeneralizedWreathDigraph(gamma);</span>
+false
+    
+  </pre></div>
+
+<p><a id="X7B258ACA864BB74C" name="X7B258ACA864BB74C"></a></p>
+
+<h5>4.2-5 IsSelfReverseDigraph</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSelfReverseDigraph</code>( <var class="Arg">gamma</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code>.</p>
+
+<p>Given a digraph <var class="Arg">gamma</var>, this function returns <code class="keyw">true</code> if <var class="Arg">gamma</var> is isomorphic to the reverse (or reverse) of <var class="Arg">gamma</var>, and otherwise it returns <code class="keyw">false</code> (see <code class="func">DigraphReverse</code> (<a href="../../../pkg/digraphs/doc/chap3.html#X78DECD26811EFD7C"><span class="RefLink">Digraphs: DigraphReverse</span></a>) ).</p>
+
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gamma:=AT2ValentDigraph(300,1);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSelfReverseDigraph(gamma);</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gamma:=AT2ValentDigraph(300,20);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSelfReverseDigraph(gamma);</span>
+true
+    
+  </pre></div>
+
+<p><a id="X80BEC5307BE5A611" name="X80BEC5307BE5A611"></a></p>
+
+<h5>4.2-6 HasATUnderlyingGraph</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HasATUnderlyingGraph</code>( <var class="Arg">gamma</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code>.</p>
+
+<p>Given a digraph <var class="Arg">gamma</var>, this function returns <code class="keyw">true</code> if the underlying graph of <var class="Arg">gamma</var> is arc-transitive, and otherwise it returns <code class="keyw">false</code> (see <code class="func">DigraphSymmetricClosure</code> (<a href="../../../pkg/digraphs/doc/chap3.html#X874883DD7DD450C4"><span class="RefLink">Digraphs: DigraphSymmetricClosure</span></a>), <code class="func">IsEdgeTransitive</code> (<a href="../../../pkg/digraphs/doc/chap6.html#X8361CA6E8401FF26"><span class="RefLink">Digraphs: IsEdgeTransitive</span></a>) and <code class="func">IsArcTransitiveDigraph</code> (<a href="chap2.html#X79AA37B085A4C47B"><span class="RefLink">2.2-8</span></a>)).</p>
+
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gamma:=AT2ValentDigraph(300,10);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HasATUnderlyingGraph(gamma);</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gamma:=AT2ValentDigraph(300,30,true);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">HasATUnderlyingGraph(gamma);</span>
+true
+    
+  </pre></div>
+
+<p><a id="X80B191667F330FD1" name="X80B191667F330FD1"></a></p>
+
+<h5>4.2-7 IsGeneralizedWreathDigraph</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsGeneralizedWreathDigraph</code>( <var class="Arg">gamma</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="keyw">true</code> or <code class="keyw">false</code>.</p>
+
+<p>Given an arc-transitive 2-valent digraph <var class="Arg">gamma</var> from the <strong class="pkg">GraphSym</strong> package such that its properties and attributes have been assigned, this function returns <code class="keyw">true</code> if it is isomorphic to a generalized wreath digraph, and otherwise it returns <code class="keyw">false</code>.</p>
+
+<p>The properties and attributes of an arc-transitive 2-valent digraph that can be found in the <strong class="pkg">GraphSym</strong> package can be assigned using the function <code class="func">SetAT2ValentDigraphProps</code> (<a href="chap4.html#X82356701867E1591"><span class="RefLink">4.2-4</span></a>), or loaded automatically by the functions <code class="func">AT2ValentDigraph</code> (<a href="chap4.html#X7D0BEAE683C85D32"><span class="RefLink">4.1-1</span></a>), <code class="func">AllAT2ValentDigraphs</code> (<a href="chap4.html#X84BD3BC08373E26A"><span class="RefLink">4.1-2</span></a>) or <code class="func">AT2ValentDigraphIterator</code> (<a href="chap4.html#X86AA45E57D0DDB55"><span class="RefLink">4.1-3</span></a>).</p>
+
+<p>Let <span class="SimpleMath">n</span> be an integer such that <span class="SimpleMath">n&gt;2</span>. The <em>generalized wreath digraph</em>, <span class="SimpleMath">overrightarrowW_n</span>, has vertex-set <span class="SimpleMath">ℤ_n × ℤ_2</span>. Then, two distinct vertices <span class="SimpleMath">(i,a),(j,b)</span> are adjacent if and only if <span class="SimpleMath">j-i≡ 1 mod n</span>.</p>
+
+<p>For more information on the generalized wreath digraphs, see <a href="chapBib.html#biBPSV_2015">[PSV15]</a>.</p>
+
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gamma:=AT2ValentDigraph(700,30,true);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsGeneralizedWreathDigraph(gamma);</span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gamma:=AT2ValentDigraph(700,43,true);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsGeneralizedWreathDigraph(gamma);</span>
+true
+    
+  </pre></div>
+
+<p><a id="X7B8B5F8B86488428" name="X7B8B5F8B86488428"></a></p>
+
+<h5>4.2-8 AT2ValentReverseDigraphId</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AT2ValentReverseDigraphId</code>( <var class="Arg">gamma</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: An integer.</p>
+
+<p>Given an arc-transitive 2-valent digraph <var class="Arg">gamma</var> from the <strong class="pkg">GraphSym</strong> package such that its properties and attributes have been assigned, this function returns the position, <code class="code">i</code>, at which the reverse (or reverse) of <var class="Arg">gamma</var> is stored (see <code class="func">DigraphReverse</code> (<a href="../../../pkg/digraphs/doc/chap3.html#X78DECD26811EFD7C"><span class="RefLink">Digraphs: DigraphReverse</span></a>)). In particular, if <var class="Arg">gamma</var> has order <span class="SimpleMath">n</span>, then <code class="code">AT2ValentDigraph(</code><span class="SimpleMath">n</span><code class="code">,i)</code> is the reverse graph of <var class="Arg">gamma</var>.</p>
+
+<p>The properties and attributes of an arc-transitive 2-valent digraph that can be found in the <strong class="pkg">GraphSym</strong> package can be assigned using the function <code class="func">SetAT2ValentDigraphProps</code> (<a href="chap4.html#X82356701867E1591"><span class="RefLink">4.2-4</span></a>), or loaded automatically by the functions <code class="func">AT2ValentDigraph</code> (<a href="chap4.html#X7D0BEAE683C85D32"><span class="RefLink">4.1-1</span></a>), <code class="func">AllAT2ValentDigraphs</code> (<a href="chap4.html#X84BD3BC08373E26A"><span class="RefLink">4.1-2</span></a>) or <code class="func">AT2ValentDigraphIterator</code> (<a href="chap4.html#X86AA45E57D0DDB55"><span class="RefLink">4.1-3</span></a>).</p>
+
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gamma:=AT2ValentDigraph(700,10,true);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AT2ValentReverseDigraphId(gamma);</span>
+9
+    
+  </pre></div>
+
+<p><a id="X8225730E7ECEA95D" name="X8225730E7ECEA95D"></a></p>
+
+<h5>4.2-9 NameOfUnderlyingGraph</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NameOfUnderlyingGraph</code>( <var class="Arg">gamma</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: A string.</p>
+
+<p>Given an arc-transitive 2-valent digraph <var class="Arg">gamma</var> from the <strong class="pkg">GraphSym</strong> package such that its properties and attributes have been assigned, this function returns the name of the underlying graph of <var class="Arg">gamma</var> (see <code class="func">DigraphSymmetricClosure</code> (<a href="../../../pkg/digraphs/doc/chap3.html#X874883DD7DD450C4"><span class="RefLink">Digraphs: DigraphSymmetricClosure</span></a>)).</p>
+
+<p>The properties and attributes of an arc-transitive 2-valent digraph that can be found in the <strong class="pkg">GraphSym</strong> package can be assigned using the function <code class="func">SetAT2ValentDigraphProps</code> (<a href="chap4.html#X82356701867E1591"><span class="RefLink">4.2-4</span></a>), or loaded automatically by the functions <code class="func">AT2ValentDigraph</code> (<a href="chap4.html#X7D0BEAE683C85D32"><span class="RefLink">4.1-1</span></a>), <code class="func">AllAT2ValentDigraphs</code> (<a href="chap4.html#X84BD3BC08373E26A"><span class="RefLink">4.1-2</span></a>) or <code class="func">AT2ValentDigraphIterator</code> (<a href="chap4.html#X86AA45E57D0DDB55"><span class="RefLink">4.1-3</span></a>).</p>
+
+<p>The string returned will start with 3 or 4 letters, and then contain 2 numbers enclosed within "[" and "]" characters and separated by the character ";". In the following we give the 3 possible strings of letters found in these names, and their meaning:</p>
+
+
+<dl>
+<dt><strong class="Mark"><code class="code">"GWD"</code></strong></dt>
+<dd><p>the underlying graph is a generalized wreath graph.</p>
+
+</dd>
+<dt><strong class="Mark"><code class="code">"HAT"</code></strong></dt>
+<dd><p>the underlying graph is half-arc-transitive, and not a generalised wreath graph (see Chapter <a href="chap6.html#X7A7CF374846360F5"><span class="RefLink">6</span></a>).</p>
+
+</dd>
+<dt><strong class="Mark"><code class="code">"GHAT"</code></strong></dt>
+<dd><p>the underlying graph is <span class="SimpleMath">G</span>-half-arc-transitive for some subgroup of its automorphism group <span class="SimpleMath">G</span>, but not a half-arc-transitive or generalised wreath graph (see Chapter <a href="chap5.html#X7FE6DF67858BF26F"><span class="RefLink">5</span></a>).</p>
+
+</dd>
+</dl>
+<p>The underlying graph corresponding to this string is then the graph in the list found in <a href="chapBib.html#biBPSV_2015">[PSV15]</a> with the same name as the string, and indexed by the remaining two integers in the string.</p>
+
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gamma:=AT2ValentDigraph(700,40,true);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">NameOfUnderlyingGraph(gamma);</span>
+"GHAT[700;12]"
+    
+  </pre></div>
+
+<p><a id="X7ECF0C50817A8070" name="X7ECF0C50817A8070"></a></p>
+
+<h5>4.2-10 MaximumArcTransitivity</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MaximumArcTransitivity</code>( <var class="Arg">gamma</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: An integer.</p>
+
+<p>Given an arc-transitive 2-valent digraph <var class="Arg">gamma</var> from the <strong class="pkg">GraphSym</strong> package such that its properties and attributes have been assigned, this function returns the maximum integer <span class="SimpleMath">s</span> such that <var class="Arg">gamma</var> is <span class="SimpleMath">s</span>-arc-transitive.</p>
+
+<p>The properties and attributes of an arc-transitive 2-valent digraph that can be found in the <strong class="pkg">GraphSym</strong> package can be assigned using the function <code class="func">SetAT2ValentDigraphProps</code> (<a href="chap4.html#X82356701867E1591"><span class="RefLink">4.2-4</span></a>), or loaded automatically by the functions <code class="func">AT2ValentDigraph</code> (<a href="chap4.html#X7D0BEAE683C85D32"><span class="RefLink">4.1-1</span></a>), <code class="func">AllAT2ValentDigraphs</code> (<a href="chap4.html#X84BD3BC08373E26A"><span class="RefLink">4.1-2</span></a>) or <code class="func">AT2ValentDigraphIterator</code> (<a href="chap4.html#X86AA45E57D0DDB55"><span class="RefLink">4.1-3</span></a>).</p>
+
+<p>An <span class="SimpleMath">s</span><em>-arc</em> of a digraph <span class="SimpleMath">Γ</span> is an <span class="SimpleMath">(s+1)</span>-tuple <span class="SimpleMath">(v_0, v_1,dots, v_s)</span> of vertices of <span class="SimpleMath">Γ</span>, such that <span class="SimpleMath">(v_{i−1}, v_i)</span> is an arc of <span class="SimpleMath">Γ</span> for every <span class="SimpleMath">i∈ {1,dots, s}</span> and <span class="SimpleMath">v_{i−1} not= v_{i+1}</span> for every <span class="SimpleMath">i∈ {1,dots,s-1}</span>. A digraph <span class="SimpleMath">Γ</span> is <span class="SimpleMath">s</span><em>-arc-transitive</em> if the automorphism group of <span class="SimpleMath">Γ</span> acts transitively on the set of <span class="SimpleMath">s</span>-arcs of <span class="SimpleMath">Γ</span>.</p>
+
+<p>For more information on <span class="SimpleMath">s</span>-arc-transitive graphs, see <a href="chapBib.html#biBGR_2001">[GR01]</a>.</p>
+
+
+<div class="example"><pre>
+    
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gamma:=AT2ValentDigraph(748,18,true);;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MaximumArcTransitivity(gamma);</span>
+373
+    
+  </pre></div>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap3.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap5.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chap7.html">7</a>  <a href="chap8.html">8</a>  <a href="chap9.html">9</a>  <a href="chap10.html">10</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

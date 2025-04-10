@@ -1,0 +1,202 @@
+  
+  [1X6 [33X[0;0YHalf–arc–transitive 4–valent graphs[133X[101X
+  
+  [33X[0;0YIn  this  Chapter  we  give  functions for accessing the half-arc-transitive
+  4-valent  graphs  stored in this package, and related properties. Currently,
+  this  package contains all half-arc-transitive 4-valent graphs on up to 1000
+  vertices. For information and references on these graphs, see [PSV13a].[133X
+  
+  [33X[0;0YLet [22XΓ[122X be a simple graph (undirected, loopless, without multiple edges). Then
+  [22XΓ[122X  is  [13X4-valent[113X  (or  [13Xtetravalent[113X) if each vertex of the graph has exactly 4
+  neighbours.[133X
+  
+  [33X[0;0YThe  graph  [22XΓ[122X  is  [13Xhalf-arc-transitive[113X  if  the automorphism group of [22XΓ[122X acts
+  transitively on the vertices and edges of [22XΓ[122X, but not on the arcs of [22XΓ[122X.[133X
+  
+  
+  [1X6.1 [33X[0;0YAccessing the half–arc–transitive 4–valent graphs[133X[101X
+  
+  [33X[0;0YIn   this   Section   we   introduce   functions   for  the  access  to  the
+  half-arc-transitive 4-valent graphs stored in the [5XGraphSym[105X package.[133X
+  
+  [1X6.1-1 HAT4ValentGraph[101X
+  
+  [33X[1;0Y[29X[2XHAT4ValentGraph[102X( [3Xn[103X, [3Xi[103X[, [3Xdata[103X] ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10YA digraph.[133X
+  
+  [33X[0;0YGiven    positive    integers   [3Xn,i[103X,   this   function   returns   the   [3Xi[103Xth
+  half-arc-transitive  4-valent  graph  with  [3Xn[103X  vertices  available  in  this
+  package. If there is no such graph, the function returns [9Xfail[109X.[133X
+  
+  [33X[0;0YWhen  the  optional  argument  [3Xdata[103X is specified, it must have value [9Xtrue[109X or
+  [9Xfalse[109X.  If  [10X[3Xdata[103X[10X=[110X[9Xtrue[109X,  the  graph  returned by this function will have been
+  assigned     the     precomputed     properties    and    attributes    from
+  [2XSetHAT4ValentGraphProps[102X  ([14X6.2-4[114X).  If  [10X[3Xdata[103X[10X=[110X[9Xfalse[109X  or not specified, none of
+  these properties or attributes are given to the resulting graph.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27XHAT4ValentGraph(600,20);[127X[104X
+    [4X[28X<immutable symmetric digraph with 600 vertices, 2400 edges>[128X[104X
+    [4X[25Xgap>[125X [27XHAT4ValentGraph(600,28);[127X[104X
+    [4X[28Xfail[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X6.1-2 AllHAT4ValentGraphs[101X
+  
+  [33X[1;0Y[29X[2XAllHAT4ValentGraphs[102X( [3Xn[103X[, [3Xdata[103X] ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10YA list.[133X
+  
+  [33X[0;0YGiven  a  positive  integer  [3Xn[103X,  this function returns a list containing all
+  half-arc-transitive  4-valent  graphs  with  [3Xn[103X  vertices  available  in this
+  package. If there are no such graphs, the function returns [9Xfail[109X.[133X
+  
+  [33X[0;0YWhen  the  optional  argument  [3Xdata[103X is specified, it must have value [9Xtrue[109X or
+  [9Xfalse[109X.  If  [10X[3Xdata[103X[10X=[110X[9Xtrue[109X,  the  graphs returned by this function will have been
+  assigned     the     precomputed     properties    and    attributes    from
+  [2XSetHAT4ValentGraphProps[102X  ([14X6.2-4[114X).  If  [10X[3Xdata[103X[10X=[110X[9Xfalse[109X  or not specified, none of
+  these properties or attributes are given to the resulting graphs.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27Xgammas:=AllHAT4ValentGraphs(600);;[127X[104X
+    [4X[25Xgap>[125X [27XLength(gammas);[127X[104X
+    [4X[28X27[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X6.1-3 HAT4ValentGraphIterator[101X
+  
+  [33X[1;0Y[29X[2XHAT4ValentGraphIterator[102X( [3Xn[103X[, [3Xdata[103X] ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10YAn iterator.[133X
+  
+  [33X[0;0YGiven  a  positive  integer  [3Xn[103X,  this  function returns an iterator over all
+  half-arc-transitive  4-valent  graphs  with  [3Xn[103X  vertices  available  in this
+  package.  If  there  are  such  no  graphs,  the  function  returns an empty
+  iterator.[133X
+  
+  [33X[0;0YWhen  the  optional  argument  [3Xdata[103X is specified, it must have value [9Xtrue[109X or
+  [9Xfalse[109X.  If  [10X[3Xdata[103X[10X=[110X[9Xtrue[109X,  the  graphs returned by this function will have been
+  assigned     the     precomputed     properties    and    attributes    from
+  [2XSetHAT4ValentGraphProps[102X  ([14X6.2-4[114X).  If  [10X[3Xdata[103X[10X=[110X[9Xfalse[109X  or not specified, none of
+  these properties or attributes are given to the resulting graphs.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27Xcnt:=0;; iter:=HAT4ValentGraphIterator(600);;[127X[104X
+    [4X[25Xgap>[125X [27Xfor gamma in iter do[127X[104X
+    [4X[25X>[125X [27Xif HasSolvableAutGroup(gamma) then[127X[104X
+    [4X[25X>[125X [27Xcnt:=cnt+1;[127X[104X
+    [4X[25X>[125X [27Xfi;[127X[104X
+    [4X[25X>[125X [27Xod;[127X[104X
+    [4X[25Xgap>[125X [27Xcnt;[127X[104X
+    [4X[28X25[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  
+  [1X6.2 [33X[0;0YProperties of the half–arc–transitive 4–valent graphs and library[133X[101X
+  
+  [33X[0;0YIn  this  Section  we  give  the  functions which give information about the
+  half-arc-transitive   4-valent   graph   library,  and  the  properties  and
+  attributes of the graphs it contains.[133X
+  
+  
+  [1X6.2-1 [33X[0;0YPrecomputed attributes of the half–arc–transitive 4–valent graphs[133X[101X
+  
+  [33X[0;0YFor  a  given  half-arc-transitive  4-valent graph [22XΓ[122X stored in this package,
+  there  are  several  precomputed  attributes stored in the [5XGraphSym[105X package.
+  These include the following:[133X
+  
+  [30X    [33X[0;6YGirth        of       [22XΓ[122X       ([2XDigraphUndirectedGirth[102X       ([14XDigraphs:
+        DigraphUndirectedGirth[114X)).[133X
+  
+  [30X    [33X[0;6YBipartiteness       of      [22XΓ[122X      ([2XIsBipartiteDigraph[102X      ([14XDigraphs:
+        IsBipartiteDigraph[114X)).[133X
+  
+  [30X    [33X[0;6YArc-transitivity of [22XΓ[122X ([2XIsArcTransitiveDigraph[102X ([14X2.2-8[114X)).[133X
+  
+  [30X    [33X[0;6YThe Cayleyness of [22XΓ[122X ([2XIsCayleyGraph[102X ([14X2.2-7[114X)).[133X
+  
+  [30X    [33X[0;6YThe   length   of   the   shortest   consistent   cycle   in   [22XΓ[122X  (see
+        [2XConsistentCycleTypes[102X ([14X5.2-6[114X)).[133X
+  
+  [30X    [33X[0;6YThe   length   of   the   longest   consistent   cycle   in   [22XΓ[122X   (see
+        [2XConsistentCycleTypes[102X ([14X5.2-6[114X)).[133X
+  
+  [33X[0;0YNow  we  introduce  functions  which  are used to find information about the
+  library and each of the graphs it stores.[133X
+  
+  [1X6.2-2 NrHAT4ValentGraphs[101X
+  
+  [33X[1;0Y[29X[2XNrHAT4ValentGraphs[102X( [3Xn[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XNumberHAT4ValentGraphs[102X( [3Xn[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10YAn integer.[133X
+  
+  [33X[0;0YGiven   a   positive   integer  [3Xn[103X,  this  function  returns  the  number  of
+  half-arc-transitive 4-valent graphs with [3Xn[103X vertices stored in this package.[133X
+  
+  [33X[0;0YFor  any  positive  integers  [22Xn[122X  up  to 1000, the current package stores all
+  half-arc-transitive 4-valent graphs with [22Xn[122X vertices.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27XNrHAT4ValentGraphs(600);[127X[104X
+    [4X[28X27[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X6.2-3 HAT4ValentGraphId[101X
+  
+  [33X[1;0Y[29X[2XHAT4ValentGraphId[102X( [3Xgamma[103X ) [32X attribute[133X
+  [6XReturns:[106X  [33X[0;10YAn integer.[133X
+  
+  [33X[0;0YGiven  a  digraph  [3Xgamma[103X,  if  [3Xgamma[103X is isomorphic to a graph stored in this
+  package,  this  function returns the index of the graph isomorphic to [3Xgamma[103X.
+  Otherwise, this function returns [9Xfail[109X.[133X
+  
+  [33X[0;0YThe  index  [10Xi[110X  of a graph [10Xgamma[110X in this library is the position at which the
+  graph  is stored relative to its number of vertices. In particular, if [10Xgamma[110X
+  has  [10Xn[110X  vertices, then [10Xgamma[110X will be the [10Xi[110Xth entry of [10XAllHAT4ValentGraphs(n)[110X
+  and the [10Xi[110Xth graph found when iterating through [10XHAT4ValentGraphIterator(n)[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27Xgamma:=HAT4ValentGraph(768,20);;[127X[104X
+    [4X[25Xgap>[125X [27XHAT4ValentGraphId(gamma);[127X[104X
+    [4X[28X20[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  
+  [1X6.2-4 SetHAT4ValentGraphProps[101X
+  
+  [33X[1;0Y[29X[2XSetHAT4ValentGraphProps[102X( [3Xgamma[103X ) [32X function[133X
+  
+  [33X[0;0YGiven a digraph [3Xgamma[103X, if this graph is isomorphic to a graph stored in this
+  library,   this  function  sets  the  properties  and  attributes  of  [3Xgamma[103X
+  precomputed in this package. This includes[133X
+  
+  [30X    [33X[0;6YAll properties and attributes found in Subsection [14X6.2-1[114X.[133X
+  
+  [30X    [33X[0;6Y[2XHAT4ValentGraphId[102X ([14X6.2-3[114X).[133X
+  
+  [30X    [33X[0;6Y[2XIsCayleyGraph[102X ([14X2.2-7[114X).[133X
+  
+  [30X    [33X[0;6Y[2XIsVertexTransitive[102X ([14XDigraphs: IsVertexTransitive[114X).[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X    [128X[104X
+    [4X[25Xgap>[125X [27Xgamma:=HAT4ValentGraph(768,20);;[127X[104X
+    [4X[25Xgap>[125X [27XSetHAT4ValentGraphProps(gamma);[127X[104X
+    [4X[25Xgap>[125X [27XSizeStabAut(gamma);[127X[104X
+    [4X[28X8[128X[104X
+    [4X[28X    [128X[104X
+    [4X[28X  [128X[104X
+  [4X[32X[104X
+  

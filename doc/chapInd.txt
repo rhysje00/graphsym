@@ -1,0 +1,93 @@
+  
+  
+  [1XIndex[101X
+  
+  [2X2AT4ValentGraph[102X 8.1-1 
+  [2X2AT4ValentGraphId[102X 8.2-2 
+  [2X2AT4ValentGraphIterator[102X 8.1-3 
+  [2XAll2AT4ValentGraphs[102X 8.1-2 
+  [2XAllAT2ValentDigraphs[102X 4.1-2 
+  [2XAllAT4ValentGraphs[102X 7.1-2 
+  [2XAllCubicATGraphs[102X 3.1-3 
+  [2XAllCubicSSGraphs[102X 3.1-4 
+  [2XAllCubicVTGraphs[102X 2.1-2 
+  [2XAllET4ValentGraphs[102X 9.1-2 
+  [2XAllGHAT4ValentGraphs[102X 5.1-2 
+  [2XAllHAT4ValentGraphs[102X 6.1-2 
+  [2XAllLAT34ValentGraphs[102X 10.1-2 
+  [2XAT2ValentDigraph[102X 4.1-1 
+  [2XAT2ValentDigraphId[102X 4.2-3 
+  [2XAT2ValentDigraphIterator[102X 4.1-3 
+  [2XAT2ValentReverseDigraphId[102X 4.2-8 
+  [2XAT4ValentGraph[102X 7.1-1 
+  [2XAT4ValentGraphId[102X 7.2-2 
+  [2XAT4ValentGraphIterator[102X 7.1-3 
+  [2XCayleyType[102X 5.2-5 
+  [2XConsistentCycleTypes[102X 5.2-6 
+  [2XCubicATGraph[102X 3.1-1 
+  [2XCubicATGraphId[102X 3.2-4 
+  [2XCubicATGraphIterator[102X 3.1-5 
+  [2XCubicSSGraph[102X 3.1-2 
+  [2XCubicSSGraphId[102X 3.2-5 
+  [2XCubicSSGraphIterator[102X 3.1-6 
+  [2XCubicVTGraph[102X 2.1-1 
+  [2XCubicVTGraphId[102X 2.2-3 
+  [2XCubicVTGraphIterator[102X 2.1-3 
+  [2XET4ValentGraph[102X 9.1-1 
+  [2XET4ValentGraphId[102X 9.2-2 
+  [2XET4ValentGraphIterator[102X 9.1-3 
+  [2XGHAT4ValentGraph[102X 5.1-1 
+  [2XGHAT4ValentGraphId[102X 5.2-3 
+  [2XGHAT4ValentGraphIterator[102X 5.1-3 
+  [5XGraphSym[105X package overview 1.0 
+  [5XGraphSym[105X 1.1 
+  [2XHasATUnderlyingGraph[102X 4.2-6 
+  [2XHAT4ValentGraph[102X 6.1-1 
+  [2XHAT4ValentGraphId[102X 6.2-3 
+  [2XHAT4ValentGraphIterator[102X 6.1-3 
+  [2XIsArcTransitiveDigraph[102X 2.2-8 
+  [2XIsCayleyGraph[102X 2.2-7 
+  [2XIsCubicGraph[102X 2.2-6 
+  [2XIsGeneralizedWreathDigraph[102X 4.2-7 
+  [2XIsSelfReverseDigraph[102X 4.2-5 
+  [2XIsSplitPraegerXuGraph[102X 2.2-9 
+  [2XLAT34ValentGraph[102X 10.1-1 
+  [2XLAT34ValentGraphId[102X 10.2-2 
+  [2XLAT34ValentGraphIterator[102X 10.1-3 
+  License 0.0-1 
+  [2XMaximumArcTransitivity[102X 4.2-10 
+  [2XNameOfUnderlyingGraph[102X 4.2-9 
+  [2XNr2AT4ValentGraphs[102X 8.2-1 
+  [2XNrAT2ValentDigraphs[102X 4.2-2 
+  [2XNrAT4ValentGraphs[102X 7.2-1 
+  [2XNrCubicATGraphs[102X 3.2-2 
+  [2XNrCubicSSGraphs[102X 3.2-3 
+  [2XNrCubicVTGraphs[102X 2.2-2 
+  [2XNrET4ValentGraphs[102X 9.2-1 
+  [2XNrGHAT4ValentGraphs[102X 5.2-2 
+  [2XNrHAT4ValentGraphs[102X 6.2-2 
+  [2XNrLAT34ValentGraphs[102X 10.2-1 
+  [2XNumber2AT4ValentGraphs[102X, long synonym 8.2-1 
+  [2XNumberAT2ValentDigraphs[102X, long synonym 4.2-2 
+  [2XNumberAT4ValentGraphs[102X, long synonym 7.2-1 
+  [2XNumberCubicATGraphs[102X, long synonym 3.2-2 
+  [2XNumberCubicSSGraphs[102X, long synonym 3.2-3 
+  [2XNumberCubicVTGraphs[102X, long synonym 2.2-2 
+  [2XNumberET4ValentGraphs[102X, long synonym 9.2-1 
+  [2XNumberGHAT4ValentGraphs[102X, long synonym 5.2-2 
+  [2XNumberHAT4ValentGraphs[102X, long synonym 6.2-2 
+  [2XNumberLAT34ValentGraphs[102X, long synonym 10.2-1 
+  [2XSet2AT4ValentGraphProps[102X 8.2-3 
+  [2XSetAT2ValentDigraphProps[102X 4.2-4 
+  [2XSetAT4ValentGraphProps[102X 7.2-3 
+  [2XSetCubicATGraphProps[102X 3.2-6 
+  [2XSetCubicSSGraphProps[102X 3.2-7 
+  [2XSetCubicVTGraphProps[102X 2.2-4 
+  [2XSetET4ValentGraphProps[102X 9.2-3 
+  [2XSetGHAT4ValentGraphProps[102X 5.2-4 
+  [2XSetHAT4ValentGraphProps[102X 6.2-4 
+  [2XSetLAT34ValentGraphProps[102X 10.2-3 
+  [2XSmallCubicVTGraphsInfo[102X 2.2-5 
+  
+  
+  -------------------------------------------------------

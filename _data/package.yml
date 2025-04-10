@@ -1,9 +1,9 @@
 name: GraphSym
 version: "0.1"
 license: "GPL-2.0-or-later"
-date: 2024-05-25
+date: 2025-04-10
 description: |
-    GRaphs with SYmmetries LIbrary
+    Graphs with symmetries library
 
 authors:
     - name: Rhys J. Evans
@@ -55,10 +55,10 @@ keywords: |
     cubic, vertex-transitive, edge-transitive, arc-transitive, graphs.
 citeas: |
     <p class='BibEntry'>
-    [<span class='BibKey'>EMP24</span>]   <b class='BibAuthor'>Evans, R. J., Montero, A. and Potočnik, P.</b>,
-     <i class='BibTitle'>GraphSym, GRaphs with SYmmetries LIbrary,
+    [<span class='BibKey'>EMP25</span>]   <b class='BibAuthor'>Evans, R. J., Montero, A. and Potočnik, P.</b>,
+     <i class='BibTitle'>GraphSym, Graphs with symmetries library,
              Version 0.1</i>
-     (<span class='BibYear'>2024</span>)<br />
+     (<span class='BibYear'>2025</span>)<br />
     (<span class='BibNote'>GAP package</span>),
     <span class='BibHowpublished'><a href="https://rhysje00.github.io/graphsym">https://rhysje00.github.io/graphsym</a></span>.
     </p>
@@ -67,10 +67,10 @@ citeas: |
 bibtex: |
     @misc{ GraphSym,
       author =           {Evans, R. J. and Montero, A. and Poto{\v c}nik, P.},
-      title =            {{GraphSym},  GRaphs with SYmmetries LIbrary, {V}ersion
+      title =            {{GraphSym},  Graphs with symmetries library, {V}ersion
                           0.1},
-      month =            {May},
-      year =             {2024},
+      month =            {Apr},
+      year =             {2025},
       note =             {GAP package},
       howpublished =     {\href            {https://rhysje00.github.io/graphsym}
                           {\texttt{https://rhysje00.github.io/}\discretionary
@@ -78,6 +78,6 @@ bibtex: |
       keywords =         {cubic;           vertex\texttt{\symbol{45}}transitive;
                           edge\texttt{\symbol{45}}transitive;
                           arc\texttt{\symbol{45}}transitive; graphs},
-      printedkey =       {EMP24}
+      printedkey =       {EMP25}
     }
 
