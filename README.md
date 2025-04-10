@@ -4,6 +4,8 @@ The GraphSym package contains various collections of small graphs with certain
 symmetry properties, and provides functionality for the access to these graphs, 
 along with several precomputed properties for each graph available.
   
+This graphs in this package can also be found at <https://graphsym.net>.
+
 ## Documentation
 
 Currently, the pdf version of the manual can be found at
