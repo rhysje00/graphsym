@@ -1,103 +1,159 @@
 #############################################################################
-##  
-##  Demo PackageInfo.g for the GitHubPagesForGAP
 ##
-
+#W  PackageInfo.g      GRaphs with SYmmetries LIbrary        Rhys J. Evans
+##
+##
+##
 SetPackageInfo( rec(
 
-PackageName := "GitHubPagesForGAP",
+  PackageName := "GraphSym",
+  Subtitle := "GRaphs with SYmmetries LIbrary",
+  Version := "0.1",
+  Date := "25/05/2024",
+  License := "GPL-2.0-or-later",
 
-Subtitle := "A GitHub Pages generator for GAP packages",
-Version := "0.4",
-Date := "10/04/2025", # dd/mm/yyyy format
-License := "0BSD",
+##  <#GAPDoc Label="PKGVERSIONDATA">
+##  <!ENTITY VERSION "0.1">
+##  <!ENTITY RELEASEDATE "25 May 2024">
+##  <!ENTITY PKGWWWHOME "https://rhysje00.github.io/graphsym/">
+##  <#/GAPDoc>
 
-Persons := [
-  rec(
-    LastName      := "Horn",
-    FirstNames    := "Max",
-    IsAuthor      := true,
-    IsMaintainer  := true,
-    Email         := "mhorn@rptu.de",
-    WWWHome       := "https://www.quendi.de/math",
-    GitHubUsername:= "fingolfin",
-    PostalAddress := Concatenation(
-                       "Fachbereich Mathematik\n",
-                       "RPTU Kaiserslautern-Landau\n",
-                       "Gottlieb-Daimler-Straße 48\n",
-                       "67663 Kaiserslautern\n",
-                       "Germany" ),
-    Place         := "Kaiserslautern, Germany",
-    Institution   := "RPTU Kaiserslautern-Landau"
+  PackageWWWHome :=
+  Concatenation( "https://rhysje00.github.io/", LowercaseString( ~.PackageName ) ),
+
+  SourceRepository := rec(
+    Type := "git",
+    URL := Concatenation("https://github.com/rhysje00/",
+                         ~.PackageName),
   ),
 
-  rec(
-    LastName      := "Thor",
-    FirstNames    := "A. U.",
-    IsAuthor      := true,
-    IsMaintainer  := false,
-    #Email         := "author@example.com",
-  ),
+  IssueTrackerURL := Concatenation( ~.SourceRepository.URL, "/issues" ), 
 
-  rec(
-    LastName      := "Itor",
-    FirstNames    := "Jan",
-    IsAuthor      := false,
-    IsMaintainer  := true,
-    #Email         := "janitor@example.com",
-  ),
-],
+  SupportEmail := "rhysjevans00@gmail.com",
 
-Status := "other",
+  ArchiveURL := Concatenation( ~.SourceRepository.URL,
+                               "/releases/download/v", ~.Version,
+                               "/", ~.PackageName, "-", ~.Version ),
 
-# The following are not strictly necessary in your own PackageInfo.g
-# (in the sense that update.g only looks at the usual fields
-# like PackageWWWHome, ArchiveURL etc.). But they are convenient
-# if you use exactly the scheme for your package website that we propose.
-GithubUser := "gap-system",
-GithubRepository := ~.PackageName,
-GithubWWW := Concatenation("https://github.com/", ~.GithubUser, "/", ~.GithubRepository),
+  ArchiveFormats := ".tar.gz",
 
-PackageWWWHome := Concatenation("https://", ~.GithubUser, ".github.io/", ~.GithubRepository, "/"),
-README_URL     := Concatenation( ~.PackageWWWHome, "README.md" ),
-PackageInfoURL := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
-# The following assumes you are using the Github releases system. If not, adjust
-# it accordingly.
-ArchiveURL     := Concatenation(~.GithubWWW,
-                    "/releases/download/v", ~.Version, "/",
-                    ~.GithubRepository, "-", ~.Version),
+  Persons := [
+    rec(
+      IsAuthor := true,
+      IsMaintainer := true,
+      FirstNames := "Rhys J.",
+      LastName := "Evans",
+      WWWHome := "https://rhysje00.github.io/",
+      Email := "rhysjevans00@gmail.com",
+      Place := "Ljubljana, Slovenia",
+      Institution := "Inštitut za matematiko, fiziko in mehaniko",
+    ),
 
-ArchiveFormats := ".tar.gz .tar.bz2",
+    rec(
+      IsAuthor := true,
+      IsMaintainer := false,
+      FirstNames := "Antonio",
+      LastName := "Montero",
+      WWWHome := "https://anteromontonio.github.io/",
+      Email := "antonio.montero@fmf.uni-lj.si",
+      Place := "Ljubljana, Slovenia",
+      Institution := "Fakulteta za Matematiko in Fiziko, Univerza v Ljubljani",
+    ),
 
-AbstractHTML := 
-  "This is a pseudo package that contains no actual\
-  <span class=\"pkgname\">GAP</span> code. Instead, it is a template for other\
-  GAP packages that allows to quickly setup GitHub Pages.",
+    rec(
+      IsAuthor := true,
+      IsMaintainer := false,
+      FirstNames := "Primož",
+      LastName := "Potočnik",
+      WWWHome := "https://users.fmf.uni-lj.si/potocnik/",
+      Email := "primoz.potocnik@fmf.uni-lj.si",
+      Place := "Ljubljana, Slovenia",
+      Institution := "Fakulteta za Matematiko in Fiziko, Univerza v Ljubljani",
+    ),
 
-PackageDoc := rec(
-  BookName  := "GitHubPagesForGAP",
-  ArchiveURLSubset := ["doc"],
-  HTMLStart := "doc/chap0.html",
-  PDFFile   := "doc/manual.pdf",
-  SixFile   := "doc/manual.six",
-  LongTitle := "A GitHub Pages generator for GAP packages",
-),
+    rec(
+      LastName      := "Conder",
+      FirstNames    := "Marston",
+      IsAuthor      := false,
+      IsMaintainer  := false,
+      Email         := "m.conder@auckland.ac.nz",
+      Place         := "Auckland, New Zealand",
+      Institution   := "University of Auckland"),
 
-# The following dependencies are fake and for testing / demo purposes
-Dependencies := rec(
-  GAP := ">=4.8.1",
-  NeededOtherPackages := [
-    ["GAPDoc", ">= 1.2"],
-    ["IO", ">= 4.1"],
+
+    rec(
+      LastName      := "Spiga",
+      FirstNames    := "Pablo",
+      IsAuthor      := false,
+      IsMaintainer  := false,
+      Email         := "pablo.spiga@unimib.it",
+      Place         := "Milan, Italy",
+      Institution   := "Università degli Studi di Milano - Bicocca"),
+
+    rec(
+      LastName      := "Verret",
+      FirstNames    := "Gabriel",
+      IsAuthor      := false,
+      IsMaintainer  := false,
+      Email         := "g.verret@auckland.ac.nz",
+      Place         := "Auckland, New Zealand",
+      Institution   := "University of Auckland"),
+  
+    rec(
+      LastName      := "Wilson",
+      FirstNames    := "Stephen",
+      IsAuthor      := false,
+      IsMaintainer  := false,
+      Email         := "stephen.wilson@nau.edu",
+      Place         := "Arizona, US",
+      Institution   := "Northern Arizona University"),
+
   ],
-  SuggestedOtherPackages := [["orb", ">= 4.2"]],
-  ExternalConditions := []
-),
 
-AvailabilityTest := ReturnTrue,
+  Status := "other",
 
-Keywords := ["GitHub Pages", "GAP"]
+  README_URL := 
+    Concatenation( ~.PackageWWWHome, "/README.md" ),
+  
+  PackageInfoURL := 
+    Concatenation( ~.PackageWWWHome, "/PackageInfo.g" ),
+
+  AbstractHTML   := 
+    "The <span class=\"pkgname\">GraphSym</span> package contains various \
+     collections of graphs with interesting symmetry properties. Each \
+     collection of graphs are attained from complete or partial enumerations \
+     published in international journals. This package provides functionality \
+     enabling easy access to these graphs, along with several precomputed \
+     properties related to many of the graphs stored within.",
+
+  PackageDoc := rec(
+    BookName  := "graphsym",
+    ArchiveURLSubset := ["doc"],
+    HTMLStart := "doc/chap0_mj.html",
+    PDFFile   := "doc/manual.pdf",
+    # the path to the .six file used by GAP's help system
+    SixFile   := "doc/manual.six",
+    LongTitle := "GRaphs with SYmmetries LIbrary",
+  ),
+
+  Dependencies := rec(
+
+    GAP := ">= 4.12.2",
+
+    NeededOtherPackages := [["GAPDoc", ">= 1.6.6"],["Digraphs",">= 1.6.1"]],
+    SuggestedOtherPackages := [],
+    OtherPackagesLoadedInAdvance := [],
+
+    ExternalConditions := []
+
+  ),
+
+  AvailabilityTest := ReturnTrue,
+
+  TestFile := "tst/testall.g",
+
+  Keywords := ["cubic","vertex-transitive","edge-transitive", "arc-transitive",
+               "graphs"]
 
 ));
-
 
